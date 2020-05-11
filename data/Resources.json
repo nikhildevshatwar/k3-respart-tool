@@ -1,0 +1,672 @@
+[
+        {
+                "deviceName": "J721E_DEV_C66SS0_INTROUTER0",
+                "deviceId": 121,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 7744,
+                "resStart": 4,
+                "resCount": 93,
+                "utype": "C6x_0 Interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_C66SS1_INTROUTER0",
+                "deviceId": 122,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 7808,
+                "resStart": 4,
+                "resCount": 93,
+                "utype": "C6x_1 Interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_CMPEVENT_INTRTR0",
+                "deviceId": 123,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 7872,
+                "resStart": 0,
+                "resCount": 32,
+                "utype": "Compare event router"
+        },
+        {
+                "deviceName": "J721E_DEV_MAIN2MCU_LVL_INTRTR0",
+                "deviceId": 128,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8192,
+                "resStart": 0,
+                "resCount": 64,
+                "utype": "main2mcu level intr router"
+        },
+        {
+                "deviceName": "J721E_DEV_MAIN2MCU_PLS_INTRTR0",
+                "deviceId": 130,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8320,
+                "resStart": 0,
+                "resCount": 48,
+                "utype": "main2mcul pulse intr router"
+        },
+        {
+                "deviceName": "J721E_DEV_GPIOMUX_INTRTR0",
+                "deviceId": 131,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8384,
+                "resStart": 0,
+                "resCount": 64,
+                "utype": "GPIO interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_R5FSS0_INTROUTER0",
+                "deviceId": 134,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8576,
+                "resStart": 0,
+                "resCount": 256,
+                "utype": "R5FSS0 interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_R5FSS1_INTROUTER0",
+                "deviceId": 135,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8640,
+                "resStart": 0,
+                "resCount": 256,
+                "utype": "R5FSS1 interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_TIMESYNC_INTRTR0",
+                "deviceId": 136,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8704,
+                "resStart": 0,
+                "resCount": 48,
+                "utype": "Timesync interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_WKUP_GPIOMUX_INTRTR0",
+                "deviceId": 137,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 8768,
+                "resStart": 0,
+                "resCount": 32,
+                "utype": "Wakeup GPIO interrupt router"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_MODSS_INTAGGR_0",
+                "deviceId": 207,
+                "subtypeName": "RESASG_SUBTYPE_IA_VINT",
+                "subtypeId": 10,
+                "uniqueId": 13258,
+                "resStart": 0,
+                "resCount": 64,
+                "utype": "MODSS0 virtual interrupts"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_MODSS_INTAGGR_0",
+                "deviceId": 207,
+                "subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT",
+                "subtypeId": 13,
+                "uniqueId": 13261,
+                "resStart": 20480,
+                "resCount": 1024,
+                "utype": "MODSS0 global events"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_MODSS_INTAGGR_1",
+                "deviceId": 208,
+                "subtypeName": "RESASG_SUBTYPE_IA_VINT",
+                "subtypeId": 10,
+                "uniqueId": 13322,
+                "resStart": 0,
+                "resCount": 64,
+                "utype": "MODSS1 virtual interrupts"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_MODSS_INTAGGR_1",
+                "deviceId": 208,
+                "subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT",
+                "subtypeId": 13,
+                "uniqueId": 13325,
+                "resStart": 22528,
+                "resCount": 1024,
+                "utype": "MODSS1 global events"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMASS_INTAGGR_0",
+                "deviceId": 209,
+                "subtypeName": "RESASG_SUBTYPE_IA_VINT",
+                "subtypeId": 10,
+                "uniqueId": 13386,
+                "resStart": 38,
+                "resCount": 218,
+                "utype": "UDMA virtual interrupts"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMASS_INTAGGR_0",
+                "deviceId": 209,
+                "subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT",
+                "subtypeId": 13,
+                "uniqueId": 13389,
+                "resStart": 38,
+                "resCount": 4570,
+                "utype": "UDMA global events"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_PROXY_0",
+                "deviceId": 210,
+                "subtypeName": "RESASG_SUBTYPE_PROXY_PROXIES",
+                "subtypeId": 0,
+                "uniqueId": 13440,
+                "resStart": 0,
+                "resCount": 64,
+                "utype": "Main non secure proxy"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
+                "subtypeId": 0,
+                "uniqueId": 13504,
+                "resStart": 0,
+                "resCount": 1,
+                "utype": "ra error"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_GP",
+                "subtypeId": 1,
+                "uniqueId": 13505,
+                "resStart": 440,
+                "resCount": 534,
+                "utype": "General purpose rings"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
+                "subtypeId": 2,
+                "uniqueId": 13506,
+                "resStart": 316,
+                "resCount": 124,
+                "utype": "Receive channels normal capacity"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
+                "subtypeId": 3,
+                "uniqueId": 13507,
+                "resStart": 16,
+                "resCount": 124,
+                "utype": "Transmit channels normal capacity"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_EXT",
+                "subtypeId": 4,
+                "uniqueId": 13508,
+                "resStart": 140,
+                "resCount": 160,
+                "utype": "Transmit extended channels"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
+                "subtypeId": 5,
+                "uniqueId": 13509,
+                "resStart": 304,
+                "resCount": 12,
+                "utype": "Receive channels high capacity"
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_UH",
+                "subtypeId": 6,
+                "uniqueId": 13510,
+                "resStart": 300,
+                "resCount": 4,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
+                "subtypeId": 7,
+                "uniqueId": 13511,
+                "resStart": 4,
+                "resCount": 12,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_UH",
+                "subtypeId": 8,
+                "uniqueId": 13512,
+                "resStart": 0,
+                "resCount": 4,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
+                "subtypeId": 10,
+                "uniqueId": 13514,
+                "resStart": 0,
+                "resCount": 4096,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+                "deviceId": 211,
+                "subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
+                "subtypeId": 11,
+                "uniqueId": 13515,
+                "resStart": 0,
+                "resCount": 32,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON",
+                "subtypeId": 0,
+                "uniqueId": 13568,
+                "resStart": 140,
+                "resCount": 160,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES",
+                "subtypeId": 1,
+                "uniqueId": 13569,
+                "resStart": 0,
+                "resCount": 1,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER",
+                "subtypeId": 2,
+                "uniqueId": 13570,
+                "resStart": 49152,
+                "resCount": 1024,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG",
+                "subtypeId": 3,
+                "uniqueId": 13571,
+                "resStart": 0,
+                "resCount": 1,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
+                "subtypeId": 10,
+                "uniqueId": 13578,
+                "resStart": 16,
+                "resCount": 124,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_HCHAN",
+                "subtypeId": 11,
+                "uniqueId": 13579,
+                "resStart": 4,
+                "resCount": 12,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_UHCHAN",
+                "subtypeId": 12,
+                "uniqueId": 13580,
+                "resStart": 0,
+                "resCount": 4,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
+                "subtypeId": 13,
+                "uniqueId": 13581,
+                "resStart": 16,
+                "resCount": 124,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
+                "subtypeId": 14,
+                "uniqueId": 13582,
+                "resStart": 140,
+                "resCount": 160,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
+                "subtypeId": 15,
+                "uniqueId": 13583,
+                "resStart": 4,
+                "resCount": 12,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+                "deviceId": 212,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_TX_UHCHAN",
+                "subtypeId": 16,
+                "uniqueId": 13584,
+                "resStart": 0,
+                "resCount": 4,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 13632,
+                "resStart": 10,
+                "resCount": 178,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 213,
+                "uniqueId": 213,
+                "resStart": 196,
+                "resCount": 28,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 213,
+                "uniqueId": 213,
+                "resStart": 228,
+                "resCount": 28,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 213,
+                "uniqueId": 213,
+                "resStart": 260,
+                "resCount": 28,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 213,
+                "uniqueId": 213,
+                "resStart": 292,
+                "resCount": 52,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 213,
+                "uniqueId": 213,
+                "resStart": 348,
+                "resCount": 28,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 213,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 213,
+                "uniqueId": 213,
+                "resStart": 380,
+                "resCount": 132,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_INTAGGR_0",
+                "deviceId": 233,
+                "subtypeName": "RESASG_SUBTYPE_IA_VINT",
+                "subtypeId": 10,
+                "uniqueId": 14922,
+                "resStart": 8,
+                "resCount": 248,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_INTAGGR_0",
+                "deviceId": 233,
+                "subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT",
+                "subtypeId": 13,
+                "uniqueId": 14925,
+                "resStart": 16392,
+                "resCount": 1528,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_PROXY_0",
+                "deviceId": 234,
+                "subtypeName": "RESASG_SUBTYPE_PROXY_PROXIES",
+                "subtypeId": 0,
+                "uniqueId": 14976,
+                "resStart": 1,
+                "resCount": 63,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
+                "subtypeId": 0,
+                "uniqueId": 15040,
+                "resStart": 0,
+                "resCount": 1,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_GP",
+                "subtypeId": 1,
+                "uniqueId": 15041,
+                "resStart": 96,
+                "resCount": 156,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
+                "subtypeId": 2,
+                "uniqueId": 15042,
+                "resStart": 50,
+                "resCount": 43,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
+                "subtypeId": 3,
+                "uniqueId": 15043,
+                "resStart": 2,
+                "resCount": 44,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
+                "subtypeId": 5,
+                "uniqueId": 15045,
+                "resStart": 48,
+                "resCount": 2,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
+                "subtypeId": 7,
+                "uniqueId": 15047,
+                "resStart": 0,
+                "resCount": 2,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
+                "subtypeId": 10,
+                "uniqueId": 15050,
+                "resStart": 0,
+                "resCount": 4096,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+                "deviceId": 235,
+                "subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
+                "subtypeId": 11,
+                "uniqueId": 15051,
+                "resStart": 0,
+                "resCount": 32,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON",
+                "subtypeId": 0,
+                "uniqueId": 15104,
+                "resStart": 48,
+                "resCount": 48,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES",
+                "subtypeId": 1,
+                "uniqueId": 15105,
+                "resStart": 0,
+                "resCount": 1,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER",
+                "subtypeId": 2,
+                "uniqueId": 15106,
+                "resStart": 56320,
+                "resCount": 256,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG",
+                "subtypeId": 3,
+                "uniqueId": 15107,
+                "resStart": 0,
+                "resCount": 1,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
+                "subtypeId": 10,
+                "uniqueId": 15114,
+                "resStart": 2,
+                "resCount": 43,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_RX_HCHAN",
+                "subtypeId": 11,
+                "uniqueId": 15115,
+                "resStart": 0,
+                "resCount": 2,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
+                "subtypeId": 13,
+                "uniqueId": 15117,
+                "resStart": 2,
+                "resCount": 44,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
+                "deviceId": 236,
+                "subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
+                "subtypeId": 15,
+                "uniqueId": 15119,
+                "resStart": 0,
+                "resCount": 2,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 237,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 0,
+                "uniqueId": 15168,
+                "resStart": 4,
+                "resCount": 28,
+                "utype": ""
+        },
+        {
+                "deviceName": "J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0",
+                "deviceId": 237,
+                "subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+                "subtypeId": 237,
+                "uniqueId": 237,
+                "resStart": 36,
+                "resCount": 28,
+                "utype": ""
+        }
+]
