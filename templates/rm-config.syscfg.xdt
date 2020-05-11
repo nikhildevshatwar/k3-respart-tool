@@ -1,0 +1,28 @@
+%%{
+	// Everything enclosed like so is treated as javascript and is run when encountered
+	// You can use this to define functions, constants for later
+
+	function getJSstring() {
+		return "javascript";
+	}	
+%%}
+
+% // Any line starting with % is also treated as javascript (in this case, it's just a comment)
+
+Everything else is just output as text, unless escaped with a tick
+which is treated as `getJSstring()`, but excuted inline
+
+This lets you describe output based on the modules in the system:
+% if (system.modules["/modules/resourceEntry"]) {
+%	for (let inst of system.modules["/modules/resourceEntry"].$instances) {
+
+        /* `inst.resType` */
+	    {
+			.start_resource = `inst.resStart`,
+			.num_resource = `inst.resCount`,
+			.type = RESASG_UTYPE (`inst.devId`,
+					`inst.subtype`),
+			.host_id = `inst.hostId`,
+	    }
+%	}
+% }

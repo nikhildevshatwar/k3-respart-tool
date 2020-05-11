@@ -1,0 +1,36 @@
+{
+	"name": "K3-Respart-Tool",
+	"displayName": "Keystone3 Resource Partitioning Tool",
+	"version": "version_1",
+	"includePaths": [
+		".."
+	],
+	"devices": [
+		".*J721E.*"
+	],
+	"templates": [
+		{
+			"name": "/templates/example.syscfg.xdt",
+			"outputPath": "example.txt",
+			"alwaysRun": true
+		},
+		{
+			"name": "/templates/rm-config.syscfg.xdt",
+			"outputPath": "rm-config.c",
+			"alwaysRun": true
+		}
+	],
+	"topModules": [
+		"/modules/hostConfig",
+		"/modules/resourceEntry",
+		"/modules/resourceAssignments",
+		"/modules/basicConfig",
+		"/modules/pinmuxRequirements",
+		"/modules/moduleOwnership",
+		"/modules/onChangeHandler",
+		"/modules/validation",
+		"/modules/uiExtras",
+		"/modules/visionAlgo"
+	],
+	"documentationPath": "docs/"
+}

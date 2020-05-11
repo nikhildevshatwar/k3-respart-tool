@@ -1,0 +1,35 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "J721E_DRA829_TDA4VM_AM752x" --package "ALF" --part "Default" --product "K3-Respart-Tool@version_1"
+ * @versions {"data":"20181113","timestamp":"2020043000","tool":"1.0.0+dev","templates":"20190604"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const hostConfig           = scripting.addModule("/modules/hostConfig", {}, false);
+const hostConfig1          = hostConfig.addInstance();
+const hostConfig2          = hostConfig.addInstance();
+const resourceAssignments  = scripting.addModule("/modules/resourceAssignments", {}, false);
+const resourceAssignments1 = resourceAssignments.addInstance();
+const resourceAssignments2 = resourceAssignments.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+hostConfig1.hostId       = "HOST_ID_A72_3";
+hostConfig1.cpuCore      = "A72_1_1";
+hostConfig1.allowedAtype = [1,2];
+hostConfig1.$name        = "hostVM1";
+
+hostConfig2.hostId  = "HOST_ID_A72_2";
+hostConfig2.cpuCore = "A72_1_0";
+hostConfig2.$name   = "hostVM0";
+
+resourceAssignments1.$name = "main_nav_usma_tx_channels";
+
+resourceAssignments2.$name   = "main_nav_udma_rx_rings";
+resourceAssignments2.devId   = "J721E_DEV_NAVSS0_RINGACC0";
+resourceAssignments2.subtype = "RESASG_SUBTYPE_RA_RX";
+resourceAssignments2.resType = "Main Nav UDMA RX Rings";
