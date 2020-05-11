@@ -1,0 +1,337 @@
+[ 
+	{
+		"devtype" : "J721E_DEV_C66SS0_INTROUTER0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Interrupt router for C6x_0" 
+	},
+	{
+		"devtype" : "J721E_DEV_C66SS1_INTROUTER0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Interrupt router for C6x_1" 
+	},
+	{
+		"devtype" : "J721E_DEV_CMPEVENT_INTRTR0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "compare event IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_MAIN2MCU_LVL_INTRTR0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main 2 MCU level IRQ IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_MAIN2MCU_PLS_INTRTR0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main 2 MCU Pulse IRQ IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_GPIOMUX_INTRTR0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main GPIO IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_R5FSS0_INTROUTER0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Interrupt router for R5FSS0 cluster" 
+	},
+	{
+		"devtype" : "J721E_DEV_R5FSS1_INTROUTER0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Interrupt router for R5FSS1 cluster" 
+	},
+	{
+		"devtype" : "J721E_DEV_TIMESYNC_INTRTR0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Timesync Router" 
+	},
+	{
+		"devtype" : "J721E_DEV_WKUP_GPIOMUX_INTRTR0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "WKUP GPIO IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_MODSS_INTAGGR_0" ,
+		"subtype" : "RESASG_SUBTYPE_IA_VINT" ,
+		"utype" : "MODSS INTA0 VINT" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_MODSS_INTAGGR_0" ,
+		"subtype" : "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT" ,
+		"utype" : "MODSS INTA0 global events" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_MODSS_INTAGGR_1" ,
+		"subtype" : "RESASG_SUBTYPE_IA_VINT" ,
+		"utype" : "MODSS INTA1 VINT" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_MODSS_INTAGGR_1" ,
+		"subtype" : "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT" ,
+		"utype" : "MODSS INTA1 global events" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMASS_INTAGGR_0" ,
+		"subtype" : "RESASG_SUBTYPE_IA_VINT" ,
+		"utype" : "Main Nav IA VINT" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMASS_INTAGGR_0" ,
+		"subtype" : "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT" ,
+		"utype" : "Main Nav IA global events" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_PROXY_0" ,
+		"subtype" : "RESASG_SUBTYPE_PROXY_PROXIES" ,
+		"utype" : "Main Nav nonsecure proxies" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_ERROR_OES" ,
+		"utype" : "Main Nav Ring Error OES" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_GP" ,
+		"utype" : "Main Nav GP Ring / Free Ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_RX" ,
+		"utype" : "Main Nav Normal Capacity RX ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_TX" ,
+		"utype" : "Main Nav Normal Capacity TX ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_TX_EXT" ,
+		"utype" : "Main Nav TX rings for extended channels" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_RX_H" ,
+		"utype" : "Main Nav High Capacity RX ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_RX_UH" ,
+		"utype" : "Main Nav Ultra High Capacity RX ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_TX_H" ,
+		"utype" : "Main Nav High Capacity TX ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_TX_UH" ,
+		"utype" : "Main Nav Ultra High Capacity TX ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_VIRTID" ,
+		"utype" : "virt_id range" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_MONITORS" ,
+		"utype" : "Main Nav ring monitors" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON" ,
+		"utype" : "Main Nav Free RX Flow" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES" ,
+		"utype" : "Main Nav invalid flow OES" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER" ,
+		"utype" : "Main Nav UDMA global event trigger" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG" ,
+		"utype" : "Main Nav UDMA global event config" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_CHAN" ,
+		"utype" : "Main Nav Normal Capacity RX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_HCHAN" ,
+		"utype" : "Main Nav High Capacity RX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_UHCHAN" ,
+		"utype" : "Main Nav Ultra High Capacity RX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_TX_CHAN" ,
+		"utype" : "Main Nav Normal Capacity TX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_TX_ECHAN" ,
+		"utype" : "Main Nav extended TX channels" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_TX_HCHAN" ,
+		"utype" : "Main Nav High Capacity TX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_TX_UHCHAN" ,
+		"utype" : "Main Nav Ultra High Capacity TX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "Main Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_INTAGGR_0" ,
+		"subtype" : "RESASG_SUBTYPE_IA_VINT" ,
+		"utype" : "MCU Nav IA VINT" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_INTAGGR_0" ,
+		"subtype" : "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT" ,
+		"utype" : "MCU Nav IA global events" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_PROXY_0" ,
+		"subtype" : "RESASG_SUBTYPE_PROXY_PROXIES" ,
+		"utype" : "MCU Nav nonsecure proxies" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_ERROR_OES" ,
+		"utype" : "MCU Nav Ring Error OES" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_GP" ,
+		"utype" : "MCU Nav GP Ring / Free Ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_RX" ,
+		"utype" : "MCU Nav Normal Capacity Rx ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_TX" ,
+		"utype" : "MCU Nav Normal Capacity Tx ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_RX_H" ,
+		"utype" : "MCU Nav High Capacity Rx ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_UDMAP_TX_H" ,
+		"utype" : "MCU Nav High Capacity Tx ring" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_VIRTID" ,
+		"utype" : "virt_id range" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_RINGACC_0" ,
+		"subtype" : "RESASG_SUBTYPE_RA_MONITORS" ,
+		"utype" : "MCU Nav ring monitors" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON" ,
+		"utype" : "MCU Nav Free RX Flow" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES" ,
+		"utype" : "MCU Nav invalid flow OES" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER" ,
+		"utype" : "MCU Nav UDMA global event trigger" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG" ,
+		"utype" : "MCU Nav UDMA global event config" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_CHAN" ,
+		"utype" : "MCU Nav Normal Capacity RX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_RX_HCHAN" ,
+		"utype" : "MCU Nav High Capacity RX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_TX_CHAN" ,
+		"utype" : "MCU Nav Normal Capacity TX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_UDMAP_0" ,
+		"subtype" : "RESASG_SUBTYPE_UDMAP_TX_HCHAN" ,
+		"utype" : "MCU Nav High Capacity TX channel" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "MCU Nav IR" 
+	},
+	{
+		"devtype" : "J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0" ,
+		"subtype" : "RESASG_SUBTYPE_IR_OUTPUT" ,
+		"utype" : "MCU Nav IR" 
+	}
+] 
