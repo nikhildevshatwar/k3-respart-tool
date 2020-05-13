@@ -1,28 +1,177 @@
 %%{
-	// Everything enclosed like so is treated as javascript and is run when encountered
-	// You can use this to define functions, constants for later
+	function setBit(arr,maxValue){
+		var notSelected = [];
+		for( var i = 0 ; i < maxValue ; i++){
+			var found = 0;
+			for( var j = 0 ; j < arr.length ; j++){
+				if(arr[j] === i){
+					found = 1;
+				}
+			}
+			if(!found){
+				notSelected.push(i);
+			}
+		}
+		var val = 0;
+		for( var i = 0 ; i < arr.length ; i++){
+			var bit = arr[i];
+			val |= (1 << (2*bit + 1) );
+		}
+		for( var i = 0 ; i < notSelected.length ; i++){
+			var bit = notSelected[i];
+			val |= (1 << (2*bit) );
+		}
+		return val;
+	}
 
-	function getJSstring() {
-		return "javascript";
-	}	
+	function decimalToBinary(val){
+		return "0b"+val.toString(2);
+	}
+
+	function decimalToHexadecimal(val){
+		return "0x"+val.toString(16).toUpperCase();
+	}
+
+	function unsignedToBinary(arr){
+		var notSelected = [];
+		var maxValue = 16;
+		for( var i = 0 ; i < maxValue ; i++){
+			var found = 0;
+			for( var j = 0 ; j < arr.length ; j++){
+				if(arr[j] === i){
+					found = 1;
+				}
+			}
+			if(!found){
+				notSelected.push(i);
+			}
+		}
+		var val = [];
+		for( var i = 0 ; i < arr.length ; i++){
+			var bit = arr[i];
+			val [ (2*bit + 1) ] = 1;
+		}
+		for( var i = 0 ; i < notSelected.length ; i++){
+			var bit = notSelected[i];
+			val [ (2*bit) ] = 1;
+		}
+		var str = "0b";
+		for( var i = 31 ; i >= 0 ; i--){
+			if(val[i])str += "1";
+			else str += "0";
+		}
+		return str;
+	}
+
 %%}
+/*
+ * K3 System Firmware Resource Management Configuration Data
+ *
+ * Copyright (C) 2019-2020 Texas Instruments Incorporated - http://www.ti.com/
+ *	Andreas Dannenberg <dannenberg@ti.com>
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *    Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ *    Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
-% // Any line starting with % is also treated as javascript (in this case, it's just a comment)
+#include "common.h"
+#include <hosts.h>
+#include <devices.h>
+#include <resasg_types.h>
 
-Everything else is just output as text, unless escaped with a tick
-which is treated as `getJSstring()`, but excuted inline
+const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
+	.rm_boardcfg = {
+		/* boardcfg_abi_rev */
+		.rev = {
+			.boardcfg_abi_maj = 0x0,
+			.boardcfg_abi_min = 0x1,
+		},
 
-This lets you describe output based on the modules in the system:
-% if (system.modules["/modules/resourceEntry"]) {
-%	for (let inst of system.modules["/modules/resourceEntry"].$instances) {
+		/* boardcfg_rm_host_cfg */
+		.host_cfg = {
+			.subhdr = {
+				.magic = BOARDCFG_RM_HOST_CFG_MAGIC_NUM,
+				.size = sizeof (struct boardcfg_rm_host_cfg),
+			},
+			.host_cfg_entries = {
+				% if (system.modules["/modules/hostConfig"]) {
+				%	for (let inst of system.modules["/modules/hostConfig"].$instances) {
 
-        /* `inst.resType` */
-	    {
-			.start_resource = `inst.resStart`,
-			.num_resource = `inst.resCount`,
-			.type = RESASG_UTYPE (`inst.devId`,
-					`inst.subtype`),
-			.host_id = `inst.hostId`,
-	    }
-%	}
-% }
+						{
+							.host_id = `inst.hostName.toUpperCase()`,
+							.allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
+							.allowed_qos = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
+							.allowed_orderid = `unsignedToBinary(inst.allowedorderid)`,
+							.allowed_priority = `decimalToHexadecimal(setBit(inst.allowedpriority,8))`,
+							.allowed_sched_priority = `decimalToHexadecimal(setBit(inst.allowedschedpriority,4))`,
+ 						},
+				%	}
+				% }
+			}
+		},
+
+		/* boardcfg_rm_resasg */
+		.resasg = {
+			.subhdr = {
+				.magic = BOARDCFG_RM_RESASG_MAGIC_NUM,
+				.size = sizeof (struct boardcfg_rm_resasg),
+			},
+			.resasg_entries_size =
+				BOARDCFG_RM_RESASG_ENTRIES *
+				sizeof (struct boardcfg_rm_resasg_entry),
+			.reserved = 0,
+			/* .resasg_entries is set via boardcfg_rm_local */
+		},
+	},
+
+/* This is actually part of .resasg */
+	.resasg_entries = {
+		% if (system.modules["/modules/resourceEntry"]) {
+		%	for (let inst of system.modules["/modules/resourceEntry"].$instances) {
+				/* `inst.resType` */
+				{
+					.start_resource = `inst.resStart`,
+					.num_resource = `inst.resCount`,
+					.type = RESASG_UTYPE (`inst.devId`,
+							`inst.subtype`),
+					.host_id = `inst.hostId`,
+				},
+		%	}
+		% }
+	};
+
+
+
+
+
+
+
+
+
+
+

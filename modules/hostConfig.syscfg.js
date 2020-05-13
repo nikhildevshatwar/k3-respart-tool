@@ -155,7 +155,7 @@ createHostArray();
 function addInst(val){
 	if (system.modules["/modules/resourceAssignments"]) {
 		for (let inst of system.modules["/modules/resourceAssignments"].$instances) {
-			  inst.hostConfig.create(val);
+			  inst.resourceassignment.create(val);
 		}
 	}
 }
@@ -173,7 +173,7 @@ function changehandler(inst){
 			else arr.security = false;
 			break;
 		}
-	}
+  }
 	return arr;
 }
 
@@ -191,6 +191,17 @@ for( var data = 0 ; data < hostArray.length ; data++ ){
 	temp.push(newTemp);
 }
 
+function powOpt(val){
+  var arr = [];
+  for(var i=0 ; i < (1<<val) ; i++ ){
+    arr.push({
+      name : i,
+      displayName : i.toString(),
+    });
+  }
+  return arr;
+}
+
 exports = {
 	displayName: "SYSFW Host Config",
 	config: [
@@ -203,7 +214,8 @@ exports = {
 			onChange: (inst, ui) => {
 				var val = changehandler(inst);
 				inst.security=val.security;
-				inst.description=val.description;
+        inst.description=val.description;
+        inst.$name = inst.hostName.toLowerCase();
 			},	
 		},
 		// Description
@@ -239,14 +251,54 @@ exports = {
 			],
 			default: [ 0, 1, 2 ],
     },
+    // Allowed values of qos
+    {
+      name : "allowedqos",
+      displayName : "Allowed values of qos",
+      default : "unknown",
+      options : powOpt(3),
+      default : [0],
+    },
+    // Allowed values of orderid
+    {
+      name : "allowedorderid",
+      displayName : "Allowed values of orderid",
+      default : "unknown",
+      options : powOpt(4),
+      default : [0],
+    },
+    // Allowed values of priority
+    {
+      name : "allowedpriority",
+      displayName : "Allowed values of priority",
+      default : "unknown",
+      options : powOpt(3),
+      default : [0],
+    },
+    // Allowed values of schedpriority
+    {
+      name : "allowedschedpriority",
+      displayName : "Allowed values of schedpriority",
+      default : "unknown",
+      options : powOpt(2),
+      default : [0],
+    },
   ],
 };
-
+/*
 var prev = 0;
-var curr = 0;
-if (system.modules["/modules/hostConfig"]) {
-  for (let inst of system.modules["/modules/hostConfig"].$instances) {
-      curr++;
+while(1){
+  var curr = 0;
+  if (system.modules["/modules/hostConfig"]) {
+    for (let inst of system.modules["/modules/hostConfig"].$instances) {
+        curr++;
+    }
+  }
+  if(curr>prev){
+    addInst(curr);
+    curr=prev;
   }
 }
-addInst(3)
+*/
+
+

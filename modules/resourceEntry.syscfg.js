@@ -36,8 +36,8 @@ exports = {
 		},
 		// Device ID
 		{
-			name: "devId",
-			displayName: "Device ID",
+			name: "devName",
+			displayName: "Device Name",
 			default: "J721E_DEV_NAVSS0_UDMAP_0",
 		},
 		// Subtype
@@ -50,7 +50,6 @@ exports = {
 		{
 			name: "resStart",
 			displayName: "Resource Range Start",
-			readOnly: true,
 			default: 0,
 		},
 		// Resource count
