@@ -249,7 +249,7 @@ exports = {
 				displayName: "Virtual address"
 			},
 			],
-			default: [ 0, 1, 2 ],
+			default: [0,1,2],
     },
     // Allowed values of qos
     {
@@ -257,7 +257,7 @@ exports = {
       displayName : "Allowed values of qos",
       default : "unknown",
       options : powOpt(3),
-      default : [0],
+      default : [0,1,2,3,4,5,6,7],
     },
     // Allowed values of orderid
     {
@@ -265,7 +265,7 @@ exports = {
       displayName : "Allowed values of orderid",
       default : "unknown",
       options : powOpt(4),
-      default : [0],
+      default : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
     },
     // Allowed values of priority
     {
@@ -273,7 +273,7 @@ exports = {
       displayName : "Allowed values of priority",
       default : "unknown",
       options : powOpt(3),
-      default : [0],
+      default : [0,1,2,3,4,5,6,7],
     },
     // Allowed values of schedpriority
     {
@@ -281,24 +281,9 @@ exports = {
       displayName : "Allowed values of schedpriority",
       default : "unknown",
       options : powOpt(2),
-      default : [0],
+      default : [0,1,2,3],
     },
   ],
 };
-/*
-var prev = 0;
-while(1){
-  var curr = 0;
-  if (system.modules["/modules/hostConfig"]) {
-    for (let inst of system.modules["/modules/hostConfig"].$instances) {
-        curr++;
-    }
-  }
-  if(curr>prev){
-    addInst(curr);
-    curr=prev;
-  }
-}
-*/
 
 

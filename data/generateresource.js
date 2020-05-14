@@ -52,7 +52,7 @@ for( var idx = 1 ;idx <= resArray.length ; idx++ ){
 
 data +=  "\n\n\n\n\n\n";
 
-for(var idx = 1 ;idx <= 10 ; idx++ ){
+for(var idx = 1 ;idx <= resArray.length ; idx++ ){
     data += "resourceAssignments" + idx + ".$name  =  \"" + commArr[idx-1].utype.split(" ").join("_").toLowerCase() + "\" ;\n" ;
     data += "resourceAssignments" + idx + ".utype  = " + "'" + commArr[idx-1].utype + "' ;\n" ;
     data += "resourceAssignments" + idx + ".devname  = " + "'" + resArray[idx-1].deviceName +  "' ;\n" ;

@@ -1,10 +1,10 @@
 %%{
-	function setBit(arr,maxValue){
+	function setBit(Resource,maxValue){
 		var notSelected = [];
 		for( var i = 0 ; i < maxValue ; i++){
 			var found = 0;
-			for( var j = 0 ; j < arr.length ; j++){
-				if(arr[j] === i){
+			for( var j = 0 ; j < Resource.length ; j++){
+				if(Resource[j] === i){
 					found = 1;
 				}
 			}
@@ -13,8 +13,8 @@
 			}
 		}
 		var val = 0;
-		for( var i = 0 ; i < arr.length ; i++){
-			var bit = arr[i];
+		for( var i = 0 ; i < Resource.length ; i++){
+			var bit = Resource[i];
 			val |= (1 << (2*bit + 1) );
 		}
 		for( var i = 0 ; i < notSelected.length ; i++){
@@ -32,13 +32,13 @@
 		return "0x"+val.toString(16).toUpperCase();
 	}
 
-	function unsignedToBinary(arr){
+	function unsignedToBinary(Resource){
 		var notSelected = [];
 		var maxValue = 16;
 		for( var i = 0 ; i < maxValue ; i++){
 			var found = 0;
-			for( var j = 0 ; j < arr.length ; j++){
-				if(arr[j] === i){
+			for( var j = 0 ; j < Resource.length ; j++){
+				if(Resource[j] === i){
 					found = 1;
 				}
 			}
@@ -47,20 +47,29 @@
 			}
 		}
 		var val = [];
-		for( var i = 0 ; i < arr.length ; i++){
-			var bit = arr[i];
+		for( var i = 0 ; i < Resource.length ; i++){
+			var bit = Resource[i];
 			val [ (2*bit + 1) ] = 1;
 		}
 		for( var i = 0 ; i < notSelected.length ; i++){
 			var bit = notSelected[i];
 			val [ (2*bit) ] = 1;
 		}
-		var str = "0b";
+		var str = "";
 		for( var i = 31 ; i >= 0 ; i--){
 			if(val[i])str += "1";
 			else str += "0";
 		}
 		return str;
+	}
+
+	function toHexa(val){
+		var hex = "";
+		for( var i = 7 ; i >= 0 ; i--){
+			var str = val[4*i] + val[4*i+1] + val[4*i+2] + val[4*i+3];
+			hex += parseInt(str,2).toString(16).toUpperCase();
+		}
+		return "0x"+hex;
 	}
 
 %%}
@@ -87,8 +96,8 @@
  *    from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WResourceANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WResourceANTIES OF MERCHANTABILITY AND FITNESS FOR
  * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
  * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
@@ -121,12 +130,11 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 			.host_cfg_entries = {
 				% if (system.modules["/modules/hostConfig"]) {
 				%	for (let inst of system.modules["/modules/hostConfig"].$instances) {
-
 						{
 							.host_id = `inst.hostName.toUpperCase()`,
 							.allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
 							.allowed_qos = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
-							.allowed_orderid = `unsignedToBinary(inst.allowedorderid)`,
+							.allowed_orderid = `toHexa(unsignedToBinary(inst.allowedorderid))`,
 							.allowed_priority = `decimalToHexadecimal(setBit(inst.allowedpriority,8))`,
 							.allowed_sched_priority = `decimalToHexadecimal(setBit(inst.allowedschedpriority,4))`,
  						},
@@ -151,18 +159,38 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 
 /* This is actually part of .resasg */
 	.resasg_entries = {
-		% if (system.modules["/modules/resourceEntry"]) {
+		%var Resource = [];
+		%if (system.modules["/modules/resourceEntry"]) {
 		%	for (let inst of system.modules["/modules/resourceEntry"].$instances) {
-				/* `inst.resType` */
-				{
-					.start_resource = `inst.resStart`,
-					.num_resource = `inst.resCount`,
-					.type = RESASG_UTYPE (`inst.devId`,
-							`inst.subtype`),
-					.host_id = `inst.hostId`,
-				},
+		%		Resource.push(inst);
 		%	}
-		% }
+		%}
+		%Resource.sort(function(a,b){
+		%	if(a.resType < b.resType)
+		%		return -1;
+		%	else if(a.resType > b.resType)
+		%		return 1;
+		%	else{
+		%		return a.resStart - b.resStart;
+		%	}
+		%});
+		%for( var i = 0 ; i < Resource.length ; ){
+			%	var type = Resource[i].resType;
+		%	var start = Resource[i].resStart;
+		%	var curr = start;
+			/* `Resource[i].resType` */
+		%	while( i < Resource.length && ( Resource[i].resType === type && Resource[i].resStart === start ) ){
+				{
+					.start_resource = `curr`,
+					.num_resource = `Resource[i].resCount`,
+					.type = RESASG_UTYPE (`Resource[i].devName`,
+							`Resource[i].subtype`),
+					.host_id = `Resource[i].hostId`,
+				},
+		%		curr += Resource[i].resCount;
+		%		i++;
+		%	}
+		%}
 	};
 
 

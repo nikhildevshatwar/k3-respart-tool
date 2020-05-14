@@ -33,24 +33,28 @@ exports = {
 			name: "resType",
 			displayName: "Unique Resource type",
 			default: "Main Nav UDMA TX Rings",
+			hidden : true,
 		},
 		// Device ID
 		{
 			name: "devName",
 			displayName: "Device Name",
 			default: "J721E_DEV_NAVSS0_UDMAP_0",
+			hidden : true,
 		},
 		// Subtype
 		{
 			name: "subtype",
 			displayName: "Subtype",
 			default: "RESASG_SUBTYPE_UDMAP_TX_CHAN",
+			hidden : true,
 		},
 		// Resource start range
 		{
 			name: "resStart",
 			displayName: "Resource Range Start",
 			default: 0,
+			hidden : true,
 		},
 		// Resource count
 		{

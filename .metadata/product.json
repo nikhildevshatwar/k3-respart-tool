@@ -22,7 +22,6 @@
 	],
 	"topModules": [
 		"/modules/hostConfig",
-		"/modules/resourceEntry",
 		"/modules/resourceAssignments",
 		"/modules/basicConfig",
 		"/modules/pinmuxRequirements",
