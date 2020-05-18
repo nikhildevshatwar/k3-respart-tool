@@ -1,26 +1,21 @@
-// This module shows the basic configurable types that are supported.  There are some additional
-// options that some modules support (numeric enums, fixed point formatting, bigint etc), but this
-// serves to give a basic idea.
-//
-// Each configurable has at least:
-// 	name: what it's called in the scripting context
-// 	displayName: what it's called in the UI
-//	default: what value it starts with
-
+// Returns the Selected Hosts
 
 function updateSelected(){
-	var selected_host_option = [{displayName : "HOST_ID_ALL",
-		name : "host_id_all"}];
+
+	var selectedHostOption = [{
+		displayName : "HOST_ID_ALL",
+                name : "host_id_all"
+        }];
 	if (system.modules["/modules/hostConfig"]) {
 		for (let inst of system.modules["/modules/hostConfig"].$instances){
 			
-			selected_host_option.push({
+			selectedHostOption.push({
 				displayName : inst.hostName.toUpperCase(),
 				name : inst.hostName
 			});
 		}
 	}
-	return selected_host_option;
+	return selectedHostOption;
 }
 
 

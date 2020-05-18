@@ -1,5 +1,10 @@
 %%{
+	// Set the bits to 10 if a option is selected else to 01
+
 	function setBit(Resource,maxValue){
+
+		// This array contain option that are not selected
+
 		var notSelected = [];
 		for( var i = 0 ; i < maxValue ; i++){
 			var found = 0;
@@ -12,11 +17,16 @@
 				notSelected.push(i);
 			}
 		}
+		// set the selected bits to 10
+
 		var val = 0;
 		for( var i = 0 ; i < Resource.length ; i++){
 			var bit = Resource[i];
 			val |= (1 << (2*bit + 1) );
 		}
+
+		// set the unselected bits to 01
+
 		for( var i = 0 ; i < notSelected.length ; i++){
 			var bit = notSelected[i];
 			val |= (1 << (2*bit) );
@@ -159,6 +169,9 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 
 /* This is actually part of .resasg */
 	.resasg_entries = {
+		% // Sort the instances on the basis of resoucetype and resource start  
+		% // and change the value of resource start appropriately 
+		% //
 		%var Resource = [];
 		%if (system.modules["/modules/resourceEntry"]) {
 		%	for (let inst of system.modules["/modules/resourceEntry"].$instances) {

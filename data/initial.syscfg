@@ -83,8 +83,6 @@ const resourceAssignments67 = resourceAssignments.addInstance();
 
 
 
-resourceAssignments1.$name  =  "interrupt_router_for_c6x_0" ;
-resourceAssignments1.utype  = 'Interrupt router for C6x_0' ;
 resourceAssignments1.devname  = 'J721E_DEV_C66SS0_INTROUTER0' ;
 resourceAssignments1.devId   = 121;
 resourceAssignments1.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -97,8 +95,6 @@ resourceAssignments1.resourcecount = 93;
 
 
 
-resourceAssignments2.$name  =  "interrupt_router_for_c6x_1" ;
-resourceAssignments2.utype  = 'Interrupt router for C6x_1' ;
 resourceAssignments2.devname  = 'J721E_DEV_C66SS1_INTROUTER0' ;
 resourceAssignments2.devId   = 122;
 resourceAssignments2.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -111,8 +107,6 @@ resourceAssignments2.resourcecount = 93;
 
 
 
-resourceAssignments3.$name  =  "compare_event_ir" ;
-resourceAssignments3.utype  = 'compare event IR' ;
 resourceAssignments3.devname  = 'J721E_DEV_CMPEVENT_INTRTR0' ;
 resourceAssignments3.devId   = 123;
 resourceAssignments3.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -125,8 +119,6 @@ resourceAssignments3.resourcecount = 32;
 
 
 
-resourceAssignments4.$name  =  "main_2_mcu_level_irq_ir" ;
-resourceAssignments4.utype  = 'Main 2 MCU level IRQ IR' ;
 resourceAssignments4.devname  = 'J721E_DEV_MAIN2MCU_LVL_INTRTR0' ;
 resourceAssignments4.devId   = 128;
 resourceAssignments4.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -139,8 +131,6 @@ resourceAssignments4.resourcecount = 64;
 
 
 
-resourceAssignments5.$name  =  "main_2_mcu_pulse_irq_ir" ;
-resourceAssignments5.utype  = 'Main 2 MCU Pulse IRQ IR' ;
 resourceAssignments5.devname  = 'J721E_DEV_MAIN2MCU_PLS_INTRTR0' ;
 resourceAssignments5.devId   = 130;
 resourceAssignments5.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -153,8 +143,6 @@ resourceAssignments5.resourcecount = 48;
 
 
 
-resourceAssignments6.$name  =  "main_gpio_ir" ;
-resourceAssignments6.utype  = 'Main GPIO IR' ;
 resourceAssignments6.devname  = 'J721E_DEV_GPIOMUX_INTRTR0' ;
 resourceAssignments6.devId   = 131;
 resourceAssignments6.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -167,8 +155,6 @@ resourceAssignments6.resourcecount = 64;
 
 
 
-resourceAssignments7.$name  =  "interrupt_router_for_r5fss0_cluster" ;
-resourceAssignments7.utype  = 'Interrupt router for R5FSS0 cluster' ;
 resourceAssignments7.devname  = 'J721E_DEV_R5FSS0_INTROUTER0' ;
 resourceAssignments7.devId   = 134;
 resourceAssignments7.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -181,8 +167,6 @@ resourceAssignments7.resourcecount = 256;
 
 
 
-resourceAssignments8.$name  =  "interrupt_router_for_r5fss1_cluster" ;
-resourceAssignments8.utype  = 'Interrupt router for R5FSS1 cluster' ;
 resourceAssignments8.devname  = 'J721E_DEV_R5FSS1_INTROUTER0' ;
 resourceAssignments8.devId   = 135;
 resourceAssignments8.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -195,8 +179,6 @@ resourceAssignments8.resourcecount = 256;
 
 
 
-resourceAssignments9.$name  =  "timesync_router" ;
-resourceAssignments9.utype  = 'Timesync Router' ;
 resourceAssignments9.devname  = 'J721E_DEV_TIMESYNC_INTRTR0' ;
 resourceAssignments9.devId   = 136;
 resourceAssignments9.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
@@ -209,14 +191,696 @@ resourceAssignments9.resourcecount = 48;
 
 
 
-resourceAssignments10.$name  =  "wkup_gpio_ir" ;
-resourceAssignments10.utype  = 'WKUP GPIO IR' ;
 resourceAssignments10.devname  = 'J721E_DEV_WKUP_GPIOMUX_INTRTR0' ;
 resourceAssignments10.devId   = 137;
 resourceAssignments10.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
 resourceAssignments10.subtypeid  =  0;
 resourceAssignments10.resourcerangestart =  0;
 resourceAssignments10.resourcecount = 32;
+
+
+
+
+
+
+resourceAssignments11.devname  = 'J721E_DEV_NAVSS0_MODSS_INTAGGR_0' ;
+resourceAssignments11.devId   = 207;
+resourceAssignments11.subtype   = 'RESASG_SUBTYPE_IA_VINT' ;
+resourceAssignments11.subtypeid  =  10;
+resourceAssignments11.resourcerangestart =  0;
+resourceAssignments11.resourcecount = 64;
+
+
+
+
+
+
+resourceAssignments12.devname  = 'J721E_DEV_NAVSS0_MODSS_INTAGGR_0' ;
+resourceAssignments12.devId   = 207;
+resourceAssignments12.subtype   = 'RESASG_SUBTYPE_GLOBAL_EVENT_SEVT' ;
+resourceAssignments12.subtypeid  =  13;
+resourceAssignments12.resourcerangestart =  20480;
+resourceAssignments12.resourcecount = 1024;
+
+
+
+
+
+
+resourceAssignments13.devname  = 'J721E_DEV_NAVSS0_MODSS_INTAGGR_1' ;
+resourceAssignments13.devId   = 208;
+resourceAssignments13.subtype   = 'RESASG_SUBTYPE_IA_VINT' ;
+resourceAssignments13.subtypeid  =  10;
+resourceAssignments13.resourcerangestart =  0;
+resourceAssignments13.resourcecount = 64;
+
+
+
+
+
+
+resourceAssignments14.devname  = 'J721E_DEV_NAVSS0_MODSS_INTAGGR_1' ;
+resourceAssignments14.devId   = 208;
+resourceAssignments14.subtype   = 'RESASG_SUBTYPE_GLOBAL_EVENT_SEVT' ;
+resourceAssignments14.subtypeid  =  13;
+resourceAssignments14.resourcerangestart =  22528;
+resourceAssignments14.resourcecount = 1024;
+
+
+
+
+
+
+resourceAssignments15.devname  = 'J721E_DEV_NAVSS0_UDMASS_INTAGGR_0' ;
+resourceAssignments15.devId   = 209;
+resourceAssignments15.subtype   = 'RESASG_SUBTYPE_IA_VINT' ;
+resourceAssignments15.subtypeid  =  10;
+resourceAssignments15.resourcerangestart =  38;
+resourceAssignments15.resourcecount = 218;
+
+
+
+
+
+
+resourceAssignments16.devname  = 'J721E_DEV_NAVSS0_UDMASS_INTAGGR_0' ;
+resourceAssignments16.devId   = 209;
+resourceAssignments16.subtype   = 'RESASG_SUBTYPE_GLOBAL_EVENT_SEVT' ;
+resourceAssignments16.subtypeid  =  13;
+resourceAssignments16.resourcerangestart =  38;
+resourceAssignments16.resourcecount = 4570;
+
+
+
+
+
+
+resourceAssignments17.devname  = 'J721E_DEV_NAVSS0_PROXY_0' ;
+resourceAssignments17.devId   = 210;
+resourceAssignments17.subtype   = 'RESASG_SUBTYPE_PROXY_PROXIES' ;
+resourceAssignments17.subtypeid  =  0;
+resourceAssignments17.resourcerangestart =  0;
+resourceAssignments17.resourcecount = 64;
+
+
+
+
+
+
+resourceAssignments18.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments18.devId   = 211;
+resourceAssignments18.subtype   = 'RESASG_SUBTYPE_RA_ERROR_OES' ;
+resourceAssignments18.subtypeid  =  0;
+resourceAssignments18.resourcerangestart =  0;
+resourceAssignments18.resourcecount = 1;
+
+
+
+
+
+
+resourceAssignments19.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments19.devId   = 211;
+resourceAssignments19.subtype   = 'RESASG_SUBTYPE_RA_GP' ;
+resourceAssignments19.subtypeid  =  1;
+resourceAssignments19.resourcerangestart =  440;
+resourceAssignments19.resourcecount = 534;
+
+
+
+
+
+
+resourceAssignments20.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments20.devId   = 211;
+resourceAssignments20.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_RX' ;
+resourceAssignments20.subtypeid  =  2;
+resourceAssignments20.resourcerangestart =  316;
+resourceAssignments20.resourcecount = 124;
+
+
+
+
+
+
+resourceAssignments21.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments21.devId   = 211;
+resourceAssignments21.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_TX' ;
+resourceAssignments21.subtypeid  =  3;
+resourceAssignments21.resourcerangestart =  16;
+resourceAssignments21.resourcecount = 124;
+
+
+
+
+
+
+resourceAssignments22.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments22.devId   = 211;
+resourceAssignments22.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_TX_EXT' ;
+resourceAssignments22.subtypeid  =  4;
+resourceAssignments22.resourcerangestart =  140;
+resourceAssignments22.resourcecount = 160;
+
+
+
+
+
+
+resourceAssignments23.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments23.devId   = 211;
+resourceAssignments23.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_RX_H' ;
+resourceAssignments23.subtypeid  =  5;
+resourceAssignments23.resourcerangestart =  304;
+resourceAssignments23.resourcecount = 12;
+
+
+
+
+
+
+resourceAssignments24.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments24.devId   = 211;
+resourceAssignments24.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_RX_UH' ;
+resourceAssignments24.subtypeid  =  6;
+resourceAssignments24.resourcerangestart =  300;
+resourceAssignments24.resourcecount = 4;
+
+
+
+
+
+
+resourceAssignments25.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments25.devId   = 211;
+resourceAssignments25.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_TX_H' ;
+resourceAssignments25.subtypeid  =  7;
+resourceAssignments25.resourcerangestart =  4;
+resourceAssignments25.resourcecount = 12;
+
+
+
+
+
+
+resourceAssignments26.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments26.devId   = 211;
+resourceAssignments26.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_TX_UH' ;
+resourceAssignments26.subtypeid  =  8;
+resourceAssignments26.resourcerangestart =  0;
+resourceAssignments26.resourcecount = 4;
+
+
+
+
+
+
+resourceAssignments27.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments27.devId   = 211;
+resourceAssignments27.subtype   = 'RESASG_SUBTYPE_RA_VIRTID' ;
+resourceAssignments27.subtypeid  =  10;
+resourceAssignments27.resourcerangestart =  0;
+resourceAssignments27.resourcecount = 4096;
+
+
+
+
+
+
+resourceAssignments28.devname  = 'J721E_DEV_NAVSS0_RINGACC_0' ;
+resourceAssignments28.devId   = 211;
+resourceAssignments28.subtype   = 'RESASG_SUBTYPE_RA_MONITORS' ;
+resourceAssignments28.subtypeid  =  11;
+resourceAssignments28.resourcerangestart =  0;
+resourceAssignments28.resourcecount = 32;
+
+
+
+
+
+
+resourceAssignments29.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments29.devId   = 212;
+resourceAssignments29.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON' ;
+resourceAssignments29.subtypeid  =  0;
+resourceAssignments29.resourcerangestart =  140;
+resourceAssignments29.resourcecount = 160;
+
+
+
+
+
+
+resourceAssignments30.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments30.devId   = 212;
+resourceAssignments30.subtype   = 'RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES' ;
+resourceAssignments30.subtypeid  =  1;
+resourceAssignments30.resourcerangestart =  0;
+resourceAssignments30.resourcecount = 1;
+
+
+
+
+
+
+resourceAssignments31.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments31.devId   = 212;
+resourceAssignments31.subtype   = 'RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER' ;
+resourceAssignments31.subtypeid  =  2;
+resourceAssignments31.resourcerangestart =  49152;
+resourceAssignments31.resourcecount = 1024;
+
+
+
+
+
+
+resourceAssignments32.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments32.devId   = 212;
+resourceAssignments32.subtype   = 'RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG' ;
+resourceAssignments32.subtypeid  =  3;
+resourceAssignments32.resourcerangestart =  0;
+resourceAssignments32.resourcecount = 1;
+
+
+
+
+
+
+resourceAssignments33.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments33.devId   = 212;
+resourceAssignments33.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_CHAN' ;
+resourceAssignments33.subtypeid  =  10;
+resourceAssignments33.resourcerangestart =  16;
+resourceAssignments33.resourcecount = 124;
+
+
+
+
+
+
+resourceAssignments34.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments34.devId   = 212;
+resourceAssignments34.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_HCHAN' ;
+resourceAssignments34.subtypeid  =  11;
+resourceAssignments34.resourcerangestart =  4;
+resourceAssignments34.resourcecount = 12;
+
+
+
+
+
+
+resourceAssignments35.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments35.devId   = 212;
+resourceAssignments35.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_UHCHAN' ;
+resourceAssignments35.subtypeid  =  12;
+resourceAssignments35.resourcerangestart =  0;
+resourceAssignments35.resourcecount = 4;
+
+
+
+
+
+
+resourceAssignments36.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments36.devId   = 212;
+resourceAssignments36.subtype   = 'RESASG_SUBTYPE_UDMAP_TX_CHAN' ;
+resourceAssignments36.subtypeid  =  13;
+resourceAssignments36.resourcerangestart =  16;
+resourceAssignments36.resourcecount = 124;
+
+
+
+
+
+
+resourceAssignments37.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments37.devId   = 212;
+resourceAssignments37.subtype   = 'RESASG_SUBTYPE_UDMAP_TX_ECHAN' ;
+resourceAssignments37.subtypeid  =  14;
+resourceAssignments37.resourcerangestart =  140;
+resourceAssignments37.resourcecount = 160;
+
+
+
+
+
+
+resourceAssignments38.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments38.devId   = 212;
+resourceAssignments38.subtype   = 'RESASG_SUBTYPE_UDMAP_TX_HCHAN' ;
+resourceAssignments38.subtypeid  =  15;
+resourceAssignments38.resourcerangestart =  4;
+resourceAssignments38.resourcecount = 12;
+
+
+
+
+
+
+resourceAssignments39.devname  = 'J721E_DEV_NAVSS0_UDMAP_0' ;
+resourceAssignments39.devId   = 212;
+resourceAssignments39.subtype   = 'RESASG_SUBTYPE_UDMAP_TX_UHCHAN' ;
+resourceAssignments39.subtypeid  =  16;
+resourceAssignments39.resourcerangestart =  0;
+resourceAssignments39.resourcecount = 4;
+
+
+
+
+
+
+resourceAssignments40.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments40.devId   = 213;
+resourceAssignments40.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments40.subtypeid  =  0;
+resourceAssignments40.resourcerangestart =  10;
+resourceAssignments40.resourcecount = 178;
+
+
+
+
+
+
+resourceAssignments41.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments41.devId   = 213;
+resourceAssignments41.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments41.subtypeid  =  213;
+resourceAssignments41.resourcerangestart =  196;
+resourceAssignments41.resourcecount = 28;
+
+
+
+
+
+
+resourceAssignments42.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments42.devId   = 213;
+resourceAssignments42.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments42.subtypeid  =  213;
+resourceAssignments42.resourcerangestart =  228;
+resourceAssignments42.resourcecount = 28;
+
+
+
+
+
+
+resourceAssignments43.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments43.devId   = 213;
+resourceAssignments43.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments43.subtypeid  =  213;
+resourceAssignments43.resourcerangestart =  260;
+resourceAssignments43.resourcecount = 28;
+
+
+
+
+
+
+resourceAssignments44.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments44.devId   = 213;
+resourceAssignments44.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments44.subtypeid  =  213;
+resourceAssignments44.resourcerangestart =  292;
+resourceAssignments44.resourcecount = 52;
+
+
+
+
+
+
+resourceAssignments45.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments45.devId   = 213;
+resourceAssignments45.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments45.subtypeid  =  213;
+resourceAssignments45.resourcerangestart =  348;
+resourceAssignments45.resourcecount = 28;
+
+
+
+
+
+
+resourceAssignments46.devname  = 'J721E_DEV_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments46.devId   = 213;
+resourceAssignments46.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments46.subtypeid  =  213;
+resourceAssignments46.resourcerangestart =  380;
+resourceAssignments46.resourcecount = 132;
+
+
+
+
+
+
+resourceAssignments47.devname  = 'J721E_DEV_MCU_NAVSS0_INTAGGR_0' ;
+resourceAssignments47.devId   = 233;
+resourceAssignments47.subtype   = 'RESASG_SUBTYPE_IA_VINT' ;
+resourceAssignments47.subtypeid  =  10;
+resourceAssignments47.resourcerangestart =  8;
+resourceAssignments47.resourcecount = 248;
+
+
+
+
+
+
+resourceAssignments48.devname  = 'J721E_DEV_MCU_NAVSS0_INTAGGR_0' ;
+resourceAssignments48.devId   = 233;
+resourceAssignments48.subtype   = 'RESASG_SUBTYPE_GLOBAL_EVENT_SEVT' ;
+resourceAssignments48.subtypeid  =  13;
+resourceAssignments48.resourcerangestart =  16392;
+resourceAssignments48.resourcecount = 1528;
+
+
+
+
+
+
+resourceAssignments49.devname  = 'J721E_DEV_MCU_NAVSS0_PROXY_0' ;
+resourceAssignments49.devId   = 234;
+resourceAssignments49.subtype   = 'RESASG_SUBTYPE_PROXY_PROXIES' ;
+resourceAssignments49.subtypeid  =  0;
+resourceAssignments49.resourcerangestart =  1;
+resourceAssignments49.resourcecount = 63;
+
+
+
+
+
+
+resourceAssignments50.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments50.devId   = 235;
+resourceAssignments50.subtype   = 'RESASG_SUBTYPE_RA_ERROR_OES' ;
+resourceAssignments50.subtypeid  =  0;
+resourceAssignments50.resourcerangestart =  0;
+resourceAssignments50.resourcecount = 1;
+
+
+
+
+
+
+resourceAssignments51.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments51.devId   = 235;
+resourceAssignments51.subtype   = 'RESASG_SUBTYPE_RA_GP' ;
+resourceAssignments51.subtypeid  =  1;
+resourceAssignments51.resourcerangestart =  96;
+resourceAssignments51.resourcecount = 156;
+
+
+
+
+
+
+resourceAssignments52.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments52.devId   = 235;
+resourceAssignments52.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_RX' ;
+resourceAssignments52.subtypeid  =  2;
+resourceAssignments52.resourcerangestart =  50;
+resourceAssignments52.resourcecount = 43;
+
+
+
+
+
+
+resourceAssignments53.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments53.devId   = 235;
+resourceAssignments53.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_TX' ;
+resourceAssignments53.subtypeid  =  3;
+resourceAssignments53.resourcerangestart =  2;
+resourceAssignments53.resourcecount = 44;
+
+
+
+
+
+
+resourceAssignments54.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments54.devId   = 235;
+resourceAssignments54.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_RX_H' ;
+resourceAssignments54.subtypeid  =  5;
+resourceAssignments54.resourcerangestart =  48;
+resourceAssignments54.resourcecount = 2;
+
+
+
+
+
+
+resourceAssignments55.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments55.devId   = 235;
+resourceAssignments55.subtype   = 'RESASG_SUBTYPE_RA_UDMAP_TX_H' ;
+resourceAssignments55.subtypeid  =  7;
+resourceAssignments55.resourcerangestart =  0;
+resourceAssignments55.resourcecount = 2;
+
+
+
+
+
+
+resourceAssignments56.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments56.devId   = 235;
+resourceAssignments56.subtype   = 'RESASG_SUBTYPE_RA_VIRTID' ;
+resourceAssignments56.subtypeid  =  10;
+resourceAssignments56.resourcerangestart =  0;
+resourceAssignments56.resourcecount = 4096;
+
+
+
+
+
+
+resourceAssignments57.devname  = 'J721E_DEV_MCU_NAVSS0_RINGACC_0' ;
+resourceAssignments57.devId   = 235;
+resourceAssignments57.subtype   = 'RESASG_SUBTYPE_RA_MONITORS' ;
+resourceAssignments57.subtypeid  =  11;
+resourceAssignments57.resourcerangestart =  0;
+resourceAssignments57.resourcecount = 32;
+
+
+
+
+
+
+resourceAssignments58.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments58.devId   = 236;
+resourceAssignments58.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON' ;
+resourceAssignments58.subtypeid  =  0;
+resourceAssignments58.resourcerangestart =  48;
+resourceAssignments58.resourcecount = 48;
+
+
+
+
+
+
+resourceAssignments59.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments59.devId   = 236;
+resourceAssignments59.subtype   = 'RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES' ;
+resourceAssignments59.subtypeid  =  1;
+resourceAssignments59.resourcerangestart =  0;
+resourceAssignments59.resourcecount = 1;
+
+
+
+
+
+
+resourceAssignments60.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments60.devId   = 236;
+resourceAssignments60.subtype   = 'RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER' ;
+resourceAssignments60.subtypeid  =  2;
+resourceAssignments60.resourcerangestart =  56320;
+resourceAssignments60.resourcecount = 256;
+
+
+
+
+
+
+resourceAssignments61.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments61.devId   = 236;
+resourceAssignments61.subtype   = 'RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG' ;
+resourceAssignments61.subtypeid  =  3;
+resourceAssignments61.resourcerangestart =  0;
+resourceAssignments61.resourcecount = 1;
+
+
+
+
+
+
+resourceAssignments62.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments62.devId   = 236;
+resourceAssignments62.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_CHAN' ;
+resourceAssignments62.subtypeid  =  10;
+resourceAssignments62.resourcerangestart =  2;
+resourceAssignments62.resourcecount = 43;
+
+
+
+
+
+
+resourceAssignments63.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments63.devId   = 236;
+resourceAssignments63.subtype   = 'RESASG_SUBTYPE_UDMAP_RX_HCHAN' ;
+resourceAssignments63.subtypeid  =  11;
+resourceAssignments63.resourcerangestart =  0;
+resourceAssignments63.resourcecount = 2;
+
+
+
+
+
+
+resourceAssignments64.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments64.devId   = 236;
+resourceAssignments64.subtype   = 'RESASG_SUBTYPE_UDMAP_TX_CHAN' ;
+resourceAssignments64.subtypeid  =  13;
+resourceAssignments64.resourcerangestart =  2;
+resourceAssignments64.resourcecount = 44;
+
+
+
+
+
+
+resourceAssignments65.devname  = 'J721E_DEV_MCU_NAVSS0_UDMAP_0' ;
+resourceAssignments65.devId   = 236;
+resourceAssignments65.subtype   = 'RESASG_SUBTYPE_UDMAP_TX_HCHAN' ;
+resourceAssignments65.subtypeid  =  15;
+resourceAssignments65.resourcerangestart =  0;
+resourceAssignments65.resourcecount = 2;
+
+
+
+
+
+
+resourceAssignments66.devname  = 'J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments66.devId   = 237;
+resourceAssignments66.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments66.subtypeid  =  0;
+resourceAssignments66.resourcerangestart =  4;
+resourceAssignments66.resourcecount = 28;
+
+
+
+
+
+
+resourceAssignments67.devname  = 'J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0' ;
+resourceAssignments67.devId   = 237;
+resourceAssignments67.subtype   = 'RESASG_SUBTYPE_IR_OUTPUT' ;
+resourceAssignments67.subtypeid  =  237;
+resourceAssignments67.resourcerangestart =  36;
+resourceAssignments67.resourcecount = 28;
 
 
 

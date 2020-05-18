@@ -1,15 +1,7 @@
-// This module shows the basic configurable types that are supported.  There are some additional
-// options that some modules support (numeric enums, fixed point formatting, bigint etc), but this
-// serves to give a basic idea.
-//
-// Each configurable has at least:
-// 	name: what it's called in the scripting context
-// 	displayName: what it's called in the UI
-//	default: what value it starts with
-
 exports = {
 	displayName: "SYSFW Resource Partitioning",
 	config: [
+		// Unique Resource Type
 		{
 			name : "utype",
 			displayName : "Unique Resource Type",
