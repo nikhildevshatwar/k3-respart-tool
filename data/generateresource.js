@@ -29,9 +29,9 @@ function createResources(){
                         
                         subtypeName : ( newText[3] === '' ? resources[sz-1].subtypeName : newText[3] ),
                         
-                        subtypeId : ( newText[4] === '' ? resources[sz-1].deviceId : parseInt(Number(newText[4]), 10) ),
+                        subtypeId : ( newText[4] === '' ? resources[sz-1].subtypeId : parseInt(Number(newText[4]), 10) ),
 
-                        uniqueId : ( newText[5] === '' ? resources[sz-1].deviceId : parseInt(Number(newText[5]), 10) ),
+                        uniqueId : ( newText[5] === '' ? resources[sz-1].uniqueId : parseInt(Number(newText[5]), 10) ),
 
                         resStart : parseInt(newText[6]),
 
@@ -49,6 +49,40 @@ createResources();
 while(!resources[0].deviceId)
         resources.shift();
 
+
+var newResources = [];
+
+for( var idx = 0 ; idx < resources.length ;  ){
+        var deviceName = resources[idx].deviceName;
+        var subtypeName = resources[idx].subtypeName;
+        var deviceId = resources[idx].deviceId;
+        var subtypeId = resources[idx].subtypeId;
+        var uniqueId = resources[idx].uniqueId;
+
+        var resArray = [];
+
+        while( idx < resources.length && ( 
+                resources[idx].deviceName === deviceName &&
+                resources[idx].subtypeName === subtypeName
+         ) ){
+                 resArray.push({
+                         resStart : resources[idx].resStart,
+                         resCount : resources[idx].resCount
+                 });
+
+                 idx++;
+        }
+        newResources.push({
+                deviceName : deviceName,
+                deviceId : deviceId,
+                subtypeName : subtypeName,
+                subtypeId : subtypeId,
+                uniqueId : uniqueId,
+                resRange : resArray ,
+                utype : ""
+        });
+}
+resources = newResources;
 
 
 var process = require('process');
@@ -76,7 +110,42 @@ if(process.argv[2]){
                 
         }
 }
+else {
+        for( var idx = 0 ; idx < resources.length ; idx++ ){
+                resources[idx].utype = "u_type_"+idx;
+        }
+}
 
+var str = "exports = [\n";
+
+for( var idx = 0 ; idx < resources.length ; idx++ ){
+        str += "        {\n";
+
+        str += "                deviceName :\"" + resources[idx].deviceName + "\",\n";
+        str += "                deviceId :" + resources[idx].deviceId + ",\n";
+        str += "                subtypename :\"" + resources[idx].subtypeName + "\",\n";
+        str += "                subtypeId :" + resources[idx].subtypeId + ",\n";
+        str += "                uniqueId :" + resources[idx].uniqueId + ",\n";
+        str += "                utype :\"" + resources[idx].utype + "\",\n";
+        str += "                resRange : [\n";
+        for( var j = 0 ; j < resources[idx].resRange.length ; j++ ){
+                str += "                        {\n";
+
+                str += "                                resStart : " + resources[idx].resRange[j].resStart + ",\n";
+                str += "                                resCount : " + resources[idx].resRange[j].resCount + ",\n";
+
+
+                str += "                        },\n";
+        }
+        str+="                ]\n";
+        str += "        },\n";
+}
+
+str+="]";
+
+fs.writeFile("./ResourceInfo.js",str,(err) => {
+        if (err) throw err; 
+});
 
 // Make json string from object
 var jsonString = JSON.stringify(resources);

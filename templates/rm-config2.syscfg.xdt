@@ -1,4 +1,4 @@
-%var res = system.getScript("/data/ResourceInfo.js");
+%var res = system.getScript("/data/J721e/ResourceInfo.js");
 % var Resource = [];
 %if (system.modules["/modules/hostConfig"]) {
 %       for (let inst of system.modules["/modules/hostConfig"].$instances){
@@ -10,7 +10,7 @@
 %                                subtype : res[idx].subtypeName,
 %                                resStart : res[idx].resStart,
 %                                resCount : inst.resourceconfig[name],
-%                                hostId : inst.hostName
+%                                hostName : inst.hostName.toUpperCase()
 %                        });
 %               }
 %        }
@@ -35,7 +35,7 @@
 		.num_resource = `Resource[i].resCount`,
 		.type = RESASG_UTYPE (`Resource[i].devName`,
 					`Resource[i].subtype`),
-		.host_id = `Resource[i].hostId`,
+		.host_id = HOST_ID_`Resource[i].hostName`,
 	},
 %		curr += Resource[i].resCount;
 %		i++;
