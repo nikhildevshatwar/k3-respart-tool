@@ -1,0 +1,11 @@
+%%{
+  
+  const {getAssignments} = system.getScript("/resources/allocation");
+  const assigns = getAssignments();
+
+%%}
+Resource | Start | End | Owner
+--- | --- | --- | ---
+% _.each(assigns, (assign) => {
+`assign.type` | `assign.start` | `assign.end` | `assign.owner`
+% });

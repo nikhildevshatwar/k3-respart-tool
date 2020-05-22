@@ -1,23 +1,52 @@
 {
 	"name": "K3-Respart-Tool",
 	"displayName": "Keystone3 Resource Partitioning Tool",
-	"version": "version_1",
+	"version": "1.0.0",
 	"includePaths": [
 		".."
 	],
 	"devices": [
 		".*J721E.*"
 	],
-	"templates": [
+	"topModules": [
 		{
-			"name": "/templates/rm-config.syscfg.xdt",
-			"outputPath": "rm-config.c",
-			"alwaysRun": true
+			"displayName": "Hosts",
+			"modules": [
+				"/hosts/DMSC",
+				"/hosts/MCU_0_R5_0",
+				"/hosts/MCU_0_R5_1",
+				"/hosts/MCU_0_R5_2",
+				"/hosts/MCU_0_R5_3",
+				"/hosts/A72_0",
+				"/hosts/A72_1",
+				"/hosts/A72_2",
+				"/hosts/A72_3",
+				"/hosts/A72_4",
+				"/hosts/C7X_0",
+				"/hosts/C7X_1",
+				"/hosts/C6X_0_0",
+				"/hosts/C6X_0_1",
+				"/hosts/C6X_1_0",
+				"/hosts/C6X_1_1",
+				"/hosts/GPU_0",
+				"/hosts/MAIN_0_R5_0",
+				"/hosts/MAIN_0_R5_1",
+				"/hosts/MAIN_0_R5_2",
+				"/hosts/MAIN_0_R5_3",
+				"/hosts/MAIN_1_R5_0",
+				"/hosts/MAIN_1_R5_1",
+				"/hosts/MAIN_1_R5_2",
+				"/hosts/MAIN_1_R5_3",
+				"/hosts/ICSSG_0"
+			]
 		}
 	],
-	"topModules": [
-		"/modules/hostConfig",
-		"/modules/resourceAssignments"
+	"views": [
+		{
+			"name": "/templates/allocation.xdt",
+			"displayName": "Resource Allocation",
+			"viewType": "markdown"
+		}
 	],
 	"documentationPath": "docs/"
 }
