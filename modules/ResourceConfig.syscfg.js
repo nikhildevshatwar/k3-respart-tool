@@ -1,4 +1,4 @@
-var resource = system.getScript("/data/J721e/ResourceInfo.js")
+var resource = system.getScript("/data/j721e/ResourceInfo.js")
 
 var configurables = [];
 

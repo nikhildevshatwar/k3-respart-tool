@@ -1,7 +1,7 @@
 // Read the Resources.json file and parse it to create resources array  
 
 const fs = require('fs');
-var str = fs.readFileSync("./Resources.json").toString(); 
+var str = fs.readFileSync("./j721e/Resources.json").toString(); 
 var resources = JSON.parse(str);
 
 var data ="/**\n* These arguments were used when this file was generated. They will be automatically applied on subsequent loads\n* via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.\n* @cliArgs --device 'J721E_DRA829_TDA4VM_AM752x' --package 'ALF' --part 'Default' --product 'K3-Respart-Tool@version_1'\n* @versions {'data':'20181113','timestamp':'2020021217','tool':'1.4.0+1234','templates':'20190604'}\n*/ "

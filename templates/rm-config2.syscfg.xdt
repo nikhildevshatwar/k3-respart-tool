@@ -1,4 +1,4 @@
-%var res = system.getScript("/data/J721e/ResourceInfo.js");
+%var res = system.getScript("/data/j721e/ResourceInfo.js");
 % var Resource = [];
 %if (system.modules["/modules/hostConfig"]) {
 %       for (let inst of system.modules["/modules/hostConfig"].$instances){

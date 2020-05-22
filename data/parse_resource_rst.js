@@ -4,7 +4,7 @@ function createResources(){
         
         // Read the file about resource information and split line by line
         var fs = require("fs");
-        var path = './resasg_types.rst';
+        var path = './j721e/resasg_types.rst';
         var textByLine = fs.readFileSync(path).toString().split("\n");
 
         // Extract resource data 
@@ -143,7 +143,7 @@ for( var idx = 0 ; idx < resources.length ; idx++ ){
 
 str+="]";
 
-fs.writeFile("./ResourceInfo.js",str,(err) => {
+fs.writeFile("./j721e/ResourceInfo.js",str,(err) => {
         if (err) throw err; 
 });
 
@@ -151,7 +151,7 @@ fs.writeFile("./ResourceInfo.js",str,(err) => {
 var jsonString = JSON.stringify(resources);
 
 // write the data to file
-fs.writeFile('./Resources.json', jsonString, (err) => { 
+fs.writeFile('./j721e/Resources.json', jsonString, (err) => { 
         if (err) throw err; 
     })
 
