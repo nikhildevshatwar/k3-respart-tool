@@ -168,6 +168,11 @@ for( var data = 0 ; data < hosts.length ; data++ ){
 
 	hostName.push(newHostName);
 }
+var supervisorhost = hostName ;
+supervisorhost.push({
+        name : "none",
+        displayName : "None"
+});
 
 // Returns values from 0 to 2^val in form of options 
 
@@ -263,15 +268,30 @@ exports = {
                         options : optionValues(2),
                         default : [0,1,2,3],
                 },
+                // Supervisor Host
+                {
+                        name : "supervisorhost",
+                        displayName : "Supervisor Host",
+                        options : supervisorhost,
+                        default : "none",
+                }
               ],
               moduleInstances: (inst) => {
 		return [{
-			name: "resourceconfig",
-			displayName: "Resource Config",
-			moduleName: "/modules/ResourceConfig",
-			collapsed: false,
-		}]
-	},
+                                name: "resourceconfig",
+                                displayName: "Resource Config",
+                                moduleName: "/modules/ResourceConfig",
+                                collapsed: false,
+		        }]
+                },
+                validate : (instance ,report) => {
+                        if(instance.hostName === "dmsc"){
+                                report.logError("Cannot select DMSC as Host",instance,"hostName");
+                        }
+                        if(instance.supervisorhost === "dmsc"){
+                                report.logError("Cannot select DMSC as Supervisor Host",instance,"supervisorhost");
+                        }
+                }
 };
 
 
