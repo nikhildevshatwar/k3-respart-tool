@@ -166,7 +166,7 @@
 		"deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
 		"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
 		"utype": "Main NAVSS Ringacc virt_id range",
-		"autoAllocStart": false
+		"autoAlloc": false
 	},
 	{
 		"deviceName": "J721E_DEV_NAVSS0_RINGACC_0",

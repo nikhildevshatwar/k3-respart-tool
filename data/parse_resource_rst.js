@@ -115,8 +115,8 @@ if(process.argv[2]){
                                         if(comments[comment].resRange){
                                                 resources[resource].resRange = comments[comment].resRange;
                                         }
-                                        if(comments[comment].autoAllocStart === false){
-                                                resources[resource].autoAllocStart = comments[comment].autoAllocStart;
+                                        if(comments[comment].autoAlloc === false){
+                                                resources[resource].autoAlloc = comments[comment].autoAlloc;
                                         }
                                 }
                 }

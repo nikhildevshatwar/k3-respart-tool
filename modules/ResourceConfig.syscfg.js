@@ -2,13 +2,18 @@ var resources = system.getScript("/data/j721e/Resources.json");
 //var dependencies = system.getScript("/data/j721e/ResourceDependencies.js");
 
 var configurables = _.map(resources,(resource) => {
+	var readonly = true;
+	if (resource.autoAlloc && resource.autoAlloc == false)
+		readonly = false;
 	return {
 		name : _.join(_.split(resource.utype," "),"_"),
 		displayName : resource.utype,
+		collapsed : false,
 		config : [
 			{
 				name : _.join(_.split(resource.utype," "),"_")+" start" ,
 				displayName : "Start",
+				readOnly : readonly,
 				default : 0
 			},
 			{
