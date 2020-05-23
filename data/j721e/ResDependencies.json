@@ -117,14 +117,14 @@
     {
         "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
         "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
-	"utype": "Main NAVSS Ringacc rings for Normal capacity Rx channels",
-	"copyFromUtype": "Main NAVSS UDMA Normal capacity Rx channels"
+        "utype": "Main NAVSS Ringacc rings for Normal capacity Rx channels",
+        "copyFromUtype": "Main NAVSS UDMA Normal capacity Rx channels"
     },
     {
         "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
         "subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
         "utype": "Main NAVSS Ringacc rings for Normal capacity Tx channels",
-	"copyFromUtype": "Main NAVSS UDMA Normal capacity Tx channels"
+        "copyFromUtype": "Main NAVSS UDMA Normal capacity Tx channels"
     },
     {
         "deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
@@ -229,81 +229,81 @@
         "resRange": [
             {
                 "resStart": 10,
-		"resCount": 178,
-		"restrictHosts": [
-			"A72_0",
-			"A72_1",
-			"A72_2",
-			"A72_3",
-			"A72_4",
-			"C7X_0",
-			"C7X_1",
-		]
+                "resCount": 178,
+                "restrictHosts": [
+                    "A72_0",
+                    "A72_1",
+                    "A72_2",
+                    "A72_3",
+                    "A72_4",
+                    "C7X_0",
+                    "C7X_1"
+                ]
             },
             {
                 "resStart": 196,
-		"resCount": 28,
-		"restrictHosts": [
-			"MAIN_0_R5_0",
-			"MAIN_0_R5_1"
-		]
+                "resCount": 28,
+                "restrictHosts": [
+                    "MAIN_0_R5_0",
+                    "MAIN_0_R5_1"
+                ]
             },
             {
                 "resStart": 228,
                 "resCount": 28,
-		"restrictHosts": [
-			"MAIN_0_R5_2",
-			"MAIN_0_R5_3"
-		]
+                "restrictHosts": [
+                    "MAIN_0_R5_2",
+                    "MAIN_0_R5_3"
+                ]
             },
             {
                 "resStart": 260,
                 "resCount": 28,
-		"restrictHosts": [
-			"MAIN_1_R5_0",
-			"MAIN_1_R5_1"
-		]
+                "restrictHosts": [
+                    "MAIN_1_R5_0",
+                    "MAIN_1_R5_1"
+                ]
             },
             {
                 "resStart": 292,
                 "resCount": 28,
-		"restrictHosts": [
-			"MAIN_1_R5_2",
-			"MAIN_1_R5_3"
-		]
+                "restrictHosts": [
+                    "MAIN_1_R5_2",
+                    "MAIN_1_R5_3"
+                ]
             },
             {
                 "resStart": 320,
                 "resCount": 24,
-		"restrictHosts": [
-			"C6X_0_0",
-			"C6X_0_1"
-		]
+                "restrictHosts": [
+                    "C6X_0_0",
+                    "C6X_0_1"
+                ]
             },
             {
                 "resStart": 352,
                 "resCount": 24,
-		"restrictHosts": [
-			"C6X_1_0",
-			"C6X_1_1"
-		]
+                "restrictHosts": [
+                    "C6X_1_0",
+                    "C6X_1_1"
+                ]
             },
             {
                 "resStart": 384,
                 "resCount": 16,
-		"restrictHosts": [
-			"ICSSG_0"
-		]
+                "restrictHosts": [
+                    "ICSSG_0"
+                ]
             },
             {
                 "resStart": 400,
                 "resCount": 8,
-		"restrictHosts": [
-			"MCU_0_R5_0",
-			"MCU_0_R5_1",
-			"MCU_0_R5_2",
-			"MCU_0_R5_3"
-		]
+                "restrictHosts": [
+                    "MCU_0_R5_0",
+                    "MCU_0_R5_1",
+                    "MCU_0_R5_2",
+                    "MCU_0_R5_3"
+                ]
             }
         ]
     },
@@ -359,8 +359,8 @@
     {
         "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
         "subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
-	"utype": "MCU NAVSS Ringacc virt_id range",
-	"copyFromUtype": "Main NAVSS Ringacc virt_id range"
+        "utype": "MCU NAVSS Ringacc virt_id range",
+        "copyFromUtype": "Main NAVSS Ringacc virt_id range"
     },
     {
         "deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
@@ -414,19 +414,19 @@
         "resRange": [
             {
                 "resStart": 4,
-		"resCount": 28,
-		"restrictHosts": [
-			"MCU_0_R5_0",
-			"MCU_0_R5_1"
-		]
+                "resCount": 28,
+                "restrictHosts": [
+                    "MCU_0_R5_0",
+                    "MCU_0_R5_1"
+                ]
             },
             {
                 "resStart": 36,
                 "resCount": 28,
-		"restrictHosts": [
-			"MCU_0_R5_2",
-			"MCU_0_R5_3"
-		]
+                "restrictHosts": [
+                    "MCU_0_R5_2",
+                    "MCU_0_R5_3"
+                ]
             }
         ]
     }

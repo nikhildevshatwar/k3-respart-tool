@@ -100,11 +100,24 @@ if(process.argv[2]){
                 for( var resource = 0 ; resource < resources.length ; resource++ ){
 
                         if( resources[resource].deviceName === comments[comment].deviceName && 
-                                resources[resource].subtypeName === comments[comment].subtypeName && 
-                                resources[resource].resStart === comments[comment].resStart && 
-                                resources[resource].resCount === comments[comment].resCount ){
+                                resources[resource].subtypeName === comments[comment].subtypeName ){
 
                                         resources[resource].utype = comments[comment].utype;
+                                        if(comments[comment].copyFromUtype){
+                                                resources[resource].copyFromUtype = comments[comment].copyFromUtype;
+                                        }
+                                        if(comments[comment].restrictHosts){
+
+                                                for(var idx = 0 ; idx < resources[resource].resRange.length ; idx++){
+                                                        resources[resource].resRange[idx].restrictHosts = comments[comment].restrictHosts;
+                                                }
+                                        }
+                                        if(comments[comment].resRange){
+                                                resources[resource].resRange = comments[comment].resRange;
+                                        }
+                                        if(comments[comment].autoAllocStart === false){
+                                                resources[resource].autoAllocStart = comments[comment].autoAllocStart;
+                                        }
                                 }
                 }
                 
@@ -116,6 +129,7 @@ else {
         }
 }
 
+/*
 var str = "exports = [\n";
 
 for( var idx = 0 ; idx < resources.length ; idx++ ){
@@ -146,6 +160,8 @@ str+="]";
 fs.writeFile("./j721e/ResourceInfo.js",str,(err) => {
         if (err) throw err; 
 });
+
+*/
 
 // Make json string from object
 var jsonString = JSON.stringify(resources);
