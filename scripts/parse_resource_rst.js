@@ -163,13 +163,15 @@ function addDependencies(resources){
 function createOutputFile(resources,soc){
 
         var fs = require('fs');
+        var process = require("process");
 
         // Make json string from object
         var jsonString = JSON.stringify(resources);
 
         // write the data to file
+        var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
 
-        var path = "../data/" + soc + "/Resources.json" ;
+        var path = dir + "/../data/" + soc + "/Resources.json" ;
 
         fs.writeFile(path, jsonString, (err) => { 
                 if (err) throw err; 

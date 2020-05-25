@@ -37,11 +37,7 @@ for( var data = 0 ; data < hosts.length ; data++ ){
 
 	hostName.push(newHostName);
 }
-var supervisorhost = hostName ;
-supervisorhost.push({
-        name : "none",
-        displayName : "None"
-});
+
 
 // Returns values from 0 to 2^val in form of options 
 
@@ -58,6 +54,7 @@ function optionValues(val){
 
 exports = {
         displayName: "SYSFW Host Config",
+        defaultInstanceName : "Unknown",
         config: [
                 // Host Name
                 {
@@ -141,7 +138,13 @@ exports = {
                 {
                         name : "supervisorhost",
                         displayName : "Supervisor Host",
-                        options : supervisorhost,
+                        options : [
+                                ...hostName,
+                                {
+                                        name : "none",
+                                        displayName : "None"
+                                }
+                        ],
                         default : "none",
                 }
               ],
@@ -164,9 +167,9 @@ exports = {
 
                         var moduleInstances = instance.$module.$instances;
 
-                        for(var idx = 0 ;idx < moduleInstances.length - 1 ; idx++){
+                        for(var idx = 0 ;idx < moduleInstances.length ; idx++){
 
-                                if(instance.hostName === moduleInstances[idx].hostName){
+                                if(instance.hostName === moduleInstances[idx].hostName && instance != moduleInstances[idx]){
                                         report.logError("Cannot select same host twice",instance,"hostName");
                                 }
                         }

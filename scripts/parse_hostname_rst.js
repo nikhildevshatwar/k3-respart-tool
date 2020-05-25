@@ -62,8 +62,9 @@ function createOutputFile(hosts,soc){
         var jsonString = JSON.stringify(hosts);
 
         // write the data to file
+        var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
 
-        var path = "../data/" + soc + "/Hosts.json" ;
+        var path = dir + "/../data/" + soc + "/Hosts.json" ;
 
         fs.writeFile(path, jsonString, (err) => { 
                 if (err) throw err; 

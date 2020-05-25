@@ -1,44 +1,21 @@
-%var res = system.getScript("/data/j721e/ResourceInfo.js");
-% var Resource = [];
-%if (system.modules["/modules/hostConfig"]) {
-%       for (let inst of system.modules["/modules/hostConfig"].$instances){
-%               for( var idx = 0 ; idx < res.length ; idx++ ){
-%                       var name = res[idx].utype.split(" ").join("_").toLowerCase();
-%                        Resource.push({
-%                                resType : res[idx].utype,
-%                                devName : res[idx].deviceName,
-%                                subtype : res[idx].subtypeName,
-%                                resStart : res[idx].resStart,
-%                                resCount : inst.resourceconfig[name],
-%                                hostName : inst.hostName.toUpperCase()
-%                        });
-%               }
-%        }
-%}
-%Resource.sort(function(a,b){
-%	if(a.resType < b.resType)
-%		return -1;
-%	else if(a.resType > b.resType)
-%		return 1;
-%	else{
-%		return a.resStart - b.resStart;
-%	}
-%});
-%for( var i = 0 ; i < Resource.length ; ){
-%	var type = Resource[i].resType;
-%	var start = Resource[i].resStart;
-%	var curr = start;
-	/* `Resource[i].resType` */
-%	while( i < Resource.length && ( Resource[i].resType === type && Resource[i].resStart === start ) ){
-	{
-		.start_resource = `curr`,
-		.num_resource = `Resource[i].resCount`,
-		.type = RESASG_UTYPE (`Resource[i].devName`,
-					`Resource[i].subtype`),
-		.host_id = HOST_ID_`Resource[i].hostName`,
-	},
-%		curr += Resource[i].resCount;
-%		i++;
-%	}
-%}
-% Resource = [];
+%%{
+  
+  const {resourceAllocate} = system.getScript("/modules/allocation.js");
+  const resources = system.getScript("/data/j721e/Resources.json");
+
+%%}
+
+%_.each(resources,(resource) => {
+%	var allocation = resourceAllocate(resource.utype);
+		/* `resource.utype` */
+%	_.each(allocation,(allocate) => {
+		{
+			.start_resource = `allocate.start`,
+			.num_resource = `allocate.count`,
+			.type = RESASG_UTYPE (`resource.deviceName`,
+					`resource.subtypeName`),
+			.host_id = `allocate.hostName`,
+		},
+%	})
+%})
+

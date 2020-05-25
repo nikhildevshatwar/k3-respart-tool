@@ -1,0 +1,10 @@
+//% var resources = system.getScript("/data/j721e/Resources.json");
+//% var allcation = system.getScript("/modules/allocation.js");
+
+%if (system.modules["/modules/hostConfig"]) {
+%        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                |`inst.hostName`|
+%        }
+%}
+
+

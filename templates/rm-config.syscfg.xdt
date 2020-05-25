@@ -205,14 +205,3 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 		%	}
 		%}
 	};
-
-
-
-
-
-
-
-
-
-
-

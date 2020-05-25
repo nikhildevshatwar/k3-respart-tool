@@ -1,5 +1,4 @@
 var resources = system.getScript("/data/j721e/Resources.json");
-//var dependencies = system.getScript("/data/j721e/ResourceDependencies.js");
 
 var configurables = _.map(resources,(resource) => {
 	return {
@@ -16,8 +15,8 @@ var configurables = _.map(resources,(resource) => {
 			{
 				name : _.join(_.split(resource.utype," "),"_")+"_count",
 				displayName : "Count",
-				default : 0
-			}
+				default : 0,
+			},
 		]
 	}
 });
