@@ -4,20 +4,13 @@ var hosts = system.getScript("/data/j721e/Hosts.json");
 
 function changehandler(inst){
         var aboutHost = {
-		security : true,
-		description : "unknown",
         };
         
 	for( var idx = 0 ; idx < hosts.length ; idx++ ){
 		if(hosts[idx].hostName.toLowerCase() === inst.hostName){
 						
 			aboutHost.description = hosts[idx].Description;
-			if(hosts[idx].Security === 'Secure'){
-                                aboutHost.security = true;
-                        }
-			else {
-                                aboutHost.security = false;
-                        }
+			aboutHost.security = hosts[idx].Security;
                         break; 
 		}
   }
@@ -81,71 +74,78 @@ exports = {
                         name: "security",
                         displayName: "Secure",
                         readOnly: true,
-                        default: false,
+                        default: "Secure",
                 },
-                // Allowed atypes
+                // Host Capabilities
                 {
-                        name: "allowedAtype",
-                        displayName: "Allowed values of atype",
-                        options: [{
-                                name: 0,
-                                displayName: "Physical address"
-                        },
-                        {
-                                name: 1,
-                                displayName: "Intermediate Physical address"
-                        },
-                        {
-                                name: 2,
-                                displayName: "Virtual address"
-                        },
-                        ],
-                        default: [0,1,2],
-                },
-                // Allowed values of qos
-                {
-                        name : "allowedqos",
-                        displayName : "Allowed values of qos",
-                        default : "unknown",
-                        options : optionValues(3),
-                        default : [0,1,2,3,4,5,6,7],
-                },
-                // Allowed values of orderid
-                {
-                        name : "allowedorderid",
-                        displayName : "Allowed values of orderid",
-                        default : "unknown",
-                        options : optionValues(4),
-                        default : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
-                },
-                // Allowed values of priority
-                {
-                        name : "allowedpriority",
-                        displayName : "Allowed values of priority",
-                        default : "unknown",
-                        options : optionValues(3),
-                        default : [0,1,2,3,4,5,6,7],
-                },
-                // Allowed values of schedpriority
-                {
-                        name : "allowedschedpriority",
-                        displayName : "Allowed values of schedpriority",
-                        default : "unknown",
-                        options : optionValues(2),
-                        default : [0,1,2,3],
-                },
-                // Supervisor Host
-                {
-                        name : "supervisorhost",
-                        displayName : "Supervisor Host",
-                        options : [
-                                ...hostName,
+                        name : "HostCapabilities",
+                        displayName : "Host Capabilities",
+                        config : [
+                                // Allowed atypes
                                 {
-                                        name : "none",
-                                        displayName : "None"
+                                        name: "allowedAtype",
+                                        displayName: "Allowed values of atype",
+                                        options: [{
+                                                name: 0,
+                                                displayName: "Physical address"
+                                        },
+                                        {
+                                                name: 1,
+                                                displayName: "Intermediate Physical address"
+                                        },
+                                        {
+                                                name: 2,
+                                                displayName: "Virtual address"
+                                        },
+                                        ],
+                                        default: [0,1,2],
+                                },
+                                // Allowed values of qos
+                                {
+                                        name : "allowedqos",
+                                        displayName : "Allowed values of qos",
+                                        default : "unknown",
+                                        options : optionValues(3),
+                                        default : [0,1,2,3,4,5,6,7],
+                                },
+                                // Allowed values of orderid
+                                {
+                                        name : "allowedorderid",
+                                        displayName : "Allowed values of orderid",
+                                        default : "unknown",
+                                        options : optionValues(4),
+                                        default : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                                },
+                                // Allowed values of priority
+                                {
+                                        name : "allowedpriority",
+                                        displayName : "Allowed values of priority",
+                                        default : "unknown",
+                                        options : optionValues(3),
+                                        default : [0,1,2,3,4,5,6,7],
+                                },
+                                // Allowed values of schedpriority
+                                {
+                                        name : "allowedschedpriority",
+                                        displayName : "Allowed values of schedpriority",
+                                        default : "unknown",
+                                        options : optionValues(2),
+                                        default : [0,1,2,3],
+                                },
+                                // Supervisor Host
+                                {
+                                        name : "supervisorhost",
+                                        displayName : "Supervisor Host",
+                                        options : [
+                                                ...hostName,
+                                                {
+                                                        name : "none",
+                                                        displayName : "None"
+                                                }
+                                        ],
+                                        default : "none",
                                 }
-                        ],
-                        default : "none",
+                        ]            
                 }
               ],
               moduleInstances: (inst) => {

@@ -13,11 +13,6 @@
 			"name": "/templates/rm-config.syscfg.xdt",
 			"outputPath": "rm-config.c",
 			"alwaysRun": true
-		},
-		{
-			"name": "/templates/rm-config2.syscfg.xdt",
-			"outputPath": "rm-config2.c",
-			"alwaysRun": true
 		}
 	],
 	"topModules": [

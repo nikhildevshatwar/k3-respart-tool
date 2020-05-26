@@ -83,6 +83,12 @@
 	}
 
 %%}
+%%{
+  
+  const {allocateAndSort} = system.getScript("/scripts/allocation.js");
+  const resources = _.keyBy(system.getScript("/data/j721e/Resources.json"), (r) => r.utype);
+
+%%}
 /*
  * K3 System Firmware Resource Management Configuration Data
  *
@@ -169,39 +175,18 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 
 /* This is actually part of .resasg */
 	.resasg_entries = {
-		% // Sort the instances on the basis of resoucetype and resource start  
-		% // and change the value of resource start appropriately 
-		% //
-		%var Resource = [];
-		%if (system.modules["/modules/resourceEntry"]) {
-		%	for (let inst of system.modules["/modules/resourceEntry"].$instances) {
-		%		Resource.push(inst);
-		%	}
-		%}
-		%Resource.sort(function(a,b){
-		%	if(a.resType < b.resType)
-		%		return -1;
-		%	else if(a.resType > b.resType)
-		%		return 1;
-		%	else{
-		%		return a.resStart - b.resStart;
-		%	}
-		%});
-		%for( var i = 0 ; i < Resource.length ; ){
-			%	var type = Resource[i].resType;
-		%	var start = Resource[i].resStart;
-		%	var curr = start;
-			/* `Resource[i].resType` */
-		%	while( i < Resource.length && ( Resource[i].resType === type && Resource[i].resStart === start ) ){
-				{
-					.start_resource = `curr`,
-					.num_resource = `Resource[i].resCount`,
-					.type = RESASG_UTYPE (`Resource[i].devName`,
-							`Resource[i].subtype`),
-					.host_id = `Resource[i].hostId`,
-				},
-		%		curr += Resource[i].resCount;
-		%		i++;
-		%	}
-		%}
+	%	var allocation = allocateAndSort(true);
+		%_.each(allocation,(all) => {
+		%	var utype = all[0].utype;
+			/* `utype` */
+	%	_.each(all,(entry) => {
+			{
+				.start_resource = `entry.start`,
+				.num_resource = `entry.count`,
+				.type = RESASG_UTYPE (`resources[utype].deviceName`,
+						`resources[utype].subtypeName`),
+				.host_id = `entry.hostName`,
+			},
+	%	})
+	%		})
 	};
