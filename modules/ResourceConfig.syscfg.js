@@ -1,25 +1,6 @@
 var resources = system.getScript("/data/j721e/Resources.json");
 
-var configurables = _.map(resources,(resource) => {
-	return {
-		name : _.join(_.split(resource.utype," "),"_"),
-		displayName : resource.utype,
-		collapsed : false,
-		config : [
-			{
-				name : _.join(_.split(resource.utype," "),"_")+"_start" ,
-				displayName : "Start",
-				default : 0,
-				readOnly : (resource.autoAlloc === false ? false : true)
-			},
-			{
-				name : _.join(_.split(resource.utype," "),"_")+"_count",
-				displayName : "Count",
-				default : 0,
-			},
-		]
-	}
-});
+
 /*
 function checkDependency(inst){
 	for(var dep = 0 ; dep < dependencies.length ; dep++){

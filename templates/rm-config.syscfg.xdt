@@ -147,7 +147,7 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 				% if (system.modules["/modules/hostConfig"]) {
 				%	for (let inst of system.modules["/modules/hostConfig"].$instances) {
 						{
-							.host_id = `inst.hostName.toUpperCase()`,
+							.host_id = HOST_ID_`inst.hostName.toUpperCase()`,
 							.allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
 							.allowed_qos = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
 							.allowed_orderid = `toHexa(unsignedToBinary(inst.allowedorderid))`,

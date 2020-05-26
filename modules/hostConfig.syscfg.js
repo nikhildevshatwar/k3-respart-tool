@@ -1,4 +1,47 @@
 var hosts = system.getScript("/data/j721e/Hosts.json");
+const resources = _.keyBy(system.getScript("/data/j721e/Resources.json"), (r) => r.utype);
+const { checkOverlap , resourceAllocate } = system.getScript("/scripts/allocation.js");
+
+
+_.each(resources,(resource) => {
+
+        if(resource.copyFromUtype){
+                resources[resource.copyFromUtype].copyToUtype = resource.utype;
+        }
+})
+
+// Create configurables for each resource
+
+var configurables = _.map(resources,(resource) => {
+	return {
+		name : _.join(_.split(resource.utype," "),"_"),
+		displayName : resource.utype,
+		collapsed : false,
+		config : [
+			{
+				name : _.join(_.split(resource.utype," "),"_") +"_start" ,
+				displayName : "Start",
+				default : 0,
+				readOnly : (resource.autoAlloc === false ? false : true),
+			},
+			{
+				name : _.join(_.split(resource.utype," "),"_") +"_count",
+				displayName : "Count",
+                                default : 0,
+                                readOnly : (resource.copyFromUtype ? true : false),
+                                onChange: (inst, ui) => {
+
+                                        if(resource.copyToUtype){
+                                                
+                                                var name1 = _.join(_.split(resource.copyToUtype," "),"_");
+                                                var name2 = _.join(_.split(resource.utype," "),"_");
+                                                inst[name1 + "_count"] = inst[name2 + "_count"];
+                                        }
+                                }
+			},
+		]
+	}
+});
 
 // Set other attributes of the selected host like security, description
 
@@ -31,6 +74,37 @@ for( var data = 0 ; data < hosts.length ; data++ ){
 	hostName.push(newHostName);
 }
 
+//Hide those resources which cannot be assigned to selected host
+
+function hideResources(inst,ui){
+
+        _.each(resources,(resource) => {
+                var hostFound = 0 , restrictHostFound = 0;
+                _.each(resource.resRange,(range) => {
+                        if(range.restrictHosts){
+                                restrictHostFound = 1;
+                                _.each(range.restrictHosts,(res) => {
+                                        if(res.toLowerCase() === inst.hostName){
+                                                hostFound = 1;
+                                        }
+                                })
+                        }
+                })
+
+                var name = _.join(_.split(resource.utype," "),"_");
+                if(restrictHostFound && !hostFound){
+                        inst[name + "_count"] = 0;
+                        inst[name + "_start"] = 0;
+                        ui[name + "_count"].hidden = true;
+                        ui[name + "_start"].hidden = true;
+                }
+                else{
+                        ui[name + "_count"].hidden = false;
+                        ui[name + "_start"].hidden = false;
+                }
+        })
+}
+
 
 // Returns values from 0 to 2^val in form of options 
 
@@ -43,6 +117,52 @@ function optionValues(val){
                 });
         }
         return option;
+}
+
+// Show error if host is dmsc
+
+function validateDmsc(instance,report){
+        if(instance.hostName === "dmsc"){
+                report.logError("Cannot select DMSC as Host",instance,"hostName");
+        }
+        if(instance.supervisorhost === "dmsc"){
+                report.logError("Cannot select DMSC as Supervisor Host",instance,"supervisorhost");
+        }
+}
+
+// Check for duplicate hosts
+
+function duplicateHost(instance,report){
+        var moduleInstances = instance.$module.$instances;
+
+        for(var idx = 0 ;idx < moduleInstances.length ; idx++){
+
+                if(instance.hostName === moduleInstances[idx].hostName && instance != moduleInstances[idx]){
+                        report.logError("Cannot select same host twice",instance,"hostName");
+                }
+        }
+}
+
+// Check for overlap and overflow
+
+function overlapAndOverflow(instance,report){
+
+        _.each(resources,(resource) => {
+
+                var name  = _.join(_.split(resource.utype," "),"_") 
+
+                if(!instance[name + "_count"].hidden){
+
+                        if(resource.autoAlloc === false && checkOverlap(resource.utype,instance)){
+                                report.logWarning("Overlap",instance,name + "_count") ;
+                        }
+                        var over = resourceAllocate(resource.utype).overflowCount;
+        
+                        if(over){
+                                report.logWarning("Assigned resource exceeds by " + over.toString(),instance,name + "_count");
+                        }
+                }
+        })
 }
 
 exports = {
@@ -60,6 +180,7 @@ exports = {
                                 inst.security=val.security;
                                 inst.description=val.description;
                                 inst.$name = inst.hostName.toLowerCase();
+                                hideResources(inst,ui);
                         },	
                 },
                 // Description
@@ -72,7 +193,7 @@ exports = {
                 // Security
                 {
                         name: "security",
-                        displayName: "Secure",
+                        displayName: "Security Level",
                         readOnly: true,
                         default: "Secure",
                 },
@@ -146,33 +267,16 @@ exports = {
                                         default : "none",
                                 }
                         ]            
-                }
-              ],
-              moduleInstances: (inst) => {
-		return [{
-                                name: "resourceconfig",
-                                displayName: "Resource Config",
-                                moduleName: "/modules/ResourceConfig",
-                                collapsed: false,
-		        }]
                 },
+                ...configurables
+              ],
                 validate : (instance ,report) => {
 
-                        if(instance.hostName === "dmsc"){
-                                report.logError("Cannot select DMSC as Host",instance,"hostName");
-                        }
-                        if(instance.supervisorhost === "dmsc"){
-                                report.logError("Cannot select DMSC as Supervisor Host",instance,"supervisorhost");
-                        }
+                        validateDmsc(instance,report);
 
-                        var moduleInstances = instance.$module.$instances;
+                        duplicateHost(instance,report);
 
-                        for(var idx = 0 ;idx < moduleInstances.length ; idx++){
-
-                                if(instance.hostName === moduleInstances[idx].hostName && instance != moduleInstances[idx]){
-                                        report.logError("Cannot select same host twice",instance,"hostName");
-                                }
-                        }
+                        overlapAndOverflow(instance,report);
                 }
 };
 
