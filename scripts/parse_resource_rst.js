@@ -117,7 +117,7 @@ function addDependencies(resources){
         var process = require('process');
         var fs = require('fs');
 
-        // If a argument is given then use it as a path and read file to assign utype values if possible
+        // If a argument is given then use it as a path and read file to assign attributes if possible
         if(args.dep){
                 var path = args.dep;
                 var str = fs.readFileSync(path).toString();
@@ -145,6 +145,9 @@ function addDependencies(resources){
                                                 }
                                                 if(comments[comment].autoAlloc === false){
                                                         resources[resource].autoAlloc = comments[comment].autoAlloc;
+                                                }
+                                                if(comments[comment].blockCopy){
+                                                        resources[resource].blockCopy = comments[comment].blockCopy;
                                                 }
                                         }
                         }

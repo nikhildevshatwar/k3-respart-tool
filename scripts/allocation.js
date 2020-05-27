@@ -3,7 +3,7 @@ const hosts = _.keyBy(system.getScript("/data/j721e/Hosts.json"), (r) => r.hostN
 
 
 function checkOverlap(utype,inst1){
-        var overlap = 0;
+        var overlap = [];
         var name = _.join(_.split(utype," "),"_") ;
         var start1 = inst1[name + "_start"], last1 = start1 + inst1[name + "_count"];
 
@@ -13,21 +13,39 @@ function checkOverlap(utype,inst1){
                         if(inst1 === inst2) continue;
 
                         var start2 = inst2[name + "_start"],last2 = start2 + inst2[name + "_count"];
-                        overlap =  Math.max(start1,start2) < Math.min(last1,last2);
+                        if(Math.max(start1,start2) < Math.min(last1,last2)){
+                                overlap.push(inst2);
+                        }
                 }
         }
 
         return overlap;
 }
 
+function hostCount(utype,hostName){
+
+        var count = [] , idx = 0;
+        _.each(resources[utype].resRange , (r) =>{
+                _.each(r.restrictHosts,(h) => {
+                        if(h === hostName){
+                                count.push(idx);
+                        }
+                })
+                idx++;
+        })
+        
+        return count;
+}
+
 
 function resourceAllocate(utype){
         var eachResource = [];
         var name = _.join(_.split(utype," "),"_") ;
-        var total = 0;
+        var over = [];
 
         if(resources[utype].autoAlloc === false){
 
+                var total = 0;
                 if (system.modules["/modules/hostConfig"]) {
                         for (let inst of system.modules["/modules/hostConfig"].$instances) {
                                 eachResource.push({
@@ -39,23 +57,59 @@ function resourceAllocate(utype){
                                 total += inst[name + "_count"];
                         }
                 }
+                over.push(Math.max(0,total - resources[utype].resRange[0].resCount));
         }
         else{
                 if(resources[utype].resRange.length > 1){
+
+                        var rStart = [], rCount = [];
+                        _.each(resources[utype].resRange , (r) =>{
+                                rStart.push(r.resStart);
+                                rCount.push(r.resCount);
+                        })
+
                         if (system.modules["/modules/hostConfig"]) {
                                 for (let inst of system.modules["/modules/hostConfig"].$instances) {
-                                        eachResource.push({
-                                                utype : utype,
-                                                hostName : inst.hostName,
-                                                start :0,
-                                                count : 0
-                                        });
+
+                                        var hCount = hostCount(utype,inst.hostName.toUpperCase());
+                                        
+                                        if(hCount.length === 1){
+                                                
+                                                var index = hCount[0];
+                                                eachResource.push({
+                                                        utype : utype,
+                                                        hostName : inst.hostName,
+                                                        start :rStart[index],
+                                                        count : inst[name + "_count"]
+                                                });
+                                                rStart[index] += inst[name + "_count"];
+                                                rCount[index] -= inst[name + "_count"];
+
+                                        }
                                 }
                         }
+                        
+                        _.each(rCount,(r) => {
+                                var val =Math.min(0,r);
+                                over.push(-val);
+                        })
                 }
-                else{
+                else{   
+                        var total = 0;
                         var startValue = resources[utype].resRange[0].resStart;
                         if (system.modules["/modules/hostConfig"]) {
+                                if(resources[utype].blockCopy){
+                                        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                                                eachResource.push({
+                                                        utype :utype,
+                                                        hostName : inst.hostName,
+                                                        start :startValue,
+                                                        count : inst[name + "_blockCount"]
+                                                });
+                                                startValue += inst[name + "_blockCount"];
+                                                total += inst[name + "_blockCount"];
+                                        }
+                                }
                                 for (let inst of system.modules["/modules/hostConfig"].$instances) {
                                         eachResource.push({
                                                 utype :utype,
@@ -67,11 +121,12 @@ function resourceAllocate(utype){
                                         total += inst[name + "_count"];
                                 }
                         }
+                        over.push(Math.max(0,total - resources[utype].resRange[0].resCount));
                 }
         }
         return {
                 allocation : eachResource,
-                overflowCount : Math.max(0,total - resources[utype].resRange[0].resCount)
+                overflowCount : over
         };
 }
 

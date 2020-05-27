@@ -185,7 +185,7 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 				.num_resource = `entry.count`,
 				.type = RESASG_UTYPE (`resources[utype].deviceName`,
 						`resources[utype].subtypeName`),
-				.host_id = `entry.hostName`,
+				.host_id = HOST_ID_`entry.hostName.toUpperCase()`,
 			},
 	%	})
 	%		})

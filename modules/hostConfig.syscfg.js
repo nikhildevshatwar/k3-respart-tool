@@ -13,10 +13,12 @@ _.each(resources,(resource) => {
 // Create configurables for each resource
 
 var configurables = _.map(resources,(resource) => {
-	return {
+	var obj = {
 		name : _.join(_.split(resource.utype," "),"_"),
 		displayName : resource.utype,
-		collapsed : false,
+                collapsed : false,
+                description : (resource.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
+                                resource.copyFromUtype : ""), 
 		config : [
 			{
 				name : _.join(_.split(resource.utype," "),"_") +"_start" ,
@@ -40,7 +42,26 @@ var configurables = _.map(resources,(resource) => {
                                 }
 			},
 		]
-	}
+        }
+        if(resource.blockCopy){
+                obj.config.push({
+                        name : _.join(_.split(resource.utype," "),"_") +"_blockCount",
+                        displayName : "Block Copy Count",
+                        default : 0,
+                        readOnly : (resource.copyFromUtype ? true : false),
+                        onChange: (inst, ui) => {
+
+                                if(resource.copyToUtype){
+                                        
+                                        var name1 = _.join(_.split(resource.copyToUtype," "),"_");
+                                        var name2 = _.join(_.split(resource.utype," "),"_");
+                                        inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
+                                }
+                        }
+                })
+        }
+
+        return obj;
 });
 
 // Set other attributes of the selected host like security, description
@@ -151,15 +172,41 @@ function overlapAndOverflow(instance,report){
 
                 var name  = _.join(_.split(resource.utype," "),"_") 
 
-                if(!instance[name + "_count"].hidden){
+                if(instance[name + "_count"] > 0 || instance[name + "_blockCount"]){
 
-                        if(resource.autoAlloc === false && checkOverlap(resource.utype,instance)){
-                                report.logWarning("Overlap",instance,name + "_count") ;
+                        if(resource.autoAlloc === false ){
+                                var overlapInstance = checkOverlap(resource.utype,instance);
+                                if(overlapInstance.length){
+
+                                        
+                                        var message = "Overlap with ";
+                                        _.each(overlapInstance , (ov) => {
+                                                message += ov.hostName + ", "
+                                        })
+                                        
+                                        report.logWarning(message,instance,name + "_count") ;
+                                }
                         }
                         var over = resourceAllocate(resource.utype).overflowCount;
-        
-                        if(over){
-                                report.logWarning("Assigned resource exceeds by " + over.toString(),instance,name + "_count");
+
+                        var index = -1 , id =0;
+                        _.each(resource.resRange,(range) => {
+                                if(range.restrictHosts){
+                                        _.each(range.restrictHosts,(res) => {
+                                                if(res.toLowerCase() === instance.hostName){
+                                                        index = id;
+                                                }
+                                        })
+                                }
+                                else{
+                                        index = id;
+                                }
+                                id++;
+                        })
+
+                        if(index !== -1 && over[index] > 0){
+                                report.logWarning("Assigned resource count exceeds by " + 
+                                over[index],instance,name + "_count");
                         }
                 }
         })
