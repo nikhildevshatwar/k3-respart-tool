@@ -65,8 +65,8 @@ function createResources(path){
         }
         
         // Remove unuseful entries
-        while(!resources[0].deviceId)
-        resources.shift();
+        while(Number.isNaN(resources[0].deviceId))
+                resources.shift();
 
         return resources;
 }

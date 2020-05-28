@@ -6,12 +6,18 @@
 		".."
 	],
 	"devices": [
-		".*J721E.*"
+		".*J721E.*",
+		"AM65xx.*"
 	],
 	"templates": [
 		{
-			"name": "/templates/rm-config.syscfg.xdt",
-			"outputPath": "rm-config.c",
+			"name": "/templates/rm-cfg.syscfg.xdt",
+			"outputPath": "rm-cfg.c",
+			"alwaysRun": true
+		},
+		{
+			"name": "/templates/sciclient_defaultBoardcfg_rm.syscfg.xdt",
+			"outputPath": "sciclient_defaultBoardcfg_rm.c",
 			"alwaysRun": true
 		}
 	],

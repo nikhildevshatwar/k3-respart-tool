@@ -85,8 +85,11 @@
 %%}
 %%{
   
+  const deviceSelected = system.deviceData.device;
+  const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+  const socName = devData[deviceSelected].shortName;
   const {allocateAndSort} = system.getScript("/scripts/allocation.js");
-  const resources = _.keyBy(system.getScript("/data/j721e/Resources.json"), (r) => r.utype);
+  const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
 
 %%}
 /*
@@ -147,7 +150,7 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 				% if (system.modules["/modules/hostConfig"]) {
 				%	for (let inst of system.modules["/modules/hostConfig"].$instances) {
 						{
-							.host_id = HOST_ID_`inst.hostName.toUpperCase()`,
+							.host_id = HOST_ID_`inst.hostName`,
 							.allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
 							.allowed_qos = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
 							.allowed_orderid = `toHexa(unsignedToBinary(inst.allowedorderid))`,
@@ -185,7 +188,7 @@ const struct boardcfg_rm_local j721e_boardcfg_rm_data = {
 				.num_resource = `entry.count`,
 				.type = RESASG_UTYPE (`resources[utype].deviceName`,
 						`resources[utype].subtypeName`),
-				.host_id = HOST_ID_`entry.hostName.toUpperCase()`,
+				.host_id = HOST_ID_`entry.hostName`,
 			},
 	%	})
 	%		})

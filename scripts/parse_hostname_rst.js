@@ -24,17 +24,10 @@ function createHostArray(path){
 	var textByLine = fs.readFileSync(path)
 	.toString().split("\n");
 
-	var first = true;
-
 	for( var line = 0 ; line < textByLine.length ; line++ ){
 		
 		if(textByLine[line][0] != '|') continue;
 
-		if(first){
-
-			first = false;
-			continue;
-		}
 
 		var newText = textByLine[line].split('|');  
 		
@@ -50,9 +43,25 @@ function createHostArray(path){
 		};
 		
 		hostArray.push(newhost);
-	}
+        }
+        while(Number.isNaN(hostArray[0].hostId))
+                hostArray.shift();
+        
+        var newArr = [];
+        for(var idx = 0 ; idx < hostArray.length ; idx++){
+                if(Number.isNaN(hostArray[idx].hostId)){
+                        newArr[ newArr.length - 1 ].Description += " ";
+                        newArr[ newArr.length - 1 ].Description += hostArray[idx].Description;
+                }
+                else{
+                        newArr.push(hostArray[idx]);
+                }
+        }
+        
+        hostArray = newArr;
 	return hostArray;
 }
+
 
 function createOutputFile(hosts,soc){
 

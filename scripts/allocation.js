@@ -1,5 +1,8 @@
-const resources = _.keyBy(system.getScript("/data/j721e/Resources.json"), (r) => r.utype);
-const hosts = _.keyBy(system.getScript("/data/j721e/Hosts.json"), (r) => r.hostName);
+const deviceSelected = system.deviceData.device;
+const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+const socName = devData[deviceSelected].shortName;
+const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
+const hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
 
 
 function checkOverlap(utype,inst1){
@@ -71,7 +74,7 @@ function resourceAllocate(utype){
                         if (system.modules["/modules/hostConfig"]) {
                                 for (let inst of system.modules["/modules/hostConfig"].$instances) {
 
-                                        var hCount = hostCount(utype,inst.hostName.toUpperCase());
+                                        var hCount = hostCount(utype,inst.hostName);
                                         
                                         if(hCount.length === 1){
                                                 
@@ -154,7 +157,7 @@ function allocateAndSort(skipZeroEntries){
                                 return 1;
                         }
                         else{
-                                var h1 = a.hostName.toUpperCase() , h2 = b.hostName.toUpperCase();
+                                var h1 = a.hostName , h2 = b.hostName;
                                 return hosts[h1].hostId - hosts[h2].hostId;
                         }
                 })

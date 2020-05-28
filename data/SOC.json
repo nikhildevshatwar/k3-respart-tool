@@ -1,0 +1,14 @@
+[
+        {
+                "soc" : "J721E_DRA829_TDA4VM_AM752x",
+                "shortName" : "j721e",
+                "sciClientSocVersion" : "V1",
+                "sciClientPrefixReplacement" : "TISCI_"
+        },
+        {
+                "soc" : "AM65xx_SR1.0",
+                "shortName" : "am65x",
+                "sciClientSocVersion" : "V0",
+                "sciClientPrefixReplacement" : "TISCI_"
+        }
+]

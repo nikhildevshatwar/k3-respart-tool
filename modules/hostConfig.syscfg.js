@@ -1,5 +1,9 @@
-var hosts = system.getScript("/data/j721e/Hosts.json");
-const resources = _.keyBy(system.getScript("/data/j721e/Resources.json"), (r) => r.utype);
+const deviceSelected = system.deviceData.device;
+const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+const socName = devData[deviceSelected].shortName;
+
+var hosts = system.getScript("/data/" + socName + "/Hosts.json");
+const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
 const { checkOverlap , resourceAllocate } = system.getScript("/scripts/allocation.js");
 
 
@@ -35,9 +39,17 @@ var configurables = _.map(resources,(resource) => {
 
                                         if(resource.copyToUtype){
                                                 
-                                                var name1 = _.join(_.split(resource.copyToUtype," "),"_");
-                                                var name2 = _.join(_.split(resource.utype," "),"_");
-                                                inst[name1 + "_count"] = inst[name2 + "_count"];
+                                                var dest = _.join(_.split(resource.copyToUtype," "),"_");
+                                                var src = _.join(_.split(resource.utype," "),"_");
+                                                inst[dest + "_count"] = inst[src + "_count"];
+
+                                                // TODO : Also have to set autoAlloc of destination as false
+
+                                                /*
+                                                if(resource.autoAlloc === false){
+                                                        inst[dest + "_start"] = inst[src + "_start"];
+                                                }
+                                                */
                                         }
                                 }
 			},
@@ -73,7 +85,7 @@ function changehandler(inst){
         };
         
 	for( var idx = 0 ; idx < hosts.length ; idx++ ){
-		if(hosts[idx].hostName.toLowerCase() === inst.hostName){
+		if(hosts[idx].hostName === inst.hostName){
 						
 			aboutHost.description = hosts[idx].Description;
 			aboutHost.security = hosts[idx].Security;
@@ -90,7 +102,7 @@ var hostName = [];
 for( var data = 0 ; data < hosts.length ; data++ ){
 	
 	var newHostName = {
-		name : hosts[data].hostName.toLowerCase(),
+		name : hosts[data].hostName,
 		displayName : hosts[data].hostName
 	}
 
@@ -107,7 +119,7 @@ function hideResources(inst,ui){
                         if(range.restrictHosts){
                                 restrictHostFound = 1;
                                 _.each(range.restrictHosts,(res) => {
-                                        if(res.toLowerCase() === inst.hostName){
+                                        if(res === inst.hostName){
                                                 hostFound = 1;
                                         }
                                 })
@@ -145,10 +157,10 @@ function optionValues(val){
 // Show error if host is dmsc
 
 function validateDmsc(instance,report){
-        if(instance.hostName === "dmsc"){
+        if(instance.hostName === "DMSC"){
                 report.logError("Cannot select DMSC as Host",instance,"hostName");
         }
-        if(instance.supervisorhost === "dmsc"){
+        if(instance.supervisorhost === "DMSC"){
                 report.logError("Cannot select DMSC as Supervisor Host",instance,"supervisorhost");
         }
 }
@@ -181,7 +193,7 @@ function overlapAndOverflow(instance,report){
                                 if(overlapInstance.length){
 
                                         
-                                        var message = "Overlap with ";
+                                        var message = "WARNING : Overlap with ";
                                         _.each(overlapInstance , (ov) => {
                                                 message += ov.hostName + ", "
                                         })
@@ -195,7 +207,7 @@ function overlapAndOverflow(instance,report){
                         _.each(resource.resRange,(range) => {
                                 if(range.restrictHosts){
                                         _.each(range.restrictHosts,(res) => {
-                                                if(res.toLowerCase() === instance.hostName){
+                                                if(res === instance.hostName){
                                                         index = id;
                                                 }
                                         })
@@ -207,7 +219,7 @@ function overlapAndOverflow(instance,report){
                         })
 
                         if(index !== -1 && over[index] > 0){
-                                report.logWarning("Assigned resource count exceeds by " + 
+                                report.logWarning("WARNING : Assigned resource count exceeds by " + 
                                 over[index],instance,name + "_count");
                         }
                 }
@@ -223,7 +235,7 @@ exports = {
                         name: "hostName",
                         displayName: "Host Name used for SYSFW",
                         options: hostName,
-                        default: "dmsc",
+                        default: "DMSC",
                         onChange: (inst, ui) => {
                                 var val = changehandler(inst);
                                 inst.security=val.security;
