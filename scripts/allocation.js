@@ -154,7 +154,7 @@ function allocateAndSort(skipZeroEntries){
                                 return 1;
                         }
                         else{
-                                var h1 = a.hostName , h2 = b.hostName;
+                                var h1 = a.hostName.toUpperCase() , h2 = b.hostName.toUpperCase();
                                 return hosts[h1].hostId - hosts[h2].hostId;
                         }
                 })

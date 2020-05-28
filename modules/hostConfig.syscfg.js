@@ -17,8 +17,6 @@ var configurables = _.map(resources,(resource) => {
 		name : _.join(_.split(resource.utype," "),"_"),
 		displayName : resource.utype,
                 collapsed : false,
-                description : (resource.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
-                                resource.copyFromUtype : ""), 
 		config : [
 			{
 				name : _.join(_.split(resource.utype," "),"_") +"_start" ,
@@ -31,6 +29,8 @@ var configurables = _.map(resources,(resource) => {
 				displayName : "Count",
                                 default : 0,
                                 readOnly : (resource.copyFromUtype ? true : false),
+                                description : (resource.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
+                                        resource.copyFromUtype : ""), 
                                 onChange: (inst, ui) => {
 
                                         if(resource.copyToUtype){
@@ -49,6 +49,8 @@ var configurables = _.map(resources,(resource) => {
                         displayName : "Block Copy Count",
                         default : 0,
                         readOnly : (resource.copyFromUtype ? true : false),
+                        description : (resource.copyFromUtype ? "Block Count of this resource is automatically matched with resource " + 
+                                        resource.copyFromUtype : ""),
                         onChange: (inst, ui) => {
 
                                 if(resource.copyToUtype){
