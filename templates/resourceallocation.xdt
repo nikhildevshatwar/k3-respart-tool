@@ -1,10 +1,55 @@
-//% var resources = system.getScript("/data/j721e/Resources.json");
-//% var allcation = system.getScript("/modules/allocation.js");
+%%{
 
-%if (system.modules["/modules/hostConfig"]) {
-%        for (let inst of system.modules["/modules/hostConfig"].$instances) {
-                |`inst.hostName`|
-%        }
-%}
+const deviceSelected = system.deviceData.device;
+const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+const socName = devData[deviceSelected].shortName;
 
+var resources = system.getScript("/data/" + socName + "/Resources.json");
+var {mapByResources} = system.getScript("/scripts/allocation.js");
 
+var resAlloc = mapByResources(false);
+var table = "";
+var hosts = "| Resources/Hosts | ";
+var pipes = "| --- | ";
+if (system.modules["/modules/hostConfig"]) {
+        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                hosts += inst.hostName;
+                hosts += " | ";
+                pipes += "--- | ";
+        }
+}
+table += hosts + "\n";
+table += pipes + "\n";
+
+_.each(resources, (resource) => {
+
+        if(resAlloc){
+                var line = "| " + resource.utype + " | ";
+                var utypeAlloc = resAlloc[resource.utype];
+                var perHost = _.groupBy(utypeAlloc, (r) => {
+                        return r.hostName;
+                })
+                if (system.modules["/modules/hostConfig"]) {
+                        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                                var resHostInfo = perHost[inst.hostName];
+                                var cell = "";
+                                _.each(resHostInfo, (entry) => {
+                                        cell += "S = " + entry.start + ", " + "C = " + entry.count + "<br>";
+                                })
+
+                                if(args[0] && args[0] === inst){
+                                        cell = "**" + cell + "**";
+                                }
+
+                                cell += " | ";
+                                line += cell;
+                        }
+                }
+                table += line;
+                table += "\n";
+        }
+})
+
+%%}
+
+`table`

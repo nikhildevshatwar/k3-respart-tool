@@ -191,14 +191,16 @@ function overlapAndOverflow(instance,report){
                         if(resource.autoAlloc === false ){
                                 var overlapInstance = checkOverlap(resource.utype,instance);
                                 if(overlapInstance.length){
-
+                                        const conflicting = _.join(_.map(overlapInstance, (inst) => system.getReference(inst)), ", ");
                                         
+                                        /*
                                         var message = "WARNING : Overlap with ";
                                         _.each(overlapInstance , (ov) => {
                                                 message += ov.hostName + ", "
                                         })
+                                        */
                                         
-                                        report.logWarning(message,instance,name + "_count") ;
+                                        report.logWarning(`WARNING : Overlap with ${conflicting}`,instance,name + "_count") ;
                                 }
                         }
                         var over = resourceAllocate(resource.utype).overflowCount;

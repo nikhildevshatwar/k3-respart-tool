@@ -22,8 +22,14 @@
 		}
 	],
 	"topModules": [
-		"/modules/hostConfig",
-		"/modules/resourceAssignments"
+		"/modules/hostConfig"
+	],
+	"views": [
+		{
+			"name": "/templates/resourceallocation.xdt",
+			"displayName": "Resource Allocation",
+			"viewType": "markdown"
+		}
 	],
 	"documentationPath": "docs/"
 }
