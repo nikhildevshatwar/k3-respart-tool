@@ -19,10 +19,16 @@
 			"name": "/templates/sciclient_defaultBoardcfg_rm.syscfg.xdt",
 			"outputPath": "sciclient_defaultBoardcfg_rm.c",
 			"alwaysRun": true
+		},
+		{
+			"name": "/templates/qos-config.syscfg.xdt",
+			"outputPath": "qos-config.c",
+			"alwaysRun": true
 		}
 	],
 	"topModules": [
-		"/modules/hostConfig"
+		"/modules/sysfwResPart",
+		"/modules/qosConfig"
 	],
 	"views": [
 		{

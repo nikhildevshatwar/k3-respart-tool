@@ -229,7 +229,7 @@ function overlapAndOverflow(instance,report){
 }
 
 exports = {
-        displayName: "SYSFW Host Config",
+        displayName: "SYSFW Resource Partitioning",
         defaultInstanceName : "Unknown",
         config: [
                 // Host Name
