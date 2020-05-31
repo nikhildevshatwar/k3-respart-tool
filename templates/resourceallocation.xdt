@@ -11,8 +11,8 @@ var resAlloc = mapByResources(true);
 var table = "";
 var hosts = "| Resources/Hosts | ";
 var pipes = "| --- | ";
-if (system.modules["/modules/hostConfig"]) {
-        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+if (system.modules["/modules/sysfwResPart"]) {
+        for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                 hosts += inst.hostName;
                 hosts += " | ";
                 pipes += "--- | ";
@@ -29,8 +29,8 @@ _.each(resources, (resource) => {
                 var perHost = _.groupBy(utypeAlloc, (r) => {
                         return r.hostName;
                 })
-                if (system.modules["/modules/hostConfig"]) {
-                        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                if (system.modules["/modules/sysfwResPart"]) {
+                        for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                                 var resHostInfo = perHost[inst.hostName];
                                 var cell = "";
                                 _.each(resHostInfo, (entry) => {

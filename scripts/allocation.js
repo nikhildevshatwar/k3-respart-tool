@@ -10,8 +10,8 @@ function checkOverlap(utype, inst1) {
         var name = _.join(_.split(utype, " "), "_");
         var start1 = inst1[name + "_start"], last1 = start1 + inst1[name + "_count"];
 
-        if (system.modules["/modules/hostConfig"]) {
-                for (let inst2 of system.modules["/modules/hostConfig"].$instances) {
+        if (system.modules["/modules/sysfwResPart"]) {
+                for (let inst2 of system.modules["/modules/sysfwResPart"].$instances) {
 
                         if (inst1 === inst2) continue;
 
@@ -49,8 +49,8 @@ function resourceAllocate(utype) {
         if (resources[utype].autoAlloc === false) {
 
                 var total = 0;
-                if (system.modules["/modules/hostConfig"]) {
-                        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                if (system.modules["/modules/sysfwResPart"]) {
+                        for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                                 eachResource.push({
                                         utype: utype,
                                         hostName: inst.hostName,
@@ -71,8 +71,8 @@ function resourceAllocate(utype) {
                                 rCount.push(r.resCount);
                         })
 
-                        if (system.modules["/modules/hostConfig"]) {
-                                for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                        if (system.modules["/modules/sysfwResPart"]) {
+                                for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
 
                                         var hCount = hostCount(utype, inst.hostName);
 
@@ -100,9 +100,9 @@ function resourceAllocate(utype) {
                 else {
                         var total = 0;
                         var startValue = resources[utype].resRange[0].resStart;
-                        if (system.modules["/modules/hostConfig"]) {
+                        if (system.modules["/modules/sysfwResPart"]) {
                                 if (resources[utype].blockCopy) {
-                                        for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                                        for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                                                 eachResource.push({
                                                         utype: utype,
                                                         hostName: inst.hostName,
@@ -113,7 +113,7 @@ function resourceAllocate(utype) {
                                                 total += inst[name + "_blockCount"];
                                         }
                                 }
-                                for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                                for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                                         eachResource.push({
                                                 utype: utype,
                                                 hostName: inst.hostName,

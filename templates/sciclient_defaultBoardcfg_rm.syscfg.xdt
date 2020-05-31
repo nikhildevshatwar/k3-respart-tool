@@ -74,8 +74,8 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
                 .size = (uint16_t) sizeof(struct tisci_boardcfg_rm_host_cfg),
             },
             .host_cfg_entries = {
-                % if (system.modules["/modules/hostConfig"]) {
-				%	for (let inst of system.modules["/modules/hostConfig"].$instances) {
+                % if (system.modules["/modules/sysfwResPart"]) {
+				%	for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
 		{
 		   .allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
 		   .allowed_qos   = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
