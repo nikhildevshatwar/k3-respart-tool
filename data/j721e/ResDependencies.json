@@ -18,12 +18,6 @@
 		]
 	},
 	{
-		"deviceName": "J721E_DEV_GPIOMUX_INTRTR0",
-		"subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
-		"utype": "Main GPIO Interrupt router"
-		"group": "Main NAVS"
-	},
-	{
 		"deviceName": "J721E_DEV_CMPEVENT_INTRTR0",
 		"subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
 		"utype": "Main NAVSS compare event Interrupt router"
@@ -49,6 +43,11 @@
 			"MCU_0_R5_2",
 			"MCU_0_R5_3"
 		]
+	},
+	{
+		"deviceName": "J721E_DEV_GPIOMUX_INTRTR0",
+		"subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
+		"utype": "Main GPIO Interrupt router"
 	},
 	{
 		"deviceName": "J721E_DEV_R5FSS0_INTROUTER0",
@@ -98,7 +97,6 @@
 	{
 		"deviceName": "J721E_DEV_NAVSS0_UDMASS_INTAGGR_0",
 		"subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT",
-		"utype": "Main NAVSS UDMA Interrupt aggregator Virtual interrupts"
 		"utype": "Main NAVSS UDMA Interrupt aggregator Global events"
 	},
 	{
@@ -204,42 +202,29 @@
 	{
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_HCHAN",
+		"utype": "Main NAVSS UDMA High capacity Rx channels",
 		"blockCopy": true
 	},
 	{
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_UHCHAN",
-		"utype": "Main NAVSS UDMA High capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Rx channels",
 		"utype": "Main NAVSS UDMA Ultra high capacity Rx channels",
 		"blockCopy": true
 	},
 	{
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
-		"utype": "Main NAVSS UDMA High capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Rx channels",
-		"utype": "Main NAVSS UDMA Ultra high capacity Rx channels",
 		"utype": "Main NAVSS UDMA Normal capacity Tx channels",
 		"blockCopy": true
 	},
 	{
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
-		"utype": "Main NAVSS UDMA High capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Rx channels",
-		"utype": "Main NAVSS UDMA Ultra high capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Tx channels",
 		"utype": "Main NAVSS UDMA extended Tx channels"
 	},
 	{
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
-		"utype": "Main NAVSS UDMA High capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Rx channels",
-		"utype": "Main NAVSS UDMA Ultra high capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Tx channels",
-		"utype": "Main NAVSS UDMA extended Tx channels"
 		"utype": "Main NAVSS UDMA High capacity Tx channels",
 		"blockCopy": true
 	},
@@ -247,12 +232,6 @@
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_UHCHAN",
 		"utype": "Main NAVSS UDMA Ultra high capacity Tx channels",
-		"utype": "Main NAVSS UDMA High capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Rx channels",
-		"utype": "Main NAVSS UDMA Ultra high capacity Rx channels",
-		"utype": "Main NAVSS UDMA Normal capacity Tx channels",
-		"utype": "Main NAVSS UDMA extended Tx channels"
-		"utype": "Main NAVSS UDMA High capacity Tx channels",
 		"blockCopy": true
 	},
 	{
