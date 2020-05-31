@@ -16,67 +16,87 @@ _.each(resources,(resource) => {
 
 // Create configurables for each resource
 
-var configurables = _.map(resources,(resource) => {
-	var obj = {
-		name : _.join(_.split(resource.utype," "),"_"),
-		displayName : resource.utype,
-                collapsed : false,
-		config : [
-			{
-				name : _.join(_.split(resource.utype," "),"_") +"_start" ,
-				displayName : "Start",
-				default : 0,
-				readOnly : (resource.autoAlloc === false ? false : true),
-			},
-			{
-				name : _.join(_.split(resource.utype," "),"_") +"_count",
-				displayName : "Count",
-                                default : 0,
-                                readOnly : (resource.copyFromUtype ? true : false),
-                                description : (resource.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
-                                        resource.copyFromUtype : ""), 
-                                onChange: (inst, ui) => {
+var groupNames = [];
 
-                                        if(resource.copyToUtype){
-                                                
-                                                var dest = _.join(_.split(resource.copyToUtype," "),"_");
-                                                var src = _.join(_.split(resource.utype," "),"_");
-                                                inst[dest + "_count"] = inst[src + "_count"];
+_.each(resources,(resource) => {
+        groupNames.push(resource.groupName);
+})
 
-                                                // TODO : Also have to set autoAlloc of destination as false
+groupNames = _.uniq(groupNames);
 
-                                                /*
-                                                if(resource.autoAlloc === false){
-                                                        inst[dest + "_start"] = inst[src + "_start"];
-                                                }
-                                                */
-                                        }
-                                }
-			},
-		]
+var byGroup = _.groupBy(resources,(r) => {
+        return r.groupName;
+})
+
+var configurables = [];
+
+_.each(groupNames,(gName) => {
+        var groupResources = byGroup[gName];
+
+        var obj = {
+                name :  _.join(_.split(gName," "),"_"),
+                displayName : gName,
+                config : [] 
         }
-        if(resource.blockCopy){
+
+        _.each(groupResources,(r) => {
                 obj.config.push({
-                        name : _.join(_.split(resource.utype," "),"_") +"_blockCount",
-                        displayName : "Block Copy Count",
+                        name : _.join(_.split(r.utype," "),"_") +"_start" ,
+                        displayName : r.utype + " Start",
+			default : 0,
+			readOnly : (r.autoAlloc === false ? false : true),
+                });
+
+                obj.config.push({
+                        name : _.join(_.split(r.utype," "),"_") +"_count",
+			displayName : r.utype + " Count",
                         default : 0,
-                        readOnly : (resource.copyFromUtype ? true : false),
-                        description : (resource.copyFromUtype ? "Block Count of this resource is automatically matched with resource " + 
-                                        resource.copyFromUtype : ""),
+                        readOnly : (r.copyFromUtype ? true : false),
+                        description : (r.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
+                                r.copyFromUtype : ""), 
                         onChange: (inst, ui) => {
 
-                                if(resource.copyToUtype){
-                                        
-                                        var name1 = _.join(_.split(resource.copyToUtype," "),"_");
-                                        var name2 = _.join(_.split(resource.utype," "),"_");
-                                        inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
+                                if(r.copyToUtype){
+                                                
+                                        var dest = _.join(_.split(r.copyToUtype," "),"_");
+                                        var src = _.join(_.split(r.utype," "),"_");
+                                        inst[dest + "_count"] = inst[src + "_count"];
+
+                                        // TODO : Also have to set autoAlloc of destination as false
+
+                                        /*
+                                        if(resource.autoAlloc === false){
+                                                inst[dest + "_start"] = inst[src + "_start"];
+                                        }
+                                        */
                                 }
                         }
-                })
-        }
+                });
 
-        return obj;
-});
+                if(r.blockCopy){
+                        obj.config.push({
+                                name : _.join(_.split(r.utype," "),"_") +"_blockCount",
+                                displayName : r.utype + " Block Copy Count",
+                                default : 0,
+                                readOnly : (r.copyFromUtype ? true : false),
+                                description : (r.copyFromUtype ? "Block Count of this resource is automatically matched with resource " + 
+                                                r.copyFromUtype : ""),
+                                onChange: (inst, ui) => {
+        
+                                        if(r.copyToUtype){
+                                                
+                                                var name1 = _.join(_.split(r.copyToUtype," "),"_");
+                                                var name2 = _.join(_.split(r.utype," "),"_");
+                                                inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
+                                        }
+                                }
+                        })
+                }
+        })
+
+        configurables.push(obj);
+})
+
 
 // Set other attributes of the selected host like security, description
 

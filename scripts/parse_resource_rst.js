@@ -122,37 +122,51 @@ function addDependencies(resources){
                 var path = args.dep;
                 var str = fs.readFileSync(path).toString();
 
-                var comments = JSON.parse(str);
+                var dependency = JSON.parse(str);
 
-                for( var comment = 0 ; comment < comments.length ; comment++ ){
-                        for( var resource = 0 ; resource < resources.length ; resource++ ){
+                var newResources = [];
 
-                                if( resources[resource].deviceName === comments[comment].deviceName && 
-                                        resources[resource].subtypeName === comments[comment].subtypeName ){
+                for(var dep = 0 ; dep < dependency.length ; dep++){
+                        var gName = dependency[dep].groupName;
+                        var depResource = dependency[dep].resources;
 
-                                                resources[resource].utype = comments[comment].utype;
-                                                if(comments[comment].copyFromUtype){
-                                                        resources[resource].copyFromUtype = comments[comment].copyFromUtype;
-                                                }
-                                                if(comments[comment].restrictHosts){
+                        for(var res = 0 ; res < depResource.length ; res++){
 
-                                                        for(var idx = 0 ; idx < resources[resource].resRange.length ; idx++){
-                                                                resources[resource].resRange[idx].restrictHosts = comments[comment].restrictHosts;
+                                for(parseRes = 0 ; parseRes < resources.length ; parseRes++){
+
+                                        if(resources[parseRes].deviceName ===depResource[res].deviceName &&
+                                                resources[parseRes].subtypeName ===depResource[res].subtypeName ){
+
+                                                        var temp = resources[parseRes];
+                                                        temp.utype = depResource[res].utype;
+                                                        temp.groupName = gName;
+                                                        if(depResource[dep].copyFromUtype){
+                                                                temp.copyFromUtype = depResource[dep].copyFromUtype;
                                                         }
+
+                                                        if(depResource[dep].autoAlloc === false){
+                                                                temp.autoAlloc = depResource[dep].autoAlloc;
+                                                        }
+                                                        if(depResource[dep].blockCopy){
+                                                                temp.blockCopy = depResource[dep].blockCopy;
+                                                        }
+                                                        if(depResource[dep].restrictHosts){
+
+                                                                for(var idx = 0 ; idx < temp.resRange.length ; idx++){
+                                                                        temp.resRange[idx].restrictHosts = depResource[dep].restrictHosts;
+                                                                }
+                                                        }
+                                                        if(depResource[dep].resRange){
+                                                                temp.resRange = depResource[dep].resRange;
+                                                        }
+
+                                                        newResources.push(temp);
                                                 }
-                                                if(comments[comment].resRange){
-                                                        resources[resource].resRange = comments[comment].resRange;
-                                                }
-                                                if(comments[comment].autoAlloc === false){
-                                                        resources[resource].autoAlloc = comments[comment].autoAlloc;
-                                                }
-                                                if(comments[comment].blockCopy){
-                                                        resources[resource].blockCopy = comments[comment].blockCopy;
-                                                }
-                                        }
+                                }
                         }
-                        
                 }
+
+                resources = newResources;
         }
         else {
                 for( var idx = 0 ; idx < resources.length ; idx++ ){

@@ -7,7 +7,7 @@ const socName = devData[deviceSelected].shortName;
 var resources = system.getScript("/data/" + socName + "/Resources.json");
 var {mapByResources} = system.getScript("/scripts/allocation.js");
 
-var resAlloc = mapByResources(false);
+var resAlloc = mapByResources(true);
 var table = "";
 var hosts = "| Resources/Hosts | ";
 var pipes = "| --- | ";
@@ -37,7 +37,7 @@ _.each(resources, (resource) => {
                                         cell += "S = " + entry.start + ", " + "C = " + entry.count + "<br>";
                                 })
 
-                                if(args[0] && args[0] === inst){
+                                if(args[0] && args[0] === inst && cell.length){
                                         cell = "**" + cell + "**";
                                 }
 
