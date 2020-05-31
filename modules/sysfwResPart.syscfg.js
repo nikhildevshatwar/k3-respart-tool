@@ -49,7 +49,7 @@ _.each(groupNames,(gName) => {
 
                 obj.config.push({
                         name : _.join(_.split(r.utype," "),"_") +"_count",
-			displayName : r.utype + " Count",
+			displayName : "========> Count",
                         default : 0,
                         readOnly : (r.copyFromUtype ? true : false),
                         description : (r.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
@@ -76,7 +76,7 @@ _.each(groupNames,(gName) => {
                 if(r.blockCopy){
                         obj.config.push({
                                 name : _.join(_.split(r.utype," "),"_") +"_blockCount",
-                                displayName : r.utype + " Block Copy Count",
+                                displayName : "========> Block-copy count",
                                 default : 0,
                                 readOnly : (r.copyFromUtype ? true : false),
                                 description : (r.copyFromUtype ? "Block Count of this resource is automatically matched with resource " + 
