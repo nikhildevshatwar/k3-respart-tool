@@ -10,14 +10,14 @@
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
-				"utype": "Main NAVSS UDMA Normal capacity Rx channels",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
+				"utype": "Main NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
-				"utype": "Main NAVSS UDMA High capacity Tx channels",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
+				"utype": "Main NAVSS UDMA Normal capacity Rx channels",
 				"blockCopy": true
 			},
 			{
@@ -28,13 +28,13 @@
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
-				"utype": "Main NAVSS UDMA extended Tx channels"
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON",
+				"utype": "Main NAVSS UDMA Rx Free flows"
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON",
-				"utype": "Main NAVSS UDMA Rx Free flows"
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
+				"utype": "Main NAVSS UDMA extended Tx channels"
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
@@ -122,26 +122,6 @@
 		"resources" : [
 			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON",
-				"utype": "MCU NAVSS Rx free flows"
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES",
-				"utype": "MCU NAVSS invalid flow event config"
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER",
-				"utype": "MCU NAVSS UDMA global event trigger"
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG",
-				"utype": "MCU NAVSS UDMA global config"
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
 				"utype": "MCU NAVSS UDMA Normal capacity Rx channels",
 				"blockCopy": true
@@ -163,6 +143,26 @@
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
 				"utype": "MCU NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_FLOW_COMMON",
+				"utype": "MCU NAVSS UDMA Rx free flows"
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_INVALID_FLOW_OES",
+				"utype": "MCU NAVSS invalid flow event config"
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+				"subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_TRIGGER",
+				"utype": "MCU NAVSS UDMA global event trigger"
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_GLOBAL_CONFIG",
+				"utype": "MCU NAVSS UDMA global config"
 			}
 		]
 	},
@@ -170,19 +170,31 @@
 		"groupName" : "MCU NAVSS Ring accelerator",
 		"resources" : [
 			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
+				"subtypeName": "RESASG_SUBTYPE_RA_GP",
+				"utype": "MCU NAVSS Ringacc free rings"
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
+				"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
+				"utype": "MCU NAVSS Ring monitors"
+			},
+			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_PROXY0",
 				"subtypeName": "RESASG_SUBTYPE_PROXY_PROXIES",
 				"utype": "MCU NAVSS Non secure proxies"
 			},
 			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-				"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
-				"utype": "MCU NAVSS Ringacc error event config"
+				"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
+				"utype": "MCU NAVSS Ringacc virt_id range",
+				"copyFromUtype": "Main NAVSS Ringacc virt_id range",
+				"autoAlloc": false
 			},
 			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-				"subtypeName": "RESASG_SUBTYPE_RA_GP",
-				"utype": "MCU NAVSS Ringacc free rings"
+				"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
+				"utype": "MCU NAVSS Ringacc error event config"
 			},
 			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
@@ -211,18 +223,6 @@
 				"utype": "MCU NAVSS Ringacc rings for High capacity Tx channels",
 				"copyFromUtype": "MCU NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-				"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
-				"utype": "MCU NAVSS Ringacc virt_id range",
-				"copyFromUtype": "Main NAVSS Ringacc virt_id range",
-				"autoAlloc": false
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-				"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
-				"utype": "MCU NAVSS Ring monitors"
 			}
 		]
 	},
