@@ -44,7 +44,7 @@ _.each(groupNames,(gName) => {
                         name : _.join(_.split(r.utype," "),"_") +"_start" ,
                         displayName : r.utype + " Start",
 			default : 0,
-			readOnly : (r.autoAlloc === false ? false : true),
+			readOnly : (r.autoAlloc === false && !r.copyFromUtype ? false : true),
                 });
 
                 obj.config.push({
@@ -62,13 +62,9 @@ _.each(groupNames,(gName) => {
                                         var src = _.join(_.split(r.utype," "),"_");
                                         inst[dest + "_count"] = inst[src + "_count"];
 
-                                        // TODO : Also have to set autoAlloc of destination as false
-
-                                        /*
-                                        if(resource.autoAlloc === false){
+                                        if(r.autoAlloc === false){
                                                 inst[dest + "_start"] = inst[src + "_start"];
                                         }
-                                        */
                                 }
                         }
                 });

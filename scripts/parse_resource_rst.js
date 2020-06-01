@@ -140,24 +140,24 @@ function addDependencies(resources){
                                                         var temp = resources[parseRes];
                                                         temp.utype = depResource[res].utype;
                                                         temp.groupName = gName;
-                                                        if(depResource[dep].copyFromUtype){
-                                                                temp.copyFromUtype = depResource[dep].copyFromUtype;
+                                                        if(depResource[res].copyFromUtype){
+                                                                temp.copyFromUtype = depResource[res].copyFromUtype;
                                                         }
 
-                                                        if(depResource[dep].autoAlloc === false){
-                                                                temp.autoAlloc = depResource[dep].autoAlloc;
+                                                        if(depResource[res].autoAlloc === false){
+                                                                temp.autoAlloc = depResource[res].autoAlloc;
                                                         }
-                                                        if(depResource[dep].blockCopy){
-                                                                temp.blockCopy = depResource[dep].blockCopy;
+                                                        if(depResource[res].blockCopy){
+                                                                temp.blockCopy = depResource[res].blockCopy;
                                                         }
-                                                        if(depResource[dep].restrictHosts){
+                                                        if(depResource[res].restrictHosts){
 
                                                                 for(var idx = 0 ; idx < temp.resRange.length ; idx++){
-                                                                        temp.resRange[idx].restrictHosts = depResource[dep].restrictHosts;
+                                                                        temp.resRange[idx].restrictHosts = depResource[res].restrictHosts;
                                                                 }
                                                         }
-                                                        if(depResource[dep].resRange){
-                                                                temp.resRange = depResource[dep].resRange;
+                                                        if(depResource[res].resRange){
+                                                                temp.resRange = depResource[res].resRange;
                                                         }
 
                                                         newResources.push(temp);
