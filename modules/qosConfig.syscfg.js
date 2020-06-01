@@ -4,18 +4,28 @@ const socName = devData[deviceSelected].shortName;
 
 const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.name);
 
-var opt = _.map(qos,(q) => {
+var qos_devlist = _.map(qos,(q) => {
 	return {
 		name : q.name,
 		displayName : q.name
 	}
 })
 
-function optionValues(val){
+qos_devlist.unshift({
+	name : "unknown",
+	displayName : "Select"
+});
+
+function optionValues(max, stringifyName=false){
         var option = [];
-        for(var i = 0 ; i < val; i++ ){
+	var val;
+        for(var i = 0 ; i < max; i++ ){
+		if (stringifyName)
+		val = i.toString();
+		else
+			val = i;
                 option.push({
-                        name : i,
+                        name : val,
                         displayName : i.toString(),
                 });
         }
@@ -26,35 +36,51 @@ exports = {
 	displayName: "Quality of Service",
 	config: [
 		{
-			name: "qosend",
+			name: "qosdev",
 			displayName: "QoS endpoint",
-			options: opt,
-			default: opt[0].name,
+			options: qos_devlist,
+			default: "unknown",
 			onChange: (inst, ui) => {
 
-				//var ch = qos[inst.qosend].channelCount;
-				//inst.chan.options = optionValues(ch);
+				if (inst.qosdev == "unknown")
+					return;
 
+				inst.numChan = qos[inst.qosdev].channelCount;
+				ui.chan.hidden = false;
 				
-				ui.atype.hidden = !qos[inst.qosend].atype;
-				ui.virtId.hidden = !qos[inst.qosend].virtId;
-				ui.orderId.hidden = !qos[inst.qosend].orderId;
-				ui.qos.hidden = !qos[inst.qosend].qos;
-				ui.epriority.hidden = !qos[inst.qosend].epriority;
-				ui.asel.hidden = !qos[inst.qosend].asel;
+                                inst.$name = inst.qosdev.toLowerCase() + "_CH" + inst.chan;
+
+				ui.atype.hidden = !qos[inst.qosdev].atype;
+				ui.virtId.hidden = !qos[inst.qosdev].virtId;
+				ui.orderId.hidden = !qos[inst.qosdev].orderId;
+				ui.qos.hidden = !qos[inst.qosdev].qos;
+				ui.epriority.hidden = !qos[inst.qosdev].epriority;
+				ui.asel.hidden = !qos[inst.qosdev].asel;
 			}
+		},
+		{
+			name: "numChan",
+			displayName: "Available number of channels",
+			readOnly: true,
+			default: 0,
 		},
 		{
 			name: "chan",
 			displayName: "Channel ID",
-			default: 0,
-			options: optionValues(4)
+			default: "0",
+			hidden: true,
+			onChange: (inst, ui) => {
+                                inst.$name = inst.qosdev.toLowerCase() + "_CH" + inst.chan;
+			},
+			options: (inst) => {
+				return optionValues(parseInt(inst.numChan), true);
+			}
 		},
 		{
 			name: "atype",
 			displayName: "Address type",
 			default: 0,
-			hidden : !qos[opt[0].name].atype,
+			hidden : true,
 			options: [
 				{
 					name: 0,
@@ -76,37 +102,43 @@ exports = {
 		{
 			name: "virtId",
 			displayName: "virt_id",
-			hidden: !qos[opt[0].name].virtId,
+			hidden: true,
 			default: 0,
 			options: optionValues(16)
 		},
 		{
 			name: "orderId",
 			displayName: "order_id",
-			hidden: !qos[opt[0].name].orderId,
+			hidden: true,
 			default: 0,
 			options: optionValues(16)
 		},
 		{
 			name: "asel",
 			displayName: "Address selector",
-			hidden: !qos[opt[0].name].asel,
+			hidden: true,
 			default: 0,
 			options: optionValues(4)
 		},
 		{
 			name: "qos",
 			displayName: "Quality of Service",
-			hidden: !qos[opt[0].name].qos,
+			hidden: true,
 			default: 0,
 			options: optionValues(8)
 		},
 		{
 			name: "epriority",
 			displayName: "Escalated priority",
-			hidden: !qos[opt[0].name].epriority,
+			hidden: true,
 			default: 0,
 			options: optionValues(8)
 		},
-	]
+	],
+	validate : (inst ,report) => {
+		if (inst.qosdev == "unknown") {
+			report.logError("Select a QoS from the list", inst, "qosdev");
+		}
+	}
+
 }

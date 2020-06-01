@@ -52,7 +52,7 @@ _.each(groupNames,(gName) => {
 			displayName : "========> Count",
                         default : 0,
                         readOnly : (r.copyFromUtype ? true : false),
-                        description : (r.copyFromUtype ? "Count of this resource is automatically matched with resource " + 
+                        description : (r.copyFromUtype ? "Count of this resource is automatically matched with resource " +
                                 r.copyFromUtype : ""), 
                         onChange: (inst, ui) => {
 
@@ -237,7 +237,7 @@ function overlapAndOverflow(instance,report){
                         })
 
                         if(index !== -1 && over[index] > 0){
-                                report.logError("WARNING : Assigned resource count exceeds by " + 
+                                report.logError("ERROR : Assigned resource count exceeds by " + 
                                 over[index],instance,name + "_count");
                         }
                 }
