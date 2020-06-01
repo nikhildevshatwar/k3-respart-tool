@@ -74,7 +74,8 @@
 			{
 				"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
-				"utype": "Main NAVSS Ringacc virt_id range"
+				"utype": "Main NAVSS Ringacc virt_id range",
+				"autoAlloc": false
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
@@ -98,8 +99,8 @@
 			{
 				"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
-				"utype": "Main NAVSS Ringacc rings for High capacity Rx channels",
-				"copyFromUtype": "Main NAVSS UDMA High capacity Rx channels",
+				"utype": "Main NAVSS Ringacc rings for High capacity Tx channels",
+				"copyFromUtype": "Main NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
 			},
 			{

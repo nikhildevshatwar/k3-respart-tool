@@ -237,7 +237,7 @@ function overlapAndOverflow(instance,report){
                         })
 
                         if(index !== -1 && over[index] > 0){
-                                report.logWarning("WARNING : Assigned resource count exceeds by " + 
+                                report.logError("WARNING : Assigned resource count exceeds by " + 
                                 over[index],instance,name + "_count");
                         }
                 }
