@@ -1,5 +1,5 @@
 const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
 
 
 // Set the bits to 10 if a option is selected else to 01
@@ -95,6 +95,31 @@ function addPrefix(str) {
         return devData[deviceSelected].sciClientPrefixReplacement + str;
 }
 
+function getValue(inst) {
+        var mask = 0;
+        mask |= inst.qos;
+        mask |= (inst.orderId << 4);
+        mask |= (inst.asel << 8);
+        mask |= (inst.epriority << 12);
+        mask |= (inst.virtId << 16);
+        mask |= (inst.atype << 28);
+
+        return mask;
+}
+
+function endPoint() {
+
+        var endPoint = [];
+
+        if (system.modules["/modules/qosConfig"]) {
+                for (let inst of system.modules["/modules/qosConfig"].$instances) {
+                        endPoint.push(inst.qosdev);
+                }
+        }
+
+        return endPoint;
+}
+
 exports = {
         setBit,
         decimalToBinary,
@@ -102,5 +127,7 @@ exports = {
         unsignedToBinary,
         toHexa,
         removePrefix,
-        addPrefix
+        addPrefix,
+        getValue,
+        endPoint
 }

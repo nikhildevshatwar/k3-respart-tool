@@ -87,13 +87,14 @@ function createQosArray(path) {
                 else {
                         toPrint.push({
                                 name: name,
+                                cslBase: info[0],
                                 info: [info[1]]
                         })
                 }
         }
 
         for (var idx = 0; idx < toPrint.length; idx++) {
-                toPrint[idx].base = extractvalue(toPrint[idx].info[0]);
+                toPrint[idx].baseAddress = extractvalue(toPrint[idx].info[0]);
                 toPrint[idx].channelCount = parseInt(extractvalue(toPrint[idx].info[1]), 10);
                 toPrint[idx].qos = parseInt(extractvalue(toPrint[idx].info[2]), 10);
                 toPrint[idx].virtId = parseInt(extractvalue(toPrint[idx].info[3]), 10);

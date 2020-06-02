@@ -1,24 +1,37 @@
+%%{
+	const deviceSelected = system.deviceData.device;
+	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+	const socName = devData[deviceSelected].shortName;
+
+	const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.name);
+
+	var utils = system.getScript("/scripts/utils.js");
+
+	var uniqueEndPoint = _.uniq(utils.endPoint());
+%%}
+
 struct qos_data j721e_qos_data[] = {
-% var chan = 0;
-% var base = "CSL_QOS_USB1_MSTR0_MMR_BASE";
-% var val = "0x12341234";
-% // For each instance in the module (unique combo of endpoint and channel)
+%if (system.modules["/modules/qosConfig"]) {
+%        for (let inst of system.modules["/modules/qosConfig"].$instances) {
+%
 	{
-		.reg = `base` + `chan` * 0x4,
-		.val = `val`,
+		.reg = `qos[inst.qosdev].cslBase` + `inst.chan` * 0x4,
+		.val = `utils.decimalToHexadecimal(utils.getValue(inst))`
 	},
-% //
+%
+%	}
+%}
 
 	/* Set the 1:1 mapping for orderID MAP1/MAP2 registers */
-% // For each unique endpoint
 % var group = 0;
+%_.each(uniqueEndPoint,(u) => {
 	{
-		.reg = `base` + `group` * 0x400 + 0x0
+		.reg = `qos[u].cslBase` + `group` * 0x400 + 0x0
 		.val = 0x76543210,
 	},
 	{
-		.reg = `base` + `group` * 0x400 + 0x4
+		.reg = `qos[u].cslBase` + `group` * 0x400 + 0x4
 		.val = 0xfedcba98,
 	},
-% //
+%})
 };
