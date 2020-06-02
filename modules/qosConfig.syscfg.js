@@ -32,6 +32,19 @@ function optionValues(max, stringifyName=false){
         return option;
 }
 
+function uniqueEndAndChannel(inst,report){
+
+	var moduleInstance = inst.$module.$instances;
+
+	_.each(moduleInstance,(i) => {
+		if(i !== inst){
+			if(i.qosdev === inst.qosdev && i.chan === inst.chan){
+				report.logError("Cannot have two instances with same endpoint and channel",inst);
+			}
+		}
+	})
+}
+
 exports = {
 	displayName: "Quality of Service",
 	config: [
@@ -139,6 +152,8 @@ exports = {
 		if (inst.qosdev == "unknown") {
 			report.logError("Select a QoS from the list", inst, "qosdev");
 		}
+
+		uniqueEndAndChannel(inst,report);
 	}
 
 }
