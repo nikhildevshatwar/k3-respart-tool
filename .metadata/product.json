@@ -28,7 +28,8 @@
 	],
 	"topModules": [
 		"/modules/sysfwResPart",
-		"/modules/qosConfig"
+		"/modules/qosConfig",
+		"/modules/firewallConfig"
 	],
 	"views": [
 		{
