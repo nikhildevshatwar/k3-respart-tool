@@ -44,12 +44,20 @@ _.each(groupNames,(gName) => {
                         name : _.join(_.split(r.utype," "),"_") +"_start" ,
                         displayName : r.utype + " Start",
 			default : 0,
-			readOnly : (r.autoAlloc === false && !r.copyFromUtype ? false : true),
+                        hidden : (r.autoAlloc === false && !r.copyFromUtype ? false : true),
+                        onChange: (inst,ui) => {
+                                
+                                if(r.copyToUtype && r.autoAlloc === false){
+                                        var dest = _.join(_.split(r.copyToUtype," "),"_");
+                                        var src = _.join(_.split(r.utype," "),"_");
+                                        inst[dest + "_start"] = inst[src + "_start"];
+                                }
+                        }
                 });
 
                 obj.config.push({
                         name : _.join(_.split(r.utype," "),"_") +"_count",
-			displayName : "========> Count",
+			displayName : r.utype + " Count",
                         default : 0,
                         readOnly : (r.copyFromUtype ? true : false),
                         description : (r.copyFromUtype ? "Count of this resource is automatically matched with resource " +
@@ -61,10 +69,6 @@ _.each(groupNames,(gName) => {
                                         var dest = _.join(_.split(r.copyToUtype," "),"_");
                                         var src = _.join(_.split(r.utype," "),"_");
                                         inst[dest + "_count"] = inst[src + "_count"];
-
-                                        if(r.autoAlloc === false){
-                                                inst[dest + "_start"] = inst[src + "_start"];
-                                        }
                                 }
                         }
                 });
@@ -147,11 +151,11 @@ function hideResources(inst,ui){
                         inst[name + "_count"] = 0;
                         inst[name + "_start"] = 0;
                         ui[name + "_count"].hidden = true;
-                        ui[name + "_start"].hidden = true;
+                        //ui[name + "_start"].hidden = true;
                 }
                 else{
                         ui[name + "_count"].hidden = false;
-                        ui[name + "_start"].hidden = false;
+                        //ui[name + "_start"].hidden = false;
                 }
         })
 }
