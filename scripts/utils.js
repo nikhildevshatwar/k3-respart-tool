@@ -113,7 +113,9 @@ function endPoint() {
 
         if (system.modules["/modules/qosConfig"]) {
                 for (let inst of system.modules["/modules/qosConfig"].$instances) {
-                        endPoint.push(inst.qosdev);
+                        _.each(inst.qosdev,(e) => {
+                                endPoint.push(e);
+                        })
                 }
         }
 

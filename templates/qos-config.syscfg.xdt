@@ -14,10 +14,12 @@ struct qos_data j721e_qos_data[] = {
 %if (system.modules["/modules/qosConfig"]) {
 %        for (let inst of system.modules["/modules/qosConfig"].$instances) {
 %
+%	_.each(inst.qosdev,(e) => {
 	{
-		.reg = `qos[inst.qosdev].cslBase` + `inst.chan` * 0x4,
+		.reg = `qos[e].cslBase` + `inst.chan` * 0x4,
 		.val = `utils.decimalToHexadecimal(utils.getValue(inst))`
 	},
+%	})
 %
 %	}
 %}

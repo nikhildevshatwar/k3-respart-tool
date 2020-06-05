@@ -16,6 +16,30 @@ qos_devlist.unshift({
 	displayName : "Select"
 });
 
+var deviceNames = [];
+
+_.each(qos,(d) => {
+	deviceNames.push(d.deviceName);
+})
+
+deviceNames = _.uniq(deviceNames);
+
+var deviceOpt = _.map(deviceNames,(d) => {
+	return {
+		name : d,
+		displayName : d
+	}
+})
+
+deviceOpt.unshift({
+	name: "unknown",
+	displayName: "Select"
+});
+
+var deviceEndPoints = _.groupBy(qos,(d) => {
+	return d.deviceName ;
+})
+
 function optionValues(max, stringifyName=false){
         var option = [];
 	var val;
@@ -32,43 +56,150 @@ function optionValues(max, stringifyName=false){
         return option;
 }
 
+function showValidConfigurables(inst,ui){
+	var maxEndPoints = 1000;
+	var obj = {
+		min : maxEndPoints,
+		atype : 0,
+		virtId : 0,
+		orderId : 0,
+		qos : 0,
+		epriority : 0,
+		asel : 0,
+	}
+
+	_.each(inst.qosdev,(e) => {
+		if(e !== "none"){
+			obj.min = Math.min(obj.min,qos[e].channelCount);
+			obj.atype |= qos[e].atype,
+			obj.virtId |= qos[e].virtId,
+			obj.orderId |= qos[e].orderId,
+			obj.qos |= qos[e].qos,
+			obj.epriority |= qos[e].epriority,
+			obj.asel |= qos[e].asel
+		}
+	})
+	inst.numChan = (obj.min === maxEndPoints ? 0 : obj.min);
+	ui.chan.hidden = false;
+
+	ui.atype.hidden = !obj.atype;
+	ui.virtId.hidden = !obj.virtId;
+	ui.orderId.hidden = !obj.orderId;
+	ui.qos.hidden = !obj.qos;
+	ui.epriority.hidden = !obj.epriority;
+	ui.asel.hidden = !obj.asel;
+}
+
 function uniqueEndAndChannel(inst,report){
 
 	var moduleInstance = inst.$module.$instances;
 
 	_.each(moduleInstance,(i) => {
 		if(i !== inst){
-			if(i.qosdev === inst.qosdev && i.chan === inst.chan){
-				report.logError("Cannot have two instances with same endpoint and channel",inst);
+			if(i.deviceName === inst.deviceName && i.chan === inst.chan){
+
+				var intersection = _.intersection(i.qosdev,inst.qosdev);
+				if(intersection.length && intersection[0] !== "none"){
+					report.logError("This endPoint is used more than once for same channel",inst,"qosdev");
+				}
 			}
 		}
 	})
+}
+
+function showParameterInfo(inst,report){
+	if(inst.deviceName === "unknown")
+		return;
+	var properties = ["atype","virtId","orderId","qos","epriority","asel"];
+
+	_.each(properties,(p) => {
+		if(!inst[p].hidden){
+			var names = "";
+			_.each(inst.qosdev,(e) => {
+				if(!qos[e][p]){
+					names += e;
+					names += ", ";
+				}
+			})
+			if(names.length){
+				report.logInfo("This property is not available for " + names,inst,p);
+			}
+		}
+	})
+}
+
+
+function setInstanceName(inst,ui) {
+	var moduleInstance = inst.$module.$instances;
+
+	var count = -1;
+	_.each(moduleInstance,(i) => {
+		if(i!== inst){
+			if(i.deviceName === inst.deviceName && i.chan === inst.chan){
+				var value = _.split(i.$name,"_");
+				value = value[value.length - 1];
+				count = Math.max(count,parseInt(value,10));
+			}
+		}
+	})
+	inst.$name = inst.deviceName + "_CH_" + inst.chan + "_" + (++count);
 }
 
 exports = {
 	displayName: "Quality of Service",
 	config: [
 		{
-			name: "qosdev",
-			displayName: "QoS endpoint",
-			options: qos_devlist,
+			name: "deviceName",
+			displayName: "Device Name",
+			options: deviceOpt,
 			default: "unknown",
 			onChange: (inst, ui) => {
 
-				if (inst.qosdev == "unknown")
+				if(inst.deviceName === "unknown")
 					return;
+				ui.qosdev.hidden = false;
+				inst.qosdev = _.map(deviceEndPoints[inst.deviceName],(d) => {
+					return d.name;
+				})
+				ui.atype.hidden = true;
+				ui.virtId.hidden = true;
+				ui.orderId.hidden = true;
+				ui.qos.hidden = true;
+				ui.epriority.hidden = true;
+				ui.asel.hidden = true;
 
-				inst.numChan = qos[inst.qosdev].channelCount;
-				ui.chan.hidden = false;
-				
-                                inst.$name = inst.qosdev.toLowerCase() + "_CH" + inst.chan;
+				inst.atype = 0;
+				inst.virtId = 0;
+				inst.orderId = 0;
+				inst.qos = 0;
+				inst.epriority = 0;
+				inst.asel = 0;
+				inst.chan = "0";
 
-				ui.atype.hidden = !qos[inst.qosdev].atype;
-				ui.virtId.hidden = !qos[inst.qosdev].virtId;
-				ui.orderId.hidden = !qos[inst.qosdev].orderId;
-				ui.qos.hidden = !qos[inst.qosdev].qos;
-				ui.epriority.hidden = !qos[inst.qosdev].epriority;
-				ui.asel.hidden = !qos[inst.qosdev].asel;
+				showValidConfigurables(inst,ui);
+
+				//setInstanceName(inst,ui);
+			} 
+		},
+		{
+			name: "qosdev",
+			displayName: "QoS endpoint",
+			options: qos_devlist,
+			hidden: true,
+			default: ["none"],
+			options: (inst) => {
+
+				var endP = _.map(deviceEndPoints[inst.deviceName],(d) => {
+					return {
+						name : d.name,
+						displayName : d.name
+					}
+				})
+
+				return endP;
+			},
+			onChange: (inst, ui) => {
+				showValidConfigurables(inst,ui);
 			}
 		},
 		{
@@ -82,11 +213,11 @@ exports = {
 			displayName: "Channel ID",
 			default: "0",
 			hidden: true,
-			onChange: (inst, ui) => {
-                                inst.$name = inst.qosdev.toLowerCase() + "_CH" + inst.chan;
-			},
 			options: (inst) => {
 				return optionValues(parseInt(inst.numChan), true);
+			},
+			onChange: (inst,ui) => {
+				//setInstanceName(inst,ui);
 			}
 		},
 		{
@@ -149,11 +280,12 @@ exports = {
 		},
 	],
 	validate : (inst ,report) => {
-		if (inst.qosdev == "unknown") {
-			report.logError("Select a QoS from the list", inst, "qosdev");
+		if (inst.deviceName == "unknown") {
+			report.logError("Select a device from the list", inst, "deviceName");
 		}
 
 		uniqueEndAndChannel(inst,report);
+		showParameterInfo(inst,report);
 	}
 
 }

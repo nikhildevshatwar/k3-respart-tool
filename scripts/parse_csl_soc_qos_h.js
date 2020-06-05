@@ -53,12 +53,18 @@ function createQosArray(path) {
                 }
         }
 
-        var temp = [];
+        var temp = [], dev = "";
         for (var line = start; line <= end; line++) {
 
                 var sz = textByLine[line].length;
                 if (textByLine[line][0] === "#" && textByLine[line][sz - 1] === ")") {
-                        temp.push(textByLine[line]);
+                        temp.push(textByLine[line] + " " + dev);
+                }
+                else if(textByLine[line][0] === "/" && textByLine[line][sz - 1] === "/"){
+                        var tempName = textByLine[line].slice(1,sz - 2);
+                        tempName = tempName.split(":");
+                        tempName =tempName[1].trim();
+                        dev = tempName;
                 }
         }
 
@@ -88,7 +94,8 @@ function createQosArray(path) {
                         toPrint.push({
                                 name: name,
                                 cslBase: info[0],
-                                info: [info[1]]
+                                info: [info[1]],
+                                deviceName : info[2]
                         })
                 }
         }
