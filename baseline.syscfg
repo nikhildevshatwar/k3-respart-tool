@@ -2,51 +2,132 @@
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
  * @cliArgs --device "J721E_DRA829_TDA4VM_AM752x" --package "ALF" --part "Default" --product "K3-Respart-Tool@version_1"
- * @versions {"data":"20181113","timestamp":"2020052503","tool":"1.6.0+1393","templates":"20190604"}
+ * @versions {"data":"20181113","timestamp":"2020043000","tool":"1.0.0+dev","templates":"20190604"}
  */
 
 /**
  * Import the modules used in this configuration.
  */
-const qosConfig     = scripting.addModule("/modules/qosConfig", {}, false);
-const qosConfig1    = qosConfig.addInstance();
-const qosConfig2    = qosConfig.addInstance();
-const qosConfig3    = qosConfig.addInstance();
-const qosConfig4    = qosConfig.addInstance();
-const sysfwResPart  = scripting.addModule("/modules/sysfwResPart", {}, false);
-const sysfwResPart1 = sysfwResPart.addInstance();
-const sysfwResPart2 = sysfwResPart.addInstance();
-const sysfwResPart3 = sysfwResPart.addInstance();
-const sysfwResPart4 = sysfwResPart.addInstance();
+const firewallConfig  = scripting.addModule("/modules/firewallConfig", {}, false);
+const firewallConfig1 = firewallConfig.addInstance();
+const firewallConfig2 = firewallConfig.addInstance();
+const qosConfig       = scripting.addModule("/modules/qosConfig", {}, false);
+const qosConfig1      = qosConfig.addInstance();
+const qosConfig2      = qosConfig.addInstance();
+const qosConfig3      = qosConfig.addInstance();
+const qosConfig4      = qosConfig.addInstance();
+const qosConfig5      = qosConfig.addInstance();
+const sysfwResPart    = scripting.addModule("/modules/sysfwResPart", {}, false);
+const sysfwResPart1   = sysfwResPart.addInstance();
+const sysfwResPart2   = sysfwResPart.addInstance();
+const sysfwResPart3   = sysfwResPart.addInstance();
+const sysfwResPart4   = sysfwResPart.addInstance();
 
 /**
  * Write custom configuration values to the imported modules.
  */
-qosConfig1.qosdev    = "MCU_R5FSS0_MEMBDG_WMST1";
-qosConfig1.atype     = 1;
-qosConfig1.virtId    = 5;
-qosConfig1.orderId   = 4;
-qosConfig1.qos       = 6;
-qosConfig1.epriority = 1;
+firewallConfig1.device                               = "usb3";
+firewallConfig1.firewalls                            = ["193"];
+firewallConfig1.$name                                = "USB_writeonly_a72";
+firewallConfig1.regions[0].$name                     = "modules_firewallRegion0";
+firewallConfig1.regions[0].perms.create(2);
+firewallConfig1.regions[0].perms[0].$name            = "modules_firewallPermissions0";
+firewallConfig1.regions[0].perms[0].privid           = 12;
+firewallConfig1.regions[0].perms[0].s_user_rd        = false;
+firewallConfig1.regions[0].perms[0].s_user_wr        = false;
+firewallConfig1.regions[0].perms[0].s_user_ex        = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_rd  = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_wr  = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_ex  = false;
+firewallConfig1.regions[0].perms[1].$name            = "modules_firewallPermissions1";
+firewallConfig1.regions[0].perms[1].privid           = 45;
+firewallConfig1.regions[0].perms[1].ns_user_wr       = false;
+firewallConfig1.regions[0].perms[1].ns_user_ex       = false;
+firewallConfig1.regions[0].perms[1].ns_supervisor_wr = false;
+firewallConfig1.regions[0].perms[1].ns_supervisor_ex = false;
+firewallConfig1.regions[0].perms[1].s_user_wr        = false;
+firewallConfig1.regions[0].perms[1].s_user_ex        = false;
+firewallConfig1.regions[0].perms[1].s_supervisor_wr  = false;
+firewallConfig1.regions[0].perms[1].s_supervisor_ex  = false;
 
-qosConfig2.qosdev = "NAVSS0_RINGACC0_DST";
+firewallConfig2.$name                               = "TIDL_mem_protection";
+firewallConfig2.regions.create(2);
+firewallConfig2.regions[0].$name                    = "modules_firewallRegion1";
+firewallConfig2.regions[0].regionAlloc              = true;
+firewallConfig2.regions[0].addrStart                = 80000000;
+firewallConfig2.regions[0].addrEnd                  = 84000000;
+firewallConfig2.regions[0].perms[0].$name           = "modules_firewallPermissions2";
+firewallConfig2.regions[0].perms[0].privid          = 31;
+firewallConfig2.regions[0].perms[0].s_user_rd       = false;
+firewallConfig2.regions[0].perms[0].s_user_wr       = false;
+firewallConfig2.regions[0].perms[0].s_user_ex       = false;
+firewallConfig2.regions[0].perms[0].s_supervisor_rd = false;
+firewallConfig2.regions[0].perms[0].s_supervisor_wr = false;
+firewallConfig2.regions[0].perms[0].s_supervisor_ex = false;
+firewallConfig2.regions[1].$name                    = "modules_firewallRegion2";
+firewallConfig2.regions[1].regionAlloc              = true;
+firewallConfig2.regions[1].addrStart                = 94000000;
+firewallConfig2.regions[1].addrEnd                  = 99000000;
+firewallConfig2.regions[1].perms.create(3);
+firewallConfig2.regions[1].perms[0].$name           = "modules_firewallPermissions3";
+firewallConfig2.regions[1].perms[0].privid          = 31;
+firewallConfig2.regions[1].perms[0].s_user_rd       = false;
+firewallConfig2.regions[1].perms[0].s_user_wr       = false;
+firewallConfig2.regions[1].perms[0].s_user_ex       = false;
+firewallConfig2.regions[1].perms[0].s_supervisor_rd = false;
+firewallConfig2.regions[1].perms[0].s_supervisor_wr = false;
+firewallConfig2.regions[1].perms[0].s_supervisor_ex = false;
+firewallConfig2.regions[1].perms[1].$name           = "modules_firewallPermissions4";
+firewallConfig2.regions[1].perms[1].privid          = 32;
+firewallConfig2.regions[1].perms[1].s_user_wr       = false;
+firewallConfig2.regions[1].perms[1].s_user_rd       = false;
+firewallConfig2.regions[1].perms[1].s_user_ex       = false;
+firewallConfig2.regions[1].perms[1].s_supervisor_rd = false;
+firewallConfig2.regions[1].perms[1].s_supervisor_wr = false;
+firewallConfig2.regions[1].perms[1].s_supervisor_ex = false;
+firewallConfig2.regions[1].perms[2].$name           = "modules_firewallPermissions5";
+firewallConfig2.regions[1].perms[2].privid          = 33;
+firewallConfig2.regions[1].perms[2].s_user_rd       = false;
+firewallConfig2.regions[1].perms[2].s_user_wr       = false;
+firewallConfig2.regions[1].perms[2].s_user_ex       = false;
+firewallConfig2.regions[1].perms[2].s_supervisor_rd = false;
+firewallConfig2.regions[1].perms[2].s_supervisor_wr = false;
+firewallConfig2.regions[1].perms[2].s_supervisor_ex = false;
 
-qosConfig3.qosdev    = "PRU_ICSSG0_PR1_EXT_VBUSM";
-qosConfig3.chan      = "5";
-qosConfig3.orderId   = 2;
-qosConfig3.epriority = 7;
+qosConfig1.deviceName = "DSS0";
+qosConfig1.chan       = "1";
+qosConfig1.atype      = 1;
+qosConfig1.virtId     = 2;
+qosConfig1.orderId    = 6;
+qosConfig1.$name      = "DSS_chan1_vm1";
 
-qosConfig4.qosdev  = "DSS0_DSS_INST0_VBUSM_DMA";
-qosConfig4.chan    = "3";
-qosConfig4.virtId  = 3;
-qosConfig4.orderId = 5;
-qosConfig4.qos     = 6;
+qosConfig2.deviceName = "DSS0";
+qosConfig2.chan       = "5";
+qosConfig2.atype      = 1;
+qosConfig2.virtId     = 3;
+qosConfig2.orderId    = 8;
+qosConfig2.$name      = "DSS_chan5_vm2";
 
-sysfwResPart1.hostName                                             = "A72_4";
+qosConfig3.$name      = "DSS_chan8_rtos";
+qosConfig3.deviceName = "DSS0";
+qosConfig3.chan       = "8";
+qosConfig3.orderId    = 10;
+qosConfig3.qos        = 4;
+
+qosConfig4.$name      = "VPAC";
+qosConfig4.deviceName = "VPAC0";
+qosConfig4.chan       = "4";
+qosConfig4.numChan    = 3;
+
+qosConfig5.$name      = "VPAC_LDC";
+qosConfig5.deviceName = "VPAC0";
+qosConfig5.qosdev     = ["VPAC0_LDC0_M_MST"];
+
 sysfwResPart1.Main_NAVSS_UDMA_High_capacity_Rx_channels_count      = 3;
 sysfwResPart1.Main_NAVSS_UDMA_High_capacity_Rx_channels_blockCount = 4;
 sysfwResPart1.Main_NAVSS_Ringacc_virt_id_range_start               = 2;
-sysfwResPart1.Main_NAVSS_Ringacc_virt_id_range_count               = 9;
+sysfwResPart1.hostName                                             = "A72_2";
+sysfwResPart1.Main_NAVSS_Ringacc_virt_id_range_count               = 1;
 
 sysfwResPart2.hostName                                                 = "MCU_0_R5_2";
 sysfwResPart2.Main_NAVSS_UDMA_High_capacity_Rx_channels_count          = 2;
@@ -59,14 +140,12 @@ sysfwResPart2.MCU_NAVSS_Ring_monitors_count                            = 5;
 sysfwResPart2.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count = 3;
 sysfwResPart2.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count  = 4;
 
-sysfwResPart3.hostName                                                      = "C6X_0_0";
-sysfwResPart3.Main_NAVSS_invalid_flow_event_config_count                    = 1;
-sysfwResPart3.Main_NAVSS_UDMA_global_event_trigger_count                    = 6;
-sysfwResPart3.Main_NAVSS_UDMA_extended_Tx_channels_count                    = 3;
-sysfwResPart3.Main_NAVSS_Ringacc_virt_id_range_count                        = 4;
-sysfwResPart3.Main_NAVSS_Ringacc_virt_id_range_start                        = 16;
-sysfwResPart3.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 2;
-sysfwResPart3.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 6;
-sysfwResPart3.Interrupt_router_for_C6X_subsystem0_count                     = 5;
+sysfwResPart3.hostName                                               = "MAIN_0_R5_3";
+sysfwResPart3.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_blockCount = 2;
+sysfwResPart3.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count      = 12;
+sysfwResPart3.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count      = 19;
+sysfwResPart3.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_blockCount = 2;
 
-sysfwResPart4.hostName = "MAIN_0_R5_3";
+sysfwResPart4.hostName                                               = "A72_3";
+sysfwResPart4.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count      = 7;
+sysfwResPart4.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_blockCount = 2;
