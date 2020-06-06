@@ -36,7 +36,8 @@ _.each(groupNames,(gName) => {
         var obj = {
                 name :  _.join(_.split(gName," "),"_"),
                 displayName : gName,
-                config : [] 
+                config : [],
+		collapsed: false
         }
 
         _.each(groupResources,(r) => {
