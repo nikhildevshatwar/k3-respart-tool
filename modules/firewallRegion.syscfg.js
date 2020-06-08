@@ -12,22 +12,18 @@ exports = {
 				} else {
 					ui.addrStart.hidden = true;
 					ui.addrEnd.hidden = true;
-					inst.addrStart = 0;
-					inst.addrEnd = 0;
 				}
 			}
 		},
 		{
 			name: "addrStart",
 			displayName: "Region start address",
-			hidden: true,
-			default: 0
+			default: "0",
 		},
 		{
 			name: "addrEnd",
 			displayName: "Region end address",
-			hidden: true,
-			default: 0
+			default: "0",
 		}
 	],
 	moduleInstances: (inst) => {

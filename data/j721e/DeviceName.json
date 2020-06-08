@@ -1,0 +1,1458 @@
+[
+        {
+                "protected_inst": "compute_cluster_j7es_tb_vdc_main_0_p4_c711_512kb",
+                "name": "Device_0"
+        },
+        {
+                "protected_inst": "compute_cluster_j7es_tb_vdc_main_0_dru",
+                "name": "Device_1"
+        },
+        {
+                "protected_inst": "psram512x32e_main_0",
+                "name": "Device_2"
+        },
+        {
+                "protected_inst": "j7_main_psc_wrap_main_0",
+                "name": "Device_3"
+        },
+        {
+                "protected_inst": "k3_pll_ctrl_wrap_main_0",
+                "name": "Device_4"
+        },
+        {
+                "protected_inst": "gtc_r10_main_0",
+                "name": "Device_5"
+        },
+        {
+                "protected_inst": "j7_main_pll_mmr_main_0",
+                "name": "Device_6"
+        },
+        {
+                "protected_inst": "j7_main_ctrl_mmr_main_0",
+                "name": "Device_7"
+        },
+        {
+                "protected_inst": "j7_dftss_wrap_main_0",
+                "name": "Device_8"
+        },
+        {
+                "protected_inst": "j7_efuse_ctrl_wrap_main_0",
+                "name": "Device_9"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_main_infra_0",
+                "name": "Device_10"
+        },
+        {
+                "protected_inst": "gpio_144_main_0",
+                "name": "Device_11"
+        },
+        {
+                "protected_inst": "gpio_144_main_1",
+                "name": "Device_12"
+        },
+        {
+                "protected_inst": "gpio_144_main_2",
+                "name": "Device_13"
+        },
+        {
+                "protected_inst": "gpio_144_main_3",
+                "name": "Device_14"
+        },
+        {
+                "protected_inst": "gpio_144_main_4",
+                "name": "Device_15"
+        },
+        {
+                "protected_inst": "gpio_144_main_5",
+                "name": "Device_16"
+        },
+        {
+                "protected_inst": "gpio_144_main_6",
+                "name": "Device_17"
+        },
+        {
+                "protected_inst": "gpio_144_main_7",
+                "name": "Device_18"
+        },
+        {
+                "protected_inst": "esm_j7_main_main_0",
+                "name": "Device_19"
+        },
+        {
+                "protected_inst": "dcc2_main_0",
+                "name": "Device_20"
+        },
+        {
+                "protected_inst": "dcc2_main_1",
+                "name": "Device_21"
+        },
+        {
+                "protected_inst": "dcc2_main_2",
+                "name": "Device_22"
+        },
+        {
+                "protected_inst": "dcc2_main_3",
+                "name": "Device_23"
+        },
+        {
+                "protected_inst": "dcc2_main_4",
+                "name": "Device_24"
+        },
+        {
+                "protected_inst": "dcc2_main_5",
+                "name": "Device_25"
+        },
+        {
+                "protected_inst": "dcc2_main_6",
+                "name": "Device_26"
+        },
+        {
+                "protected_inst": "dcc2_main_7",
+                "name": "Device_27"
+        },
+        {
+                "protected_inst": "dcc2_main_8",
+                "name": "Device_28"
+        },
+        {
+                "protected_inst": "dcc2_main_9",
+                "name": "Device_29"
+        },
+        {
+                "protected_inst": "dcc2_main_10",
+                "name": "Device_30"
+        },
+        {
+                "protected_inst": "dcc2_main_11",
+                "name": "Device_31"
+        },
+        {
+                "protected_inst": "dcc2_main_12",
+                "name": "Device_32"
+        },
+        {
+                "protected_inst": "j7_main_gpiomux_introuter_main_0",
+                "name": "Device_33"
+        },
+        {
+                "protected_inst": "j7_main2mcu_lvl_introuter_main_0",
+                "name": "Device_34"
+        },
+        {
+                "protected_inst": "j7_main2mcu_pls_introuter_main_0",
+                "name": "Device_35"
+        },
+        {
+                "protected_inst": "j7_cmp_event_introuter_main_0",
+                "name": "Device_36"
+        },
+        {
+                "protected_inst": "j7_timesync_event_introuter_main_0",
+                "name": "Device_37"
+        },
+        {
+                "protected_inst": "j7_main_pulsar1_introuter_main_0",
+                "name": "Device_38"
+        },
+        {
+                "protected_inst": "j7_main_pulsar0_introuter_main_0",
+                "name": "Device_39"
+        },
+        {
+                "protected_inst": "j7_c66_0_introuter_main_0",
+                "name": "Device_40"
+        },
+        {
+                "protected_inst": "j7_c66_1_introuter_main_0",
+                "name": "Device_41"
+        },
+        {
+                "protected_inst": "j7_main_fw_cbass_main_0",
+                "name": "Device_42"
+        },
+        {
+                "protected_inst": "j7_main_infra_cbass_main_0",
+                "name": "Device_43"
+        },
+        {
+                "protected_inst": "j7_main_infraclk2_ecc_aggr_main_0",
+                "name": "Device_44"
+        },
+        {
+                "protected_inst": "psram256x32e_16ffc_main_0",
+                "name": "Device_45"
+        },
+        {
+                "protected_inst": "j7_wkup_psc_wrap_wkup_0",
+                "name": "Device_46"
+        },
+        {
+                "protected_inst": "k3_pll_ctrl_wrap_wkup_0",
+                "name": "Device_47"
+        },
+        {
+                "protected_inst": "j7_wkup_ctrl_mmr_wkup_0",
+                "name": "Device_48"
+        },
+        {
+                "protected_inst": "gpio_144_wkup_0",
+                "name": "Device_49"
+        },
+        {
+                "protected_inst": "esm_wkup_wkup_0",
+                "name": "Device_50"
+        },
+        {
+                "protected_inst": "k3vtm_n16ffc_wkup_0",
+                "name": "Device_51"
+        },
+        {
+                "protected_inst": "k3_ddpa_wkup_0",
+                "name": "Device_52"
+        },
+        {
+                "protected_inst": "gpio_144_wkup_1",
+                "name": "Device_53"
+        },
+        {
+                "protected_inst": "mshsi2c_wkup_0",
+                "name": "Device_54"
+        },
+        {
+                "protected_inst": "usart_wkup_0",
+                "name": "Device_55"
+        },
+        {
+                "protected_inst": "j7_wkup_gpiomux_introuter_wkup_0",
+                "name": "Device_56"
+        },
+        {
+                "protected_inst": "j7_wkup_cbass_wkup_0",
+                "name": "Device_57"
+        },
+        {
+                "protected_inst": "j7_wkup_fw_cbass_wkup_0",
+                "name": "Device_58"
+        },
+        {
+                "protected_inst": "j7_wkup_clk4_ecc_aggr_wkup_0",
+                "name": "Device_59"
+        },
+        {
+                "protected_inst": "vdc_infra_safeg_vbusp_32b_ref_wkup2main_infra",
+                "name": "Device_60"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0",
+                "name": "Device_61"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_dmtimer_dmc1ms_0",
+                "name": "Device_62"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_dmtimer_dmc1ms_1",
+                "name": "Device_63"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_rti_0",
+                "name": "Device_64"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_ksbus_rat_0",
+                "name": "Device_65"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_ks3_sec_mgr_0",
+                "name": "Device_66"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_dmtimer_dmc1ms_2",
+                "name": "Device_67"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_dmtimer_dmc1ms_3",
+                "name": "Device_68"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_aeseip38t_0",
+                "name": "Device_69"
+        },
+        {
+                "protected_inst": "dmsc_wkup_0_ksdma_intaggr_0",
+                "name": "Device_70"
+        },
+        {
+                "protected_inst": "pulsar_sl_mcu_0",
+                "name": "Device_71"
+        },
+        {
+                "protected_inst": "rti_cfg1_mcu_0",
+                "name": "Device_72"
+        },
+        {
+                "protected_inst": "rti_cfg1_mcu_1",
+                "name": "Device_73"
+        },
+        {
+                "protected_inst": "fss_mcu_0",
+                "name": "Device_74"
+        },
+        {
+                "protected_inst": "psrom49152x32_mcu_0",
+                "name": "Device_75"
+        },
+        {
+                "protected_inst": "msram128kx64e_mcu_0",
+                "name": "Device_76"
+        },
+        {
+                "protected_inst": "psram128x32_mcu_0",
+                "name": "Device_77"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_0",
+                "name": "Device_78"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_1",
+                "name": "Device_79"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_2",
+                "name": "Device_80"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_3",
+                "name": "Device_81"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_4",
+                "name": "Device_82"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_5",
+                "name": "Device_83"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_6",
+                "name": "Device_84"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_7",
+                "name": "Device_85"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_8",
+                "name": "Device_86"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_mcu_9",
+                "name": "Device_87"
+        },
+        {
+                "protected_inst": "spi_mcu_0",
+                "name": "Device_88"
+        },
+        {
+                "protected_inst": "spi_mcu_1",
+                "name": "Device_89"
+        },
+        {
+                "protected_inst": "spi_mcu_2",
+                "name": "Device_90"
+        },
+        {
+                "protected_inst": "dcc2_mcu_0",
+                "name": "Device_91"
+        },
+        {
+                "protected_inst": "dcc2_mcu_1",
+                "name": "Device_92"
+        },
+        {
+                "protected_inst": "dcc2_mcu_2",
+                "name": "Device_93"
+        },
+        {
+                "protected_inst": "adc12_core_mcu_0",
+                "name": "Device_94"
+        },
+        {
+                "protected_inst": "adc12_core_mcu_1",
+                "name": "Device_95"
+        },
+        {
+                "protected_inst": "usart_mcu_0",
+                "name": "Device_96"
+        },
+        {
+                "protected_inst": "mshsi2c_mcu_0",
+                "name": "Device_97"
+        },
+        {
+                "protected_inst": "mshsi2c_mcu_1",
+                "name": "Device_98"
+        },
+        {
+                "protected_inst": "i3c_mcu_0",
+                "name": "Device_99"
+        },
+        {
+                "protected_inst": "i3c_mcu_1",
+                "name": "Device_100"
+        },
+        {
+                "protected_inst": "esm_mcu_mcu_0",
+                "name": "Device_101"
+        },
+        {
+                "protected_inst": "mcanss_mcu_0",
+                "name": "Device_102"
+        },
+        {
+                "protected_inst": "mcanss_mcu_1",
+                "name": "Device_103"
+        },
+        {
+                "protected_inst": "sa2_ul_mcu_0",
+                "name": "Device_104"
+        },
+        {
+                "protected_inst": "j7_mcu_ctrl_mmr_mcu_0",
+                "name": "Device_105"
+        },
+        {
+                "protected_inst": "j7_mcu_pll_mmr_mcu_0",
+                "name": "Device_106"
+        },
+        {
+                "protected_inst": "j7_efuse_ctrl_wrap_mcu_0",
+                "name": "Device_107"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_mcu_0",
+                "name": "Device_108"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_mcu_pulsar_0",
+                "name": "Device_109"
+        },
+        {
+                "protected_inst": "cpsw_2guss_mcu_0",
+                "name": "Device_110"
+        },
+        {
+                "protected_inst": "j7_mcu_cbass_mcu_0",
+                "name": "Device_111"
+        },
+        {
+                "protected_inst": "j7_mcu_dbg_cbass_mcu_0",
+                "name": "Device_112"
+        },
+        {
+                "protected_inst": "j7_mcu_fw_cbass_mcu_0",
+                "name": "Device_113"
+        },
+        {
+                "protected_inst": "j7_mcuclk8_ecc_aggr_mcu_0",
+                "name": "Device_114"
+        },
+        {
+                "protected_inst": "j7_mcu_vbusm_safety_gasket_mcu2main_0",
+                "name": "Device_115"
+        },
+        {
+                "protected_inst": "vdc_infra_safeg_vbusp_32b_ref_mcu2main_infra",
+                "name": "Device_116"
+        },
+        {
+                "protected_inst": "vdc_soc_fw_safeg_vbusp_32b_ref_fwmcu2main",
+                "name": "Device_117"
+        },
+        {
+                "protected_inst": "DOMAIN_ISOLATION_MCU",
+                "name": "Device_118"
+        },
+        {
+                "protected_inst": "ehrpwm_main_0",
+                "name": "Device_119"
+        },
+        {
+                "protected_inst": "ehrpwm_main_1",
+                "name": "Device_120"
+        },
+        {
+                "protected_inst": "ehrpwm_main_2",
+                "name": "Device_121"
+        },
+        {
+                "protected_inst": "ehrpwm_main_3",
+                "name": "Device_122"
+        },
+        {
+                "protected_inst": "ehrpwm_main_4",
+                "name": "Device_123"
+        },
+        {
+                "protected_inst": "ehrpwm_main_5",
+                "name": "Device_124"
+        },
+        {
+                "protected_inst": "eqep_main_0",
+                "name": "Device_125"
+        },
+        {
+                "protected_inst": "eqep_main_1",
+                "name": "Device_126"
+        },
+        {
+                "protected_inst": "eqep_main_2",
+                "name": "Device_127"
+        },
+        {
+                "protected_inst": "ecap_main_0",
+                "name": "Device_128"
+        },
+        {
+                "protected_inst": "ecap_main_1",
+                "name": "Device_129"
+        },
+        {
+                "protected_inst": "ecap_main_2",
+                "name": "Device_130"
+        },
+        {
+                "protected_inst": "mshsi2c_main_0",
+                "name": "Device_131"
+        },
+        {
+                "protected_inst": "mshsi2c_main_1",
+                "name": "Device_132"
+        },
+        {
+                "protected_inst": "mshsi2c_main_2",
+                "name": "Device_133"
+        },
+        {
+                "protected_inst": "mshsi2c_main_3",
+                "name": "Device_134"
+        },
+        {
+                "protected_inst": "mshsi2c_main_4",
+                "name": "Device_135"
+        },
+        {
+                "protected_inst": "mshsi2c_main_5",
+                "name": "Device_136"
+        },
+        {
+                "protected_inst": "mshsi2c_main_6",
+                "name": "Device_137"
+        },
+        {
+                "protected_inst": "atl_main_0",
+                "name": "Device_138"
+        },
+        {
+                "protected_inst": "i3c_main_0",
+                "name": "Device_139"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_a72_0",
+                "name": "Device_140"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_a72_1",
+                "name": "Device_141"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_r5_0",
+                "name": "Device_142"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_r5_1",
+                "name": "Device_143"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_r5_2",
+                "name": "Device_144"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_r5_3",
+                "name": "Device_145"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_c7_0",
+                "name": "Device_146"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_c66_0",
+                "name": "Device_147"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_c66_1",
+                "name": "Device_148"
+        },
+        {
+                "protected_inst": "rti_cfg1_main_gpu",
+                "name": "Device_149"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_0",
+                "name": "Device_150"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_1",
+                "name": "Device_151"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_2",
+                "name": "Device_152"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_3",
+                "name": "Device_153"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_4",
+                "name": "Device_154"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_5",
+                "name": "Device_155"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_6",
+                "name": "Device_156"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_7",
+                "name": "Device_157"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_8",
+                "name": "Device_158"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_9",
+                "name": "Device_159"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_10",
+                "name": "Device_160"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_11",
+                "name": "Device_161"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_12",
+                "name": "Device_162"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_13",
+                "name": "Device_163"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_14",
+                "name": "Device_164"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_15",
+                "name": "Device_165"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_16",
+                "name": "Device_166"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_17",
+                "name": "Device_167"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_18",
+                "name": "Device_168"
+        },
+        {
+                "protected_inst": "dmtimer_dmc1ms_main_19",
+                "name": "Device_169"
+        },
+        {
+                "protected_inst": "spi_main_0",
+                "name": "Device_170"
+        },
+        {
+                "protected_inst": "spi_main_1",
+                "name": "Device_171"
+        },
+        {
+                "protected_inst": "spi_main_2",
+                "name": "Device_172"
+        },
+        {
+                "protected_inst": "spi_main_3",
+                "name": "Device_173"
+        },
+        {
+                "protected_inst": "spi_main_4",
+                "name": "Device_174"
+        },
+        {
+                "protected_inst": "spi_main_5",
+                "name": "Device_175"
+        },
+        {
+                "protected_inst": "spi_main_6",
+                "name": "Device_176"
+        },
+        {
+                "protected_inst": "spi_main_7",
+                "name": "Device_177"
+        },
+        {
+                "protected_inst": "usart_main_0",
+                "name": "Device_178"
+        },
+        {
+                "protected_inst": "usart_main_1",
+                "name": "Device_179"
+        },
+        {
+                "protected_inst": "usart_main_2",
+                "name": "Device_180"
+        },
+        {
+                "protected_inst": "usart_main_3",
+                "name": "Device_181"
+        },
+        {
+                "protected_inst": "usart_main_4",
+                "name": "Device_182"
+        },
+        {
+                "protected_inst": "usart_main_5",
+                "name": "Device_183"
+        },
+        {
+                "protected_inst": "usart_main_6",
+                "name": "Device_184"
+        },
+        {
+                "protected_inst": "usart_main_7",
+                "name": "Device_185"
+        },
+        {
+                "protected_inst": "usart_main_8",
+                "name": "Device_186"
+        },
+        {
+                "protected_inst": "usart_main_9",
+                "name": "Device_187"
+        },
+        {
+                "protected_inst": "mcanss_main_0",
+                "name": "Device_188"
+        },
+        {
+                "protected_inst": "mcanss_main_1",
+                "name": "Device_189"
+        },
+        {
+                "protected_inst": "mcanss_main_2",
+                "name": "Device_190"
+        },
+        {
+                "protected_inst": "mcanss_main_3",
+                "name": "Device_191"
+        },
+        {
+                "protected_inst": "mcanss_main_4",
+                "name": "Device_192"
+        },
+        {
+                "protected_inst": "mcanss_main_5",
+                "name": "Device_193"
+        },
+        {
+                "protected_inst": "mcanss_main_6",
+                "name": "Device_194"
+        },
+        {
+                "protected_inst": "mcanss_main_7",
+                "name": "Device_195"
+        },
+        {
+                "protected_inst": "mcanss_main_8",
+                "name": "Device_196"
+        },
+        {
+                "protected_inst": "mcanss_main_9",
+                "name": "Device_197"
+        },
+        {
+                "protected_inst": "mcanss_main_10",
+                "name": "Device_198"
+        },
+        {
+                "protected_inst": "mcanss_main_11",
+                "name": "Device_199"
+        },
+        {
+                "protected_inst": "mcanss_main_12",
+                "name": "Device_200"
+        },
+        {
+                "protected_inst": "mcanss_main_13",
+                "name": "Device_201"
+        },
+        {
+                "protected_inst": "pdma_j7_main_mcan_main_0",
+                "name": "Device_202"
+        },
+        {
+                "protected_inst": "pdma_j7_main_misc_psilss_main_0",
+                "name": "Device_203"
+        },
+        {
+                "protected_inst": "pdma_j7_main_usart_psilss_main_0",
+                "name": "Device_204"
+        },
+        {
+                "protected_inst": "j7_ipphy_cbass_main_0",
+                "name": "Device_205"
+        },
+        {
+                "protected_inst": "k3_c66_corepac_main_0",
+                "name": "Device_206"
+        },
+        {
+                "protected_inst": "k3_c66_corepac_main_1",
+                "name": "Device_207"
+        },
+        {
+                "protected_inst": "msram16kx256e_main_0",
+                "name": "Device_208"
+        },
+        {
+                "protected_inst": "gpmc_main_0",
+                "name": "Device_209"
+        },
+        {
+                "protected_inst": "DOMAIN_ISOLATION_MAIN",
+                "name": "Device_210"
+        },
+        {
+                "protected_inst": "pulsar_sl_main_0",
+                "name": "Device_211"
+        },
+        {
+                "protected_inst": "pulsar_sl_main_1",
+                "name": "Device_212"
+        },
+        {
+                "protected_inst": "emmcsd4ss_main_0",
+                "name": "Device_213"
+        },
+        {
+                "protected_inst": "emmcsd4ss_main_1",
+                "name": "Device_214"
+        },
+        {
+                "protected_inst": "elm_main_0",
+                "name": "Device_215"
+        },
+        {
+                "protected_inst": "icss_g_16ffc_main_0",
+                "name": "Device_216"
+        },
+        {
+                "protected_inst": "icss_g_16ffc_main_1",
+                "name": "Device_217"
+        },
+        {
+                "protected_inst": "cpsw_9xuss_main_0",
+                "name": "Device_218"
+        },
+        {
+                "protected_inst": "sa2_ul_main_0",
+                "name": "Device_219"
+        },
+        {
+                "protected_inst": "vpfe_main_0",
+                "name": "Device_220"
+        },
+        {
+                "protected_inst": "navss512l_main_0",
+                "name": "Device_221"
+        },
+        {
+                "protected_inst": "compute_cluster_j7es_tb_vdc_main_0",
+                "name": "Device_222"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rcnavss_11",
+                "name": "Device_223"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rc_4",
+                "name": "Device_224"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rc_r5_0_0",
+                "name": "Device_225"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rc_r5_1_1",
+                "name": "Device_226"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rc_r5_2_2",
+                "name": "Device_227"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rc_r5_3_3",
+                "name": "Device_228"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_rcnavss_10",
+                "name": "Device_229"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_main_rc_navss",
+                "name": "Device_230"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_main_rc_pulsar_0",
+                "name": "Device_231"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_main_rc_pulsar_1",
+                "name": "Device_232"
+        },
+        {
+                "protected_inst": "j7_rc_cbass_main_0",
+                "name": "Device_233"
+        },
+        {
+                "protected_inst": "j7_rc_cfg_cbass_main_0",
+                "name": "Device_234"
+        },
+        {
+                "protected_inst": "csi_rx_if_main_0",
+                "name": "Device_235"
+        },
+        {
+                "protected_inst": "csi_rx_if_main_1",
+                "name": "Device_236"
+        },
+        {
+                "protected_inst": "K3_DPHY_RX_main_0",
+                "name": "Device_237"
+        },
+        {
+                "protected_inst": "K3_DPHY_RX_main_1",
+                "name": "Device_238"
+        },
+        {
+                "protected_inst": "csi_tx_if_main_0",
+                "name": "Device_239"
+        },
+        {
+                "protected_inst": "wiz16b8m4cdt_main_0",
+                "name": "Device_240"
+        },
+        {
+                "protected_inst": "csi_psilss_main_0",
+                "name": "Device_241"
+        },
+        {
+                "protected_inst": "j7_csi_cbass_main_0",
+                "name": "Device_242"
+        },
+        {
+                "protected_inst": "cxstm500ss_main_0",
+                "name": "Device_243"
+        },
+        {
+                "protected_inst": "debugss_k3_wrap_cv0_main_0",
+                "name": "Device_244"
+        },
+        {
+                "protected_inst": "j7_main_debug_cell_main_0",
+                "name": "Device_245"
+        },
+        {
+                "protected_inst": "j7_cc_debug_cell_main_0",
+                "name": "Device_246"
+        },
+        {
+                "protected_inst": "j7_main_debug_cell_main_1",
+                "name": "Device_247"
+        },
+        {
+                "protected_inst": "j7_c66_debug_cell_main_0",
+                "name": "Device_248"
+        },
+        {
+                "protected_inst": "j7_c66_debug_cell_main_1",
+                "name": "Device_249"
+        },
+        {
+                "protected_inst": "pdma_j7_main_debug_psilss_main_0",
+                "name": "Device_250"
+        },
+        {
+                "protected_inst": "j7_main_dbg_cbass_main_0",
+                "name": "Device_251"
+        },
+        {
+                "protected_inst": "j7_debug_cbass_main_0",
+                "name": "Device_252"
+        },
+        {
+                "protected_inst": "mcasp_main_3",
+                "name": "Device_253"
+        },
+        {
+                "protected_inst": "mcasp_main_4",
+                "name": "Device_254"
+        },
+        {
+                "protected_inst": "mcasp_main_5",
+                "name": "Device_255"
+        },
+        {
+                "protected_inst": "mcasp_main_6",
+                "name": "Device_256"
+        },
+        {
+                "protected_inst": "mcasp_main_7",
+                "name": "Device_257"
+        },
+        {
+                "protected_inst": "mcasp_main_8",
+                "name": "Device_258"
+        },
+        {
+                "protected_inst": "mcasp_main_9",
+                "name": "Device_259"
+        },
+        {
+                "protected_inst": "mcasp_main_10",
+                "name": "Device_260"
+        },
+        {
+                "protected_inst": "mcasp_main_11",
+                "name": "Device_261"
+        },
+        {
+                "protected_inst": "j7_mcasp_g1_cbass_main_0",
+                "name": "Device_262"
+        },
+        {
+                "protected_inst": "pcie_g4x2_main_0",
+                "name": "Device_263"
+        },
+        {
+                "protected_inst": "pcie_g4x2_main_1",
+                "name": "Device_264"
+        },
+        {
+                "protected_inst": "pcie_g4x2_main_2",
+                "name": "Device_265"
+        },
+        {
+                "protected_inst": "pcie_g4x2_main_3",
+                "name": "Device_266"
+        },
+        {
+                "protected_inst": "usb3p0ss_16ffc_main_0",
+                "name": "Device_267"
+        },
+        {
+                "protected_inst": "usb3p0ss_16ffc_main_1",
+                "name": "Device_268"
+        },
+        {
+                "protected_inst": "emmc8ss_16ffc_main_0",
+                "name": "Device_269"
+        },
+        {
+                "protected_inst": "mlbss2p0_main_0",
+                "name": "Device_270"
+        },
+        {
+                "protected_inst": "ufshci2p1ss_16ffc_main_0",
+                "name": "Device_271"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_hc_5",
+                "name": "Device_272"
+        },
+        {
+                "protected_inst": "wiz16b4m4cs_main_0",
+                "name": "Device_273"
+        },
+        {
+                "protected_inst": "wiz16b4m4cs_main_1",
+                "name": "Device_274"
+        },
+        {
+                "protected_inst": "wiz16b4m4cs_main_2",
+                "name": "Device_275"
+        },
+        {
+                "protected_inst": "wiz16b4m4cs_main_3",
+                "name": "Device_276"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_main_hc_0",
+                "name": "Device_277"
+        },
+        {
+                "protected_inst": "j7_hc2_cbass_main_0",
+                "name": "Device_278"
+        },
+        {
+                "protected_inst": "j7_hc_cbass_main_0",
+                "name": "Device_279"
+        },
+        {
+                "protected_inst": "j7_hc_cfg_cbass_main_0",
+                "name": "Device_280"
+        },
+        {
+                "protected_inst": "mcasp_main_0",
+                "name": "Device_281"
+        },
+        {
+                "protected_inst": "mcasp_main_1",
+                "name": "Device_282"
+        },
+        {
+                "protected_inst": "mcasp_main_2",
+                "name": "Device_283"
+        },
+        {
+                "protected_inst": "pdma_j7_main_aasrc_psilss_main_0",
+                "name": "Device_284"
+        },
+        {
+                "protected_inst": "j7_mcasp_g0_cbass_main_0",
+                "name": "Device_285"
+        },
+        {
+                "protected_inst": "k3_aasrc_main_0",
+                "name": "Device_286"
+        },
+        {
+                "protected_inst": "j7_aasrc_cbass_main_0",
+                "name": "Device_287"
+        },
+        {
+                "protected_inst": "k3_d5520mp2_main_0",
+                "name": "Device_288"
+        },
+        {
+                "protected_inst": "k3_vxe384mp2_main_0",
+                "name": "Device_289"
+        },
+        {
+                "protected_inst": "k3_dss_main_0",
+                "name": "Device_290"
+        },
+        {
+                "protected_inst": "k3_dss_dsi_main_0",
+                "name": "Device_291"
+        },
+        {
+                "protected_inst": "k3_dss_edp_main_0",
+                "name": "Device_292"
+        },
+        {
+                "protected_inst": "wiz16b8m4ct_main_0",
+                "name": "Device_293"
+        },
+        {
+                "protected_inst": "j7_lascar_gpu_wrap_main_0",
+                "name": "Device_294"
+        },
+        {
+                "protected_inst": "k3_pbist_4c28p_wrap_main_ac_decoder",
+                "name": "Device_295"
+        },
+        {
+                "protected_inst": "k3_pbist_4c28p_wrap_main_ac_dmpac",
+                "name": "Device_296"
+        },
+        {
+                "protected_inst": "k3_pbist_8c28p_wrap_main_ac_edpdsi",
+                "name": "Device_297"
+        },
+        {
+                "protected_inst": "k3_pbist_4c28p_wrap_main_ac_encoder",
+                "name": "Device_298"
+        },
+        {
+                "protected_inst": "k3_pbist_4c28p_wrap_main_ac_vpac",
+                "name": "Device_299"
+        },
+        {
+                "protected_inst": "j7_mainclk2_ecc_aggr_main_ac_6",
+                "name": "Device_300"
+        },
+        {
+                "protected_inst": "j7_ac_cbass_main_0",
+                "name": "Device_301"
+        },
+        {
+                "protected_inst": "j7_ac_cfg_cbass_main_0",
+                "name": "Device_302"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_ringacc_0",
+                "name": "Device_303"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_intaggr_2",
+                "name": "Device_304"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_udmap_0",
+                "name": "Device_305"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdw_ecc_aggr_1",
+                "name": "Device_306"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_psilcfg_0",
+                "name": "Device_307"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_psilss_0",
+                "name": "Device_308"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_virtid_0",
+                "name": "Device_309"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_virtid_1",
+                "name": "Device_310"
+        },
+        {
+                "protected_inst": "navss512l_main_0_cpts_0",
+                "name": "Device_311"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksipc_spinlock_0",
+                "name": "Device_312"
+        },
+        {
+                "protected_inst": "navss512l_main_0_timer_mgr_0",
+                "name": "Device_313"
+        },
+        {
+                "protected_inst": "navss512l_main_0_timer_mgr_1",
+                "name": "Device_314"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_intaggr_0",
+                "name": "Device_315"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_intaggr_1",
+                "name": "Device_316"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_proxy_0",
+                "name": "Device_317"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_sec_proxy_0",
+                "name": "Device_318"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdw_ecc_aggr_0",
+                "name": "Device_319"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksintr_router_0",
+                "name": "Device_320"
+        },
+        {
+                "protected_inst": "navss512l_main_0_mcrc64_0",
+                "name": "Device_321"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksbus_pat_0",
+                "name": "Device_322"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksbus_pat_1",
+                "name": "Device_323"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksbus_pat_2",
+                "name": "Device_324"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksbus_pat_3",
+                "name": "Device_325"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksbus_pat_4",
+                "name": "Device_326"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_pvu_0",
+                "name": "Device_327"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_pvu_1",
+                "name": "Device_328"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdma_pvu_2",
+                "name": "Device_329"
+        },
+        {
+                "protected_inst": "navss512l_main_0_tcu_0",
+                "name": "Device_330"
+        },
+        {
+                "protected_inst": "navss512l_main_0_ksdw_ecc_aggr_3",
+                "name": "Device_331"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0",
+                "name": "Device_332"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_cp_intd_0",
+                "name": "Device_333"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_hts_0",
+                "name": "Device_334"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_ctset2_0",
+                "name": "Device_335"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_foco_0",
+                "name": "Device_336"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_foco_1",
+                "name": "Device_337"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_dof_0",
+                "name": "Device_338"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_sde_0",
+                "name": "Device_339"
+        },
+        {
+                "protected_inst": "dmpac_top_main_0_dru_0",
+                "name": "Device_340"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_ksdw_ecc_aggr_0",
+                "name": "Device_341"
+        },
+        {
+                "protected_inst": "vpac_top_main_0",
+                "name": "Device_342"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_cp_intd_0",
+                "name": "Device_343"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_hts_0",
+                "name": "Device_344"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_ctset2_0",
+                "name": "Device_345"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_vpac_viss_0",
+                "name": "Device_346"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_vpac_ldc_0",
+                "name": "Device_347"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_vpac_msc_0",
+                "name": "Device_348"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_vpac_nf_0",
+                "name": "Device_349"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_utc_0",
+                "name": "Device_350"
+        },
+        {
+                "protected_inst": "vpac_top_main_0_utc_1",
+                "name": "Device_351"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_proxy_0",
+                "name": "Device_352"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_sec_proxy_0",
+                "name": "Device_353"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_ringacc_0",
+                "name": "Device_354"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_intaggr_0",
+                "name": "Device_355"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_udmap_0",
+                "name": "Device_356"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdw_ecc_aggr_0",
+                "name": "Device_357"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_psilcfg_0",
+                "name": "Device_358"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdma_psilss_0",
+                "name": "Device_359"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksdw_ecc_aggr_1",
+                "name": "Device_360"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_ksintr_router_0",
+                "name": "Device_361"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0_mcrc64_0",
+                "name": "Device_362"
+        },
+        {
+                "protected_inst": "navss_mcu_j7_mcu_0",
+                "name": "Device_363"
+        }
+]

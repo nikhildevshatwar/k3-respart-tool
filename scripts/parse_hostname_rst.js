@@ -10,6 +10,11 @@ const args = require('yargs')
                         describe : "Soc name",
                         demandOption : true,
                         type : "string"
+                },
+                "firewall" : {
+                        describe : "Path to firewall.rst file",
+                        demandOption : true,
+                        type : "string"
                 }
         })
         .help()
@@ -63,6 +68,51 @@ function createHostArray(path){
 }
 
 
+function addPrivIds(hostArray,path){
+
+	var fs = require("fs");
+	var textByLine = fs.readFileSync(path)
+        .toString().split("\n");
+        
+        var temp = [] , privTable = 0;
+
+        textByLine.forEach((line) => {
+                if(privTable){
+                        temp.push(line);
+                }
+                else{
+                        if(line.trim() === "List of priv-ids")
+                                privTable = 1;
+                }
+        })
+
+        textByLine = temp;
+
+        textByLine.forEach((line) => {
+                if(line[0] === "|"){
+                        var newText = line.split('|');
+                        var privId = parseInt(newText[2],10);
+                        if(privId){
+                                var hostsId = newText[7];
+                                var t = hostsId.split(",").map((id) => {
+                                        return parseInt(id,10);
+                                })
+                                hostsId = t;
+                                hostsId.forEach((id) => {
+                                        hostArray.forEach((h) => {
+                                                if(h.hostId === id){
+                                                        h.privId = privId;
+                                                }
+                                        })
+                                })
+                        }
+                }
+        })
+
+        return hostArray;
+}
+
+
 function createOutputFile(hosts,soc){
 
         var fs = require('fs');
@@ -81,5 +131,7 @@ function createOutputFile(hosts,soc){
 }
 
 var hostArray = createHostArray(args.doc);
+
+hostArray = addPrivIds(hostArray,args.firewall);
 
 createOutputFile(hostArray,args.soc);
