@@ -1,0 +1,98 @@
+[
+	{
+		"Description": "Device Management and Security Control",
+		"Security": "Secure",
+		"hostId": 0,
+		"hostName": "DMSC"
+	},
+	{
+		"Description": "Cortex R5_0 context 0 on Main island(BOOT)",
+		"Security": "Secure",
+		"hostId": 35,
+		"hostName": "MAIN_0_R5_0"
+	},
+	{
+		"Description": "Cortex R5_0 context 1 on Main island",
+		"Security": "Non Secure",
+		"hostId": 36,
+		"hostName": "MAIN_0_R5_1"
+	},
+	{
+		"Description": "Cortex R5_0 context 2 on Main island",
+		"Security": "Secure",
+		"hostId": 37,
+		"hostName": "MAIN_0_R5_2"
+	},
+	{
+		"Description": "Cortex R5_0 context 3 on Main island",
+		"Security": "Non Secure",
+		"hostId": 38,
+		"hostName": "MAIN_0_R5_3"
+	},
+	{
+		"Description": "Cortex a53 context 0 on Main islana - ATF",
+		"Security": "Secure",
+		"hostId": 10,
+		"hostName": "A53_0",
+		"privId": 1
+	},
+	{
+		"Description": "Cortex A72 context 1 on Main island - EL2/Hyp",
+		"Security": "Non Secure",
+		"hostId": 11,
+		"hostName": "A53_1",
+		"privId": 1
+	},
+	{
+		"Description": "Cortex A53 context 2 on Main island - VM/OS1",
+		"Security": "Non Secure",
+		"hostId": 12,
+		"hostName": "A53_2",
+		"privId": 1
+	},
+	{
+		"Description": "Cortex A53 context 3 on Main island - VM2/OS2",
+		"Security": "Non Secure",
+		"hostId": 13,
+		"hostName": "A53_3",
+		"privId": 1
+	},
+	{
+		"Description": "M4",
+		"Security": "Non Secure",
+		"hostId": 30,
+		"hostName": "M4_0",
+		"privId": 184
+	},
+	{
+		"Description": "Cortex R5_1 context 0 on Main island",
+		"Security": "Secure",
+		"hostId": 40,
+		"hostName": "MAIN_1_R5_0"
+	},
+	{
+		"Description": "Cortex R5_1 context 1 on Main island",
+		"Security": "Non Secure",
+		"hostId": 41,
+		"hostName": "MAIN_1_R5_1"
+	},
+	{
+		"Description": "Cortex R5_1 context 2 on Main island",
+		"Security": "Secure",
+		"hostId": 42,
+		"hostName": "MAIN_1_R5_2"
+	},
+	{
+		"Description": "Cortex R5_1 context 3 on Main island",
+		"Security": "Non Secure",
+		"hostId": 43,
+		"hostName": "MAIN_1_R5_3"
+	},
+	{
+		"Description": "ICSSG context 0 on Main island",
+		"Security": "Non Secure",
+		"hostId": 50,
+		"hostName": "ICSSG_0",
+		"privId": 136
+	}
+]
