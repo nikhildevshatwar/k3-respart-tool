@@ -16,5 +16,11 @@
                 "shortName" : "am65x",
                 "sciClientSocVersion" : "V0",
                 "sciClientPrefixReplacement" : "TISCI_"
+        },
+        {
+                "soc" : "AM437x",
+                "shortName" : "am64x",
+                "sciClientSocVersion" : "V3",
+                "sciClientPrefixReplacement" : "TISCI_"
         }
 ]
