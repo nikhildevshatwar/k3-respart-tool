@@ -1365,47 +1365,47 @@
         },
         {
                 "protected_inst": "vpac_top_main_0_ksdw_ecc_aggr_0",
-                "name": "Device_341"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0",
-                "name": "Device_342"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_cp_intd_0",
-                "name": "Device_343"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_hts_0",
-                "name": "Device_344"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_ctset2_0",
-                "name": "Device_345"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_vpac_viss_0",
-                "name": "Device_346"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_vpac_ldc_0",
-                "name": "Device_347"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_vpac_msc_0",
-                "name": "Device_348"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_vpac_nf_0",
-                "name": "Device_349"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_utc_0",
-                "name": "Device_350"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "vpac_top_main_0_utc_1",
-                "name": "Device_351"
+                "name": "VPAC"
         },
         {
                 "protected_inst": "navss_mcu_j7_mcu_0_ksdma_proxy_0",

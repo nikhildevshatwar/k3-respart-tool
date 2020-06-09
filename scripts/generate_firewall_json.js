@@ -21,6 +21,16 @@ const args = require('yargs')
         .alias('help', 'h')
         .argv;
 
+function getInHexa(val){
+        var hex = val.toString(16).toUpperCase();
+
+        var prefix = "0x";
+        for(var idx = 0 ; idx < (12 - hex.length); idx++){
+                prefix += "0";
+        }
+
+        return prefix + hex;
+}
 
 var fs = require('fs');
 
@@ -30,6 +40,12 @@ var names = fs.readFileSync(args.dname).toString();
 
 names = JSON.parse(names); 
 firewall = JSON.parse(firewall);
+
+var deviceNames = [];
+
+names.forEach( n => {
+        deviceNames.push(n.name);
+})
 
 var namesMap = new Map();
 
@@ -43,8 +59,8 @@ firewall.forEach(item => {
         var end = parseInt(item.protected_regions[0].end_address,16);
 
         item.protected_regions.forEach(r => {
-                start = Math.min(start,r.start_address);
-                end = Math.max(end,r.end_address);
+                start = Math.min(start,parseInt(r.start_address,16));
+                end = Math.max(end,parseInt(r.end_address,16));
         })
 
         finalData.push({
@@ -52,10 +68,43 @@ firewall.forEach(item => {
                 num_regions: item.num_regions,
                 protected_inst: item.protected_inst,
                 name: namesMap[item.protected_inst],
-                start_address: start.toString(16),
-                end_address: end.toString(16)
+                start_address: start,
+                end_address: end
         })
 })
+
+
+var temp = [];
+
+deviceNames.forEach( n => {
+        var interface = [];
+        finalData.forEach( f => {
+                if(n === f.name){
+                        interface.push(f);
+                }
+        })
+        var start = interface[0].start_address;
+        var end = interface[0].end_address;
+        var ids = [];
+
+        interface.forEach( i => {
+                start = Math.min(start,i.start_address);
+                end = Math.max(end,i.end_address);
+                ids.push(i.id);
+        })
+        temp.push({
+                ids: ids,
+                //num_regions: item.num_regions,
+                //protected_inst: item.protected_inst,
+                name: n,
+                start_address: getInHexa(start),
+                end_address: getInHexa(end)
+        })
+})
+
+finalData = temp;
+
+
 
 function createOutputFile(data,soc){
 

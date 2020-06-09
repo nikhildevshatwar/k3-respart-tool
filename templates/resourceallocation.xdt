@@ -18,6 +18,9 @@ if (system.modules["/modules/sysfwResPart"]) {
                 pipes += "--- | ";
         }
 }
+hosts += "HOST_ID_ALL";
+hosts += " | ";
+pipes += "--- | "
 table += hosts + "\n";
 table += pipes + "\n";
 
@@ -44,6 +47,9 @@ _.each(resources, (resource) => {
                                 cell += " | ";
                                 line += cell;
                         }
+                }
+                if(perHost["HOST_ID_ALL"]){
+                        line += "S = " + perHost["HOST_ID_ALL"][0].start + ", " + "C = " + perHost["HOST_ID_ALL"][0].count + " | ";
                 }
                 table += line;
                 table += "\n";

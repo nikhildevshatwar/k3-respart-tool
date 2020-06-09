@@ -123,6 +123,12 @@ function resourceAllocate(utype) {
                                         startValue += inst[name + "_count"];
                                         total += inst[name + "_count"];
                                 }
+                                eachResource.push({
+                                        utype: utype,
+                                        hostName: "HOST_ID_ALL",
+                                        start: startValue,
+                                        count: resources[utype].resRange[0].resCount - total
+                                })
                         }
                         over.push(Math.max(0, total - resources[utype].resRange[0].resCount));
                 }

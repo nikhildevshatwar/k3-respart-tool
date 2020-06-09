@@ -54,8 +54,13 @@ exports = {
 			default: true,
 		},
 		{
-			name: "ns_user_ex",
-			displayName: "Non Secure User Execute",
+			name: "ns_user_cache",
+			displayName: "Non Secure User Cacheable",
+			default: true,
+		},
+		{
+			name: "ns_user_deb",
+			displayName: "Non Secure User Debug",
 			default: true,
 		},
 		{
@@ -69,8 +74,13 @@ exports = {
 			default: true,
 		},
 		{
-			name: "ns_supervisor_ex",
-			displayName: "Non Secure Supervisor Execute",
+			name: "ns_supervisor_cache",
+			displayName: "Non Secure Supervisor Cacheable",
+			default: true,
+		},
+		{
+			name: "ns_supervisor_debug",
+			displayName: "Non Secure Supervisor Debug",
 			default: true,
 		},
 		{
@@ -84,8 +94,13 @@ exports = {
 			default: true,
 		},
 		{
-			name: "s_user_ex",
-			displayName: "Secure User Execute",
+			name: "s_user_cache",
+			displayName: "Secure User Cacheable",
+			default: true,
+		},
+		{
+			name: "s_user_debug",
+			displayName: "Secure User Debug",
 			default: true,
 		},
 		{
@@ -99,9 +114,26 @@ exports = {
 			default: true,
 		},
 		{
-			name: "s_supervisor_ex",
-			displayName: "Secure Supervisor Execute",
+			name: "s_supervisor_cache",
+			displayName: "Secure Supervisor Cacheable",
 			default: true,
+		},
+		{
+			name: "s_supervisor_debug",
+			displayName: "Secure Supervisor Debug",
+			default: true,
+		},
+	],
+	validate: (inst,report) => {
+		var privHosts = "";
+		_.each(hosts,(h) => {
+			if(h.privId === inst.privid){
+				privHosts += h.hostName;
+				privHosts += ", ";
+			}
+		})
+		if(privHosts.length){
+			report.logInfo("INFO : " + privHosts + "have same Priv Id",inst,"privid");
 		}
-	]
+	}
 }

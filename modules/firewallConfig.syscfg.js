@@ -2,13 +2,12 @@ const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 const socName = devData[deviceSelected].shortName;
 
-var devices = system.getScript("/data/" + socName + "/Firewall.json");
+var devices = _.keyBy(system.getScript("/data/" + socName + "/Firewall.json"),(d) => d.name);
 
 var uniqDevices = _.map(devices,(d) => {
 	return d.name; 
 })
 
-var uniqDevices = _.uniq(uniqDevices);
 
 var devOpt = _.map(uniqDevices,(d) => {
 	return {
@@ -17,9 +16,6 @@ var devOpt = _.map(uniqDevices,(d) => {
 	}
 })
 
-var deviceGroup = _.groupBy(devices,(d) => {
-	return d.name;
-});
 
 var start = "0" , end = "0"; 
 
@@ -38,42 +34,9 @@ exports = {
 			],
 			default: "unknown",
 			onChange: (inst,ui) => {
-				inst.firewalls = "";
-				start = "0", end = "0";
+				start = devices[inst.device].start_address, end = devices[inst.device].end_address;
 			}
-		},
-		{
-			name: "firewalls",
-			displayName: "Firewalls for the device",
-			options: (inst) => {
-
-				var firewallopt = [];
-
-				if(inst.device !== "unknown"){
-					var group = deviceGroup[inst.device]; 
-					_.each(group ,(g) => {
-						firewallopt.push({
-							name : g.id.toString(),
-							displayName : g.id.toString()
-						})
-					})
-				}
-
-				return firewallopt;
-			},
-			default: "none",
-			onChange: (inst,ui) => {
-				if(inst.firewalls !== "none"){
-					var group = deviceGroup[inst.device]; 
-					_.each(group ,(g) => {
-						if(inst.firewalls === g.id.toString()){
-							start = g.start_address
-							end = g.end_address
-						}
-					})
-				}
-			}
-		},
+		}
 	],
 	moduleInstances: (inst) => {
 		return [{
@@ -81,13 +44,19 @@ exports = {
 			displayName: "Firewall Regions",
 			moduleName: "/modules/firewallRegion",
 			minInstanceCount: 1,
-			maxInstanceCount: 5,
+			maxInstanceCount: 1,
 			useArray: true,
 			collapsed: false,
 			args: {
-				addrStart : start,
-				addrEnd : end
+				regionAlloc: false,
+				defaultStart : start,
+				defaultEnd : end
 			}
 		}]
+	},
+	validate: (inst,report) => {
+		if(inst.device === "unknown"){
+			report.logError("Select a Device",inst,"device");
+		}
 	}
 }
