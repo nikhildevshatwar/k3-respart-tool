@@ -54,6 +54,8 @@ for(var idx = 0 ; idx < names.length ; idx++){
 }
 var finalData = [];
 
+var notFoundCount = 0;
+
 firewall.forEach(item => {
         var start = parseInt(item.protected_regions[0].start_address,16);
         var end = parseInt(item.protected_regions[0].end_address,16);
@@ -63,11 +65,21 @@ firewall.forEach(item => {
                 end = Math.max(end,parseInt(r.end_address,16));
         })
 
+        var devName = "";
+
+        if(namesMap[item.protected_inst]){
+                devName = namesMap[item.protected_inst];
+        }
+        else{
+                devName = "AAAAAA" + notFoundCount;
+                notFoundCount++;
+        }
+
         finalData.push({
                 id: item.id,
                 num_regions: item.num_regions,
                 protected_inst: item.protected_inst,
-                name: namesMap[item.protected_inst],
+                name: devName,
                 start_address: start,
                 end_address: end
         })
@@ -81,6 +93,7 @@ deviceNames.forEach( n => {
         finalData.forEach( f => {
                 if(n === f.name){
                         interface.push(f);
+                        f.found = 1;
                 }
         })
         var start = interface[0].start_address;
@@ -100,6 +113,17 @@ deviceNames.forEach( n => {
                 start_address: getInHexa(start),
                 end_address: getInHexa(end)
         })
+})
+
+finalData.forEach( f => {
+        if(!f.found){
+                temp.push({
+                        ids: [f.id],
+                        name: f.name,
+                        start_address: f.start_address,
+                        end_address: f.end_address
+                })
+        }
 })
 
 finalData = temp;

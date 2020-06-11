@@ -134,16 +134,19 @@ function addDependencies(resources){
 
                                 for(parseRes = 0 ; parseRes < resources.length ; parseRes++){
 
-                                        if(resources[parseRes].deviceName ===depResource[res].deviceName &&
-                                                resources[parseRes].subtypeName ===depResource[res].subtypeName ){
+                                        if(resources[parseRes].deviceName === depResource[res].deviceName &&
+                                                resources[parseRes].subtypeName === depResource[res].subtypeName ){
 
                                                         var temp = resources[parseRes];
+                                                        resources[parseRes].found = 1;
                                                         temp.utype = depResource[res].utype;
                                                         temp.groupName = gName;
                                                         if(depResource[res].copyFromUtype){
                                                                 temp.copyFromUtype = depResource[res].copyFromUtype;
                                                         }
-
+                                                        if(depResource[res].blockCopyFrom){
+                                                                temp.blockCopyFrom = depResource[res].blockCopyFrom;
+                                                        }
                                                         if(depResource[res].autoAlloc === false){
                                                                 temp.autoAlloc = depResource[res].autoAlloc;
                                                         }
@@ -159,14 +162,29 @@ function addDependencies(resources){
                                                         if(depResource[res].resRange){
                                                                 temp.resRange = depResource[res].resRange;
                                                         }
-
                                                         newResources.push(temp);
                                                 }
                                 }
                         }
                 }
+                var resourcesNotFound = [];
+                resources.forEach( r => {
+                        if(!r.found){
+                                resourcesNotFound.push(r);
+                        }
+                })
 
+                for(var idx = 0 ; idx < resourcesNotFound.length ; idx++){
+                        resourcesNotFound[idx].utype = "u_type_" + idx;
+                        resourcesNotFound[idx].groupName = "Others";
+
+                        newResources.push(resourcesNotFound[idx]);
+                }
                 resources = newResources;
+
+                resources.forEach( r => {
+                        delete r.found ;
+                })
         }
         else {
                 for( var idx = 0 ; idx < resources.length ; idx++ ){

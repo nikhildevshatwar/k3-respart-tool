@@ -12,7 +12,32 @@ _.each(resources,(resource) => {
         if(resource.copyFromUtype){
                 resources[resource.copyFromUtype].copyToUtype = resource.utype;
         }
+        if(resource.blockCopyFrom){
+                resources[resource.blockCopyFrom].blockCopyTo = resource.utype;
+        }
 })
+
+function getDisplayPrefix(toBeRemoved , removeFrom){
+        
+        var finalPrefix = "" , idx = 0;
+
+        var split1 = _.split(toBeRemoved," ");
+        var split2 = _.split(removeFrom," ");
+
+        for(var i = 0 ; i < split2.length ; i++){
+                if(split1[i] !== split2[i]){
+                        idx = i;
+                        break;
+                }
+        }
+
+        for(var i = idx ; i < split2.length ; i++){
+                finalPrefix += split2[i];
+                finalPrefix += " ";
+        }
+
+        return finalPrefix;
+}
 
 // Create configurables for each resource
 
@@ -41,9 +66,11 @@ _.each(groupNames,(gName) => {
         }
 
         _.each(groupResources,(r) => {
+
+                var displayPrefix = getDisplayPrefix(gName,r.utype);
                 obj.config.push({
                         name : _.join(_.split(r.utype," "),"_") +"_start" ,
-                        displayName : r.utype + " Start",
+                        displayName : displayPrefix + " Start",
 			default : 0,
                         hidden : (r.autoAlloc === false && !r.copyFromUtype ? false : true),
                         onChange: (inst,ui) => {
@@ -58,9 +85,10 @@ _.each(groupNames,(gName) => {
 
                 obj.config.push({
                         name : _.join(_.split(r.utype," "),"_") +"_count",
-			displayName : r.utype + " Count",
+			displayName : displayPrefix + " Count",
                         default : 0,
                         readOnly : (r.copyFromUtype ? true : false),
+                        hidden : (r.copyFromUtype ? true : false),
                         description : (r.copyFromUtype ? "Count of this resource is automatically matched with resource " +
                                 r.copyFromUtype : ""), 
                         onChange: (inst, ui) => {
@@ -80,6 +108,7 @@ _.each(groupNames,(gName) => {
                                 displayName : "========> Block-copy count",
                                 default : 0,
                                 readOnly : (r.copyFromUtype ? true : false),
+                                hidden : (r.blockCopyFrom || r.copyFromUtype ? true : false),
                                 description : (r.copyFromUtype ? "Block Count of this resource is automatically matched with resource " + 
                                                 r.copyFromUtype : ""),
                                 onChange: (inst, ui) => {
@@ -87,6 +116,13 @@ _.each(groupNames,(gName) => {
                                         if(r.copyToUtype){
                                                 
                                                 var name1 = _.join(_.split(r.copyToUtype," "),"_");
+                                                var name2 = _.join(_.split(r.utype," "),"_");
+                                                inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
+                                        }
+
+                                        if(r.blockCopyTo){
+
+                                                var name1 = _.join(_.split(r.blockCopyTo," "),"_");
                                                 var name2 = _.join(_.split(r.utype," "),"_");
                                                 inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
                                         }
@@ -154,8 +190,10 @@ function hideResources(inst,ui){
                         ui[name + "_count"].hidden = true;
                         //ui[name + "_start"].hidden = true;
                 }
-                else{
-                        ui[name + "_count"].hidden = false;
+                else{   
+                        if(!resource.copyFromUtype){
+                                ui[name + "_count"].hidden = false;
+                        }
                         //ui[name + "_start"].hidden = false;
                 }
         })
@@ -280,6 +318,24 @@ exports = {
                         displayName: "Security Level",
                         readOnly: true,
                         default: "Secure",
+                },
+                {
+                        name: "hideDependentResources",
+                        displayName: "Hide Dependent Resources",
+                        default: true,
+                        onChange: (inst,ui) => {
+                                _.each(resources , r => {
+
+                                        var name = _.join(_.split(r.utype," "),"_");
+                                        if(r.copyFromUtype){
+                                                ui[name + "_count"].hidden = inst.hideDependentResources;
+
+                                                if(r.blockCopy){
+                                                        ui[name + "_blockCount"].hidden = inst.hideDependentResources;
+                                                }
+                                        }
+                                })
+                        }
                 },
                 // Host Capabilities
                 {

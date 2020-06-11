@@ -3,24 +3,28 @@
                 "soc" : "J721E_DRA829_TDA4VM_AM752x",
                 "shortName" : "j721e",
                 "sciClientSocVersion" : "V1",
-                "sciClientPrefixReplacement" : "TISCI_"
+                "sciClientPrefixReplacement" : "TISCI_",
+                "wildCardPrivId" : 195
         },
         {
                 "soc" : "AM65xx_SR1.0",
                 "shortName" : "am65x",
                 "sciClientSocVersion" : "V0",
-                "sciClientPrefixReplacement" : "TISCI_"
+                "sciClientPrefixReplacement" : "TISCI_",
+                "wildCardPrivId" : 195
         },
         {
                 "soc" : "AM65xx_SR2.0_beta",
                 "shortName" : "am65x",
                 "sciClientSocVersion" : "V0",
-                "sciClientPrefixReplacement" : "TISCI_"
+                "sciClientPrefixReplacement" : "TISCI_",
+                "wildCardPrivId" : 195
         },
         {
                 "soc" : "AM437x",
                 "shortName" : "am64x",
                 "sciClientSocVersion" : "V3",
-                "sciClientPrefixReplacement" : "TISCI_"
+                "sciClientPrefixReplacement" : "TISCI_",
+                "wildCardPrivId" : 195
         }
 ]

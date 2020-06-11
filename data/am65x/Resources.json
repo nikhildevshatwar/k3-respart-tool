@@ -1,6 +1,7 @@
 [
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "Main NAVSS UDMA High capacity Tx channels",
 		"deviceId": 188,
 		"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
 		"groupName": "Main NAVSS UDMA",
@@ -33,6 +34,7 @@
 	},
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "Main NAVSS UDMA Normal capacity Tx channels",
 		"deviceId": 188,
 		"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
 		"groupName": "Main NAVSS UDMA",
@@ -222,8 +224,8 @@
 		"groupName": "Main NAVSS Ring accelerator",
 		"resRange": [
 			{
-				"resCount": 6,
-				"resStart": 154
+				"resCount": 7,
+				"resStart": 153
 			}
 		],
 		"subtypeId": 5,
@@ -300,22 +302,7 @@
 	},
 	{
 		"blockCopy": true,
-		"deviceId": 194,
-		"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-		"groupName": "MCU NAVSS UDMA",
-		"resRange": [
-			{
-				"resCount": 46,
-				"resStart": 2
-			}
-		],
-		"subtypeId": 10,
-		"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
-		"uniqueId": 12426,
-		"utype": "MCU NAVSS UDMA Normal capacity Rx channels"
-	},
-	{
-		"blockCopy": true,
+		"blockCopyFrom": "MCU NAVSS UDMA High capacity Tx channels",
 		"deviceId": 194,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
 		"groupName": "MCU NAVSS UDMA",
@@ -337,22 +324,6 @@
 		"groupName": "MCU NAVSS UDMA",
 		"resRange": [
 			{
-				"resCount": 46,
-				"resStart": 2
-			}
-		],
-		"subtypeId": 13,
-		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
-		"uniqueId": 12429,
-		"utype": "MCU NAVSS UDMA Normal capacity Tx channels"
-	},
-	{
-		"blockCopy": true,
-		"deviceId": 194,
-		"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-		"groupName": "MCU NAVSS UDMA",
-		"resRange": [
-			{
 				"resCount": 2,
 				"resStart": 0
 			}
@@ -361,6 +332,39 @@
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
 		"uniqueId": 12431,
 		"utype": "MCU NAVSS UDMA High capacity Tx channels"
+	},
+	{
+		"blockCopy": true,
+		"blockCopyFrom": "MCU NAVSS UDMA Normal capacity Tx channels",
+		"deviceId": 194,
+		"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+		"groupName": "MCU NAVSS UDMA",
+		"resRange": [
+			{
+				"resCount": 46,
+				"resStart": 2
+			}
+		],
+		"subtypeId": 10,
+		"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
+		"uniqueId": 12426,
+		"utype": "MCU NAVSS UDMA Normal capacity Rx channels"
+	},
+	{
+		"blockCopy": true,
+		"deviceId": 194,
+		"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+		"groupName": "MCU NAVSS UDMA",
+		"resRange": [
+			{
+				"resCount": 46,
+				"resStart": 2
+			}
+		],
+		"subtypeId": 13,
+		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
+		"uniqueId": 12429,
+		"utype": "MCU NAVSS UDMA Normal capacity Tx channels"
 	},
 	{
 		"deviceId": 194,

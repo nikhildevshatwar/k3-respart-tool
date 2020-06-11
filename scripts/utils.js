@@ -1,5 +1,8 @@
 const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
+const socName = devData[deviceSelected].shortName;
+
+var devices = _.keyBy(system.getScript("/data/" + socName + "/Firewall.json"),(d) => d.name);
 
 
 // Set the bits to 10 if a option is selected else to 01
@@ -122,6 +125,78 @@ function endPoint() {
         return endPoint;
 }
 
+function getPermissionMask(p){
+                
+        var val = 0;
+        var order = ["s_supervisor_wr","s_supervisor_rd","s_supervisor_cache","s_supervisor_debug","s_user_wr"
+        ,"s_user_rd","s_user_cache","s_user_debug","ns_supervisor_wr","ns_supervisor_rd","ns_supervisor_cache"
+        ,"ns_supervisor_debug","ns_user_wr","ns_user_rd","ns_user_cache","ns_user_deb"]
+        
+        for(var idx = 0 ; idx < order.length ; idx++){
+                if(p[order[idx]]){
+                        val |= (p[order[idx]] << idx);
+                }
+        }
+
+        var pid = p.privid;
+        for(var idx = 0; idx < 8 ; idx++){
+                if(pid & (1 << idx)){
+                        val |= (1 << (16 + idx));
+                }
+        }
+        return "0x" + val.toString(16).toUpperCase();
+}
+
+function getControlMask(r){
+        var val = 10;
+        if(r.lock){
+                val |= (1 << 4);
+        }
+
+        if(r.background){
+                val |= (1 << 8);
+        }
+        val |= (1 << 9);
+
+        return "0x" + val.toString(16).toUpperCase();
+}
+
+
+function generateFirewallEntries(){
+        var entries = [];
+        if (system.modules["/modules/firewallConfig"]) {
+                for (let inst of system.modules["/modules/firewallConfig"].$instances) {
+                        var device = devices[inst.device];
+                        var ids = device.ids;
+
+                        _.each(ids,(id) => {
+                                var regions = inst.regions;
+
+                                _.each(regions , (r, idx) => {
+                                        var params = r.perms;
+                                        var premissionArray = [];
+
+                                        _.each(params, (p) => {
+                                                premissionArray.push(getPermissionMask(p));
+                                        }) 
+
+                                        entries.push({
+                                                fwl_id : id,
+                                                start : r.addrStart,
+                                                end : r.addrEnd,
+                                                region : idx,
+                                                permissions : premissionArray,
+                                                n_permission_regs : params.length,
+                                                control : getControlMask(r)
+                                        })
+                                })
+                        })
+                }
+        }
+
+        return entries;
+}
+
 exports = {
         setBit,
         decimalToBinary,
@@ -131,5 +206,6 @@ exports = {
         removePrefix,
         addPrefix,
         getValue,
-        endPoint
+        endPoint,
+        generateFirewallEntries
 }

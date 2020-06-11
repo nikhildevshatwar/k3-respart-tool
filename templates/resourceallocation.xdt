@@ -48,8 +48,8 @@ _.each(resources, (resource) => {
                                 line += cell;
                         }
                 }
-                if(perHost["HOST_ID_ALL"]){
-                        line += "S = " + perHost["HOST_ID_ALL"][0].start + ", " + "C = " + perHost["HOST_ID_ALL"][0].count + " | ";
+                if(perHost["ALL"]){
+                        line += "S = " + perHost["ALL"][0].start + ", " + "C = " + perHost["ALL"][0].count + " | ";
                 }
                 table += line;
                 table += "\n";

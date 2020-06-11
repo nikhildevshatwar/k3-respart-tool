@@ -6,7 +6,8 @@
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_HCHAN",
 				"utype": "Main NAVSS UDMA High capacity Rx channels",
-				"blockCopy": true
+				"blockCopy": true,
+				"blockCopyFrom": "Main NAVSS UDMA High capacity Tx channels"
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
@@ -18,7 +19,8 @@
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
 				"utype": "Main NAVSS UDMA Normal capacity Rx channels",
-				"blockCopy": true
+				"blockCopy": true,
+				"blockCopyFrom": "Main NAVSS UDMA Normal capacity Tx channels"
 			},
 			{
 				"deviceName": "AM6_DEV_NAVSS0_UDMAP0",
@@ -123,26 +125,28 @@
 		"resources" : [
 			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
-				"utype": "MCU NAVSS UDMA Normal capacity Rx channels",
-				"blockCopy": true
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_HCHAN",
 				"utype": "MCU NAVSS UDMA High capacity Rx channels",
-				"blockCopy": true
-			},
-			{
-				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
-				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
-				"utype": "MCU NAVSS UDMA Normal capacity Tx channels",
-				"blockCopy": true
+				"blockCopy": true,
+				"blockCopyFrom": "MCU NAVSS UDMA High capacity Tx channels"
 			},
 			{
 				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_HCHAN",
 				"utype": "MCU NAVSS UDMA High capacity Tx channels",
+				"blockCopy": true
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_RX_CHAN",
+				"utype": "MCU NAVSS UDMA Normal capacity Rx channels",
+				"blockCopy": true,
+				"blockCopyFrom": "MCU NAVSS UDMA Normal capacity Tx channels"
+			},
+			{
+				"deviceName": "AM6_DEV_MCU_NAVSS0_UDMAP0",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_CHAN",
+				"utype": "MCU NAVSS UDMA Normal capacity Tx channels",
 				"blockCopy": true
 			},
 			{

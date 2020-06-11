@@ -74,17 +74,17 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
                 .size = (uint16_t) sizeof(struct tisci_boardcfg_rm_host_cfg),
             },
             .host_cfg_entries = {
-                % if (system.modules["/modules/sysfwResPart"]) {
-				%	for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
-		{
-		   .allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
-		   .allowed_qos   = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
-		   .allowed_orderid = `toHexa(unsignedToBinary(inst.allowedorderid))`,
-		   .allowed_priority = `decimalToHexadecimal(setBit(inst.allowedpriority,8))`,
-		   .allowed_sched_priority = `decimalToHexadecimal(setBit(inst.allowedschedpriority,4))`
-		},
-				%	}
-				% }
+% if (system.modules["/modules/sysfwResPart"]) {
+%	for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+                {
+                    .allowed_atype = `decimalToBinary(setBit(inst.allowedAtype,3))`,
+                    .allowed_qos   = `decimalToHexadecimal(setBit(inst.allowedqos,8))`,
+                    .allowed_orderid = `toHexa(unsignedToBinary(inst.allowedorderid))`,
+                    .allowed_priority = `decimalToHexadecimal(setBit(inst.allowedpriority,8))`,
+                    .allowed_sched_priority = `decimalToHexadecimal(setBit(inst.allowedschedpriority,4))`
+                },
+%	}
+% }
             },
         },
         .resasg = {
@@ -100,12 +100,12 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
 %   _.each(allocation,(all) => {
 %	    var utype = all[0].utype;
 %	        _.each(all,(entry) => {
-	{
-	    .num_resource = `entry.count`,
-	    .type = RESASG_UTYPE (`addPrefix(removePrefix(resources[utype].deviceName))`, `addPrefix(resources[utype].subtypeName)`),
+        {
+            .num_resource = `entry.count`,
+            .type = RESASG_UTYPE (`addPrefix(removePrefix(resources[utype].deviceName))`, `addPrefix(resources[utype].subtypeName)`),
             .start_resource = `entry.start`,
-	    .host_id = `addPrefix(entry.hostName)`,
-	},
+            .host_id = `addPrefix("HOST_ID_" + entry.hostName)`,
+        },
 %	        })
 %		})
     }

@@ -46,6 +46,16 @@ exports = {
 				inst.addrEnd = inst.defaultEnd;
 				ui.addrEnd.readOnly = true;
 			}
+		},
+		{
+			name: "lock",
+			displayName: "Lock Region",
+			default: false
+		},
+		{
+			name: "background",
+			displayName: "Mark as Background Region",
+			default: false
 		}
 	],
 	moduleInstances: (inst) => {

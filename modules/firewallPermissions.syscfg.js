@@ -15,9 +15,14 @@ _.each(hosts,(h) => {
 });
 
 hostopt.unshift({
+	name: "wildCard",
+	displayName: "Wild Card"
+});
+
+hostopt.unshift({
 	name: "custom",
 	displayName: "Custom Priv Id"
-})
+});
 
 exports = {
 	displayName: "Permissions",
@@ -31,6 +36,10 @@ exports = {
 				if(inst.hostName === "custom"){
 					inst.privid = 0;
 					ui.privid.readOnly = false;
+				}
+				else if(inst.hostName === "wildCard"){
+					inst.privid = devData[deviceSelected].wildCardPrivId;
+					ui.privid.readOnly = true;
 				}
 				else{
 					inst.privid = hosts[inst.hostName].privId;
@@ -133,7 +142,7 @@ exports = {
 			}
 		})
 		if(privHosts.length){
-			report.logInfo("INFO : " + privHosts + "have same Priv Id",inst,"privid");
+			report.logInfo("INFO : " + "This Priv Id is used by " + privHosts ,inst,"privid");
 		}
 	}
 }

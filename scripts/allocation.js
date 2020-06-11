@@ -125,7 +125,7 @@ function resourceAllocate(utype) {
                                 }
                                 eachResource.push({
                                         utype: utype,
-                                        hostName: "HOST_ID_ALL",
+                                        hostName: "ALL",
                                         start: startValue,
                                         count: resources[utype].resRange[0].resCount - total
                                 })

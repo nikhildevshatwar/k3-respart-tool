@@ -1,6 +1,7 @@
 [
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "Main NAVSS UDMA Ultra high capacity Tx channels",
 		"deviceId": 212,
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"groupName": "Main NAVSS UDMA",
@@ -33,6 +34,7 @@
 	},
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "Main NAVSS UDMA High capacity Tx channels",
 		"deviceId": 212,
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"groupName": "Main NAVSS UDMA",
@@ -65,6 +67,7 @@
 	},
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "Main NAVSS UDMA Normal capacity Tx channels",
 		"deviceId": 212,
 		"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 		"groupName": "Main NAVSS UDMA",
@@ -366,6 +369,7 @@
 	},
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "MCU NAVSS UDMA High capacity Tx channels",
 		"deviceId": 236,
 		"deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
 		"groupName": "MCU NAVSS UDMA",
@@ -398,6 +402,7 @@
 	},
 	{
 		"blockCopy": true,
+		"blockCopyFrom": "MCU NAVSS UDMA Normal capacity Tx channels",
 		"deviceId": 236,
 		"deviceName": "J721E_DEV_MCU_NAVSS0_UDMAP_0",
 		"groupName": "MCU NAVSS UDMA",

@@ -122,7 +122,7 @@ function showParameterInfo(inst,report){
 				}
 			})
 			if(names.length){
-				report.logInfo("This property is not available for " + names,inst,p);
+				report.logInfo("This parameter is not available for " + names,inst,p);
 			}
 		}
 	})
