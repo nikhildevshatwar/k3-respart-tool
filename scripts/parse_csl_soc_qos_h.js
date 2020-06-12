@@ -39,81 +39,31 @@ function extractvalue(str) {
 
 function createQosArray(path) {
         var fs = require("fs");
-        var textByLine = fs.readFileSync(path)
-                .toString().split("\n");
+        var qosArray = fs.readFileSync(path).toString();
 
-        var start, end;
-        for (var line = 0; line < textByLine.length; line++) {
-                textByLine[line] = textByLine[line].trim();
-                if (textByLine[line] === "{") {
-                        start = line;
-                }
-                if (textByLine[line] === "}") {
-                        end = line;
-                }
-        }
+        qosArray = JSON.parse(qosArray);
+        qosArray = qosArray.qos.cbass_qos_mmr;
 
-        var temp = [], dev = "";
-        for (var line = start; line <= end; line++) {
+        var finalData = [];
 
-                var sz = textByLine[line].length;
-                if (textByLine[line][0] === "#" && textByLine[line][sz - 1] === ")") {
-                        temp.push(textByLine[line] + " " + dev);
-                }
-                else if(textByLine[line][0] === "/" && textByLine[line][sz - 1] === "/"){
-                        var tempName = textByLine[line].slice(1,sz - 2);
-                        tempName = tempName.split(":");
-                        tempName =tempName[1].trim();
-                        dev = tempName;
-                }
-        }
+        qosArray.forEach( q => {
 
-        textByLine = temp;
+                finalData.push({
+                        asel: q.asel_capable,
+                        atype: q.atype_capable,
+                        baseAddress: q.mmr_base_addr,
+                        channelCount: q.channel_count,
+                        cslBase: "CSL_QOS_" + q.master_inst.toUpperCase() + "_" + q.master_intf.toUpperCase() + "_MMR_BASE",
+                        deviceName: q.master_inst.toUpperCase(),
+                        epriority: q.epriority_capable,
+                        name: q.master_intf.toUpperCase(),
+                        orderId: q.orderid_capable,
+                        qos: q.qos_capable,
+                        virtId: q.virtid_capable  
+                })
+        })
 
-        var toPrint = [];
-
-        for (var line = 0; line < textByLine.length; line++) {
-
-                var info = textByLine[line].split(" ");
-                temp = [];
-
-                for (var idx = 0; idx < info.length; idx++) {
-                        if (info[idx] !== "") {
-                                temp.push(info[idx]);
-                        }
-                }
-                temp.shift();
-                info = temp;
-                var name = extractname(info[0]);
-                var sz = toPrint.length;
-                if (sz && toPrint[sz - 1].name === name) {
-
-                        toPrint[sz - 1].info.push(info[1]);
-                }
-                else {
-                        toPrint.push({
-                                name: name,
-                                cslBase: info[0],
-                                info: [info[1]],
-                                deviceName : info[2]
-                        })
-                }
-        }
-
-        for (var idx = 0; idx < toPrint.length; idx++) {
-                toPrint[idx].baseAddress = extractvalue(toPrint[idx].info[0]);
-                toPrint[idx].channelCount = parseInt(extractvalue(toPrint[idx].info[1]), 10);
-                toPrint[idx].qos = parseInt(extractvalue(toPrint[idx].info[2]), 10);
-                toPrint[idx].virtId = parseInt(extractvalue(toPrint[idx].info[3]), 10);
-                toPrint[idx].orderId = parseInt(extractvalue(toPrint[idx].info[4]), 10);
-                toPrint[idx].epriority = parseInt(extractvalue(toPrint[idx].info[5]), 10);
-                toPrint[idx].atype = parseInt(extractvalue(toPrint[idx].info[6]), 10);
-                toPrint[idx].asel = parseInt(extractvalue(toPrint[idx].info[7]), 10);
-
-                delete toPrint[idx].info;
-        }
-
-        return toPrint;
+        return finalData;
 }
 
 

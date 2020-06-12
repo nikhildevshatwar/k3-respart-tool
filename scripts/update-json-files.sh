@@ -41,17 +41,17 @@ soc=$1
 	prettify_json $topdir/data/$soc/Hosts.json 
 
 	# Parse CSL SoC QoS data
-	if [ -f $csl_repo/soc/$csl_soc/src/csl_soc_qos.h ]; then
+	if [ -f $topdir/data/$soc/SOCData.json ]; then
 		node $topdir/scripts/parse_csl_soc_qos_h.js --soc $soc \
-		   --doc $csl_repo/soc/$csl_soc/src/csl_soc_qos.h
+		   --doc $topdir/data/$soc/SOCData.json
 		echo "Generated data/$soc/Qos.json"
 		prettify_json $topdir/data/$soc/Qos.json 
 	fi
 
 	# Parse Slave Firewall data
-	if [ -f $topdir/data/$soc/std_slave_firewalls.json ]; then
+	if [ -f $topdir/data/$soc/SOCData.json ]; then
 		node $topdir/scripts/generate_firewall_json.js --soc $soc \
-		   --doc $topdir/data/$soc/std_slave_firewalls.json \
+		   --doc $topdir/data/$soc/SOCData.json \
 		   --dname $topdir/data/$soc/DeviceName.json
 		echo "Generated data/$soc/Firewall.json"
 		prettify_json $topdir/data/$soc/Firewall.json 

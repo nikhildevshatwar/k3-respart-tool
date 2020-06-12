@@ -41,6 +41,8 @@ var names = fs.readFileSync(args.dname).toString();
 names = JSON.parse(names); 
 firewall = JSON.parse(firewall);
 
+firewall = firewall.security.std_slave_firewalls;
+
 var deviceNames = [];
 
 names.forEach( n => {
@@ -57,32 +59,35 @@ var finalData = [];
 var notFoundCount = 0;
 
 firewall.forEach(item => {
-        var start = parseInt(item.protected_regions[0].start_address,16);
-        var end = parseInt(item.protected_regions[0].end_address,16);
+        
+        if(item.protected_regions.length > 0){
+                var start = parseInt(item.protected_regions[0].start_address,16);
+                var end = parseInt(item.protected_regions[0].end_address,16);
 
-        item.protected_regions.forEach(r => {
-                start = Math.min(start,parseInt(r.start_address,16));
-                end = Math.max(end,parseInt(r.end_address,16));
-        })
+                item.protected_regions.forEach(r => {
+                        start = Math.min(start,parseInt(r.start_address,16));
+                        end = Math.max(end,parseInt(r.end_address,16));
+                })
 
-        var devName = "";
+                var devName = "";
 
-        if(namesMap[item.protected_inst]){
-                devName = namesMap[item.protected_inst];
+                if(namesMap[item.protected_inst]){
+                        devName = namesMap[item.protected_inst];
+                }
+                else{
+                        devName = "AAAAAA" + notFoundCount;
+                        notFoundCount++;
+                }
+
+                finalData.push({
+                        id: item.id,
+                        num_regions: item.num_regions,
+                        protected_inst: item.protected_inst,
+                        name: devName,
+                        start_address: start,
+                        end_address: end
+                })
         }
-        else{
-                devName = "AAAAAA" + notFoundCount;
-                notFoundCount++;
-        }
-
-        finalData.push({
-                id: item.id,
-                num_regions: item.num_regions,
-                protected_inst: item.protected_inst,
-                name: devName,
-                start_address: start,
-                end_address: end
-        })
 })
 
 

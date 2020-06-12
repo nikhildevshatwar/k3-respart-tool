@@ -6,7 +6,7 @@
                 "sciClientPrefixReplacement" : "TISCI_",
                 "wildCardPrivId" : 195,
                 "sRAMSize" : 8,
-                "granularity" : 1
+                "sRamGranularity" : 1
         },
         {
                 "soc" : "AM65xx_SR1.0",
@@ -15,7 +15,7 @@
                 "sciClientPrefixReplacement" : "TISCI_",
                 "wildCardPrivId" : 195,
                 "sRAMSize" : 8,
-                "granularity" : 1
+                "sRamGranularity" : 1
         },
         {
                 "soc" : "AM65xx_SR2.0_beta",
@@ -24,7 +24,7 @@
                 "sciClientPrefixReplacement" : "TISCI_",
                 "wildCardPrivId" : 195,
                 "sRAMSize" : 8,
-                "granularity" : 1
+                "sRamGranularity" : 1
         },
         {
                 "soc" : "AM437x",
@@ -33,6 +33,6 @@
                 "sciClientPrefixReplacement" : "TISCI_",
                 "wildCardPrivId" : 195,
                 "sRAMSize" : 8,
-                "granularity" : 1
+                "sRamGranularity" : 1
         }
 ]

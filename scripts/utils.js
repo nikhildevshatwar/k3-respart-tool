@@ -197,6 +197,15 @@ function generateFirewallEntries(){
         return entries;
 }
 
+function getNumber(val){
+        var TotalSize = devData[deviceSelected].sRAMSize;
+        var cacheSize = TotalSize - val;
+
+        val = (32 * cacheSize) / TotalSize;
+
+        return val.toString(16).toUpperCase();
+}
+
 exports = {
         setBit,
         decimalToBinary,
@@ -207,5 +216,6 @@ exports = {
         addPrefix,
         getValue,
         endPoint,
-        generateFirewallEntries
+        generateFirewallEntries,
+        getNumber
 }

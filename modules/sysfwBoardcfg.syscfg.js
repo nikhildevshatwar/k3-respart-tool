@@ -4,7 +4,7 @@ const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 function createRAMSizeOptions(){
         var opt = [];
 
-        var gran = devData[deviceSelected].granularity;
+        var gran = devData[deviceSelected].sRamGranularity;
         var curr = 0;
         var size = devData[deviceSelected].sRAMSize;
 
@@ -25,7 +25,7 @@ exports = {
         config: [
                 {
                         name: "ramSize",
-                        displayName: "RAM Size",
+                        displayName: "sRAM Size",
                         options: createRAMSizeOptions(),
                         default: 0
                 },
@@ -34,5 +34,6 @@ exports = {
                         displayName: "Debug Enable",
                         default: false
                 }
-        ]
+        ],
+        maxInstances: 1
 }
