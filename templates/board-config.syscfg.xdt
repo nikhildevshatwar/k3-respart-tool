@@ -1,0 +1,49 @@
+%%{     
+        const deviceSelected = system.deviceData.device;
+        const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+
+        function getNumber(val){
+                var TotalSize = devData[deviceSelected].sRAMSize;
+                var cacheSize = TotalSize - val;
+
+                val = (32 * cacheSize) / TotalSize;
+
+                return val.toString(16).toUpperCase();
+        }
+%%}
+
+.msmc = {
+        .subhdr = {
+            .magic = TISCI_BOARDCFG_MSMC_MAGIC_NUM,
+            .size = (uint16_t) sizeof(struct tisci_boardcfg_msmc),
+        },
+%if (system.modules["/modules/sysfwBoardcfg"]) {
+%        for (let inst of system.modules["/modules/sysfwBoardcfg"].$instances) {
+%
+        .msmc_cache_size = `getNumber(inst.ramSize)`,
+%
+%        }
+%}
+    },
+
+.debug_cfg = {
+        .subhdr = {
+            .magic = TISCI_BOARDCFG_DBG_CFG_MAGIC_NUM,
+            .size = (uint16_t) sizeof(struct tisci_boardcfg_dbg_cfg),
+        },
+%if (system.modules["/modules/sysfwBoardcfg"]) {
+%        for (let inst of system.modules["/modules/sysfwBoardcfg"].$instances) {
+%                if(inst.debugEnable){
+        .trace_dst_enables = (TISCI_BOARDCFG_TRACE_DST_UART0 |
+                              TISCI_BOARDCFG_TRACE_DST_ITM |
+                              TISCI_BOARDCFG_TRACE_DST_MEM),
+        .trace_src_enables = (TISCI_BOARDCFG_TRACE_SRC_PM |
+                              TISCI_BOARDCFG_TRACE_SRC_RM |
+                              TISCI_BOARDCFG_TRACE_SRC_SEC |
+                              TISCI_BOARDCFG_TRACE_SRC_BASE |
+                              TISCI_BOARDCFG_TRACE_SRC_USER |
+                              TISCI_BOARDCFG_TRACE_SRC_SUPR)
+%                }
+%        }
+%}
+    },

@@ -31,12 +31,18 @@
 			"name": "/templates/firewall-config.syscfg.xdt",
 			"outputPath": "firewall-config.c",
 			"alwaysRun": true
+		},
+		{
+			"name": "/templates/board-config.syscfg.xdt",
+			"outputPath": "board-config.c",
+			"alwaysRun": true
 		}
 	],
 	"topModules": [
 		"/modules/sysfwResPart",
 		"/modules/qosConfig",
-		"/modules/firewallConfig"
+		"/modules/firewallConfig",
+		"/modules/sysfwBoardcfg"
 	],
 	"views": [
 		{
