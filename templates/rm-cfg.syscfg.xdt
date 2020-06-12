@@ -31,8 +31,8 @@
  *    from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WResourceANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WResourceANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
  * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
  * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
@@ -92,7 +92,7 @@ const struct boardcfg_rm_local `socName`_boardcfg_rm_data = {
 		},
 	},
 
-/* This is actually part of .resasg */
+	/* This is actually part of .resasg */
 	.resasg_entries = {
 %	var allocation = allocateAndSort(true);
 %	_.each(allocation,(all) => {

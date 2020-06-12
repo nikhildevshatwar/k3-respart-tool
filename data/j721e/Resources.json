@@ -760,8 +760,51 @@
 		"groupName": "Interrupt routers",
 		"resRange": [
 			{
-				"resCount": 64,
-				"resStart": 0
+				"resCount": 16,
+				"resStart": 0,
+				"restrictHosts": [
+					"MCU_0_R5_0",
+					"MCU_0_R5_1",
+					"MCU_0_R5_2",
+					"MCU_0_R5_3"
+				]
+			},
+			{
+				"resCount": 16,
+				"resStart": 16,
+				"restrictHosts": [
+					"MAIN_0_R5_0",
+					"MAIN_0_R5_1",
+					"MAIN_0_R5_2",
+					"MAIN_0_R5_3",
+					"MAIN_1_R5_0",
+					"MAIN_1_R5_1",
+					"MAIN_1_R5_2",
+					"MAIN_1_R5_3"
+				]
+			},
+			{
+				"resCount": 8,
+				"resStart": 32,
+				"restrictHosts": [
+					"C6X_0_0",
+					"C6X_0_1",
+					"C6X_1_0",
+					"C6X_1_1"
+				]
+			},
+			{
+				"resCount": 24,
+				"resStart": 40,
+				"restrictHosts": [
+					"A72_0",
+					"A72_1",
+					"A72_2",
+					"A72_3",
+					"A72_4",
+					"C7X_0",
+					"C7X_1"
+				]
 			}
 		],
 		"subtypeId": 0,
@@ -775,8 +818,35 @@
 		"groupName": "Interrupt routers",
 		"resRange": [
 			{
-				"resCount": 32,
-				"resStart": 0
+				"resCount": 16,
+				"resStart": 0,
+				"restrictHosts": [
+					"MCU_0_R5_0",
+					"MCU_0_R5_1",
+					"MCU_0_R5_2",
+					"MCU_0_R5_3"
+				]
+			},
+			{
+				"resCount": 16,
+				"resStart": 16,
+				"restrictHosts": [
+					"MAIN_0_R5_0",
+					"MAIN_0_R5_1",
+					"MAIN_0_R5_2",
+					"MAIN_0_R5_3",
+					"MAIN_1_R5_0",
+					"MAIN_1_R5_1",
+					"MAIN_1_R5_2",
+					"MAIN_1_R5_3",
+					"A72_0",
+					"A72_1",
+					"A72_2",
+					"A72_3",
+					"A72_4",
+					"C7X_0",
+					"C7X_1"
+				]
 			}
 		],
 		"subtypeId": 0,
