@@ -145,8 +145,52 @@ function setInstanceName(inst,ui) {
 	inst.$name = inst.deviceName + "_CH_" + inst.chan + "_" + (++count);
 }
 
+var documentation = `
+**QoS configuration**
+
+---
+
+This module allows you to set various Qoality of Service (QoS) parameters
+for different devices in the SoC. QoS for most of the devices is programmed
+at the interconnect QoS endpoints. QoS parameters for devices using UDMA
+are programmed dynamically. Here you will only find devices which has CBASS
+interconnect QoS endpoints.
+
+Following steps allow you to achieve this:
+
+*	Click on ADD button to program a device QoS endpoint
+*	Select the device from the drop down list
+*	Select a list of endpoints to be programmed. By default, all the
+	endpoints are selected. You can add more instances with same device
+	and select different set of endpoints to program the QoS differently.
+*	Select the channel number for programming the exact QoS register.
+*	For the selected channel, tool will present a set of parameters which
+	are applicable for it. Select the appropriate value that you wish
+	to program.
+
+**Endpoint and Channel ID selection**
+
+Every device may have multiple DMA ports to the interconnect. There is a
+dedicated QoS endpoint per DMA port. Also, many devices differentiate the
+type of DMA traffic by driving the channel_id value. e.g. DSS traffic for
+VID1 pipeline and VIDL1 pipeline wil carry a different channel ID and the
+QoS settings corresponding to this channel ID will be used. Note that, how
+the channel_id is driven for a device is different for different device.
+
+**Output files**
+
+---
+
+*	\`qos-config.c\` - This file should be copied to the bootloader for
+	configuring the QoS registers. This file has a simple address, value
+	pairs in an array. The bootloader is supposed to iterate over the
+	array and program the QoS registers one-time as part of the bootup.
+
+`
+
 exports = {
 	displayName: "Quality of Service",
+	longDescription: documentation,
 	config: [
 		{
 			name: "deviceName",
@@ -240,6 +284,11 @@ exports = {
 					name: 2,
 					displayName: "Virtual address",
 					description: "All transactions are routed via sMMU"
+				},
+				{
+					name: 3,
+					displayName: "Non coherent address",
+					description: "Memory coherency is disabled for these transactions"
 				}
 			]
 		},

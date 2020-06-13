@@ -287,8 +287,81 @@ function overlapAndOverflow(instance,report){
         })
 }
 
+var documentation = `
+**SYSFW Resource Partitioning**
+
+---
+
+This module allows to partition resources managed by System firmware
+across different software entities. Typically, resources related to
+DMA channels, rings, proxies, and interrupts are managed by SYSFW.
+
+Following steps allow you to achieve this:
+
+*	Click on ADD button to add a new host in the tool
+*	Select the host_id to be used by the software to communicate with SYSFW
+*	Note the CPU core and security level assosiated with selected host
+*	Optionally, you can configure some capabilities of the host
+*	For each host, a list of resources is presented in various groups.
+	You can specify the count of certain resource.
+
+**Resource allocation**
+
+Most of the resources are homogeneous. It should not matter as to which specific
+range of resource has been allocated to the software. Therefore, the tool only
+asks for the count of the resources required for each host, and then does
+allocation of the exact range taking into consideration some constraints.
+
+However, there are some resources (e.g. virtid) where user can choose the
+start index and count specifically. I 
+
+Note that after allocating resources for all the hosts, remaining count is
+assigned to *HOST_ID_ALL*.
+
+**Host capabilities**
+
+Most of the parameters here are needed for some specialized use cases.
+You should modify these only if you knwo what you are doing.
+
+*	**Allowed values of atype** - SYSFW will ensure that a host can program
+	a certain value of atype (address type) only if it is enabled in this
+	list. There are few APIs (e.g. UDMA config) which accept atype
+	as part of the TISCI API. This is useful for hosts running inside
+	virtual machine where all the DMA accesses should must through an IOMMU.
+*	**Allowed values of QoS, orderid, priority, schedpriority** - SYSFW will
+	ensure that the host can program a certain value of Quality of Service
+	parameters only if it is enabled in this list. This is useful to ensure
+	that a host cannot program higher QoS values for UDMA potentially
+	causing performance degradation to other masters.
+*	**Supervisor host** - This parameter allows to declare another host
+	as the supervisor of the current host. Supervisor can claim all the
+	resources that his subordinate owns. This is useful for FFI recovery
+	scenario where a safety software would try to restart nonsafe software.
+
+**Output files**
+
+---
+
+*	\`rm-cfg.c, board-config.c\` - This is the format used for k3-image-gen
+	RM board config files
+*	\`sciclient_defaultBoardcfg_rm.c\` - This is the format used for Secondary
+	Boot Loader (SBL) RM board config files.
+
+**Allocation visualization**
+
+---
+
+The tool shows the current allocation of each resource for each host in a table.
+Click on the three dots in the top right corner to open the *Resource Allocation*
+pane to view this table. This table gets updated automatically whenever some
+allocation is changed. This is especially useful when trying to solve errors
+due to overflow in allocation.
+
+`
+
 exports = {
         displayName: "SYSFW Resource Partitioning",
+	longDescription: documentation,
         defaultInstanceName : "Unknown",
         config: [
                 // Host Name

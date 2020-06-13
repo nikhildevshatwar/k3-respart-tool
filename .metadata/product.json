@@ -48,7 +48,8 @@
 		{
 			"name": "/templates/resourceallocation.xdt",
 			"displayName": "Resource Allocation",
-			"viewType": "markdown"
+			"viewType": "markdown",
+			"ignoreErrors": true
 		}
 	],
 	"documentationPath": "docs/"
