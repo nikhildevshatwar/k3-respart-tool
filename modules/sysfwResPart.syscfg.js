@@ -115,17 +115,19 @@ _.each(groupNames,(gName) => {
         
                                         if(r.copyToUtype){
                                                 
-                                                var name1 = _.join(_.split(r.copyToUtype," "),"_");
-                                                var name2 = _.join(_.split(r.utype," "),"_");
-                                                inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
+                                                var dest = _.join(_.split(r.copyToUtype," "),"_");
+                                                var src = _.join(_.split(r.utype," "),"_");
+                                                inst[dest + "_blockCount"] = inst[src + "_blockCount"];
                                         }
 
                                         if(r.blockCopyTo){
 
-                                                var name1 = _.join(_.split(r.blockCopyTo," "),"_");
-                                                var name2 = _.join(_.split(r.utype," "),"_");
-                                                inst[name1 + "_blockCount"] = inst[name2 + "_blockCount"];
+                                                var dest = _.join(_.split(r.blockCopyTo," "),"_");
+                                                var src = _.join(_.split(r.utype," "),"_");
+                                                inst[dest + "_blockCount"] = inst[src + "_blockCount"];
                                         }
+
+                                        // TODO :- Block Copy Channels are not working correctly 
                                 }
                         })
                 }

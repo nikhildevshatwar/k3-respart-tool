@@ -16,7 +16,7 @@ struct qos_data j721e_qos_data[] = {
 %
 %	_.each(inst.qosdev,(e) => {
 	{
-		.reg = `qos[e].cslBase` + `inst.chan` * 0x4,
+		.reg = `qos[e].baseAddress + 0x100` + `inst.chan` * 0x4,
 		.val = `utils.decimalToHexadecimal(utils.getValue(inst))`
 	},
 %	})

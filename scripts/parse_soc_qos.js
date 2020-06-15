@@ -37,6 +37,19 @@ function extractvalue(str) {
         return str.slice(1, sz - 1);
 }
 
+function to32Bit(str){
+        var t = "";
+        for(var idx = str.length - 1 ; idx >=0 ; idx--){
+                t += str[idx];
+                if(t.length === 8)
+                        break;
+        }
+
+        t = t.split("").reverse().join("");
+
+        return "0x" + t;
+}
+
 function createQosArray(path) {
         var fs = require("fs");
         var qosArray = fs.readFileSync(path).toString();
@@ -51,9 +64,8 @@ function createQosArray(path) {
                 finalData.push({
                         asel: q.asel_capable,
                         atype: q.atype_capable,
-                        baseAddress: q.mmr_base_addr,
+                        baseAddress: to32Bit(q.mmr_base_addr),
                         channelCount: q.channel_count,
-                        cslBase: "CSL_QOS_" + q.master_inst.toUpperCase() + "_" + q.master_intf.toUpperCase() + "_MMR_BASE",
                         deviceName: q.master_inst.toUpperCase(),
                         epriority: q.epriority_capable,
                         name: q.master_intf.toUpperCase(),
@@ -78,7 +90,7 @@ function createOutputFile(arr,soc){
         var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
 
         var path = dir + "/../data/" + soc + "/Qos.json" ;
-
+        
         fs.writeFile(path, jsonString, (err) => { 
                 if (err) throw err; 
         })

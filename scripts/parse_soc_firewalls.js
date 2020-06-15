@@ -47,12 +47,25 @@ var deviceNames = [];
 
 names.forEach( n => {
         deviceNames.push(n.name);
+
+        if(!n.memory){
+                n.memory = false;
+        }
 })
+
+function onlyUnique(value, index, self) { 
+        return self.indexOf(value) === index;
+}
+
+var deviceNames = deviceNames.filter(onlyUnique)
 
 var namesMap = new Map();
 
 for(var idx = 0 ; idx < names.length ; idx++){
-        namesMap[names[idx].protected_inst] = names[idx].name;
+        namesMap[names[idx].protected_inst] = {
+                name : names[idx].name,
+                memory : names[idx].memory
+        }
 }
 var finalData = [];
 
@@ -69,10 +82,11 @@ firewall.forEach(item => {
                         end = Math.max(end,parseInt(r.end_address,16));
                 })
 
-                var devName = "";
+                var devName = "" , memory = false;
 
-                if(namesMap[item.protected_inst]){
-                        devName = namesMap[item.protected_inst];
+                if(namesMap[item.protected_inst].name){
+                        devName = namesMap[item.protected_inst].name;
+                        memory = namesMap[item.protected_inst].memory;
                 }
                 else{
                         devName = "AAAAAA" + notFoundCount;
@@ -85,7 +99,8 @@ firewall.forEach(item => {
                         protected_inst: item.protected_inst,
                         name: devName,
                         start_address: start,
-                        end_address: end
+                        end_address: end,
+                        memory: memory
                 })
         }
 })
@@ -101,32 +116,40 @@ deviceNames.forEach( n => {
                         f.found = 1;
                 }
         })
-        var start = interface[0].start_address;
-        var end = interface[0].end_address;
-        var ids = [];
 
-        interface.forEach( i => {
-                start = Math.min(start,i.start_address);
-                end = Math.max(end,i.end_address);
-                ids.push(i.id);
-        })
-        temp.push({
-                ids: ids,
-                //num_regions: item.num_regions,
-                //protected_inst: item.protected_inst,
-                name: n,
-                start_address: getInHexa(start),
-                end_address: getInHexa(end)
-        })
+        if(interface.length){
+                var start = interface[0].start_address;
+                var end = interface[0].end_address;
+                var ids = [];
+                var region = interface[0].num_regions;
+
+                interface.forEach( i => {
+                        start = Math.min(start,i.start_address);
+                        end = Math.max(end,i.end_address);
+                        ids.push(i.id);
+                        region = Math.min(region,i.num_regions);
+                })
+                temp.push({
+                        ids: ids,
+                        num_regions: region,
+                        //protected_inst: item.protected_inst,
+                        name: n,
+                        start_address: getInHexa(start),
+                        end_address: getInHexa(end),
+                        memory: interface[0].memory 
+                })
+        }
 })
 
 finalData.forEach( f => {
         if(!f.found){
                 temp.push({
                         ids: [f.id],
+                        num_regions: f.num_regions,
                         name: f.name,
                         start_address: f.start_address,
-                        end_address: f.end_address
+                        end_address: f.end_address,
+                        memory: f.memory
                 })
         }
 })
@@ -146,7 +169,7 @@ function createOutputFile(data,soc){
         var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
 
         var path = dir + "/../data/" + soc + "/Firewall.json" ;
-
+        
         fs.writeFile(path, jsonString, (err) => { 
                 if (err) throw err; 
         })

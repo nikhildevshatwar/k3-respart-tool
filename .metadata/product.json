@@ -36,6 +36,11 @@
 			"name": "/templates/board-config.syscfg.xdt",
 			"outputPath": "board-config.c",
 			"alwaysRun": true
+		},
+		{
+			"name": "/templates/sysfw_img_cfg.syscfg.xdt",
+			"outputPath": "sysfw_img_cfg.h",
+			"alwaysRun": true
 		}
 	],
 	"topModules": [

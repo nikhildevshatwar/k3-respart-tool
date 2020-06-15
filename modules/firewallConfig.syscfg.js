@@ -17,7 +17,7 @@ var devOpt = _.map(uniqDevices,(d) => {
 })
 
 
-var start = "0" , end = "0"; 
+var start = "0" , end = "0" , regions = 1, customAlloc = false; 
 
 var documentation = `
 **Firewall configuration**
@@ -74,6 +74,15 @@ exports = {
 			default: "unknown",
 			onChange: (inst,ui) => {
 				start = devices[inst.device].start_address, end = devices[inst.device].end_address;
+
+				if(devices[inst.device].memory){
+					regions = devices[inst.device].num_regions;
+					customAlloc = true;
+				}
+				else{
+					regions = 1;
+					customAlloc = false;
+				}
 			}
 		}
 	],
@@ -83,13 +92,13 @@ exports = {
 			displayName: "Firewall Regions",
 			moduleName: "/modules/firewallRegion",
 			minInstanceCount: 1,
-			maxInstanceCount: 1,
+			maxInstanceCount: regions,
 			useArray: true,
 			collapsed: false,
 			args: {
-				regionAlloc: false,
 				defaultStart : start,
-				defaultEnd : end
+				defaultEnd : end,
+				regionAlloc: customAlloc
 			}
 		}]
 	},
