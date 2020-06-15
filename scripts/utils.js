@@ -203,7 +203,7 @@ function getNumber(val){
 
         val = (32 * cacheSize) / TotalSize;
 
-        return val.toString(16).toUpperCase();
+        return "0x" + val.toString(16).toUpperCase();
 }
 
 exports = {

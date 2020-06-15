@@ -94,7 +94,7 @@ const struct boardcfg_rm_local `socName`_boardcfg_rm_data = {
 
 	/* This is actually part of .resasg */
 	.resasg_entries = {
-%	var allocation = allocateAndSort(true);
+%	var allocation = allocateAndSort(true,true);
 %	_.each(allocation,(all) => {
 %	var utype = all[0].utype;
 		/* `utype` */

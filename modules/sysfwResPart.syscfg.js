@@ -224,6 +224,19 @@ function validateDmsc(instance,report){
         }
 }
 
+// Check if same host is selected to share resource with different hosts
+
+function duplicateShareResourceWithHost(instance,report){
+        var moduleInstances = instance.$module.$instances;
+
+        for(var idx = 0 ;idx < moduleInstances.length ; idx++){
+
+                if(instance.shareResource !== "none" && instance.shareResource === moduleInstances[idx].shareResource && instance != moduleInstances[idx]){
+                        report.logError("Cannot Share resources with same host twice",instance,"shareResource");
+                }
+        }
+}
+
 // Check for duplicate hosts
 
 function duplicateHost(instance,report){
@@ -233,6 +246,19 @@ function duplicateHost(instance,report){
 
                 if(instance.hostName === moduleInstances[idx].hostName && instance != moduleInstances[idx]){
                         report.logError("Cannot select same host twice",instance,"hostName");
+                }
+        }
+}
+
+// Check if same host is selected as Host as well as Share resource with
+
+function duplicateHostAndShareHost(instance,report){
+        var moduleInstances = instance.$module.$instances;
+
+        for(var idx = 0 ;idx < moduleInstances.length ; idx++){
+
+                if(instance.shareResource === moduleInstances[idx].hostName){
+                        report.logError("Resources are already assigned to host",instance,"shareResource");
                 }
         }
 }
@@ -478,6 +504,19 @@ exports = {
                                                 }
                                         ],
                                         default : "none",
+                                },
+                                // Share Resource With Host
+                                {
+                                        name : "shareResource",
+                                        displayName : "Share Resources with",
+                                        options :[
+                                                {
+                                                        name : "none",
+                                                        displayName : "None"
+                                                },
+                                                ...hostName
+                                        ],
+                                        default : "none"
                                 }
                         ]            
                 },
@@ -488,6 +527,10 @@ exports = {
                         validateDmsc(instance,report);
 
                         duplicateHost(instance,report);
+
+                        duplicateShareResourceWithHost(instance,report);
+
+                        duplicateHostAndShareHost(instance,report);
 
                         overlapAndOverflow(instance,report);
                 }

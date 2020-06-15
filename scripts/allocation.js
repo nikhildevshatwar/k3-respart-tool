@@ -41,7 +41,7 @@ function hostCount(utype, hostName) {
 }
 
 
-function resourceAllocate(utype) {
+function resourceAllocate(utype,addShareResourceEntries) {
         var eachResource = [];
         var name = _.join(_.split(utype, " "), "_");
         var over = [];
@@ -57,6 +57,17 @@ function resourceAllocate(utype) {
                                         start: inst[name + "_start"],
                                         count: inst[name + "_count"]
                                 });
+
+                                if(addShareResourceEntries){
+                                        if(inst.shareResource !== "none"){
+                                                eachResource.push({
+                                                        utype: utype,
+                                                        hostName: inst.shareResource,
+                                                        start: inst[name + "_start"],
+                                                        count: inst[name + "_count"]
+                                                });
+                                        }
+                                }
                                 total += inst[name + "_count"];
                         }
                 }
@@ -85,6 +96,18 @@ function resourceAllocate(utype) {
                                                         start: rStart[index],
                                                         count: inst[name + "_count"]
                                                 });
+
+                                                if(addShareResourceEntries){
+                                                        if(inst.shareResource !== "none"){
+                                                                eachResource.push({
+                                                                        utype: utype,
+                                                                        hostName: inst.shareResource,
+                                                                        start: rStart[index],
+                                                                        count: inst[name + "_count"]
+                                                                });
+                                                        }
+                                                }
+
                                                 rStart[index] += inst[name + "_count"];
                                                 rCount[index] -= inst[name + "_count"];
 
@@ -109,6 +132,18 @@ function resourceAllocate(utype) {
                                                         start: startValue,
                                                         count: inst[name + "_blockCount"]
                                                 });
+
+                                                if(addShareResourceEntries){
+                                                        if(inst.shareResource !== "none"){
+                                                                eachResource.push({
+                                                                        utype: utype,
+                                                                        hostName: inst.shareResource,
+                                                                        start: startValue,
+                                                                        count: inst[name + "_blockCount"]
+                                                                });
+                                                        }
+                                                }
+
                                                 startValue += inst[name + "_blockCount"];
                                                 total += inst[name + "_blockCount"];
                                         }
@@ -120,6 +155,18 @@ function resourceAllocate(utype) {
                                                 start: startValue,
                                                 count: inst[name + "_count"]
                                         });
+
+                                        if(addShareResourceEntries){
+                                                if(inst.shareResource !== "none"){
+                                                        eachResource.push({
+                                                                utype: utype,
+                                                                hostName: inst.shareResource,
+                                                                start: startValue,
+                                                                count: inst[name + "_count"]
+                                                        });
+                                                }
+                                        }
+
                                         startValue += inst[name + "_count"];
                                         total += inst[name + "_count"];
                                 }
@@ -139,12 +186,13 @@ function resourceAllocate(utype) {
         };
 }
 
-function allocateAndSort(skipZeroEntries) {
+function allocateAndSort(skipZeroEntries,addShareResourceEntries) {
         var allocation = [];
 
         _.each(resources, (resource) => {
-                var temp = resourceAllocate(resource.utype).allocation;
+                var temp = resourceAllocate(resource.utype,addShareResourceEntries).allocation;
                 var res = [];
+
                 if (skipZeroEntries) {
                         _.each(temp, (t) => {
                                 if (t.count) {
@@ -178,8 +226,8 @@ function allocateAndSort(skipZeroEntries) {
         return allocation;
 }
 
-function mapByResources(skipZeroEntries) {
-        var allocation = allocateAndSort(skipZeroEntries);
+function mapByResources(skipZeroEntries,addShareResourceEntries) {
+        var allocation = allocateAndSort(skipZeroEntries,addShareResourceEntries);
         var resourcesMap;
         if (allocation.length) {
                 resourcesMap = _.keyBy(allocation, (all) => all[0].utype);

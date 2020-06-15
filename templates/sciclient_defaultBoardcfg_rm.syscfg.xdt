@@ -96,7 +96,7 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
         },
     },
     .resasg_entries = {
-%	var allocation = allocateAndSort(true);
+%	var allocation = allocateAndSort(true,true);
 %   _.each(allocation,(all) => {
 %	    var utype = all[0].utype;
 %	        _.each(all,(entry) => {

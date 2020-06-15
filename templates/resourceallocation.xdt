@@ -7,13 +7,17 @@ const socName = devData[deviceSelected].shortName;
 var resources = system.getScript("/data/" + socName + "/Resources.json");
 var {mapByResources} = system.getScript("/scripts/allocation.js");
 
-var resAlloc = mapByResources(true);
+var resAlloc = mapByResources(true,false);
 var table = "";
 var hosts = "| Resources/Hosts | ";
 var pipes = "| --- | ";
 if (system.modules["/modules/sysfwResPart"]) {
         for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                 hosts += inst.hostName;
+                if(inst.shareResource !== "none"){
+                        hosts += "/";
+                        hosts += inst.shareResource;
+                }
                 hosts += " | ";
                 pipes += "--- | ";
         }

@@ -2,7 +2,7 @@
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
  * @cliArgs --device "J721E_DRA829_TDA4VM_AM752x" --package "ALF" --part "Default" --product "K3-Respart-Tool@version_1"
- * @versions {"data":"20181113","timestamp":"2020043000","tool":"1.0.0+dev","templates":"20190604"}
+ * @versions {"data":"20181113","timestamp":"2020052503","tool":"1.6.0+1393","templates":"20190604"}
  */
 
 /**
@@ -97,6 +97,7 @@ sysfwResPart3.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count         = 5;
 sysfwResPart3.MCU_NAVSS_UDMA_High_capacity_Tx_channels_count           = 2;
 sysfwResPart3.MCU_NAVSS_Interrupt_router_count                         = 28;
 sysfwResPart3.Main_NAVSS_Ring_monitors_count                           = 1;
+sysfwResPart3.shareResource                                            = "MCU_0_R5_1";
 
 sysfwResPart4.hostName                                                 = "MCU_0_R5_2";
 sysfwResPart4.Main_2_MCU_Level_Interrupt_router_count                  = 32;
