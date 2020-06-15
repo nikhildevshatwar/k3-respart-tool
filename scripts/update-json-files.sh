@@ -16,6 +16,10 @@ soc=$1
 			sysfw_soc=j721e
 			soc_json=$autogen_repo/src_input/csl/j7es/json/J7ES.json
 			;;
+		j7200)
+			sysfw_soc=j7200
+			soc_json=$autogen_repo/src_input/csl/j7vcl/json/J7VCL.json
+			;;
 		am65x)
 			sysfw_soc=am6x
 			soc_json=$autogen_repo/src_input/csl/maxwell/json/MAXWELL_PG2.json
@@ -58,6 +62,7 @@ if [ "$1" = "" ]; then
 	exit
 elif [ "$1" = "all" ]; then
 	gen_files j721e
+	gen_files j7200
 	gen_files am65x
 	gen_files am64x
 else
