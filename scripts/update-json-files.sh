@@ -18,7 +18,7 @@ soc=$1
 			;;
 		am65x)
 			sysfw_soc=am6x
-			soc_json=$autogen_repo/src_input/csl/maxwell/json/MAXWELL_PG1.json
+			soc_json=$autogen_repo/src_input/csl/maxwell/json/MAXWELL_PG2.json
 			;;
 		am64x)
 			sysfw_soc=am64x
