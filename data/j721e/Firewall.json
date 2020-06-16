@@ -4,7 +4,9 @@
 		"ids": [
 			264
 		],
+		"memory": false,
 		"name": "Device_0",
+		"num_regions": 2,
 		"start_address": "0x000064800000"
 	},
 	{
@@ -12,7 +14,9 @@
 		"ids": [
 			288
 		],
+		"memory": false,
 		"name": "Device_1",
+		"num_regions": 3,
 		"start_address": "0x00006D000000"
 	},
 	{
@@ -21,7 +25,9 @@
 			1,
 			2
 		],
+		"memory": false,
 		"name": "Device_2",
+		"num_regions": 1,
 		"start_address": "0x000000000000"
 	},
 	{
@@ -29,7 +35,9 @@
 		"ids": [
 			5
 		],
+		"memory": false,
 		"name": "Device_3",
+		"num_regions": 1,
 		"start_address": "0x000000400000"
 	},
 	{
@@ -37,7 +45,9 @@
 		"ids": [
 			6
 		],
+		"memory": false,
 		"name": "Device_4",
+		"num_regions": 1,
 		"start_address": "0x000000410000"
 	},
 	{
@@ -45,7 +55,9 @@
 		"ids": [
 			7
 		],
+		"memory": false,
 		"name": "Device_5",
+		"num_regions": 4,
 		"start_address": "0x000000A80000"
 	},
 	{
@@ -53,7 +65,9 @@
 		"ids": [
 			8
 		],
+		"memory": false,
 		"name": "Device_6",
+		"num_regions": 16,
 		"start_address": "0x000000680000"
 	},
 	{
@@ -61,7 +75,9 @@
 		"ids": [
 			9
 		],
+		"memory": false,
 		"name": "Device_7",
+		"num_regions": 8,
 		"start_address": "0x000000100000"
 	},
 	{
@@ -69,7 +85,9 @@
 		"ids": [
 			10
 		],
+		"memory": false,
 		"name": "Device_8",
+		"num_regions": 1,
 		"start_address": "0x000000500000"
 	},
 	{
@@ -77,7 +95,9 @@
 		"ids": [
 			11
 		],
+		"memory": false,
 		"name": "Device_9",
+		"num_regions": 1,
 		"start_address": "0x000000300000"
 	},
 	{
@@ -85,7 +105,9 @@
 		"ids": [
 			12
 		],
+		"memory": false,
 		"name": "Device_10",
+		"num_regions": 1,
 		"start_address": "0x000000420000"
 	},
 	{
@@ -93,7 +115,9 @@
 		"ids": [
 			16
 		],
+		"memory": false,
 		"name": "Device_11",
+		"num_regions": 1,
 		"start_address": "0x000000600000"
 	},
 	{
@@ -101,7 +125,9 @@
 		"ids": [
 			17
 		],
+		"memory": false,
 		"name": "Device_12",
+		"num_regions": 1,
 		"start_address": "0x000000601000"
 	},
 	{
@@ -109,7 +135,9 @@
 		"ids": [
 			18
 		],
+		"memory": false,
 		"name": "Device_13",
+		"num_regions": 1,
 		"start_address": "0x000000610000"
 	},
 	{
@@ -117,7 +145,9 @@
 		"ids": [
 			19
 		],
+		"memory": false,
 		"name": "Device_14",
+		"num_regions": 1,
 		"start_address": "0x000000611000"
 	},
 	{
@@ -125,7 +155,9 @@
 		"ids": [
 			20
 		],
+		"memory": false,
 		"name": "Device_15",
+		"num_regions": 1,
 		"start_address": "0x000000620000"
 	},
 	{
@@ -133,7 +165,9 @@
 		"ids": [
 			21
 		],
+		"memory": false,
 		"name": "Device_16",
+		"num_regions": 1,
 		"start_address": "0x000000621000"
 	},
 	{
@@ -141,7 +175,9 @@
 		"ids": [
 			22
 		],
+		"memory": false,
 		"name": "Device_17",
+		"num_regions": 1,
 		"start_address": "0x000000630000"
 	},
 	{
@@ -149,7 +185,9 @@
 		"ids": [
 			23
 		],
+		"memory": false,
 		"name": "Device_18",
+		"num_regions": 1,
 		"start_address": "0x000000631000"
 	},
 	{
@@ -157,7 +195,9 @@
 		"ids": [
 			24
 		],
+		"memory": false,
 		"name": "Device_19",
+		"num_regions": 1,
 		"start_address": "0x000000700000"
 	},
 	{
@@ -165,7 +205,9 @@
 		"ids": [
 			32
 		],
+		"memory": false,
 		"name": "Device_20",
+		"num_regions": 1,
 		"start_address": "0x000000800000"
 	},
 	{
@@ -173,7 +215,9 @@
 		"ids": [
 			33
 		],
+		"memory": false,
 		"name": "Device_21",
+		"num_regions": 1,
 		"start_address": "0x000000804000"
 	},
 	{
@@ -181,7 +225,9 @@
 		"ids": [
 			34
 		],
+		"memory": false,
 		"name": "Device_22",
+		"num_regions": 1,
 		"start_address": "0x000000808000"
 	},
 	{
@@ -189,7 +235,9 @@
 		"ids": [
 			35
 		],
+		"memory": false,
 		"name": "Device_23",
+		"num_regions": 1,
 		"start_address": "0x00000080C000"
 	},
 	{
@@ -197,7 +245,9 @@
 		"ids": [
 			36
 		],
+		"memory": false,
 		"name": "Device_24",
+		"num_regions": 1,
 		"start_address": "0x000000810000"
 	},
 	{
@@ -205,7 +255,9 @@
 		"ids": [
 			37
 		],
+		"memory": false,
 		"name": "Device_25",
+		"num_regions": 1,
 		"start_address": "0x000000814000"
 	},
 	{
@@ -213,7 +265,9 @@
 		"ids": [
 			38
 		],
+		"memory": false,
 		"name": "Device_26",
+		"num_regions": 1,
 		"start_address": "0x000000818000"
 	},
 	{
@@ -221,7 +275,9 @@
 		"ids": [
 			39
 		],
+		"memory": false,
 		"name": "Device_27",
+		"num_regions": 1,
 		"start_address": "0x00000081C000"
 	},
 	{
@@ -229,7 +285,9 @@
 		"ids": [
 			40
 		],
+		"memory": false,
 		"name": "Device_28",
+		"num_regions": 1,
 		"start_address": "0x000000820000"
 	},
 	{
@@ -237,7 +295,9 @@
 		"ids": [
 			41
 		],
+		"memory": false,
 		"name": "Device_29",
+		"num_regions": 1,
 		"start_address": "0x000000824000"
 	},
 	{
@@ -245,7 +305,9 @@
 		"ids": [
 			42
 		],
+		"memory": false,
 		"name": "Device_30",
+		"num_regions": 1,
 		"start_address": "0x000000828000"
 	},
 	{
@@ -253,7 +315,9 @@
 		"ids": [
 			43
 		],
+		"memory": false,
 		"name": "Device_31",
+		"num_regions": 1,
 		"start_address": "0x00000082C000"
 	},
 	{
@@ -261,7 +325,9 @@
 		"ids": [
 			44
 		],
+		"memory": false,
 		"name": "Device_32",
+		"num_regions": 1,
 		"start_address": "0x000000830000"
 	},
 	{
@@ -269,7 +335,9 @@
 		"ids": [
 			56
 		],
+		"memory": false,
 		"name": "Device_33",
+		"num_regions": 1,
 		"start_address": "0x000000A00000"
 	},
 	{
@@ -277,7 +345,9 @@
 		"ids": [
 			57
 		],
+		"memory": false,
 		"name": "Device_34",
+		"num_regions": 1,
 		"start_address": "0x000000A10000"
 	},
 	{
@@ -285,7 +355,9 @@
 		"ids": [
 			58
 		],
+		"memory": false,
 		"name": "Device_35",
+		"num_regions": 1,
 		"start_address": "0x000000A20000"
 	},
 	{
@@ -293,7 +365,9 @@
 		"ids": [
 			59
 		],
+		"memory": false,
 		"name": "Device_36",
+		"num_regions": 1,
 		"start_address": "0x000000A30000"
 	},
 	{
@@ -301,7 +375,9 @@
 		"ids": [
 			60
 		],
+		"memory": false,
 		"name": "Device_37",
+		"num_regions": 1,
 		"start_address": "0x000000A40000"
 	},
 	{
@@ -309,7 +385,9 @@
 		"ids": [
 			62
 		],
+		"memory": false,
 		"name": "Device_38",
+		"num_regions": 1,
 		"start_address": "0x000000A70000"
 	},
 	{
@@ -317,7 +395,9 @@
 		"ids": [
 			63
 		],
+		"memory": false,
 		"name": "Device_39",
+		"num_regions": 1,
 		"start_address": "0x000000A60000"
 	},
 	{
@@ -325,7 +405,9 @@
 		"ids": [
 			64
 		],
+		"memory": false,
 		"name": "Device_40",
+		"num_regions": 1,
 		"start_address": "0x000000AC0000"
 	},
 	{
@@ -333,7 +415,9 @@
 		"ids": [
 			65
 		],
+		"memory": false,
 		"name": "Device_41",
+		"num_regions": 1,
 		"start_address": "0x000000AD0000"
 	},
 	{
@@ -341,7 +425,9 @@
 		"ids": [
 			73
 		],
+		"memory": false,
 		"name": "Device_42",
+		"num_regions": 1,
 		"start_address": "0x000000B08000"
 	},
 	{
@@ -349,7 +435,9 @@
 		"ids": [
 			74
 		],
+		"memory": false,
 		"name": "Device_43",
+		"num_regions": 1,
 		"start_address": "0x000000B00000"
 	},
 	{
@@ -357,7 +445,9 @@
 		"ids": [
 			81
 		],
+		"memory": false,
 		"name": "Device_44",
+		"num_regions": 1,
 		"start_address": "0x000000C02000"
 	},
 	{
@@ -366,7 +456,9 @@
 			84,
 			85
 		],
+		"memory": false,
 		"name": "Device_45",
+		"num_regions": 1,
 		"start_address": "0x000000200000"
 	},
 	{
@@ -374,7 +466,9 @@
 		"ids": [
 			129
 		],
+		"memory": false,
 		"name": "Device_46",
+		"num_regions": 1,
 		"start_address": "0x000042000000"
 	},
 	{
@@ -382,7 +476,9 @@
 		"ids": [
 			130
 		],
+		"memory": false,
 		"name": "Device_47",
+		"num_regions": 1,
 		"start_address": "0x000042010000"
 	},
 	{
@@ -390,7 +486,9 @@
 		"ids": [
 			131
 		],
+		"memory": false,
 		"name": "Device_48",
+		"num_regions": 16,
 		"start_address": "0x000043000000"
 	},
 	{
@@ -398,7 +496,9 @@
 		"ids": [
 			132
 		],
+		"memory": false,
 		"name": "Device_49",
+		"num_regions": 1,
 		"start_address": "0x000042110000"
 	},
 	{
@@ -406,7 +506,9 @@
 		"ids": [
 			133
 		],
+		"memory": false,
 		"name": "Device_50",
+		"num_regions": 1,
 		"start_address": "0x000042080000"
 	},
 	{
@@ -414,7 +516,9 @@
 		"ids": [
 			135
 		],
+		"memory": false,
 		"name": "Device_51",
+		"num_regions": 3,
 		"start_address": "0x000042040000"
 	},
 	{
@@ -422,7 +526,9 @@
 		"ids": [
 			136
 		],
+		"memory": false,
 		"name": "Device_52",
+		"num_regions": 1,
 		"start_address": "0x000042060000"
 	},
 	{
@@ -430,7 +536,9 @@
 		"ids": [
 			137
 		],
+		"memory": false,
 		"name": "Device_53",
+		"num_regions": 1,
 		"start_address": "0x000042100000"
 	},
 	{
@@ -438,7 +546,9 @@
 		"ids": [
 			144
 		],
+		"memory": false,
 		"name": "Device_54",
+		"num_regions": 1,
 		"start_address": "0x000042120000"
 	},
 	{
@@ -446,7 +556,9 @@
 		"ids": [
 			160
 		],
+		"memory": false,
 		"name": "Device_55",
+		"num_regions": 1,
 		"start_address": "0x000042300000"
 	},
 	{
@@ -454,7 +566,9 @@
 		"ids": [
 			168
 		],
+		"memory": false,
 		"name": "Device_56",
+		"num_regions": 1,
 		"start_address": "0x000042200000"
 	},
 	{
@@ -462,7 +576,9 @@
 		"ids": [
 			176
 		],
+		"memory": false,
 		"name": "Device_57",
+		"num_regions": 1,
 		"start_address": "0x000042400000"
 	},
 	{
@@ -470,7 +586,9 @@
 		"ids": [
 			177
 		],
+		"memory": false,
 		"name": "Device_58",
+		"num_regions": 1,
 		"start_address": "0x000042404000"
 	},
 	{
@@ -478,7 +596,9 @@
 		"ids": [
 			178
 		],
+		"memory": false,
 		"name": "Device_59",
+		"num_regions": 1,
 		"start_address": "0x000042410000"
 	},
 	{
@@ -486,7 +606,9 @@
 		"ids": [
 			179
 		],
+		"memory": false,
 		"name": "Device_60",
+		"num_regions": 1,
 		"start_address": "0x000042900000"
 	},
 	{
@@ -501,7 +623,9 @@
 			578,
 			639
 		],
+		"memory": false,
 		"name": "Device_61",
+		"num_regions": 1,
 		"start_address": "0x000044000000"
 	},
 	{
@@ -509,7 +633,9 @@
 		"ids": [
 			536
 		],
+		"memory": false,
 		"name": "Device_62",
+		"num_regions": 1,
 		"start_address": "0x000044133000"
 	},
 	{
@@ -517,7 +643,9 @@
 		"ids": [
 			537
 		],
+		"memory": false,
 		"name": "Device_63",
+		"num_regions": 1,
 		"start_address": "0x000044134000"
 	},
 	{
@@ -526,7 +654,9 @@
 			544,
 			545
 		],
+		"memory": false,
 		"name": "Device_64",
+		"num_regions": 1,
 		"start_address": "0x000044135000"
 	},
 	{
@@ -534,7 +664,9 @@
 		"ids": [
 			552
 		],
+		"memory": false,
 		"name": "Device_65",
+		"num_regions": 1,
 		"start_address": "0x000044200000"
 	},
 	{
@@ -543,7 +675,9 @@
 			576,
 			582
 		],
+		"memory": false,
 		"name": "Device_66",
+		"num_regions": 1,
 		"start_address": "0x000044230000"
 	},
 	{
@@ -551,7 +685,9 @@
 		"ids": [
 			592
 		],
+		"memory": false,
 		"name": "Device_67",
+		"num_regions": 1,
 		"start_address": "0x000044238000"
 	},
 	{
@@ -559,7 +695,9 @@
 		"ids": [
 			593
 		],
+		"memory": false,
 		"name": "Device_68",
+		"num_regions": 1,
 		"start_address": "0x000044239000"
 	},
 	{
@@ -567,7 +705,9 @@
 		"ids": [
 			602
 		],
+		"memory": false,
 		"name": "Device_69",
+		"num_regions": 2,
 		"start_address": "0x00004423C000"
 	},
 	{
@@ -575,7 +715,9 @@
 		"ids": [
 			607
 		],
+		"memory": false,
 		"name": "Device_70",
+		"num_regions": 2,
 		"start_address": "0x000044300000"
 	},
 	{
@@ -586,7 +728,9 @@
 			1028,
 			1029
 		],
+		"memory": false,
 		"name": "Device_71",
+		"num_regions": 1,
 		"start_address": "0x000040080000"
 	},
 	{
@@ -594,7 +738,9 @@
 		"ids": [
 			1026
 		],
+		"memory": false,
 		"name": "Device_72",
+		"num_regions": 1,
 		"start_address": "0x000040600000"
 	},
 	{
@@ -602,7 +748,9 @@
 		"ids": [
 			1030
 		],
+		"memory": false,
 		"name": "Device_73",
+		"num_regions": 1,
 		"start_address": "0x000040610000"
 	},
 	{
@@ -612,7 +760,9 @@
 			1033,
 			1036
 		],
+		"memory": false,
 		"name": "Device_74",
+		"num_regions": 8,
 		"start_address": "0x000047000000"
 	},
 	{
@@ -620,7 +770,9 @@
 		"ids": [
 			1048
 		],
+		"memory": false,
 		"name": "Device_75",
+		"num_regions": 1,
 		"start_address": "0x000041800000"
 	},
 	{
@@ -629,7 +781,9 @@
 			1050,
 			1051
 		],
+		"memory": false,
 		"name": "Device_76",
+		"num_regions": 1,
 		"start_address": "0x00004070B000"
 	},
 	{
@@ -637,7 +791,9 @@
 		"ids": [
 			1052
 		],
+		"memory": false,
 		"name": "Device_77",
+		"num_regions": 1,
 		"start_address": "0x000040280000"
 	},
 	{
@@ -645,7 +801,9 @@
 		"ids": [
 			1056
 		],
+		"memory": false,
 		"name": "Device_78",
+		"num_regions": 1,
 		"start_address": "0x000040400000"
 	},
 	{
@@ -653,7 +811,9 @@
 		"ids": [
 			1057
 		],
+		"memory": false,
 		"name": "Device_79",
+		"num_regions": 1,
 		"start_address": "0x000040410000"
 	},
 	{
@@ -661,7 +821,9 @@
 		"ids": [
 			1058
 		],
+		"memory": false,
 		"name": "Device_80",
+		"num_regions": 1,
 		"start_address": "0x000040420000"
 	},
 	{
@@ -669,7 +831,9 @@
 		"ids": [
 			1059
 		],
+		"memory": false,
 		"name": "Device_81",
+		"num_regions": 1,
 		"start_address": "0x000040430000"
 	},
 	{
@@ -677,7 +841,9 @@
 		"ids": [
 			1060
 		],
+		"memory": false,
 		"name": "Device_82",
+		"num_regions": 1,
 		"start_address": "0x000040440000"
 	},
 	{
@@ -685,7 +851,9 @@
 		"ids": [
 			1061
 		],
+		"memory": false,
 		"name": "Device_83",
+		"num_regions": 1,
 		"start_address": "0x000040450000"
 	},
 	{
@@ -693,7 +861,9 @@
 		"ids": [
 			1062
 		],
+		"memory": false,
 		"name": "Device_84",
+		"num_regions": 1,
 		"start_address": "0x000040460000"
 	},
 	{
@@ -701,7 +871,9 @@
 		"ids": [
 			1063
 		],
+		"memory": false,
 		"name": "Device_85",
+		"num_regions": 1,
 		"start_address": "0x000040470000"
 	},
 	{
@@ -709,7 +881,9 @@
 		"ids": [
 			1064
 		],
+		"memory": false,
 		"name": "Device_86",
+		"num_regions": 1,
 		"start_address": "0x000040480000"
 	},
 	{
@@ -717,7 +891,9 @@
 		"ids": [
 			1065
 		],
+		"memory": false,
 		"name": "Device_87",
+		"num_regions": 1,
 		"start_address": "0x000040490000"
 	},
 	{
@@ -725,7 +901,9 @@
 		"ids": [
 			1072
 		],
+		"memory": false,
 		"name": "Device_88",
+		"num_regions": 1,
 		"start_address": "0x000040300000"
 	},
 	{
@@ -733,7 +911,9 @@
 		"ids": [
 			1073
 		],
+		"memory": false,
 		"name": "Device_89",
+		"num_regions": 1,
 		"start_address": "0x000040310000"
 	},
 	{
@@ -741,7 +921,9 @@
 		"ids": [
 			1074
 		],
+		"memory": false,
 		"name": "Device_90",
+		"num_regions": 1,
 		"start_address": "0x000040320000"
 	},
 	{
@@ -749,7 +931,9 @@
 		"ids": [
 			1088
 		],
+		"memory": false,
 		"name": "Device_91",
+		"num_regions": 1,
 		"start_address": "0x000040100000"
 	},
 	{
@@ -757,7 +941,9 @@
 		"ids": [
 			1089
 		],
+		"memory": false,
 		"name": "Device_92",
+		"num_regions": 1,
 		"start_address": "0x000040110000"
 	},
 	{
@@ -765,7 +951,9 @@
 		"ids": [
 			1090
 		],
+		"memory": false,
 		"name": "Device_93",
+		"num_regions": 1,
 		"start_address": "0x000040120000"
 	},
 	{
@@ -774,7 +962,9 @@
 			1104,
 			1105
 		],
+		"memory": false,
 		"name": "Device_94",
+		"num_regions": 1,
 		"start_address": "0x000040200000"
 	},
 	{
@@ -783,7 +973,9 @@
 			1106,
 			1107
 		],
+		"memory": false,
 		"name": "Device_95",
+		"num_regions": 1,
 		"start_address": "0x000040210000"
 	},
 	{
@@ -791,7 +983,9 @@
 		"ids": [
 			1120
 		],
+		"memory": false,
 		"name": "Device_96",
+		"num_regions": 1,
 		"start_address": "0x000040A00000"
 	},
 	{
@@ -799,7 +993,9 @@
 		"ids": [
 			1152
 		],
+		"memory": false,
 		"name": "Device_97",
+		"num_regions": 1,
 		"start_address": "0x000040B00000"
 	},
 	{
@@ -807,7 +1003,9 @@
 		"ids": [
 			1153
 		],
+		"memory": false,
 		"name": "Device_98",
+		"num_regions": 1,
 		"start_address": "0x000040B10000"
 	},
 	{
@@ -815,7 +1013,9 @@
 		"ids": [
 			1160
 		],
+		"memory": false,
 		"name": "Device_99",
+		"num_regions": 4,
 		"start_address": "0x000040720000"
 	},
 	{
@@ -823,7 +1023,9 @@
 		"ids": [
 			1161
 		],
+		"memory": false,
 		"name": "Device_100",
+		"num_regions": 4,
 		"start_address": "0x000040722000"
 	},
 	{
@@ -831,7 +1033,9 @@
 		"ids": [
 			1168
 		],
+		"memory": false,
 		"name": "Device_101",
+		"num_regions": 1,
 		"start_address": "0x000040800000"
 	},
 	{
@@ -839,7 +1043,9 @@
 		"ids": [
 			1184
 		],
+		"memory": false,
 		"name": "Device_102",
+		"num_regions": 4,
 		"start_address": "0x000040500000"
 	},
 	{
@@ -847,7 +1053,9 @@
 		"ids": [
 			1185
 		],
+		"memory": false,
 		"name": "Device_103",
+		"num_regions": 4,
 		"start_address": "0x000040540000"
 	},
 	{
@@ -855,7 +1063,9 @@
 		"ids": [
 			1196
 		],
+		"memory": false,
 		"name": "Device_104",
+		"num_regions": 5,
 		"start_address": "0x00004070C000"
 	},
 	{
@@ -863,7 +1073,9 @@
 		"ids": [
 			1200
 		],
+		"memory": false,
 		"name": "Device_105",
+		"num_regions": 8,
 		"start_address": "0x000040F00000"
 	},
 	{
@@ -871,7 +1083,9 @@
 		"ids": [
 			1201
 		],
+		"memory": false,
 		"name": "Device_106",
+		"num_regions": 3,
 		"start_address": "0x000040D00000"
 	},
 	{
@@ -879,7 +1093,9 @@
 		"ids": [
 			1208
 		],
+		"memory": false,
 		"name": "Device_107",
+		"num_regions": 1,
 		"start_address": "0x000040C00000"
 	},
 	{
@@ -887,7 +1103,9 @@
 		"ids": [
 			1212
 		],
+		"memory": false,
 		"name": "Device_108",
+		"num_regions": 1,
 		"start_address": "0x000040E00000"
 	},
 	{
@@ -895,7 +1113,9 @@
 		"ids": [
 			1213
 		],
+		"memory": false,
 		"name": "Device_109",
+		"num_regions": 1,
 		"start_address": "0x000040E10000"
 	},
 	{
@@ -903,7 +1123,9 @@
 		"ids": [
 			1220
 		],
+		"memory": false,
 		"name": "Device_110",
+		"num_regions": 2,
 		"start_address": "0x000040709000"
 	},
 	{
@@ -911,7 +1133,9 @@
 		"ids": [
 			1244
 		],
+		"memory": false,
 		"name": "Device_111",
+		"num_regions": 1,
 		"start_address": "0x000047100000"
 	},
 	{
@@ -919,7 +1143,9 @@
 		"ids": [
 			1245
 		],
+		"memory": false,
 		"name": "Device_112",
+		"num_regions": 1,
 		"start_address": "0x000047104000"
 	},
 	{
@@ -927,7 +1153,9 @@
 		"ids": [
 			1246
 		],
+		"memory": false,
 		"name": "Device_113",
+		"num_regions": 1,
 		"start_address": "0x000047108000"
 	},
 	{
@@ -935,7 +1163,9 @@
 		"ids": [
 			1253
 		],
+		"memory": false,
 		"name": "Device_114",
+		"num_regions": 1,
 		"start_address": "0x000047200000"
 	},
 	{
@@ -943,7 +1173,9 @@
 		"ids": [
 			1268
 		],
+		"memory": false,
 		"name": "Device_115",
+		"num_regions": 1,
 		"start_address": "0x000040730000"
 	},
 	{
@@ -951,7 +1183,9 @@
 		"ids": [
 			1269
 		],
+		"memory": false,
 		"name": "Device_116",
+		"num_regions": 1,
 		"start_address": "0x000040731000"
 	},
 	{
@@ -959,7 +1193,9 @@
 		"ids": [
 			1270
 		],
+		"memory": false,
 		"name": "Device_117",
+		"num_regions": 1,
 		"start_address": "0x000040732000"
 	},
 	{
@@ -967,7 +1203,9 @@
 		"ids": [
 			1280
 		],
+		"memory": false,
 		"name": "Device_118",
+		"num_regions": 8,
 		"start_address": "0x000002000000"
 	},
 	{
@@ -976,7 +1214,9 @@
 			2048,
 			2049
 		],
+		"memory": false,
 		"name": "Device_119",
+		"num_regions": 1,
 		"start_address": "0x000003000000"
 	},
 	{
@@ -985,7 +1225,9 @@
 			2050,
 			2051
 		],
+		"memory": false,
 		"name": "Device_120",
+		"num_regions": 1,
 		"start_address": "0x000003010000"
 	},
 	{
@@ -994,7 +1236,9 @@
 			2052,
 			2053
 		],
+		"memory": false,
 		"name": "Device_121",
+		"num_regions": 1,
 		"start_address": "0x000003020000"
 	},
 	{
@@ -1003,7 +1247,9 @@
 			2054,
 			2055
 		],
+		"memory": false,
 		"name": "Device_122",
+		"num_regions": 1,
 		"start_address": "0x000003030000"
 	},
 	{
@@ -1012,7 +1258,9 @@
 			2056,
 			2057
 		],
+		"memory": false,
 		"name": "Device_123",
+		"num_regions": 1,
 		"start_address": "0x000003040000"
 	},
 	{
@@ -1021,7 +1269,9 @@
 			2058,
 			2059
 		],
+		"memory": false,
 		"name": "Device_124",
+		"num_regions": 1,
 		"start_address": "0x000003050000"
 	},
 	{
@@ -1029,7 +1279,9 @@
 		"ids": [
 			2064
 		],
+		"memory": false,
 		"name": "Device_125",
+		"num_regions": 1,
 		"start_address": "0x000003200000"
 	},
 	{
@@ -1037,7 +1289,9 @@
 		"ids": [
 			2065
 		],
+		"memory": false,
 		"name": "Device_126",
+		"num_regions": 1,
 		"start_address": "0x000003210000"
 	},
 	{
@@ -1045,7 +1299,9 @@
 		"ids": [
 			2066
 		],
+		"memory": false,
 		"name": "Device_127",
+		"num_regions": 1,
 		"start_address": "0x000003220000"
 	},
 	{
@@ -1053,7 +1309,9 @@
 		"ids": [
 			2068
 		],
+		"memory": false,
 		"name": "Device_128",
+		"num_regions": 1,
 		"start_address": "0x000003100000"
 	},
 	{
@@ -1061,7 +1319,9 @@
 		"ids": [
 			2069
 		],
+		"memory": false,
 		"name": "Device_129",
+		"num_regions": 1,
 		"start_address": "0x000003110000"
 	},
 	{
@@ -1069,7 +1329,9 @@
 		"ids": [
 			2070
 		],
+		"memory": false,
 		"name": "Device_130",
+		"num_regions": 1,
 		"start_address": "0x000003120000"
 	},
 	{
@@ -1077,7 +1339,9 @@
 		"ids": [
 			2072
 		],
+		"memory": false,
 		"name": "Device_131",
+		"num_regions": 1,
 		"start_address": "0x000002000000"
 	},
 	{
@@ -1085,7 +1349,9 @@
 		"ids": [
 			2073
 		],
+		"memory": false,
 		"name": "Device_132",
+		"num_regions": 1,
 		"start_address": "0x000002010000"
 	},
 	{
@@ -1093,7 +1359,9 @@
 		"ids": [
 			2074
 		],
+		"memory": false,
 		"name": "Device_133",
+		"num_regions": 1,
 		"start_address": "0x000002020000"
 	},
 	{
@@ -1101,7 +1369,9 @@
 		"ids": [
 			2075
 		],
+		"memory": false,
 		"name": "Device_134",
+		"num_regions": 1,
 		"start_address": "0x000002030000"
 	},
 	{
@@ -1109,7 +1379,9 @@
 		"ids": [
 			2076
 		],
+		"memory": false,
 		"name": "Device_135",
+		"num_regions": 1,
 		"start_address": "0x000002040000"
 	},
 	{
@@ -1117,7 +1389,9 @@
 		"ids": [
 			2077
 		],
+		"memory": false,
 		"name": "Device_136",
+		"num_regions": 1,
 		"start_address": "0x000002050000"
 	},
 	{
@@ -1125,7 +1399,9 @@
 		"ids": [
 			2078
 		],
+		"memory": false,
 		"name": "Device_137",
+		"num_regions": 1,
 		"start_address": "0x000002060000"
 	},
 	{
@@ -1133,7 +1409,9 @@
 		"ids": [
 			2080
 		],
+		"memory": false,
 		"name": "Device_138",
+		"num_regions": 1,
 		"start_address": "0x0000031F0000"
 	},
 	{
@@ -1141,7 +1419,9 @@
 		"ids": [
 			2082
 		],
+		"memory": false,
 		"name": "Device_139",
+		"num_regions": 4,
 		"start_address": "0x0000020A0000"
 	},
 	{
@@ -1149,7 +1429,9 @@
 		"ids": [
 			2086
 		],
+		"memory": false,
 		"name": "Device_140",
+		"num_regions": 1,
 		"start_address": "0x000002200000"
 	},
 	{
@@ -1157,7 +1439,9 @@
 		"ids": [
 			2087
 		],
+		"memory": false,
 		"name": "Device_141",
+		"num_regions": 1,
 		"start_address": "0x000002210000"
 	},
 	{
@@ -1165,7 +1449,9 @@
 		"ids": [
 			2094
 		],
+		"memory": false,
 		"name": "Device_142",
+		"num_regions": 1,
 		"start_address": "0x0000023C0000"
 	},
 	{
@@ -1173,7 +1459,9 @@
 		"ids": [
 			2095
 		],
+		"memory": false,
 		"name": "Device_143",
+		"num_regions": 1,
 		"start_address": "0x0000023D0000"
 	},
 	{
@@ -1181,7 +1469,9 @@
 		"ids": [
 			2096
 		],
+		"memory": false,
 		"name": "Device_144",
+		"num_regions": 1,
 		"start_address": "0x0000023E0000"
 	},
 	{
@@ -1189,7 +1479,9 @@
 		"ids": [
 			2097
 		],
+		"memory": false,
 		"name": "Device_145",
+		"num_regions": 1,
 		"start_address": "0x0000023F0000"
 	},
 	{
@@ -1197,7 +1489,9 @@
 		"ids": [
 			2100
 		],
+		"memory": false,
 		"name": "Device_146",
+		"num_regions": 1,
 		"start_address": "0x000002300000"
 	},
 	{
@@ -1205,7 +1499,9 @@
 		"ids": [
 			2104
 		],
+		"memory": false,
 		"name": "Device_147",
+		"num_regions": 1,
 		"start_address": "0x000002380000"
 	},
 	{
@@ -1213,7 +1509,9 @@
 		"ids": [
 			2105
 		],
+		"memory": false,
 		"name": "Device_148",
+		"num_regions": 1,
 		"start_address": "0x000002390000"
 	},
 	{
@@ -1221,7 +1519,9 @@
 		"ids": [
 			2108
 		],
+		"memory": false,
 		"name": "Device_149",
+		"num_regions": 1,
 		"start_address": "0x0000022F0000"
 	},
 	{
@@ -1229,7 +1529,9 @@
 		"ids": [
 			2112
 		],
+		"memory": false,
 		"name": "Device_150",
+		"num_regions": 1,
 		"start_address": "0x000002400000"
 	},
 	{
@@ -1237,7 +1539,9 @@
 		"ids": [
 			2113
 		],
+		"memory": false,
 		"name": "Device_151",
+		"num_regions": 1,
 		"start_address": "0x000002410000"
 	},
 	{
@@ -1245,7 +1549,9 @@
 		"ids": [
 			2114
 		],
+		"memory": false,
 		"name": "Device_152",
+		"num_regions": 1,
 		"start_address": "0x000002420000"
 	},
 	{
@@ -1253,7 +1559,9 @@
 		"ids": [
 			2115
 		],
+		"memory": false,
 		"name": "Device_153",
+		"num_regions": 1,
 		"start_address": "0x000002430000"
 	},
 	{
@@ -1261,7 +1569,9 @@
 		"ids": [
 			2116
 		],
+		"memory": false,
 		"name": "Device_154",
+		"num_regions": 1,
 		"start_address": "0x000002440000"
 	},
 	{
@@ -1269,7 +1579,9 @@
 		"ids": [
 			2117
 		],
+		"memory": false,
 		"name": "Device_155",
+		"num_regions": 1,
 		"start_address": "0x000002450000"
 	},
 	{
@@ -1277,7 +1589,9 @@
 		"ids": [
 			2118
 		],
+		"memory": false,
 		"name": "Device_156",
+		"num_regions": 1,
 		"start_address": "0x000002460000"
 	},
 	{
@@ -1285,7 +1599,9 @@
 		"ids": [
 			2119
 		],
+		"memory": false,
 		"name": "Device_157",
+		"num_regions": 1,
 		"start_address": "0x000002470000"
 	},
 	{
@@ -1293,7 +1609,9 @@
 		"ids": [
 			2120
 		],
+		"memory": false,
 		"name": "Device_158",
+		"num_regions": 1,
 		"start_address": "0x000002480000"
 	},
 	{
@@ -1301,7 +1619,9 @@
 		"ids": [
 			2121
 		],
+		"memory": false,
 		"name": "Device_159",
+		"num_regions": 1,
 		"start_address": "0x000002490000"
 	},
 	{
@@ -1309,7 +1629,9 @@
 		"ids": [
 			2122
 		],
+		"memory": false,
 		"name": "Device_160",
+		"num_regions": 1,
 		"start_address": "0x0000024A0000"
 	},
 	{
@@ -1317,7 +1639,9 @@
 		"ids": [
 			2123
 		],
+		"memory": false,
 		"name": "Device_161",
+		"num_regions": 1,
 		"start_address": "0x0000024B0000"
 	},
 	{
@@ -1325,7 +1649,9 @@
 		"ids": [
 			2124
 		],
+		"memory": false,
 		"name": "Device_162",
+		"num_regions": 1,
 		"start_address": "0x0000024C0000"
 	},
 	{
@@ -1333,7 +1659,9 @@
 		"ids": [
 			2125
 		],
+		"memory": false,
 		"name": "Device_163",
+		"num_regions": 1,
 		"start_address": "0x0000024D0000"
 	},
 	{
@@ -1341,7 +1669,9 @@
 		"ids": [
 			2126
 		],
+		"memory": false,
 		"name": "Device_164",
+		"num_regions": 1,
 		"start_address": "0x0000024E0000"
 	},
 	{
@@ -1349,7 +1679,9 @@
 		"ids": [
 			2127
 		],
+		"memory": false,
 		"name": "Device_165",
+		"num_regions": 1,
 		"start_address": "0x0000024F0000"
 	},
 	{
@@ -1357,7 +1689,9 @@
 		"ids": [
 			2128
 		],
+		"memory": false,
 		"name": "Device_166",
+		"num_regions": 1,
 		"start_address": "0x000002500000"
 	},
 	{
@@ -1365,7 +1699,9 @@
 		"ids": [
 			2129
 		],
+		"memory": false,
 		"name": "Device_167",
+		"num_regions": 1,
 		"start_address": "0x000002510000"
 	},
 	{
@@ -1373,7 +1709,9 @@
 		"ids": [
 			2130
 		],
+		"memory": false,
 		"name": "Device_168",
+		"num_regions": 1,
 		"start_address": "0x000002520000"
 	},
 	{
@@ -1381,7 +1719,9 @@
 		"ids": [
 			2131
 		],
+		"memory": false,
 		"name": "Device_169",
+		"num_regions": 1,
 		"start_address": "0x000002530000"
 	},
 	{
@@ -1389,7 +1729,9 @@
 		"ids": [
 			2136
 		],
+		"memory": false,
 		"name": "Device_170",
+		"num_regions": 1,
 		"start_address": "0x000002100000"
 	},
 	{
@@ -1397,7 +1739,9 @@
 		"ids": [
 			2137
 		],
+		"memory": false,
 		"name": "Device_171",
+		"num_regions": 1,
 		"start_address": "0x000002110000"
 	},
 	{
@@ -1405,7 +1749,9 @@
 		"ids": [
 			2138
 		],
+		"memory": false,
 		"name": "Device_172",
+		"num_regions": 1,
 		"start_address": "0x000002120000"
 	},
 	{
@@ -1413,7 +1759,9 @@
 		"ids": [
 			2139
 		],
+		"memory": false,
 		"name": "Device_173",
+		"num_regions": 1,
 		"start_address": "0x000002130000"
 	},
 	{
@@ -1421,7 +1769,9 @@
 		"ids": [
 			2140
 		],
+		"memory": false,
 		"name": "Device_174",
+		"num_regions": 1,
 		"start_address": "0x000002140000"
 	},
 	{
@@ -1429,7 +1779,9 @@
 		"ids": [
 			2141
 		],
+		"memory": false,
 		"name": "Device_175",
+		"num_regions": 1,
 		"start_address": "0x000002150000"
 	},
 	{
@@ -1437,7 +1789,9 @@
 		"ids": [
 			2142
 		],
+		"memory": false,
 		"name": "Device_176",
+		"num_regions": 1,
 		"start_address": "0x000002160000"
 	},
 	{
@@ -1445,7 +1799,9 @@
 		"ids": [
 			2143
 		],
+		"memory": false,
 		"name": "Device_177",
+		"num_regions": 1,
 		"start_address": "0x000002170000"
 	},
 	{
@@ -1453,7 +1809,9 @@
 		"ids": [
 			2148
 		],
+		"memory": false,
 		"name": "Device_178",
+		"num_regions": 1,
 		"start_address": "0x000002800000"
 	},
 	{
@@ -1461,7 +1819,9 @@
 		"ids": [
 			2149
 		],
+		"memory": false,
 		"name": "Device_179",
+		"num_regions": 1,
 		"start_address": "0x000002810000"
 	},
 	{
@@ -1469,7 +1829,9 @@
 		"ids": [
 			2150
 		],
+		"memory": false,
 		"name": "Device_180",
+		"num_regions": 1,
 		"start_address": "0x000002820000"
 	},
 	{
@@ -1477,7 +1839,9 @@
 		"ids": [
 			2151
 		],
+		"memory": false,
 		"name": "Device_181",
+		"num_regions": 1,
 		"start_address": "0x000002830000"
 	},
 	{
@@ -1485,7 +1849,9 @@
 		"ids": [
 			2152
 		],
+		"memory": false,
 		"name": "Device_182",
+		"num_regions": 1,
 		"start_address": "0x000002840000"
 	},
 	{
@@ -1493,7 +1859,9 @@
 		"ids": [
 			2153
 		],
+		"memory": false,
 		"name": "Device_183",
+		"num_regions": 1,
 		"start_address": "0x000002850000"
 	},
 	{
@@ -1501,7 +1869,9 @@
 		"ids": [
 			2154
 		],
+		"memory": false,
 		"name": "Device_184",
+		"num_regions": 1,
 		"start_address": "0x000002860000"
 	},
 	{
@@ -1509,7 +1879,9 @@
 		"ids": [
 			2155
 		],
+		"memory": false,
 		"name": "Device_185",
+		"num_regions": 1,
 		"start_address": "0x000002870000"
 	},
 	{
@@ -1517,7 +1889,9 @@
 		"ids": [
 			2156
 		],
+		"memory": false,
 		"name": "Device_186",
+		"num_regions": 1,
 		"start_address": "0x000002880000"
 	},
 	{
@@ -1525,7 +1899,9 @@
 		"ids": [
 			2157
 		],
+		"memory": false,
 		"name": "Device_187",
+		"num_regions": 1,
 		"start_address": "0x000002890000"
 	},
 	{
@@ -1533,7 +1909,9 @@
 		"ids": [
 			2160
 		],
+		"memory": false,
 		"name": "Device_188",
+		"num_regions": 4,
 		"start_address": "0x000002700000"
 	},
 	{
@@ -1541,7 +1919,9 @@
 		"ids": [
 			2161
 		],
+		"memory": false,
 		"name": "Device_189",
+		"num_regions": 4,
 		"start_address": "0x000002710000"
 	},
 	{
@@ -1549,7 +1929,9 @@
 		"ids": [
 			2162
 		],
+		"memory": false,
 		"name": "Device_190",
+		"num_regions": 4,
 		"start_address": "0x000002720000"
 	},
 	{
@@ -1557,7 +1939,9 @@
 		"ids": [
 			2163
 		],
+		"memory": false,
 		"name": "Device_191",
+		"num_regions": 4,
 		"start_address": "0x000002730000"
 	},
 	{
@@ -1565,7 +1949,9 @@
 		"ids": [
 			2164
 		],
+		"memory": false,
 		"name": "Device_192",
+		"num_regions": 4,
 		"start_address": "0x000002740000"
 	},
 	{
@@ -1573,7 +1959,9 @@
 		"ids": [
 			2165
 		],
+		"memory": false,
 		"name": "Device_193",
+		"num_regions": 4,
 		"start_address": "0x000002750000"
 	},
 	{
@@ -1581,7 +1969,9 @@
 		"ids": [
 			2166
 		],
+		"memory": false,
 		"name": "Device_194",
+		"num_regions": 4,
 		"start_address": "0x000002760000"
 	},
 	{
@@ -1589,7 +1979,9 @@
 		"ids": [
 			2167
 		],
+		"memory": false,
 		"name": "Device_195",
+		"num_regions": 4,
 		"start_address": "0x000002770000"
 	},
 	{
@@ -1597,7 +1989,9 @@
 		"ids": [
 			2168
 		],
+		"memory": false,
 		"name": "Device_196",
+		"num_regions": 4,
 		"start_address": "0x000002780000"
 	},
 	{
@@ -1605,7 +1999,9 @@
 		"ids": [
 			2169
 		],
+		"memory": false,
 		"name": "Device_197",
+		"num_regions": 4,
 		"start_address": "0x000002790000"
 	},
 	{
@@ -1613,7 +2009,9 @@
 		"ids": [
 			2170
 		],
+		"memory": false,
 		"name": "Device_198",
+		"num_regions": 4,
 		"start_address": "0x0000027A0000"
 	},
 	{
@@ -1621,7 +2019,9 @@
 		"ids": [
 			2171
 		],
+		"memory": false,
 		"name": "Device_199",
+		"num_regions": 4,
 		"start_address": "0x0000027B0000"
 	},
 	{
@@ -1629,7 +2029,9 @@
 		"ids": [
 			2172
 		],
+		"memory": false,
 		"name": "Device_200",
+		"num_regions": 4,
 		"start_address": "0x0000027C0000"
 	},
 	{
@@ -1637,7 +2039,9 @@
 		"ids": [
 			2173
 		],
+		"memory": false,
 		"name": "Device_201",
+		"num_regions": 4,
 		"start_address": "0x0000027D0000"
 	},
 	{
@@ -1645,7 +2049,9 @@
 		"ids": [
 			2176
 		],
+		"memory": false,
 		"name": "Device_202",
+		"num_regions": 1,
 		"start_address": "0x0000027E0000"
 	},
 	{
@@ -1653,7 +2059,9 @@
 		"ids": [
 			2184
 		],
+		"memory": false,
 		"name": "Device_203",
+		"num_regions": 1,
 		"start_address": "0x000003404000"
 	},
 	{
@@ -1661,7 +2069,9 @@
 		"ids": [
 			2185
 		],
+		"memory": false,
 		"name": "Device_204",
+		"num_regions": 1,
 		"start_address": "0x000003400000"
 	},
 	{
@@ -1669,7 +2079,9 @@
 		"ids": [
 			2303
 		],
+		"memory": false,
 		"name": "Device_205",
+		"num_regions": 1,
 		"start_address": "0x000002A8F000"
 	},
 	{
@@ -1678,7 +2090,9 @@
 			2304,
 			2376
 		],
+		"memory": false,
 		"name": "Device_206",
+		"num_regions": 1,
 		"start_address": "0x004D80000000"
 	},
 	{
@@ -1687,7 +2101,9 @@
 			2305,
 			2377
 		],
+		"memory": false,
 		"name": "Device_207",
+		"num_regions": 1,
 		"start_address": "0x004D81000000"
 	},
 	{
@@ -1696,7 +2112,9 @@
 			2308,
 			2402
 		],
+		"memory": false,
 		"name": "Device_208",
+		"num_regions": 1,
 		"start_address": "0x000002A2F000"
 	},
 	{
@@ -1704,7 +2122,9 @@
 		"ids": [
 			2310
 		],
+		"memory": false,
 		"name": "Device_209",
+		"num_regions": 8,
 		"start_address": "0x000005390000"
 	},
 	{
@@ -1712,7 +2132,9 @@
 		"ids": [
 			2312
 		],
+		"memory": false,
 		"name": "Device_210",
+		"num_regions": 8,
 		"start_address": "0x000040000000"
 	},
 	{
@@ -1723,7 +2145,9 @@
 			2368,
 			2369
 		],
+		"memory": false,
 		"name": "Device_211",
+		"num_regions": 1,
 		"start_address": "0x000002A68000"
 	},
 	{
@@ -1734,7 +2158,9 @@
 			2370,
 			2371
 		],
+		"memory": false,
 		"name": "Device_212",
+		"num_regions": 1,
 		"start_address": "0x000002A69000"
 	},
 	{
@@ -1742,7 +2168,9 @@
 		"ids": [
 			2380
 		],
+		"memory": false,
 		"name": "Device_213",
+		"num_regions": 4,
 		"start_address": "0x000002A26000"
 	},
 	{
@@ -1750,7 +2178,9 @@
 		"ids": [
 			2381
 		],
+		"memory": false,
 		"name": "Device_214",
+		"num_regions": 4,
 		"start_address": "0x000002A70000"
 	},
 	{
@@ -1758,7 +2188,9 @@
 		"ids": [
 			2384
 		],
+		"memory": false,
 		"name": "Device_215",
+		"num_regions": 1,
 		"start_address": "0x000005380000"
 	},
 	{
@@ -1766,7 +2198,9 @@
 		"ids": [
 			2386
 		],
+		"memory": false,
 		"name": "Device_216",
+		"num_regions": 8,
 		"start_address": "0x00000B000000"
 	},
 	{
@@ -1774,7 +2208,9 @@
 		"ids": [
 			2387
 		],
+		"memory": false,
 		"name": "Device_217",
+		"num_regions": 8,
 		"start_address": "0x00000B100000"
 	},
 	{
@@ -1782,7 +2218,9 @@
 		"ids": [
 			2390
 		],
+		"memory": false,
 		"name": "Device_218",
+		"num_regions": 2,
 		"start_address": "0x000002A21000"
 	},
 	{
@@ -1790,7 +2228,9 @@
 		"ids": [
 			2392
 		],
+		"memory": false,
 		"name": "Device_219",
+		"num_regions": 5,
 		"start_address": "0x000002A23000"
 	},
 	{
@@ -1799,7 +2239,9 @@
 			2394,
 			2395
 		],
+		"memory": false,
 		"name": "Device_220",
+		"num_regions": 1,
 		"start_address": "0x000002F00000"
 	},
 	{
@@ -1813,7 +2255,9 @@
 			4762,
 			4763
 		],
+		"memory": false,
 		"name": "Device_221",
+		"num_regions": 1,
 		"start_address": "0x000003800000"
 	},
 	{
@@ -1821,7 +2265,9 @@
 		"ids": [
 			2400
 		],
+		"memory": false,
 		"name": "Device_222",
+		"num_regions": 16,
 		"start_address": "0x000001000000"
 	},
 	{
@@ -1829,7 +2275,9 @@
 		"ids": [
 			2408
 		],
+		"memory": false,
 		"name": "Device_223",
+		"num_regions": 1,
 		"start_address": "0x000002AFB000"
 	},
 	{
@@ -1837,7 +2285,9 @@
 		"ids": [
 			2409
 		],
+		"memory": false,
 		"name": "Device_224",
+		"num_regions": 1,
 		"start_address": "0x000002AF4000"
 	},
 	{
@@ -1845,7 +2295,9 @@
 		"ids": [
 			2410
 		],
+		"memory": false,
 		"name": "Device_225",
+		"num_regions": 1,
 		"start_address": "0x000002AF0000"
 	},
 	{
@@ -1853,7 +2305,9 @@
 		"ids": [
 			2411
 		],
+		"memory": false,
 		"name": "Device_226",
+		"num_regions": 1,
 		"start_address": "0x000002AF1000"
 	},
 	{
@@ -1861,7 +2315,9 @@
 		"ids": [
 			2412
 		],
+		"memory": false,
 		"name": "Device_227",
+		"num_regions": 1,
 		"start_address": "0x000002AF2000"
 	},
 	{
@@ -1869,7 +2325,9 @@
 		"ids": [
 			2413
 		],
+		"memory": false,
 		"name": "Device_228",
+		"num_regions": 1,
 		"start_address": "0x000002AF3000"
 	},
 	{
@@ -1877,7 +2335,9 @@
 		"ids": [
 			2415
 		],
+		"memory": false,
 		"name": "Device_229",
+		"num_regions": 1,
 		"start_address": "0x000002AFA000"
 	},
 	{
@@ -1885,7 +2345,9 @@
 		"ids": [
 			2416
 		],
+		"memory": false,
 		"name": "Device_230",
+		"num_regions": 1,
 		"start_address": "0x000003360000"
 	},
 	{
@@ -1893,7 +2355,9 @@
 		"ids": [
 			2418
 		],
+		"memory": false,
 		"name": "Device_231",
+		"num_regions": 1,
 		"start_address": "0x000003380000"
 	},
 	{
@@ -1901,7 +2365,9 @@
 		"ids": [
 			2419
 		],
+		"memory": false,
 		"name": "Device_232",
+		"num_regions": 1,
 		"start_address": "0x000003390000"
 	},
 	{
@@ -1909,7 +2375,9 @@
 		"ids": [
 			2430
 		],
+		"memory": false,
 		"name": "Device_233",
+		"num_regions": 1,
 		"start_address": "0x000002A8C000"
 	},
 	{
@@ -1917,7 +2385,9 @@
 		"ids": [
 			2431
 		],
+		"memory": false,
 		"name": "Device_234",
+		"num_regions": 1,
 		"start_address": "0x000002A8D000"
 	},
 	{
@@ -1925,7 +2395,9 @@
 		"ids": [
 			2432
 		],
+		"memory": false,
 		"name": "Device_235",
+		"num_regions": 4,
 		"start_address": "0x000002A30000"
 	},
 	{
@@ -1933,7 +2405,9 @@
 		"ids": [
 			2433
 		],
+		"memory": false,
 		"name": "Device_236",
+		"num_regions": 4,
 		"start_address": "0x000002A31000"
 	},
 	{
@@ -1941,7 +2415,9 @@
 		"ids": [
 			2436
 		],
+		"memory": false,
 		"name": "Device_237",
+		"num_regions": 2,
 		"start_address": "0x000004580000"
 	},
 	{
@@ -1949,7 +2425,9 @@
 		"ids": [
 			2437
 		],
+		"memory": false,
 		"name": "Device_238",
+		"num_regions": 2,
 		"start_address": "0x000004590000"
 	},
 	{
@@ -1957,7 +2435,9 @@
 		"ids": [
 			2440
 		],
+		"memory": false,
 		"name": "Device_239",
+		"num_regions": 4,
 		"start_address": "0x000002A38000"
 	},
 	{
@@ -1965,7 +2445,9 @@
 		"ids": [
 			2442
 		],
+		"memory": false,
 		"name": "Device_240",
+		"num_regions": 1,
 		"start_address": "0x000004480000"
 	},
 	{
@@ -1973,7 +2455,9 @@
 		"ids": [
 			2446
 		],
+		"memory": false,
 		"name": "Device_241",
+		"num_regions": 1,
 		"start_address": "0x000003410000"
 	},
 	{
@@ -1981,7 +2465,9 @@
 		"ids": [
 			2463
 		],
+		"memory": false,
 		"name": "Device_242",
+		"num_regions": 1,
 		"start_address": "0x000002A88000"
 	},
 	{
@@ -1989,7 +2475,9 @@
 		"ids": [
 			2464
 		],
+		"memory": false,
 		"name": "Device_243",
+		"num_regions": 2,
 		"start_address": "0x000009000000"
 	},
 	{
@@ -1997,7 +2485,9 @@
 		"ids": [
 			2465
 		],
+		"memory": false,
 		"name": "Device_244",
+		"num_regions": 1,
 		"start_address": "0x004C00000000"
 	},
 	{
@@ -2005,7 +2495,9 @@
 		"ids": [
 			2466
 		],
+		"memory": false,
 		"name": "Device_245",
+		"num_regions": 1,
 		"start_address": "0x000008004000"
 	},
 	{
@@ -2013,7 +2505,9 @@
 		"ids": [
 			2467
 		],
+		"memory": false,
 		"name": "Device_246",
+		"num_regions": 1,
 		"start_address": "0x000008008000"
 	},
 	{
@@ -2021,7 +2515,9 @@
 		"ids": [
 			2468
 		],
+		"memory": false,
 		"name": "Device_247",
+		"num_regions": 1,
 		"start_address": "0x000008000000"
 	},
 	{
@@ -2029,7 +2525,9 @@
 		"ids": [
 			2469
 		],
+		"memory": false,
 		"name": "Device_248",
+		"num_regions": 1,
 		"start_address": "0x000008010000"
 	},
 	{
@@ -2037,7 +2535,9 @@
 		"ids": [
 			2470
 		],
+		"memory": false,
 		"name": "Device_249",
+		"num_regions": 1,
 		"start_address": "0x000008020000"
 	},
 	{
@@ -2045,7 +2545,9 @@
 		"ids": [
 			2472
 		],
+		"memory": false,
 		"name": "Device_250",
+		"num_regions": 1,
 		"start_address": "0x000003408000"
 	},
 	{
@@ -2053,7 +2555,9 @@
 		"ids": [
 			2494
 		],
+		"memory": false,
 		"name": "Device_251",
+		"num_regions": 1,
 		"start_address": "0x000002A80000"
 	},
 	{
@@ -2061,7 +2565,9 @@
 		"ids": [
 			2495
 		],
+		"memory": false,
 		"name": "Device_252",
+		"num_regions": 1,
 		"start_address": "0x000002A86000"
 	},
 	{
@@ -2070,7 +2576,9 @@
 			2496,
 			2497
 		],
+		"memory": false,
 		"name": "Device_253",
+		"num_regions": 1,
 		"start_address": "0x000002B30000"
 	},
 	{
@@ -2079,7 +2587,9 @@
 			2498,
 			2499
 		],
+		"memory": false,
 		"name": "Device_254",
+		"num_regions": 1,
 		"start_address": "0x000002B40000"
 	},
 	{
@@ -2088,7 +2598,9 @@
 			2500,
 			2501
 		],
+		"memory": false,
 		"name": "Device_255",
+		"num_regions": 1,
 		"start_address": "0x000002B50000"
 	},
 	{
@@ -2097,7 +2609,9 @@
 			2502,
 			2503
 		],
+		"memory": false,
 		"name": "Device_256",
+		"num_regions": 1,
 		"start_address": "0x000002B60000"
 	},
 	{
@@ -2106,7 +2620,9 @@
 			2504,
 			2505
 		],
+		"memory": false,
 		"name": "Device_257",
+		"num_regions": 1,
 		"start_address": "0x000002B70000"
 	},
 	{
@@ -2115,7 +2631,9 @@
 			2506,
 			2507
 		],
+		"memory": false,
 		"name": "Device_258",
+		"num_regions": 1,
 		"start_address": "0x000002B80000"
 	},
 	{
@@ -2124,7 +2642,9 @@
 			2508,
 			2509
 		],
+		"memory": false,
 		"name": "Device_259",
+		"num_regions": 1,
 		"start_address": "0x000002B90000"
 	},
 	{
@@ -2133,7 +2653,9 @@
 			2510,
 			2511
 		],
+		"memory": false,
 		"name": "Device_260",
+		"num_regions": 1,
 		"start_address": "0x000002BA0000"
 	},
 	{
@@ -2142,7 +2664,9 @@
 			2512,
 			2513
 		],
+		"memory": false,
 		"name": "Device_261",
+		"num_regions": 1,
 		"start_address": "0x000002BB0000"
 	},
 	{
@@ -2150,7 +2674,9 @@
 		"ids": [
 			2527
 		],
+		"memory": false,
 		"name": "Device_262",
+		"num_regions": 1,
 		"start_address": "0x000002A8B000"
 	},
 	{
@@ -2160,7 +2686,9 @@
 			2529,
 			2560
 		],
+		"memory": false,
 		"name": "Device_263",
+		"num_regions": 8,
 		"start_address": "0x000000000000"
 	},
 	{
@@ -2170,7 +2698,9 @@
 			2531,
 			2561
 		],
+		"memory": false,
 		"name": "Device_264",
+		"num_regions": 8,
 		"start_address": "0x000000000000"
 	},
 	{
@@ -2180,7 +2710,9 @@
 			2533,
 			2562
 		],
+		"memory": false,
 		"name": "Device_265",
+		"num_regions": 8,
 		"start_address": "0x000000000000"
 	},
 	{
@@ -2190,7 +2722,9 @@
 			2535,
 			2563
 		],
+		"memory": false,
 		"name": "Device_266",
+		"num_regions": 8,
 		"start_address": "0x000000000000"
 	},
 	{
@@ -2199,7 +2733,9 @@
 			2568,
 			2569
 		],
+		"memory": false,
 		"name": "Device_267",
+		"num_regions": 1,
 		"start_address": "0x000002A10000"
 	},
 	{
@@ -2208,7 +2744,9 @@
 			2570,
 			2571
 		],
+		"memory": false,
 		"name": "Device_268",
+		"num_regions": 1,
 		"start_address": "0x000002A16000"
 	},
 	{
@@ -2216,7 +2754,9 @@
 		"ids": [
 			2576
 		],
+		"memory": false,
 		"name": "Device_269",
+		"num_regions": 4,
 		"start_address": "0x000002A24000"
 	},
 	{
@@ -2224,7 +2764,9 @@
 		"ids": [
 			2578
 		],
+		"memory": false,
 		"name": "Device_270",
+		"num_regions": 4,
 		"start_address": "0x000002F80000"
 	},
 	{
@@ -2232,7 +2774,9 @@
 		"ids": [
 			2580
 		],
+		"memory": false,
 		"name": "Device_271",
+		"num_regions": 4,
 		"start_address": "0x000002A28000"
 	},
 	{
@@ -2240,7 +2784,9 @@
 		"ids": [
 			2583
 		],
+		"memory": false,
 		"name": "Device_272",
+		"num_regions": 1,
 		"start_address": "0x000002AF5000"
 	},
 	{
@@ -2248,7 +2794,9 @@
 		"ids": [
 			2584
 		],
+		"memory": false,
 		"name": "Device_273",
+		"num_regions": 1,
 		"start_address": "0x000005000000"
 	},
 	{
@@ -2256,7 +2804,9 @@
 		"ids": [
 			2585
 		],
+		"memory": false,
 		"name": "Device_274",
+		"num_regions": 1,
 		"start_address": "0x000005010000"
 	},
 	{
@@ -2264,7 +2814,9 @@
 		"ids": [
 			2586
 		],
+		"memory": false,
 		"name": "Device_275",
+		"num_regions": 1,
 		"start_address": "0x000005020000"
 	},
 	{
@@ -2272,7 +2824,9 @@
 		"ids": [
 			2587
 		],
+		"memory": false,
 		"name": "Device_276",
+		"num_regions": 1,
 		"start_address": "0x000005030000"
 	},
 	{
@@ -2280,7 +2834,9 @@
 		"ids": [
 			2588
 		],
+		"memory": false,
 		"name": "Device_277",
+		"num_regions": 1,
 		"start_address": "0x000003370000"
 	},
 	{
@@ -2288,7 +2844,9 @@
 		"ids": [
 			2589
 		],
+		"memory": false,
 		"name": "Device_278",
+		"num_regions": 1,
 		"start_address": "0x000002A83000"
 	},
 	{
@@ -2296,7 +2854,9 @@
 		"ids": [
 			2590
 		],
+		"memory": false,
 		"name": "Device_279",
+		"num_regions": 1,
 		"start_address": "0x000002A87000"
 	},
 	{
@@ -2304,7 +2864,9 @@
 		"ids": [
 			2591
 		],
+		"memory": false,
 		"name": "Device_280",
+		"num_regions": 1,
 		"start_address": "0x000002A89000"
 	},
 	{
@@ -2313,7 +2875,9 @@
 			2592,
 			2593
 		],
+		"memory": false,
 		"name": "Device_281",
+		"num_regions": 1,
 		"start_address": "0x000002B00000"
 	},
 	{
@@ -2322,7 +2886,9 @@
 			2594,
 			2595
 		],
+		"memory": false,
 		"name": "Device_282",
+		"num_regions": 1,
 		"start_address": "0x000002B10000"
 	},
 	{
@@ -2331,7 +2897,9 @@
 			2596,
 			2597
 		],
+		"memory": false,
 		"name": "Device_283",
+		"num_regions": 1,
 		"start_address": "0x000002B20000"
 	},
 	{
@@ -2339,7 +2907,9 @@
 		"ids": [
 			2606
 		],
+		"memory": false,
 		"name": "Device_284",
+		"num_regions": 1,
 		"start_address": "0x00000340C000"
 	},
 	{
@@ -2347,7 +2917,9 @@
 		"ids": [
 			2607
 		],
+		"memory": false,
 		"name": "Device_285",
+		"num_regions": 1,
 		"start_address": "0x000002A8A000"
 	},
 	{
@@ -2356,7 +2928,9 @@
 			2608,
 			2609
 		],
+		"memory": false,
 		"name": "Device_286",
+		"num_regions": 1,
 		"start_address": "0x000002D00000"
 	},
 	{
@@ -2364,7 +2938,9 @@
 		"ids": [
 			2623
 		],
+		"memory": false,
 		"name": "Device_287",
+		"num_regions": 1,
 		"start_address": "0x000002A8E000"
 	},
 	{
@@ -2372,7 +2948,9 @@
 		"ids": [
 			2696
 		],
+		"memory": false,
 		"name": "Device_288",
+		"num_regions": 36,
 		"start_address": "0x000004300000"
 	},
 	{
@@ -2380,7 +2958,9 @@
 		"ids": [
 			2698
 		],
+		"memory": false,
 		"name": "Device_289",
+		"num_regions": 12,
 		"start_address": "0x000004200000"
 	},
 	{
@@ -2388,7 +2968,9 @@
 		"ids": [
 			2700
 		],
+		"memory": false,
 		"name": "Device_290",
+		"num_regions": 17,
 		"start_address": "0x000004A00000"
 	},
 	{
@@ -2396,7 +2978,9 @@
 		"ids": [
 			2704
 		],
+		"memory": false,
 		"name": "Device_291",
+		"num_regions": 3,
 		"start_address": "0x000004700000"
 	},
 	{
@@ -2404,7 +2988,9 @@
 		"ids": [
 			2706
 		],
+		"memory": false,
 		"name": "Device_292",
+		"num_regions": 6,
 		"start_address": "0x000002AC0000"
 	},
 	{
@@ -2412,7 +2998,9 @@
 		"ids": [
 			2710
 		],
+		"memory": false,
 		"name": "Device_293",
+		"num_regions": 1,
 		"start_address": "0x000005050000"
 	},
 	{
@@ -2421,7 +3009,9 @@
 			2728,
 			2729
 		],
+		"memory": false,
 		"name": "Device_294",
+		"num_regions": 1,
 		"start_address": "0x0000033A0000"
 	},
 	{
@@ -2429,7 +3019,9 @@
 		"ids": [
 			2732
 		],
+		"memory": false,
 		"name": "Device_295",
+		"num_regions": 1,
 		"start_address": "0x000003320000"
 	},
 	{
@@ -2437,7 +3029,9 @@
 		"ids": [
 			2733
 		],
+		"memory": false,
 		"name": "Device_296",
+		"num_regions": 1,
 		"start_address": "0x000003300000"
 	},
 	{
@@ -2445,7 +3039,9 @@
 		"ids": [
 			2734
 		],
+		"memory": false,
 		"name": "Device_297",
+		"num_regions": 1,
 		"start_address": "0x000003340000"
 	},
 	{
@@ -2453,7 +3049,9 @@
 		"ids": [
 			2735
 		],
+		"memory": false,
 		"name": "Device_298",
+		"num_regions": 1,
 		"start_address": "0x000003330000"
 	},
 	{
@@ -2461,7 +3059,9 @@
 		"ids": [
 			2736
 		],
+		"memory": false,
 		"name": "Device_299",
+		"num_regions": 1,
 		"start_address": "0x000003310000"
 	},
 	{
@@ -2469,7 +3069,9 @@
 		"ids": [
 			2738
 		],
+		"memory": false,
 		"name": "Device_300",
+		"num_regions": 1,
 		"start_address": "0x000002AF6000"
 	},
 	{
@@ -2477,7 +3079,9 @@
 		"ids": [
 			2750
 		],
+		"memory": false,
 		"name": "Device_301",
+		"num_regions": 1,
 		"start_address": "0x000002A85000"
 	},
 	{
@@ -2485,7 +3089,9 @@
 		"ids": [
 			2751
 		],
+		"memory": false,
 		"name": "Device_302",
+		"num_regions": 1,
 		"start_address": "0x000002A84000"
 	},
 	{
@@ -2494,7 +3100,9 @@
 			4160,
 			4288
 		],
+		"memory": false,
 		"name": "Device_303",
+		"num_regions": 1,
 		"start_address": "0x000031080000"
 	},
 	{
@@ -2502,7 +3110,9 @@
 		"ids": [
 			4352
 		],
+		"memory": false,
 		"name": "Device_304",
+		"num_regions": 7,
 		"start_address": "0x000030802000"
 	},
 	{
@@ -2510,7 +3120,9 @@
 		"ids": [
 			4384
 		],
+		"memory": false,
 		"name": "Device_305",
+		"num_regions": 6,
 		"start_address": "0x000030B00000"
 	},
 	{
@@ -2518,7 +3130,9 @@
 		"ids": [
 			4385
 		],
+		"memory": false,
 		"name": "Device_306",
+		"num_regions": 1,
 		"start_address": "0x000031001000"
 	},
 	{
@@ -2526,7 +3140,9 @@
 		"ids": [
 			4386
 		],
+		"memory": false,
 		"name": "Device_307",
+		"num_regions": 1,
 		"start_address": "0x000031F78000"
 	},
 	{
@@ -2536,7 +3152,9 @@
 			4388,
 			4389
 		],
+		"memory": false,
 		"name": "Device_308",
+		"num_regions": 1,
 		"start_address": "0x000031170000"
 	},
 	{
@@ -2544,7 +3162,9 @@
 		"ids": [
 			4608
 		],
+		"memory": false,
 		"name": "Device_309",
+		"num_regions": 1,
 		"start_address": "0x000030A02000"
 	},
 	{
@@ -2552,7 +3172,9 @@
 		"ids": [
 			4609
 		],
+		"memory": false,
 		"name": "Device_310",
+		"num_regions": 1,
 		"start_address": "0x000030A03000"
 	},
 	{
@@ -2560,7 +3182,9 @@
 		"ids": [
 			4610
 		],
+		"memory": false,
 		"name": "Device_311",
+		"num_regions": 1,
 		"start_address": "0x0000310D0000"
 	},
 	{
@@ -2568,7 +3192,9 @@
 		"ids": [
 			4611
 		],
+		"memory": false,
 		"name": "Device_312",
+		"num_regions": 1,
 		"start_address": "0x000030E00000"
 	},
 	{
@@ -2576,7 +3202,9 @@
 		"ids": [
 			4632
 		],
+		"memory": false,
 		"name": "Device_313",
+		"num_regions": 3,
 		"start_address": "0x000030E80000"
 	},
 	{
@@ -2584,7 +3212,9 @@
 		"ids": [
 			4640
 		],
+		"memory": false,
 		"name": "Device_314",
+		"num_regions": 3,
 		"start_address": "0x000030E81000"
 	},
 	{
@@ -2592,7 +3222,9 @@
 		"ids": [
 			4648
 		],
+		"memory": false,
 		"name": "Device_315",
+		"num_regions": 3,
 		"start_address": "0x000030800000"
 	},
 	{
@@ -2600,7 +3232,9 @@
 		"ids": [
 			4656
 		],
+		"memory": false,
 		"name": "Device_316",
+		"num_regions": 3,
 		"start_address": "0x000030801000"
 	},
 	{
@@ -2609,7 +3243,9 @@
 			4664,
 			4688
 		],
+		"memory": false,
 		"name": "Device_317",
+		"num_regions": 1,
 		"start_address": "0x000031120000"
 	},
 	{
@@ -2618,7 +3254,9 @@
 			4680,
 			4704
 		],
+		"memory": false,
 		"name": "Device_318",
+		"num_regions": 1,
 		"start_address": "0x000031140000"
 	},
 	{
@@ -2626,7 +3264,9 @@
 		"ids": [
 			4681
 		],
+		"memory": false,
 		"name": "Device_319",
+		"num_regions": 1,
 		"start_address": "0x000031000000"
 	},
 	{
@@ -2634,7 +3274,9 @@
 		"ids": [
 			4682
 		],
+		"memory": false,
 		"name": "Device_320",
+		"num_regions": 1,
 		"start_address": "0x0000310E0000"
 	},
 	{
@@ -2642,7 +3284,9 @@
 		"ids": [
 			4683
 		],
+		"memory": false,
 		"name": "Device_321",
+		"num_regions": 1,
 		"start_address": "0x000031F70000"
 	},
 	{
@@ -2650,7 +3294,9 @@
 		"ids": [
 			4736
 		],
+		"memory": false,
 		"name": "Device_322",
+		"num_regions": 6,
 		"start_address": "0x000031010000"
 	},
 	{
@@ -2658,7 +3304,9 @@
 		"ids": [
 			4737
 		],
+		"memory": false,
 		"name": "Device_323",
+		"num_regions": 6,
 		"start_address": "0x000031011000"
 	},
 	{
@@ -2666,7 +3314,9 @@
 		"ids": [
 			4738
 		],
+		"memory": false,
 		"name": "Device_324",
+		"num_regions": 6,
 		"start_address": "0x000031012000"
 	},
 	{
@@ -2674,7 +3324,9 @@
 		"ids": [
 			4739
 		],
+		"memory": false,
 		"name": "Device_325",
+		"num_regions": 6,
 		"start_address": "0x000031013000"
 	},
 	{
@@ -2682,7 +3334,9 @@
 		"ids": [
 			4740
 		],
+		"memory": false,
 		"name": "Device_326",
+		"num_regions": 6,
 		"start_address": "0x000031014000"
 	},
 	{
@@ -2690,7 +3344,9 @@
 		"ids": [
 			4744
 		],
+		"memory": false,
 		"name": "Device_327",
+		"num_regions": 2,
 		"start_address": "0x000030F80000"
 	},
 	{
@@ -2698,7 +3354,9 @@
 		"ids": [
 			4745
 		],
+		"memory": false,
 		"name": "Device_328",
+		"num_regions": 2,
 		"start_address": "0x000030F81000"
 	},
 	{
@@ -2706,7 +3364,9 @@
 		"ids": [
 			4747
 		],
+		"memory": false,
 		"name": "Device_329",
+		"num_regions": 2,
 		"start_address": "0x000030F83000"
 	},
 	{
@@ -2714,7 +3374,9 @@
 		"ids": [
 			4752
 		],
+		"memory": false,
 		"name": "Device_330",
+		"num_regions": 1,
 		"start_address": "0x000036600000"
 	},
 	{
@@ -2722,7 +3384,9 @@
 		"ids": [
 			4753
 		],
+		"memory": false,
 		"name": "Device_331",
+		"num_regions": 1,
 		"start_address": "0x000031002000"
 	},
 	{
@@ -2731,7 +3395,9 @@
 			5984,
 			5985
 		],
+		"memory": false,
 		"name": "Device_332",
+		"num_regions": 1,
 		"start_address": "0x000002A6A000"
 	},
 	{
@@ -2739,7 +3405,9 @@
 		"ids": [
 			5986
 		],
+		"memory": false,
 		"name": "Device_333",
+		"num_regions": 4,
 		"start_address": "0x00000F401000"
 	},
 	{
@@ -2747,7 +3415,9 @@
 		"ids": [
 			5987
 		],
+		"memory": false,
 		"name": "Device_334",
+		"num_regions": 4,
 		"start_address": "0x00000F408000"
 	},
 	{
@@ -2755,7 +3425,9 @@
 		"ids": [
 			5988
 		],
+		"memory": false,
 		"name": "Device_335",
+		"num_regions": 1,
 		"start_address": "0x00000F420000"
 	},
 	{
@@ -2763,7 +3435,9 @@
 		"ids": [
 			5989
 		],
+		"memory": false,
 		"name": "Device_336",
+		"num_regions": 1,
 		"start_address": "0x00000F424000"
 	},
 	{
@@ -2771,7 +3445,9 @@
 		"ids": [
 			5990
 		],
+		"memory": false,
 		"name": "Device_337",
+		"num_regions": 1,
 		"start_address": "0x00000F428000"
 	},
 	{
@@ -2783,7 +3459,9 @@
 			6018,
 			6019
 		],
+		"memory": false,
 		"name": "Device_338",
+		"num_regions": 1,
 		"start_address": "0x00000F480000"
 	},
 	{
@@ -2791,7 +3469,9 @@
 		"ids": [
 			5992
 		],
+		"memory": false,
 		"name": "Device_339",
+		"num_regions": 1,
 		"start_address": "0x00000F500000"
 	},
 	{
@@ -2799,7 +3479,9 @@
 		"ids": [
 			5993
 		],
+		"memory": false,
 		"name": "Device_340",
+		"num_regions": 4,
 		"start_address": "0x00000F600000"
 	},
 	{
@@ -2821,227 +3503,9 @@
 			6082,
 			6083
 		],
+		"memory": false,
 		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x004F0007FFFF",
-		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
-			6083
-		],
-		"name": "VPAC",
+		"num_regions": 1,
 		"start_address": "0x000002A60000"
 	},
 	{
@@ -3050,7 +3514,9 @@
 			6148,
 			6260
 		],
+		"memory": false,
 		"name": "Device_352",
+		"num_regions": 1,
 		"start_address": "0x000028590000"
 	},
 	{
@@ -3059,7 +3525,9 @@
 			6156,
 			6268
 		],
+		"memory": false,
 		"name": "Device_353",
+		"num_regions": 1,
 		"start_address": "0x0000285B0000"
 	},
 	{
@@ -3068,7 +3536,9 @@
 			6176,
 			6288
 		],
+		"memory": false,
 		"name": "Device_354",
+		"num_regions": 1,
 		"start_address": "0x000028440000"
 	},
 	{
@@ -3076,7 +3546,9 @@
 		"ids": [
 			6240
 		],
+		"memory": false,
 		"name": "Device_355",
+		"num_regions": 7,
 		"start_address": "0x0000283C0000"
 	},
 	{
@@ -3084,7 +3556,9 @@
 		"ids": [
 			6248
 		],
+		"memory": false,
 		"name": "Device_356",
+		"num_regions": 6,
 		"start_address": "0x000028400000"
 	},
 	{
@@ -3092,7 +3566,9 @@
 		"ids": [
 			6249
 		],
+		"memory": false,
 		"name": "Device_357",
+		"num_regions": 1,
 		"start_address": "0x000028381000"
 	},
 	{
@@ -3100,7 +3576,9 @@
 		"ids": [
 			6250
 		],
+		"memory": false,
 		"name": "Device_358",
+		"num_regions": 1,
 		"start_address": "0x00002A268000"
 	},
 	{
@@ -3108,7 +3586,9 @@
 		"ids": [
 			6251
 		],
+		"memory": false,
 		"name": "Device_359",
+		"num_regions": 1,
 		"start_address": "0x0000285E0000"
 	},
 	{
@@ -3116,7 +3596,9 @@
 		"ids": [
 			6252
 		],
+		"memory": false,
 		"name": "Device_360",
+		"num_regions": 1,
 		"start_address": "0x000028380000"
 	},
 	{
@@ -3124,7 +3606,9 @@
 		"ids": [
 			6253
 		],
+		"memory": false,
 		"name": "Device_361",
+		"num_regions": 1,
 		"start_address": "0x000028540000"
 	},
 	{
@@ -3132,7 +3616,9 @@
 		"ids": [
 			6254
 		],
+		"memory": false,
 		"name": "Device_362",
+		"num_regions": 1,
 		"start_address": "0x00002A264000"
 	},
 	{
@@ -3141,7 +3627,9 @@
 			6269,
 			6270
 		],
+		"memory": false,
 		"name": "Device_363",
+		"num_regions": 1,
 		"start_address": "0x000028000000"
 	}
 ]

@@ -201,7 +201,7 @@
 		"subtypeId": 11,
 		"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
 		"uniqueId": 13515,
-		"utype": "Main NAVSS Ring monitors"
+		"utype": "Main NAVSS Ringacc ring monitors"
 	},
 	{
 		"deviceId": 210,
@@ -521,7 +521,7 @@
 		"subtypeId": 11,
 		"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
 		"uniqueId": 15051,
-		"utype": "MCU NAVSS Ring monitors"
+		"utype": "MCU NAVSS Ringacc ring monitors"
 	},
 	{
 		"deviceId": 234,
