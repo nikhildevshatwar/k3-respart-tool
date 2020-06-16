@@ -1,0 +1,138 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "VF211x" --package "ZDN" --part "Default" --product "K3-Respart-Tool@version_1"
+ * @versions {"data":"2020052503","timestamp":"2020052503","tool":"1.6.0+1393","templates":"2020052503"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const sysfwResPart  = scripting.addModule("/modules/sysfwResPart", {}, false);
+const sysfwResPart1 = sysfwResPart.addInstance();
+const sysfwResPart2 = sysfwResPart.addInstance();
+const sysfwResPart3 = sysfwResPart.addInstance();
+const sysfwResPart4 = sysfwResPart.addInstance();
+const sysfwResPart5 = sysfwResPart.addInstance();
+const sysfwResPart6 = sysfwResPart.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+sysfwResPart1.hostName                                                      = "A72_2";
+sysfwResPart1.Main_NAVSS_Interrupt_router_count                             = 128;
+sysfwResPart1.Main_NAVSS_Non_secure_proxies_count                           = 4;
+sysfwResPart1.Main_NAVSS_Ringacc_Free_rings_count                           = 150;
+sysfwResPart1.Main_NAVSS_Ringacc_ring_monitors_count                        = 3;
+sysfwResPart1.Main_NAVSS_UDMA_Rx_free_flows_count                           = 8;
+sysfwResPart1.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count             = 24;
+sysfwResPart1.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count             = 24;
+sysfwResPart1.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 24;
+sysfwResPart1.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 1024;
+sysfwResPart1.MCU_NAVSS_Non_secure_proxies_count                            = 8;
+sysfwResPart1.MCU_NAVSS_Ringacc_free_rings_count                            = 20;
+sysfwResPart1.MCU_NAVSS_Ringacc_ring_monitors_count                         = 3;
+sysfwResPart1.MCU_NAVSS_UDMA_Rx_free_flows_count                            = 8;
+sysfwResPart1.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count              = 12;
+sysfwResPart1.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 12;
+sysfwResPart1.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count       = 32;
+sysfwResPart1.MCU_NAVSS_Interrupt_aggregator_Global_events_count            = 128;
+
+sysfwResPart2.hostName                                                      = "A72_3";
+sysfwResPart2.Main_NAVSS_Interrupt_router_count                             = 54;
+sysfwResPart2.Main_NAVSS_Non_secure_proxies_count                           = 4;
+sysfwResPart2.Main_NAVSS_Ringacc_Free_rings_count                           = 40;
+sysfwResPart2.Main_NAVSS_Ringacc_ring_monitors_count                        = 2;
+sysfwResPart2.Main_NAVSS_UDMA_Rx_free_flows_count                           = 8;
+sysfwResPart2.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count             = 10;
+sysfwResPart2.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count             = 10;
+sysfwResPart2.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 32;
+sysfwResPart2.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 512;
+sysfwResPart2.MCU_NAVSS_Non_secure_proxies_count                            = 4;
+sysfwResPart2.MCU_NAVSS_Ringacc_free_rings_count                            = 8;
+sysfwResPart2.MCU_NAVSS_Ringacc_ring_monitors_count                         = 2;
+sysfwResPart2.MCU_NAVSS_UDMA_Rx_free_flows_count                            = 4;
+sysfwResPart2.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count              = 6;
+sysfwResPart2.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 6;
+sysfwResPart2.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count       = 16;
+sysfwResPart2.MCU_NAVSS_Interrupt_aggregator_Global_events_count            = 128;
+
+sysfwResPart3.hostName                                                 = "MCU_0_R5_0";
+sysfwResPart3.Main_2_MCU_Level_Interrupt_router_count                  = 32;
+sysfwResPart3.Main_2_MCU_Pulse_Interrupt_router_count                  = 24;
+sysfwResPart3.Main_NAVSS_Non_secure_proxies_count                      = 4;
+sysfwResPart3.Main_NAVSS_Ringacc_Free_rings_count                      = 6;
+sysfwResPart3.Main_NAVSS_Ringacc_ring_monitors_count                   = 1;
+sysfwResPart3.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count        = 2;
+sysfwResPart3.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count        = 2;
+sysfwResPart3.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count = 32;
+sysfwResPart3.MCU_NAVSS_Interrupt_router_count                         = 28;
+sysfwResPart3.MCU_NAVSS_Non_secure_proxies_count                       = 8;
+sysfwResPart3.MCU_NAVSS_Ringacc_free_rings_count                       = 32;
+sysfwResPart3.MCU_NAVSS_Ringacc_ring_monitors_count                    = 3;
+sysfwResPart3.MCU_NAVSS_UDMA_Rx_free_flows_count                       = 8;
+sysfwResPart3.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count         = 5;
+sysfwResPart3.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count         = 5;
+sysfwResPart3.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count  = 64;
+sysfwResPart3.MCU_NAVSS_Interrupt_aggregator_Global_events_count       = 256;
+
+sysfwResPart4.hostName                                                 = "MCU_0_R5_2";
+sysfwResPart4.Main_2_MCU_Level_Interrupt_router_count                  = 32;
+sysfwResPart4.Main_2_MCU_Pulse_Interrupt_router_count                  = 24;
+sysfwResPart4.Main_NAVSS_Non_secure_proxies_count                      = 4;
+sysfwResPart4.Main_NAVSS_Ringacc_Free_rings_count                      = 6;
+sysfwResPart4.Main_NAVSS_Ringacc_ring_monitors_count                   = 1;
+sysfwResPart4.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count        = 2;
+sysfwResPart4.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count        = 2;
+sysfwResPart4.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count = 32;
+sysfwResPart4.MCU_NAVSS_Interrupt_router_count                         = 28;
+sysfwResPart4.MCU_NAVSS_Non_secure_proxies_count                       = 8;
+sysfwResPart4.MCU_NAVSS_Ringacc_free_rings_count                       = 12;
+sysfwResPart4.MCU_NAVSS_Ringacc_ring_monitors_count                    = 3;
+sysfwResPart4.MCU_NAVSS_UDMA_Rx_free_flows_count                       = 4;
+sysfwResPart4.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count         = 2;
+sysfwResPart4.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count         = 2;
+sysfwResPart4.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count  = 4;
+sysfwResPart4.MCU_NAVSS_Interrupt_aggregator_Global_events_count       = 64;
+
+sysfwResPart5.hostName                                                      = "MAIN_0_R5_0";
+sysfwResPart5.Main_NAVSS_Interrupt_router_count                             = 28;
+sysfwResPart5.Main_NAVSS_Non_secure_proxies_count                           = 8;
+sysfwResPart5.Main_NAVSS_Ringacc_Free_rings_count                           = 40;
+sysfwResPart5.Main_NAVSS_Ringacc_ring_monitors_count                        = 6;
+sysfwResPart5.Main_NAVSS_UDMA_Rx_free_flows_count                           = 64;
+sysfwResPart5.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count             = 7;
+sysfwResPart5.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count             = 7;
+sysfwResPart5.Main_NAVSS_UDMA_High_capacity_Rx_channels_count               = 2;
+sysfwResPart5.Main_NAVSS_UDMA_High_capacity_Tx_channels_count               = 2;
+sysfwResPart5.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 8;
+sysfwResPart5.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 256;
+sysfwResPart5.MCU_NAVSS_Non_secure_proxies_count                            = 16;
+sysfwResPart5.MCU_NAVSS_Ringacc_free_rings_count                            = 16;
+sysfwResPart5.MCU_NAVSS_Ringacc_ring_monitors_count                         = 3;
+sysfwResPart5.MCU_NAVSS_UDMA_Rx_free_flows_count                            = 8;
+sysfwResPart5.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count              = 3;
+sysfwResPart5.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 3;
+sysfwResPart5.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count       = 16;
+sysfwResPart5.MCU_NAVSS_Interrupt_aggregator_Global_events_count            = 128;
+
+sysfwResPart6.hostName                                                      = "MAIN_0_R5_2";
+sysfwResPart6.Main_NAVSS_Interrupt_router_count                             = 28;
+sysfwResPart6.Main_NAVSS_Non_secure_proxies_count                           = 8;
+sysfwResPart6.Main_NAVSS_Ringacc_Free_rings_count                           = 182;
+sysfwResPart6.Main_NAVSS_Ringacc_ring_monitors_count                        = 3;
+sysfwResPart6.Main_NAVSS_UDMA_Rx_free_flows_count                           = 8;
+sysfwResPart6.Main_NAVSS_UDMA_Normal_capacity_Rx_channels_count             = 8;
+sysfwResPart6.Main_NAVSS_UDMA_Normal_capacity_Tx_channels_count             = 8;
+sysfwResPart6.Main_NAVSS_UDMA_Ultra_high_capacity_Rx_channels_count         = 2;
+sysfwResPart6.Main_NAVSS_UDMA_Ultra_high_capacity_Tx_channels_count         = 2;
+sysfwResPart6.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 24;
+sysfwResPart6.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 512;
+sysfwResPart6.MCU_NAVSS_Non_secure_proxies_count                            = 12;
+sysfwResPart6.MCU_NAVSS_Ringacc_free_rings_count                            = 8;
+sysfwResPart6.MCU_NAVSS_Ringacc_ring_monitors_count                         = 3;
+sysfwResPart6.MCU_NAVSS_UDMA_Rx_free_flows_count                            = 4;
+sysfwResPart6.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count              = 2;
+sysfwResPart6.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 2;
+sysfwResPart6.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count       = 16;
+sysfwResPart6.MCU_NAVSS_Interrupt_aggregator_Global_events_count            = 128;
