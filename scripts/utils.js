@@ -117,7 +117,7 @@ function endPoint() {
         if (system.modules["/modules/qosConfig"]) {
                 for (let inst of system.modules["/modules/qosConfig"].$instances) {
                         _.each(inst.qosdev,(e) => {
-                                endPoint.push(e);
+                                endPoint.push(inst.deviceName + "_" + e);
                         })
                 }
         }

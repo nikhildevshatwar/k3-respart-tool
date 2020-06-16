@@ -2,19 +2,7 @@ const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 const socName = devData[deviceSelected].shortName;
 
-const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.name);
-
-var qos_devlist = _.map(qos,(q) => {
-	return {
-		name : q.name,
-		displayName : q.name
-	}
-})
-
-qos_devlist.unshift({
-	name : "unknown",
-	displayName : "Select"
-});
+const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.uniqueName);
 
 var deviceNames = [];
 
@@ -57,9 +45,9 @@ function optionValues(max, stringifyName=false){
 }
 
 function showValidConfigurables(inst,ui){
-	var maxEndPoints = 1000;
+	var maxChannelCount = 1000;
 	var obj = {
-		min : maxEndPoints,
+		min : maxChannelCount,
 		atype : 0,
 		virtId : 0,
 		orderId : 0,
@@ -70,16 +58,17 @@ function showValidConfigurables(inst,ui){
 
 	_.each(inst.qosdev,(e) => {
 		if(e !== "none"){
-			obj.min = Math.min(obj.min,qos[e].channelCount);
-			obj.atype |= qos[e].atype,
-			obj.virtId |= qos[e].virtId,
-			obj.orderId |= qos[e].orderId,
-			obj.qos |= qos[e].qos,
-			obj.epriority |= qos[e].epriority,
-			obj.asel |= qos[e].asel
+			var n = inst.deviceName + "_" + e;
+			obj.min = Math.min(obj.min,qos[n].channelCount);
+			obj.atype |= qos[n].atype,
+			obj.virtId |= qos[n].virtId,
+			obj.orderId |= qos[n].orderId,
+			obj.qos |= qos[n].qos,
+			obj.epriority |= qos[n].epriority,
+			obj.asel |= qos[n].asel
 		}
 	})
-	inst.numChan = (obj.min === maxEndPoints ? 0 : obj.min);
+	inst.numChan = (obj.min === maxChannelCount ? 0 : obj.min);
 	ui.chan.hidden = false;
 
 	ui.atype.hidden = !obj.atype;
@@ -116,7 +105,8 @@ function showParameterInfo(inst,report){
 		if(!inst[p].hidden){
 			var names = "";
 			_.each(inst.qosdev,(e) => {
-				if(!qos[e][p]){
+				var n = inst.deviceName + "_" + e;
+				if(!qos[n][p]){
 					names += e;
 					names += ", ";
 				}
@@ -228,7 +218,6 @@ exports = {
 		{
 			name: "qosdev",
 			displayName: "QoS endpoint",
-			options: qos_devlist,
 			hidden: true,
 			default: ["none"],
 			options: (inst) => {

@@ -51,7 +51,8 @@ soc=$1
 		prettify_json $topdir/data/$soc/Qos.json 
 
 		node $topdir/scripts/parse_soc_firewalls.js --soc $soc --doc $soc_json \
-		  --dname $topdir/data/$soc/DeviceName.json
+		  --dname $topdir/data/$soc/DeviceName.json \
+		  --firewall $sysfw_repo/docs/public/5_soc_doc/$sysfw_soc/firewalls.rst
 		echo "Generated data/$soc/Firewall.json"
 		prettify_json $topdir/data/$soc/Firewall.json 
 	fi

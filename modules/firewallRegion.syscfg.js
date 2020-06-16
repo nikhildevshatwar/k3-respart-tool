@@ -50,6 +50,19 @@ exports = {
 			}
 		},
 		{
+			name: "memory",
+			default: false,
+			hidden: true,
+			onChange: (inst,ui) => {
+				if(inst.memory){
+					ui.regionAlloc.hidden = true;
+				}
+				else{
+					ui.regionAlloc.hidden = false;
+				}
+			}
+		},
+		{
 			name: "lock",
 			displayName: "Lock Region",
 			default: false

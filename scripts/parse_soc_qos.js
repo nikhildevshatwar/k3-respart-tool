@@ -17,26 +17,6 @@ const args = require('yargs')
         .argv;
 
 
-
-
-function extractname(str) {
-        var pieces = str.split("_");
-        pieces.shift();
-        pieces.shift();
-        pieces.pop();
-        pieces.pop();
-
-        str = pieces.join("_");
-
-        return str;
-}
-
-function extractvalue(str) {
-
-        var sz = str.length;
-        return str.slice(1, sz - 1);
-}
-
 function to32Bit(str){
         var t = "";
         for(var idx = str.length - 1 ; idx >=0 ; idx--){
@@ -50,11 +30,23 @@ function to32Bit(str){
         return "0x" + t;
 }
 
+function getAddress(base,offset){
+
+        base  = parseInt(base);
+
+        var val = (base + offset ) & (~(0xff));
+
+        val += 256;
+
+        return "0x" + val.toString(16).toUpperCase();
+}
+
 function createQosArray(path) {
         var fs = require("fs");
         var qosArray = fs.readFileSync(path).toString();
 
         qosArray = JSON.parse(qosArray);
+        var allData = qosArray;
         qosArray = qosArray.qos.cbass_qos_mmr;
 
         var finalData = [];
@@ -71,9 +63,42 @@ function createQosArray(path) {
                         name: q.master_intf.toUpperCase(),
                         orderId: q.orderid_capable,
                         qos: q.qos_capable,
-                        virtId: q.virtid_capable  
+                        virtId: q.virtid_capable,
+                        groupCount: 0,
+                        uniqueName: q.master_inst.toUpperCase() + "_" + q.master_intf.toUpperCase()
                 })
         })
+
+        var qosRegs = [];
+
+        allData.ip_instances.forEach( i => {
+
+                if(i.regions){
+                        i.regions.forEach( r => {
+                                if(r.design_name === "qos_regs")
+                                        qosRegs.push(r);
+                        })
+                }
+        })
+
+        qosRegs.forEach( q => {
+                var base = to32Bit(q.base);
+                q.registers.forEach( r => {
+                        var name = r.name.split("_");
+                        if(name.length >= 2){
+                                if(name[name.length - 1] === "map1" && name[name.length - 2] === "grp"){
+                                        var address = getAddress(base,r.offset);
+                                        finalData.forEach( f => {
+                                                if(address === f.baseAddress){
+                                                        f.groupCount++;
+                                                }
+                                        })
+                                }
+                        }
+                })
+        })
+
+        
 
         return finalData;
 }

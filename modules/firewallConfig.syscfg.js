@@ -98,7 +98,8 @@ exports = {
 			args: {
 				defaultStart : start,
 				defaultEnd : end,
-				regionAlloc: customAlloc
+				regionAlloc: customAlloc,
+				memory: customAlloc
 			}
 		}]
 	},

@@ -3,7 +3,7 @@
 	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 	const socName = devData[deviceSelected].shortName;
 
-	const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.name);
+	const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.uniqueName);
 
 	var utils = system.getScript("/scripts/utils.js");
 
@@ -15,8 +15,9 @@ struct qos_data j721e_qos_data[] = {
 %        for (let inst of system.modules["/modules/qosConfig"].$instances) {
 %
 %	_.each(inst.qosdev,(e) => {
+%	var n = inst.deviceName + "_" + e;
 	{
-		.reg = `qos[e].baseAddress + 0x100` + `inst.chan` * 0x4,
+		.reg = `qos[n].baseAddress` + `inst.chan` * 0x4,
 		.val = `utils.decimalToHexadecimal(utils.getValue(inst))`
 	},
 %	})
@@ -25,15 +26,19 @@ struct qos_data j721e_qos_data[] = {
 %}
 
 	/* Set the 1:1 mapping for orderID MAP1/MAP2 registers */
-% var group = 0;
 %_.each(uniqueEndPoint,(u) => {
-	{
-		.reg = `qos[u].cslBase` + `group` * 0x400 + 0x0
-		.val = 0x76543210,
-	},
-	{
-		.reg = `qos[u].cslBase` + `group` * 0x400 + 0x4
-		.val = 0xfedcba98,
-	},
+%        var group = qos[u].groupCount;
+%        for(var g = 0 ; g < group ; g++ ){
+%
+        {
+                .reg = `qos[u].baseAddress` + `g` * 0x400 + 0x0
+                .val = 0x76543210,
+        },
+        {
+                .reg = `qos[u].baseAddress` + `g` * 0x400 + 0x4
+                .val = 0xfedcba98,
+        },
+%
+%        }
 %})
 };
