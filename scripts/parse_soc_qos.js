@@ -2,7 +2,7 @@ const args = require('yargs')
         .options({
                 "doc" : {
                         alias : "document",
-                        describe : "Path to csl_soc_qos.h file",
+                        describe : "Path to SOC JSON file",
                         demandOption : true,
                         type : "string"
                 },
@@ -65,7 +65,7 @@ function createQosArray(path) {
                         qos: q.qos_capable,
                         virtId: q.virtid_capable,
                         groupCount: 0,
-                        uniqueName: q.master_inst.toUpperCase() + "_" + q.master_intf.toUpperCase()
+                        endpointName: q.master_inst.toUpperCase() + "_" + q.master_intf.toUpperCase()
                 })
         })
 

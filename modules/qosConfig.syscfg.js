@@ -2,7 +2,7 @@ const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 const socName = devData[deviceSelected].shortName;
 
-const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.uniqueName);
+const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.endpointName);
 
 var deviceNames = [];
 

@@ -2,7 +2,7 @@ const args = require('yargs')
         .options({
                 "doc": {
                         alias: "document",
-                        describe: "Path to std_slave_firewall file",
+                        describe : "Path to SOC JSON file",
                         demandOption: true,
                         type: "string"
                 },
