@@ -5,8 +5,11 @@
 			264
 		],
 		"memory": false,
-		"name": "Device_0",
+		"name": "AAAAAA0",
 		"num_regions": 2,
+		"protected_inst": [
+			"compute_cluster_j7es_tb_vdc_main_0_p4_c711_512kb"
+		],
 		"start_address": "0x000064800000"
 	},
 	{
@@ -15,20 +18,38 @@
 			288
 		],
 		"memory": false,
-		"name": "Device_1",
+		"name": "AAAAAA1",
 		"num_regions": 3,
+		"protected_inst": [
+			"compute_cluster_j7es_tb_vdc_main_0_dru"
+		],
 		"start_address": "0x00006D000000"
+	},
+	{
+		"end_address": "0x0000000007FF",
+		"ids": [
+			1
+		],
+		"memory": false,
+		"name": "AAAAAA2",
+		"num_regions": 1,
+		"protected_inst": [
+			"psram512x32e_main_0"
+		],
+		"start_address": "0x000000000000"
 	},
 	{
 		"end_address": "0x0000007803FF",
 		"ids": [
-			1,
 			2
 		],
 		"memory": false,
-		"name": "Device_2",
+		"name": "AAAAAA3",
 		"num_regions": 1,
-		"start_address": "0x000000000000"
+		"protected_inst": [
+			"psram512x32e_main_0"
+		],
+		"start_address": "0x000000780000"
 	},
 	{
 		"end_address": "0x000000400FFF",
@@ -36,8 +57,11 @@
 			5
 		],
 		"memory": false,
-		"name": "Device_3",
+		"name": "AAAAAA4",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_psc_wrap_main_0"
+		],
 		"start_address": "0x000000400000"
 	},
 	{
@@ -46,8 +70,11 @@
 			6
 		],
 		"memory": false,
-		"name": "Device_4",
+		"name": "AAAAAA5",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pll_ctrl_wrap_main_0"
+		],
 		"start_address": "0x000000410000"
 	},
 	{
@@ -56,8 +83,11 @@
 			7
 		],
 		"memory": false,
-		"name": "Device_5",
+		"name": "AAAAAA6",
 		"num_regions": 4,
+		"protected_inst": [
+			"gtc_r10_main_0"
+		],
 		"start_address": "0x000000A80000"
 	},
 	{
@@ -66,8 +96,11 @@
 			8
 		],
 		"memory": false,
-		"name": "Device_6",
+		"name": "AAAAAA7",
 		"num_regions": 16,
+		"protected_inst": [
+			"j7_main_pll_mmr_main_0"
+		],
 		"start_address": "0x000000680000"
 	},
 	{
@@ -76,8 +109,11 @@
 			9
 		],
 		"memory": false,
-		"name": "Device_7",
+		"name": "AAAAAA8",
 		"num_regions": 8,
+		"protected_inst": [
+			"j7_main_ctrl_mmr_main_0"
+		],
 		"start_address": "0x000000100000"
 	},
 	{
@@ -86,8 +122,11 @@
 			10
 		],
 		"memory": false,
-		"name": "Device_8",
+		"name": "AAAAAA9",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_dftss_wrap_main_0"
+		],
 		"start_address": "0x000000500000"
 	},
 	{
@@ -96,8 +135,11 @@
 			11
 		],
 		"memory": false,
-		"name": "Device_9",
+		"name": "AAAAAA10",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_efuse_ctrl_wrap_main_0"
+		],
 		"start_address": "0x000000300000"
 	},
 	{
@@ -106,8 +148,11 @@
 			12
 		],
 		"memory": false,
-		"name": "Device_10",
+		"name": "AAAAAA11",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_main_infra_0"
+		],
 		"start_address": "0x000000420000"
 	},
 	{
@@ -116,8 +161,11 @@
 			16
 		],
 		"memory": false,
-		"name": "Device_11",
+		"name": "AAAAAA12",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_0"
+		],
 		"start_address": "0x000000600000"
 	},
 	{
@@ -126,8 +174,11 @@
 			17
 		],
 		"memory": false,
-		"name": "Device_12",
+		"name": "AAAAAA13",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_1"
+		],
 		"start_address": "0x000000601000"
 	},
 	{
@@ -136,8 +187,11 @@
 			18
 		],
 		"memory": false,
-		"name": "Device_13",
+		"name": "AAAAAA14",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_2"
+		],
 		"start_address": "0x000000610000"
 	},
 	{
@@ -146,8 +200,11 @@
 			19
 		],
 		"memory": false,
-		"name": "Device_14",
+		"name": "AAAAAA15",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_3"
+		],
 		"start_address": "0x000000611000"
 	},
 	{
@@ -156,8 +213,11 @@
 			20
 		],
 		"memory": false,
-		"name": "Device_15",
+		"name": "AAAAAA16",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_4"
+		],
 		"start_address": "0x000000620000"
 	},
 	{
@@ -166,8 +226,11 @@
 			21
 		],
 		"memory": false,
-		"name": "Device_16",
+		"name": "AAAAAA17",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_5"
+		],
 		"start_address": "0x000000621000"
 	},
 	{
@@ -176,8 +239,11 @@
 			22
 		],
 		"memory": false,
-		"name": "Device_17",
+		"name": "AAAAAA18",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_6"
+		],
 		"start_address": "0x000000630000"
 	},
 	{
@@ -186,8 +252,11 @@
 			23
 		],
 		"memory": false,
-		"name": "Device_18",
+		"name": "AAAAAA19",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_main_7"
+		],
 		"start_address": "0x000000631000"
 	},
 	{
@@ -196,8 +265,11 @@
 			24
 		],
 		"memory": false,
-		"name": "Device_19",
+		"name": "AAAAAA20",
 		"num_regions": 1,
+		"protected_inst": [
+			"esm_j7_main_main_0"
+		],
 		"start_address": "0x000000700000"
 	},
 	{
@@ -206,8 +278,11 @@
 			32
 		],
 		"memory": false,
-		"name": "Device_20",
+		"name": "AAAAAA21",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_0"
+		],
 		"start_address": "0x000000800000"
 	},
 	{
@@ -216,8 +291,11 @@
 			33
 		],
 		"memory": false,
-		"name": "Device_21",
+		"name": "AAAAAA22",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_1"
+		],
 		"start_address": "0x000000804000"
 	},
 	{
@@ -226,8 +304,11 @@
 			34
 		],
 		"memory": false,
-		"name": "Device_22",
+		"name": "AAAAAA23",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_2"
+		],
 		"start_address": "0x000000808000"
 	},
 	{
@@ -236,8 +317,11 @@
 			35
 		],
 		"memory": false,
-		"name": "Device_23",
+		"name": "AAAAAA24",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_3"
+		],
 		"start_address": "0x00000080C000"
 	},
 	{
@@ -246,8 +330,11 @@
 			36
 		],
 		"memory": false,
-		"name": "Device_24",
+		"name": "AAAAAA25",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_4"
+		],
 		"start_address": "0x000000810000"
 	},
 	{
@@ -256,8 +343,11 @@
 			37
 		],
 		"memory": false,
-		"name": "Device_25",
+		"name": "AAAAAA26",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_5"
+		],
 		"start_address": "0x000000814000"
 	},
 	{
@@ -266,8 +356,11 @@
 			38
 		],
 		"memory": false,
-		"name": "Device_26",
+		"name": "AAAAAA27",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_6"
+		],
 		"start_address": "0x000000818000"
 	},
 	{
@@ -276,8 +369,11 @@
 			39
 		],
 		"memory": false,
-		"name": "Device_27",
+		"name": "AAAAAA28",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_7"
+		],
 		"start_address": "0x00000081C000"
 	},
 	{
@@ -286,8 +382,11 @@
 			40
 		],
 		"memory": false,
-		"name": "Device_28",
+		"name": "AAAAAA29",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_8"
+		],
 		"start_address": "0x000000820000"
 	},
 	{
@@ -296,8 +395,11 @@
 			41
 		],
 		"memory": false,
-		"name": "Device_29",
+		"name": "AAAAAA30",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_9"
+		],
 		"start_address": "0x000000824000"
 	},
 	{
@@ -306,8 +408,11 @@
 			42
 		],
 		"memory": false,
-		"name": "Device_30",
+		"name": "AAAAAA31",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_10"
+		],
 		"start_address": "0x000000828000"
 	},
 	{
@@ -316,8 +421,11 @@
 			43
 		],
 		"memory": false,
-		"name": "Device_31",
+		"name": "AAAAAA32",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_11"
+		],
 		"start_address": "0x00000082C000"
 	},
 	{
@@ -326,8 +434,11 @@
 			44
 		],
 		"memory": false,
-		"name": "Device_32",
+		"name": "AAAAAA33",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_main_12"
+		],
 		"start_address": "0x000000830000"
 	},
 	{
@@ -336,8 +447,11 @@
 			56
 		],
 		"memory": false,
-		"name": "Device_33",
+		"name": "AAAAAA34",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_gpiomux_introuter_main_0"
+		],
 		"start_address": "0x000000A00000"
 	},
 	{
@@ -346,8 +460,11 @@
 			57
 		],
 		"memory": false,
-		"name": "Device_34",
+		"name": "AAAAAA35",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main2mcu_lvl_introuter_main_0"
+		],
 		"start_address": "0x000000A10000"
 	},
 	{
@@ -356,8 +473,11 @@
 			58
 		],
 		"memory": false,
-		"name": "Device_35",
+		"name": "AAAAAA36",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main2mcu_pls_introuter_main_0"
+		],
 		"start_address": "0x000000A20000"
 	},
 	{
@@ -366,8 +486,11 @@
 			59
 		],
 		"memory": false,
-		"name": "Device_36",
+		"name": "AAAAAA37",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_cmp_event_introuter_main_0"
+		],
 		"start_address": "0x000000A30000"
 	},
 	{
@@ -376,8 +499,11 @@
 			60
 		],
 		"memory": false,
-		"name": "Device_37",
+		"name": "AAAAAA38",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_timesync_event_introuter_main_0"
+		],
 		"start_address": "0x000000A40000"
 	},
 	{
@@ -386,8 +512,11 @@
 			62
 		],
 		"memory": false,
-		"name": "Device_38",
+		"name": "AAAAAA39",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_pulsar1_introuter_main_0"
+		],
 		"start_address": "0x000000A70000"
 	},
 	{
@@ -396,8 +525,11 @@
 			63
 		],
 		"memory": false,
-		"name": "Device_39",
+		"name": "AAAAAA40",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_pulsar0_introuter_main_0"
+		],
 		"start_address": "0x000000A60000"
 	},
 	{
@@ -406,8 +538,11 @@
 			64
 		],
 		"memory": false,
-		"name": "Device_40",
+		"name": "AAAAAA41",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_c66_0_introuter_main_0"
+		],
 		"start_address": "0x000000AC0000"
 	},
 	{
@@ -416,8 +551,11 @@
 			65
 		],
 		"memory": false,
-		"name": "Device_41",
+		"name": "AAAAAA42",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_c66_1_introuter_main_0"
+		],
 		"start_address": "0x000000AD0000"
 	},
 	{
@@ -426,8 +564,11 @@
 			73
 		],
 		"memory": false,
-		"name": "Device_42",
+		"name": "AAAAAA43",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_fw_cbass_main_0"
+		],
 		"start_address": "0x000000B08000"
 	},
 	{
@@ -436,8 +577,11 @@
 			74
 		],
 		"memory": false,
-		"name": "Device_43",
+		"name": "AAAAAA44",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_infra_cbass_main_0"
+		],
 		"start_address": "0x000000B00000"
 	},
 	{
@@ -446,20 +590,38 @@
 			81
 		],
 		"memory": false,
-		"name": "Device_44",
+		"name": "AAAAAA45",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_infraclk2_ecc_aggr_main_0"
+		],
 		"start_address": "0x000000C02000"
+	},
+	{
+		"end_address": "0x0000002003FF",
+		"ids": [
+			84
+		],
+		"memory": false,
+		"name": "AAAAAA46",
+		"num_regions": 1,
+		"protected_inst": [
+			"psram256x32e_16ffc_main_0"
+		],
+		"start_address": "0x000000200000"
 	},
 	{
 		"end_address": "0x0000007843FF",
 		"ids": [
-			84,
 			85
 		],
 		"memory": false,
-		"name": "Device_45",
+		"name": "AAAAAA47",
 		"num_regions": 1,
-		"start_address": "0x000000200000"
+		"protected_inst": [
+			"psram256x32e_16ffc_main_0"
+		],
+		"start_address": "0x000000784000"
 	},
 	{
 		"end_address": "0x000042000FFF",
@@ -467,8 +629,11 @@
 			129
 		],
 		"memory": false,
-		"name": "Device_46",
+		"name": "AAAAAA48",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_wkup_psc_wrap_wkup_0"
+		],
 		"start_address": "0x000042000000"
 	},
 	{
@@ -477,8 +642,11 @@
 			130
 		],
 		"memory": false,
-		"name": "Device_47",
+		"name": "AAAAAA49",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pll_ctrl_wrap_wkup_0"
+		],
 		"start_address": "0x000042010000"
 	},
 	{
@@ -487,8 +655,11 @@
 			131
 		],
 		"memory": false,
-		"name": "Device_48",
+		"name": "AAAAAA50",
 		"num_regions": 16,
+		"protected_inst": [
+			"j7_wkup_ctrl_mmr_wkup_0"
+		],
 		"start_address": "0x000043000000"
 	},
 	{
@@ -497,8 +668,11 @@
 			132
 		],
 		"memory": false,
-		"name": "Device_49",
+		"name": "AAAAAA51",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_wkup_0"
+		],
 		"start_address": "0x000042110000"
 	},
 	{
@@ -507,8 +681,11 @@
 			133
 		],
 		"memory": false,
-		"name": "Device_50",
+		"name": "AAAAAA52",
 		"num_regions": 1,
+		"protected_inst": [
+			"esm_wkup_wkup_0"
+		],
 		"start_address": "0x000042080000"
 	},
 	{
@@ -517,8 +694,11 @@
 			135
 		],
 		"memory": false,
-		"name": "Device_51",
+		"name": "AAAAAA53",
 		"num_regions": 3,
+		"protected_inst": [
+			"k3vtm_n16ffc_wkup_0"
+		],
 		"start_address": "0x000042040000"
 	},
 	{
@@ -527,8 +707,11 @@
 			136
 		],
 		"memory": false,
-		"name": "Device_52",
+		"name": "AAAAAA54",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_ddpa_wkup_0"
+		],
 		"start_address": "0x000042060000"
 	},
 	{
@@ -537,8 +720,11 @@
 			137
 		],
 		"memory": false,
-		"name": "Device_53",
+		"name": "AAAAAA55",
 		"num_regions": 1,
+		"protected_inst": [
+			"gpio_144_wkup_1"
+		],
 		"start_address": "0x000042100000"
 	},
 	{
@@ -547,8 +733,11 @@
 			144
 		],
 		"memory": false,
-		"name": "Device_54",
+		"name": "AAAAAA56",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_wkup_0"
+		],
 		"start_address": "0x000042120000"
 	},
 	{
@@ -557,8 +746,11 @@
 			160
 		],
 		"memory": false,
-		"name": "Device_55",
+		"name": "AAAAAA57",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_wkup_0"
+		],
 		"start_address": "0x000042300000"
 	},
 	{
@@ -567,8 +759,11 @@
 			168
 		],
 		"memory": false,
-		"name": "Device_56",
+		"name": "AAAAAA58",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_wkup_gpiomux_introuter_wkup_0"
+		],
 		"start_address": "0x000042200000"
 	},
 	{
@@ -577,8 +772,11 @@
 			176
 		],
 		"memory": false,
-		"name": "Device_57",
+		"name": "AAAAAA59",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_wkup_cbass_wkup_0"
+		],
 		"start_address": "0x000042400000"
 	},
 	{
@@ -587,8 +785,11 @@
 			177
 		],
 		"memory": false,
-		"name": "Device_58",
+		"name": "AAAAAA60",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_wkup_fw_cbass_wkup_0"
+		],
 		"start_address": "0x000042404000"
 	},
 	{
@@ -597,8 +798,11 @@
 			178
 		],
 		"memory": false,
-		"name": "Device_59",
+		"name": "AAAAAA61",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_wkup_clk4_ecc_aggr_wkup_0"
+		],
 		"start_address": "0x000042410000"
 	},
 	{
@@ -607,26 +811,38 @@
 			179
 		],
 		"memory": false,
-		"name": "Device_60",
+		"name": "AAAAAA62",
 		"num_regions": 1,
+		"protected_inst": [
+			"vdc_infra_safeg_vbusp_32b_ref_wkup2main_infra"
+		],
 		"start_address": "0x000042900000"
 	},
 	{
-		"end_address": "0x000045FFFFFF",
+		"end_address": "0x000044027FFF",
 		"ids": [
-			512,
-			513,
-			514,
-			515,
-			528,
-			562,
-			578,
-			639
+			512
 		],
 		"memory": false,
-		"name": "Device_61",
-		"num_regions": 1,
+		"name": "AAAAAA63",
+		"num_regions": 2,
+		"protected_inst": [
+			"dmsc_wkup_0"
+		],
 		"start_address": "0x000044000000"
+	},
+	{
+		"end_address": "0x0000441307FF",
+		"ids": [
+			528
+		],
+		"memory": false,
+		"name": "AAAAAA67",
+		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0"
+		],
+		"start_address": "0x000044130000"
 	},
 	{
 		"end_address": "0x0000441333FF",
@@ -634,8 +850,11 @@
 			536
 		],
 		"memory": false,
-		"name": "Device_62",
+		"name": "AAAAAA68",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_dmtimer_dmc1ms_0"
+		],
 		"start_address": "0x000044133000"
 	},
 	{
@@ -644,20 +863,38 @@
 			537
 		],
 		"memory": false,
-		"name": "Device_63",
+		"name": "AAAAAA69",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_dmtimer_dmc1ms_1"
+		],
 		"start_address": "0x000044134000"
+	},
+	{
+		"end_address": "0x0000441350FF",
+		"ids": [
+			544
+		],
+		"memory": false,
+		"name": "AAAAAA70",
+		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_rti_0"
+		],
+		"start_address": "0x000044135000"
 	},
 	{
 		"end_address": "0x0000441351FF",
 		"ids": [
-			544,
 			545
 		],
 		"memory": false,
-		"name": "Device_64",
+		"name": "AAAAAA71",
 		"num_regions": 1,
-		"start_address": "0x000044135000"
+		"protected_inst": [
+			"dmsc_wkup_0_rti_0"
+		],
+		"start_address": "0x000044135100"
 	},
 	{
 		"end_address": "0x000044200FFF",
@@ -665,20 +902,51 @@
 			552
 		],
 		"memory": false,
-		"name": "Device_65",
+		"name": "AAAAAA72",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_ksbus_rat_0"
+		],
 		"start_address": "0x000044200000"
 	},
 	{
-		"end_address": "0x000044237FFF",
+		"end_address": "0x0000442023FF",
 		"ids": [
-			576,
-			582
+			562
 		],
 		"memory": false,
-		"name": "Device_66",
+		"name": "AAAAAA73",
+		"num_regions": 2,
+		"protected_inst": [
+			"dmsc_wkup_0"
+		],
+		"start_address": "0x000044202000"
+	},
+	{
+		"end_address": "0x000044230FFF",
+		"ids": [
+			576
+		],
+		"memory": false,
+		"name": "AAAAAA74",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_ks3_sec_mgr_0"
+		],
 		"start_address": "0x000044230000"
+	},
+	{
+		"end_address": "0x000044232FFF",
+		"ids": [
+			578
+		],
+		"memory": false,
+		"name": "AAAAAA75",
+		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0"
+		],
+		"start_address": "0x000044232000"
 	},
 	{
 		"end_address": "0x0000442383FF",
@@ -686,8 +954,11 @@
 			592
 		],
 		"memory": false,
-		"name": "Device_67",
+		"name": "AAAAAA77",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_dmtimer_dmc1ms_2"
+		],
 		"start_address": "0x000044238000"
 	},
 	{
@@ -696,8 +967,11 @@
 			593
 		],
 		"memory": false,
-		"name": "Device_68",
+		"name": "AAAAAA78",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmsc_wkup_0_dmtimer_dmc1ms_3"
+		],
 		"start_address": "0x000044239000"
 	},
 	{
@@ -706,8 +980,11 @@
 			602
 		],
 		"memory": false,
-		"name": "Device_69",
+		"name": "AAAAAA79",
 		"num_regions": 2,
+		"protected_inst": [
+			"dmsc_wkup_0_aeseip38t_0"
+		],
 		"start_address": "0x00004423C000"
 	},
 	{
@@ -716,21 +993,37 @@
 			607
 		],
 		"memory": false,
-		"name": "Device_70",
+		"name": "AAAAAA80",
 		"num_regions": 2,
+		"protected_inst": [
+			"dmsc_wkup_0_ksdma_intaggr_0"
+		],
 		"start_address": "0x000044300000"
 	},
 	{
-		"end_address": "0x005401FFFFFF",
+		"end_address": "0x005400FFFFFF",
 		"ids": [
-			1024,
-			1025,
-			1028,
-			1029
+			1024
 		],
 		"memory": false,
-		"name": "Device_71",
-		"num_regions": 1,
+		"name": "AAAAAA82",
+		"num_regions": 4,
+		"protected_inst": [
+			"pulsar_sl_mcu_0"
+		],
+		"start_address": "0x000041000000"
+	},
+	{
+		"end_address": "0x0000400F00FF",
+		"ids": [
+			1025
+		],
+		"memory": false,
+		"name": "AAAAAA83",
+		"num_regions": 2,
+		"protected_inst": [
+			"pulsar_sl_mcu_0"
+		],
 		"start_address": "0x000040080000"
 	},
 	{
@@ -739,9 +1032,38 @@
 			1026
 		],
 		"memory": false,
-		"name": "Device_72",
+		"name": "AAAAAA84",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_mcu_0"
+		],
 		"start_address": "0x000040600000"
+	},
+	{
+		"end_address": "0x005401FFFFFF",
+		"ids": [
+			1028
+		],
+		"memory": false,
+		"name": "AAAAAA85",
+		"num_regions": 4,
+		"protected_inst": [
+			"pulsar_sl_mcu_0"
+		],
+		"start_address": "0x000041400000"
+	},
+	{
+		"end_address": "0x0000400C03FF",
+		"ids": [
+			1029
+		],
+		"memory": false,
+		"name": "AAAAAA86",
+		"num_regions": 1,
+		"protected_inst": [
+			"pulsar_sl_mcu_0"
+		],
+		"start_address": "0x0000400C0000"
 	},
 	{
 		"end_address": "0x0000406100FF",
@@ -749,21 +1071,51 @@
 			1030
 		],
 		"memory": false,
-		"name": "Device_73",
+		"name": "AAAAAA87",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_mcu_1"
+		],
 		"start_address": "0x000040610000"
+	},
+	{
+		"end_address": "0x0000470683FF",
+		"ids": [
+			1032
+		],
+		"memory": false,
+		"name": "AAAAAA88",
+		"num_regions": 12,
+		"protected_inst": [
+			"fss_mcu_0"
+		],
+		"start_address": "0x000047000000"
 	},
 	{
 		"end_address": "0x0007FFFFFFFF",
 		"ids": [
-			1032,
-			1033,
+			1033
+		],
+		"memory": false,
+		"name": "AAAAAA89",
+		"num_regions": 8,
+		"protected_inst": [
+			"fss_mcu_0"
+		],
+		"start_address": "0x000058000000"
+	},
+	{
+		"end_address": "0x0005FFFFFFFF",
+		"ids": [
 			1036
 		],
 		"memory": false,
-		"name": "Device_74",
+		"name": "AAAAAA90",
 		"num_regions": 8,
-		"start_address": "0x000047000000"
+		"protected_inst": [
+			"fss_mcu_0"
+		],
+		"start_address": "0x000050000000"
 	},
 	{
 		"end_address": "0x00004183FFFF",
@@ -771,19 +1123,37 @@
 			1048
 		],
 		"memory": false,
-		"name": "Device_75",
+		"name": "AAAAAA91",
 		"num_regions": 1,
+		"protected_inst": [
+			"psrom49152x32_mcu_0"
+		],
 		"start_address": "0x000041800000"
 	},
 	{
 		"end_address": "0x000041CFFFFF",
 		"ids": [
-			1050,
+			1050
+		],
+		"memory": false,
+		"name": "AAAAAA92",
+		"num_regions": 8,
+		"protected_inst": [
+			"msram128kx64e_mcu_0"
+		],
+		"start_address": "0x000041C00000"
+	},
+	{
+		"end_address": "0x00004070B3FF",
+		"ids": [
 			1051
 		],
 		"memory": false,
-		"name": "Device_76",
+		"name": "AAAAAA93",
 		"num_regions": 1,
+		"protected_inst": [
+			"msram128kx64e_mcu_0"
+		],
 		"start_address": "0x00004070B000"
 	},
 	{
@@ -792,8 +1162,11 @@
 			1052
 		],
 		"memory": false,
-		"name": "Device_77",
+		"name": "AAAAAA94",
 		"num_regions": 1,
+		"protected_inst": [
+			"psram128x32_mcu_0"
+		],
 		"start_address": "0x000040280000"
 	},
 	{
@@ -802,8 +1175,11 @@
 			1056
 		],
 		"memory": false,
-		"name": "Device_78",
+		"name": "AAAAAA95",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_0"
+		],
 		"start_address": "0x000040400000"
 	},
 	{
@@ -812,8 +1188,11 @@
 			1057
 		],
 		"memory": false,
-		"name": "Device_79",
+		"name": "AAAAAA96",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_1"
+		],
 		"start_address": "0x000040410000"
 	},
 	{
@@ -822,8 +1201,11 @@
 			1058
 		],
 		"memory": false,
-		"name": "Device_80",
+		"name": "AAAAAA97",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_2"
+		],
 		"start_address": "0x000040420000"
 	},
 	{
@@ -832,8 +1214,11 @@
 			1059
 		],
 		"memory": false,
-		"name": "Device_81",
+		"name": "AAAAAA98",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_3"
+		],
 		"start_address": "0x000040430000"
 	},
 	{
@@ -842,8 +1227,11 @@
 			1060
 		],
 		"memory": false,
-		"name": "Device_82",
+		"name": "AAAAAA99",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_4"
+		],
 		"start_address": "0x000040440000"
 	},
 	{
@@ -852,8 +1240,11 @@
 			1061
 		],
 		"memory": false,
-		"name": "Device_83",
+		"name": "AAAAAA100",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_5"
+		],
 		"start_address": "0x000040450000"
 	},
 	{
@@ -862,8 +1253,11 @@
 			1062
 		],
 		"memory": false,
-		"name": "Device_84",
+		"name": "AAAAAA101",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_6"
+		],
 		"start_address": "0x000040460000"
 	},
 	{
@@ -872,8 +1266,11 @@
 			1063
 		],
 		"memory": false,
-		"name": "Device_85",
+		"name": "AAAAAA102",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_7"
+		],
 		"start_address": "0x000040470000"
 	},
 	{
@@ -882,8 +1279,11 @@
 			1064
 		],
 		"memory": false,
-		"name": "Device_86",
+		"name": "AAAAAA103",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_8"
+		],
 		"start_address": "0x000040480000"
 	},
 	{
@@ -892,8 +1292,11 @@
 			1065
 		],
 		"memory": false,
-		"name": "Device_87",
+		"name": "AAAAAA104",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_mcu_9"
+		],
 		"start_address": "0x000040490000"
 	},
 	{
@@ -902,8 +1305,11 @@
 			1072
 		],
 		"memory": false,
-		"name": "Device_88",
+		"name": "AAAAAA105",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_mcu_0"
+		],
 		"start_address": "0x000040300000"
 	},
 	{
@@ -912,8 +1318,11 @@
 			1073
 		],
 		"memory": false,
-		"name": "Device_89",
+		"name": "AAAAAA106",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_mcu_1"
+		],
 		"start_address": "0x000040310000"
 	},
 	{
@@ -922,8 +1331,11 @@
 			1074
 		],
 		"memory": false,
-		"name": "Device_90",
+		"name": "AAAAAA107",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_mcu_2"
+		],
 		"start_address": "0x000040320000"
 	},
 	{
@@ -932,8 +1344,11 @@
 			1088
 		],
 		"memory": false,
-		"name": "Device_91",
+		"name": "AAAAAA108",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_mcu_0"
+		],
 		"start_address": "0x000040100000"
 	},
 	{
@@ -942,8 +1357,11 @@
 			1089
 		],
 		"memory": false,
-		"name": "Device_92",
+		"name": "AAAAAA109",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_mcu_1"
+		],
 		"start_address": "0x000040110000"
 	},
 	{
@@ -952,30 +1370,63 @@
 			1090
 		],
 		"memory": false,
-		"name": "Device_93",
+		"name": "AAAAAA110",
 		"num_regions": 1,
+		"protected_inst": [
+			"dcc2_mcu_2"
+		],
 		"start_address": "0x000040120000"
+	},
+	{
+		"end_address": "0x0000402083FF",
+		"ids": [
+			1104
+		],
+		"memory": false,
+		"name": "AAAAAA111",
+		"num_regions": 1,
+		"protected_inst": [
+			"adc12_core_mcu_0"
+		],
+		"start_address": "0x000040208000"
 	},
 	{
 		"end_address": "0x0000407073FF",
 		"ids": [
-			1104,
 			1105
 		],
 		"memory": false,
-		"name": "Device_94",
-		"num_regions": 1,
+		"name": "AAAAAA112",
+		"num_regions": 2,
+		"protected_inst": [
+			"adc12_core_mcu_0"
+		],
 		"start_address": "0x000040200000"
+	},
+	{
+		"end_address": "0x0000402183FF",
+		"ids": [
+			1106
+		],
+		"memory": false,
+		"name": "AAAAAA113",
+		"num_regions": 1,
+		"protected_inst": [
+			"adc12_core_mcu_1"
+		],
+		"start_address": "0x000040218000"
 	},
 	{
 		"end_address": "0x0000407083FF",
 		"ids": [
-			1106,
 			1107
 		],
 		"memory": false,
-		"name": "Device_95",
-		"num_regions": 1,
+		"name": "AAAAAA114",
+		"num_regions": 2,
+		"protected_inst": [
+			"adc12_core_mcu_1"
+		],
 		"start_address": "0x000040210000"
 	},
 	{
@@ -984,8 +1435,11 @@
 			1120
 		],
 		"memory": false,
-		"name": "Device_96",
+		"name": "AAAAAA115",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_mcu_0"
+		],
 		"start_address": "0x000040A00000"
 	},
 	{
@@ -994,8 +1448,11 @@
 			1152
 		],
 		"memory": false,
-		"name": "Device_97",
+		"name": "AAAAAA116",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_mcu_0"
+		],
 		"start_address": "0x000040B00000"
 	},
 	{
@@ -1004,8 +1461,11 @@
 			1153
 		],
 		"memory": false,
-		"name": "Device_98",
+		"name": "AAAAAA117",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_mcu_1"
+		],
 		"start_address": "0x000040B10000"
 	},
 	{
@@ -1014,8 +1474,11 @@
 			1160
 		],
 		"memory": false,
-		"name": "Device_99",
+		"name": "AAAAAA118",
 		"num_regions": 4,
+		"protected_inst": [
+			"i3c_mcu_0"
+		],
 		"start_address": "0x000040720000"
 	},
 	{
@@ -1024,8 +1487,11 @@
 			1161
 		],
 		"memory": false,
-		"name": "Device_100",
+		"name": "AAAAAA119",
 		"num_regions": 4,
+		"protected_inst": [
+			"i3c_mcu_1"
+		],
 		"start_address": "0x000040722000"
 	},
 	{
@@ -1034,8 +1500,11 @@
 			1168
 		],
 		"memory": false,
-		"name": "Device_101",
+		"name": "AAAAAA120",
 		"num_regions": 1,
+		"protected_inst": [
+			"esm_mcu_mcu_0"
+		],
 		"start_address": "0x000040800000"
 	},
 	{
@@ -1044,8 +1513,11 @@
 			1184
 		],
 		"memory": false,
-		"name": "Device_102",
+		"name": "AAAAAA121",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_mcu_0"
+		],
 		"start_address": "0x000040500000"
 	},
 	{
@@ -1054,8 +1526,11 @@
 			1185
 		],
 		"memory": false,
-		"name": "Device_103",
+		"name": "AAAAAA122",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_mcu_1"
+		],
 		"start_address": "0x000040540000"
 	},
 	{
@@ -1064,8 +1539,11 @@
 			1196
 		],
 		"memory": false,
-		"name": "Device_104",
+		"name": "AAAAAA123",
 		"num_regions": 5,
+		"protected_inst": [
+			"sa2_ul_mcu_0"
+		],
 		"start_address": "0x00004070C000"
 	},
 	{
@@ -1074,8 +1552,11 @@
 			1200
 		],
 		"memory": false,
-		"name": "Device_105",
+		"name": "AAAAAA124",
 		"num_regions": 8,
+		"protected_inst": [
+			"j7_mcu_ctrl_mmr_mcu_0"
+		],
 		"start_address": "0x000040F00000"
 	},
 	{
@@ -1084,8 +1565,11 @@
 			1201
 		],
 		"memory": false,
-		"name": "Device_106",
+		"name": "AAAAAA125",
 		"num_regions": 3,
+		"protected_inst": [
+			"j7_mcu_pll_mmr_mcu_0"
+		],
 		"start_address": "0x000040D00000"
 	},
 	{
@@ -1094,8 +1578,11 @@
 			1208
 		],
 		"memory": false,
-		"name": "Device_107",
+		"name": "AAAAAA126",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_efuse_ctrl_wrap_mcu_0"
+		],
 		"start_address": "0x000040C00000"
 	},
 	{
@@ -1104,8 +1591,11 @@
 			1212
 		],
 		"memory": false,
-		"name": "Device_108",
+		"name": "AAAAAA127",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_mcu_0"
+		],
 		"start_address": "0x000040E00000"
 	},
 	{
@@ -1114,8 +1604,11 @@
 			1213
 		],
 		"memory": false,
-		"name": "Device_109",
+		"name": "AAAAAA128",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_mcu_pulsar_0"
+		],
 		"start_address": "0x000040E10000"
 	},
 	{
@@ -1124,8 +1617,11 @@
 			1220
 		],
 		"memory": false,
-		"name": "Device_110",
+		"name": "AAAAAA129",
 		"num_regions": 2,
+		"protected_inst": [
+			"cpsw_2guss_mcu_0"
+		],
 		"start_address": "0x000040709000"
 	},
 	{
@@ -1134,8 +1630,11 @@
 			1244
 		],
 		"memory": false,
-		"name": "Device_111",
+		"name": "AAAAAA130",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcu_cbass_mcu_0"
+		],
 		"start_address": "0x000047100000"
 	},
 	{
@@ -1144,8 +1643,11 @@
 			1245
 		],
 		"memory": false,
-		"name": "Device_112",
+		"name": "AAAAAA131",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcu_dbg_cbass_mcu_0"
+		],
 		"start_address": "0x000047104000"
 	},
 	{
@@ -1154,8 +1656,11 @@
 			1246
 		],
 		"memory": false,
-		"name": "Device_113",
+		"name": "AAAAAA132",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcu_fw_cbass_mcu_0"
+		],
 		"start_address": "0x000047108000"
 	},
 	{
@@ -1164,8 +1669,11 @@
 			1253
 		],
 		"memory": false,
-		"name": "Device_114",
+		"name": "AAAAAA133",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcuclk8_ecc_aggr_mcu_0"
+		],
 		"start_address": "0x000047200000"
 	},
 	{
@@ -1174,8 +1682,11 @@
 			1268
 		],
 		"memory": false,
-		"name": "Device_115",
+		"name": "AAAAAA134",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcu_vbusm_safety_gasket_mcu2main_0"
+		],
 		"start_address": "0x000040730000"
 	},
 	{
@@ -1184,8 +1695,11 @@
 			1269
 		],
 		"memory": false,
-		"name": "Device_116",
+		"name": "AAAAAA135",
 		"num_regions": 1,
+		"protected_inst": [
+			"vdc_infra_safeg_vbusp_32b_ref_mcu2main_infra"
+		],
 		"start_address": "0x000040731000"
 	},
 	{
@@ -1194,8 +1708,11 @@
 			1270
 		],
 		"memory": false,
-		"name": "Device_117",
+		"name": "AAAAAA136",
 		"num_regions": 1,
+		"protected_inst": [
+			"vdc_soc_fw_safeg_vbusp_32b_ref_fwmcu2main"
+		],
 		"start_address": "0x000040732000"
 	},
 	{
@@ -1204,75 +1721,168 @@
 			1280
 		],
 		"memory": false,
-		"name": "Device_118",
+		"name": "AAAAAA137",
 		"num_regions": 8,
+		"protected_inst": [
+			"DOMAIN_ISOLATION_MCU"
+		],
 		"start_address": "0x000002000000"
+	},
+	{
+		"end_address": "0x0000030000FF",
+		"ids": [
+			2048
+		],
+		"memory": false,
+		"name": "AAAAAA138",
+		"num_regions": 1,
+		"protected_inst": [
+			"ehrpwm_main_0"
+		],
+		"start_address": "0x000003000000"
 	},
 	{
 		"end_address": "0x0000030080FF",
 		"ids": [
-			2048,
 			2049
 		],
 		"memory": false,
-		"name": "Device_119",
+		"name": "AAAAAA139",
 		"num_regions": 1,
-		"start_address": "0x000003000000"
+		"protected_inst": [
+			"ehrpwm_main_0"
+		],
+		"start_address": "0x000003008000"
+	},
+	{
+		"end_address": "0x0000030100FF",
+		"ids": [
+			2050
+		],
+		"memory": false,
+		"name": "AAAAAA140",
+		"num_regions": 1,
+		"protected_inst": [
+			"ehrpwm_main_1"
+		],
+		"start_address": "0x000003010000"
 	},
 	{
 		"end_address": "0x0000030180FF",
 		"ids": [
-			2050,
 			2051
 		],
 		"memory": false,
-		"name": "Device_120",
+		"name": "AAAAAA141",
 		"num_regions": 1,
-		"start_address": "0x000003010000"
+		"protected_inst": [
+			"ehrpwm_main_1"
+		],
+		"start_address": "0x000003018000"
+	},
+	{
+		"end_address": "0x0000030200FF",
+		"ids": [
+			2052
+		],
+		"memory": false,
+		"name": "AAAAAA142",
+		"num_regions": 1,
+		"protected_inst": [
+			"ehrpwm_main_2"
+		],
+		"start_address": "0x000003020000"
 	},
 	{
 		"end_address": "0x0000030280FF",
 		"ids": [
-			2052,
 			2053
 		],
 		"memory": false,
-		"name": "Device_121",
+		"name": "AAAAAA143",
 		"num_regions": 1,
-		"start_address": "0x000003020000"
+		"protected_inst": [
+			"ehrpwm_main_2"
+		],
+		"start_address": "0x000003028000"
+	},
+	{
+		"end_address": "0x0000030300FF",
+		"ids": [
+			2054
+		],
+		"memory": false,
+		"name": "AAAAAA144",
+		"num_regions": 1,
+		"protected_inst": [
+			"ehrpwm_main_3"
+		],
+		"start_address": "0x000003030000"
 	},
 	{
 		"end_address": "0x0000030380FF",
 		"ids": [
-			2054,
 			2055
 		],
 		"memory": false,
-		"name": "Device_122",
+		"name": "AAAAAA145",
 		"num_regions": 1,
-		"start_address": "0x000003030000"
+		"protected_inst": [
+			"ehrpwm_main_3"
+		],
+		"start_address": "0x000003038000"
+	},
+	{
+		"end_address": "0x0000030400FF",
+		"ids": [
+			2056
+		],
+		"memory": false,
+		"name": "AAAAAA146",
+		"num_regions": 1,
+		"protected_inst": [
+			"ehrpwm_main_4"
+		],
+		"start_address": "0x000003040000"
 	},
 	{
 		"end_address": "0x0000030480FF",
 		"ids": [
-			2056,
 			2057
 		],
 		"memory": false,
-		"name": "Device_123",
+		"name": "AAAAAA147",
 		"num_regions": 1,
-		"start_address": "0x000003040000"
+		"protected_inst": [
+			"ehrpwm_main_4"
+		],
+		"start_address": "0x000003048000"
+	},
+	{
+		"end_address": "0x0000030500FF",
+		"ids": [
+			2058
+		],
+		"memory": false,
+		"name": "AAAAAA148",
+		"num_regions": 1,
+		"protected_inst": [
+			"ehrpwm_main_5"
+		],
+		"start_address": "0x000003050000"
 	},
 	{
 		"end_address": "0x0000030580FF",
 		"ids": [
-			2058,
 			2059
 		],
 		"memory": false,
-		"name": "Device_124",
+		"name": "AAAAAA149",
 		"num_regions": 1,
-		"start_address": "0x000003050000"
+		"protected_inst": [
+			"ehrpwm_main_5"
+		],
+		"start_address": "0x000003058000"
 	},
 	{
 		"end_address": "0x0000032000FF",
@@ -1280,8 +1890,11 @@
 			2064
 		],
 		"memory": false,
-		"name": "Device_125",
+		"name": "AAAAAA150",
 		"num_regions": 1,
+		"protected_inst": [
+			"eqep_main_0"
+		],
 		"start_address": "0x000003200000"
 	},
 	{
@@ -1290,8 +1903,11 @@
 			2065
 		],
 		"memory": false,
-		"name": "Device_126",
+		"name": "AAAAAA151",
 		"num_regions": 1,
+		"protected_inst": [
+			"eqep_main_1"
+		],
 		"start_address": "0x000003210000"
 	},
 	{
@@ -1300,8 +1916,11 @@
 			2066
 		],
 		"memory": false,
-		"name": "Device_127",
+		"name": "AAAAAA152",
 		"num_regions": 1,
+		"protected_inst": [
+			"eqep_main_2"
+		],
 		"start_address": "0x000003220000"
 	},
 	{
@@ -1310,8 +1929,11 @@
 			2068
 		],
 		"memory": false,
-		"name": "Device_128",
+		"name": "AAAAAA153",
 		"num_regions": 1,
+		"protected_inst": [
+			"ecap_main_0"
+		],
 		"start_address": "0x000003100000"
 	},
 	{
@@ -1320,8 +1942,11 @@
 			2069
 		],
 		"memory": false,
-		"name": "Device_129",
+		"name": "AAAAAA154",
 		"num_regions": 1,
+		"protected_inst": [
+			"ecap_main_1"
+		],
 		"start_address": "0x000003110000"
 	},
 	{
@@ -1330,8 +1955,11 @@
 			2070
 		],
 		"memory": false,
-		"name": "Device_130",
+		"name": "AAAAAA155",
 		"num_regions": 1,
+		"protected_inst": [
+			"ecap_main_2"
+		],
 		"start_address": "0x000003120000"
 	},
 	{
@@ -1340,8 +1968,11 @@
 			2072
 		],
 		"memory": false,
-		"name": "Device_131",
+		"name": "AAAAAA156",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_0"
+		],
 		"start_address": "0x000002000000"
 	},
 	{
@@ -1350,8 +1981,11 @@
 			2073
 		],
 		"memory": false,
-		"name": "Device_132",
+		"name": "AAAAAA157",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_1"
+		],
 		"start_address": "0x000002010000"
 	},
 	{
@@ -1360,8 +1994,11 @@
 			2074
 		],
 		"memory": false,
-		"name": "Device_133",
+		"name": "AAAAAA158",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_2"
+		],
 		"start_address": "0x000002020000"
 	},
 	{
@@ -1370,8 +2007,11 @@
 			2075
 		],
 		"memory": false,
-		"name": "Device_134",
+		"name": "AAAAAA159",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_3"
+		],
 		"start_address": "0x000002030000"
 	},
 	{
@@ -1380,8 +2020,11 @@
 			2076
 		],
 		"memory": false,
-		"name": "Device_135",
+		"name": "AAAAAA160",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_4"
+		],
 		"start_address": "0x000002040000"
 	},
 	{
@@ -1390,8 +2033,11 @@
 			2077
 		],
 		"memory": false,
-		"name": "Device_136",
+		"name": "AAAAAA161",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_5"
+		],
 		"start_address": "0x000002050000"
 	},
 	{
@@ -1400,8 +2046,11 @@
 			2078
 		],
 		"memory": false,
-		"name": "Device_137",
+		"name": "AAAAAA162",
 		"num_regions": 1,
+		"protected_inst": [
+			"mshsi2c_main_6"
+		],
 		"start_address": "0x000002060000"
 	},
 	{
@@ -1410,8 +2059,11 @@
 			2080
 		],
 		"memory": false,
-		"name": "Device_138",
+		"name": "AAAAAA163",
 		"num_regions": 1,
+		"protected_inst": [
+			"atl_main_0"
+		],
 		"start_address": "0x0000031F0000"
 	},
 	{
@@ -1420,8 +2072,11 @@
 			2082
 		],
 		"memory": false,
-		"name": "Device_139",
+		"name": "AAAAAA164",
 		"num_regions": 4,
+		"protected_inst": [
+			"i3c_main_0"
+		],
 		"start_address": "0x0000020A0000"
 	},
 	{
@@ -1430,8 +2085,11 @@
 			2086
 		],
 		"memory": false,
-		"name": "Device_140",
+		"name": "AAAAAA165",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_a72_0"
+		],
 		"start_address": "0x000002200000"
 	},
 	{
@@ -1440,8 +2098,11 @@
 			2087
 		],
 		"memory": false,
-		"name": "Device_141",
+		"name": "AAAAAA166",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_a72_1"
+		],
 		"start_address": "0x000002210000"
 	},
 	{
@@ -1450,8 +2111,11 @@
 			2094
 		],
 		"memory": false,
-		"name": "Device_142",
+		"name": "AAAAAA167",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_r5_0"
+		],
 		"start_address": "0x0000023C0000"
 	},
 	{
@@ -1460,8 +2124,11 @@
 			2095
 		],
 		"memory": false,
-		"name": "Device_143",
+		"name": "AAAAAA168",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_r5_1"
+		],
 		"start_address": "0x0000023D0000"
 	},
 	{
@@ -1470,8 +2137,11 @@
 			2096
 		],
 		"memory": false,
-		"name": "Device_144",
+		"name": "AAAAAA169",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_r5_2"
+		],
 		"start_address": "0x0000023E0000"
 	},
 	{
@@ -1480,8 +2150,11 @@
 			2097
 		],
 		"memory": false,
-		"name": "Device_145",
+		"name": "AAAAAA170",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_r5_3"
+		],
 		"start_address": "0x0000023F0000"
 	},
 	{
@@ -1490,8 +2163,11 @@
 			2100
 		],
 		"memory": false,
-		"name": "Device_146",
+		"name": "AAAAAA171",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_c7_0"
+		],
 		"start_address": "0x000002300000"
 	},
 	{
@@ -1500,8 +2176,11 @@
 			2104
 		],
 		"memory": false,
-		"name": "Device_147",
+		"name": "AAAAAA172",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_c66_0"
+		],
 		"start_address": "0x000002380000"
 	},
 	{
@@ -1510,8 +2189,11 @@
 			2105
 		],
 		"memory": false,
-		"name": "Device_148",
+		"name": "AAAAAA173",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_c66_1"
+		],
 		"start_address": "0x000002390000"
 	},
 	{
@@ -1520,8 +2202,11 @@
 			2108
 		],
 		"memory": false,
-		"name": "Device_149",
+		"name": "AAAAAA174",
 		"num_regions": 1,
+		"protected_inst": [
+			"rti_cfg1_main_gpu"
+		],
 		"start_address": "0x0000022F0000"
 	},
 	{
@@ -1530,8 +2215,11 @@
 			2112
 		],
 		"memory": false,
-		"name": "Device_150",
+		"name": "AAAAAA175",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_0"
+		],
 		"start_address": "0x000002400000"
 	},
 	{
@@ -1540,8 +2228,11 @@
 			2113
 		],
 		"memory": false,
-		"name": "Device_151",
+		"name": "AAAAAA176",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_1"
+		],
 		"start_address": "0x000002410000"
 	},
 	{
@@ -1550,8 +2241,11 @@
 			2114
 		],
 		"memory": false,
-		"name": "Device_152",
+		"name": "AAAAAA177",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_2"
+		],
 		"start_address": "0x000002420000"
 	},
 	{
@@ -1560,8 +2254,11 @@
 			2115
 		],
 		"memory": false,
-		"name": "Device_153",
+		"name": "AAAAAA178",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_3"
+		],
 		"start_address": "0x000002430000"
 	},
 	{
@@ -1570,8 +2267,11 @@
 			2116
 		],
 		"memory": false,
-		"name": "Device_154",
+		"name": "AAAAAA179",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_4"
+		],
 		"start_address": "0x000002440000"
 	},
 	{
@@ -1580,8 +2280,11 @@
 			2117
 		],
 		"memory": false,
-		"name": "Device_155",
+		"name": "AAAAAA180",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_5"
+		],
 		"start_address": "0x000002450000"
 	},
 	{
@@ -1590,8 +2293,11 @@
 			2118
 		],
 		"memory": false,
-		"name": "Device_156",
+		"name": "AAAAAA181",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_6"
+		],
 		"start_address": "0x000002460000"
 	},
 	{
@@ -1600,8 +2306,11 @@
 			2119
 		],
 		"memory": false,
-		"name": "Device_157",
+		"name": "AAAAAA182",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_7"
+		],
 		"start_address": "0x000002470000"
 	},
 	{
@@ -1610,8 +2319,11 @@
 			2120
 		],
 		"memory": false,
-		"name": "Device_158",
+		"name": "AAAAAA183",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_8"
+		],
 		"start_address": "0x000002480000"
 	},
 	{
@@ -1620,8 +2332,11 @@
 			2121
 		],
 		"memory": false,
-		"name": "Device_159",
+		"name": "AAAAAA184",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_9"
+		],
 		"start_address": "0x000002490000"
 	},
 	{
@@ -1630,8 +2345,11 @@
 			2122
 		],
 		"memory": false,
-		"name": "Device_160",
+		"name": "AAAAAA185",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_10"
+		],
 		"start_address": "0x0000024A0000"
 	},
 	{
@@ -1640,8 +2358,11 @@
 			2123
 		],
 		"memory": false,
-		"name": "Device_161",
+		"name": "AAAAAA186",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_11"
+		],
 		"start_address": "0x0000024B0000"
 	},
 	{
@@ -1650,8 +2371,11 @@
 			2124
 		],
 		"memory": false,
-		"name": "Device_162",
+		"name": "AAAAAA187",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_12"
+		],
 		"start_address": "0x0000024C0000"
 	},
 	{
@@ -1660,8 +2384,11 @@
 			2125
 		],
 		"memory": false,
-		"name": "Device_163",
+		"name": "AAAAAA188",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_13"
+		],
 		"start_address": "0x0000024D0000"
 	},
 	{
@@ -1670,8 +2397,11 @@
 			2126
 		],
 		"memory": false,
-		"name": "Device_164",
+		"name": "AAAAAA189",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_14"
+		],
 		"start_address": "0x0000024E0000"
 	},
 	{
@@ -1680,8 +2410,11 @@
 			2127
 		],
 		"memory": false,
-		"name": "Device_165",
+		"name": "AAAAAA190",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_15"
+		],
 		"start_address": "0x0000024F0000"
 	},
 	{
@@ -1690,8 +2423,11 @@
 			2128
 		],
 		"memory": false,
-		"name": "Device_166",
+		"name": "AAAAAA191",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_16"
+		],
 		"start_address": "0x000002500000"
 	},
 	{
@@ -1700,8 +2436,11 @@
 			2129
 		],
 		"memory": false,
-		"name": "Device_167",
+		"name": "AAAAAA192",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_17"
+		],
 		"start_address": "0x000002510000"
 	},
 	{
@@ -1710,8 +2449,11 @@
 			2130
 		],
 		"memory": false,
-		"name": "Device_168",
+		"name": "AAAAAA193",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_18"
+		],
 		"start_address": "0x000002520000"
 	},
 	{
@@ -1720,8 +2462,11 @@
 			2131
 		],
 		"memory": false,
-		"name": "Device_169",
+		"name": "AAAAAA194",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmtimer_dmc1ms_main_19"
+		],
 		"start_address": "0x000002530000"
 	},
 	{
@@ -1730,8 +2475,11 @@
 			2136
 		],
 		"memory": false,
-		"name": "Device_170",
+		"name": "AAAAAA195",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_0"
+		],
 		"start_address": "0x000002100000"
 	},
 	{
@@ -1740,8 +2488,11 @@
 			2137
 		],
 		"memory": false,
-		"name": "Device_171",
+		"name": "AAAAAA196",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_1"
+		],
 		"start_address": "0x000002110000"
 	},
 	{
@@ -1750,8 +2501,11 @@
 			2138
 		],
 		"memory": false,
-		"name": "Device_172",
+		"name": "AAAAAA197",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_2"
+		],
 		"start_address": "0x000002120000"
 	},
 	{
@@ -1760,8 +2514,11 @@
 			2139
 		],
 		"memory": false,
-		"name": "Device_173",
+		"name": "AAAAAA198",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_3"
+		],
 		"start_address": "0x000002130000"
 	},
 	{
@@ -1770,8 +2527,11 @@
 			2140
 		],
 		"memory": false,
-		"name": "Device_174",
+		"name": "AAAAAA199",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_4"
+		],
 		"start_address": "0x000002140000"
 	},
 	{
@@ -1780,8 +2540,11 @@
 			2141
 		],
 		"memory": false,
-		"name": "Device_175",
+		"name": "AAAAAA200",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_5"
+		],
 		"start_address": "0x000002150000"
 	},
 	{
@@ -1790,8 +2553,11 @@
 			2142
 		],
 		"memory": false,
-		"name": "Device_176",
+		"name": "AAAAAA201",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_6"
+		],
 		"start_address": "0x000002160000"
 	},
 	{
@@ -1800,8 +2566,11 @@
 			2143
 		],
 		"memory": false,
-		"name": "Device_177",
+		"name": "AAAAAA202",
 		"num_regions": 1,
+		"protected_inst": [
+			"spi_main_7"
+		],
 		"start_address": "0x000002170000"
 	},
 	{
@@ -1810,8 +2579,11 @@
 			2148
 		],
 		"memory": false,
-		"name": "Device_178",
+		"name": "AAAAAA203",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_0"
+		],
 		"start_address": "0x000002800000"
 	},
 	{
@@ -1820,8 +2592,11 @@
 			2149
 		],
 		"memory": false,
-		"name": "Device_179",
+		"name": "AAAAAA204",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_1"
+		],
 		"start_address": "0x000002810000"
 	},
 	{
@@ -1830,8 +2605,11 @@
 			2150
 		],
 		"memory": false,
-		"name": "Device_180",
+		"name": "AAAAAA205",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_2"
+		],
 		"start_address": "0x000002820000"
 	},
 	{
@@ -1840,8 +2618,11 @@
 			2151
 		],
 		"memory": false,
-		"name": "Device_181",
+		"name": "AAAAAA206",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_3"
+		],
 		"start_address": "0x000002830000"
 	},
 	{
@@ -1850,8 +2631,11 @@
 			2152
 		],
 		"memory": false,
-		"name": "Device_182",
+		"name": "AAAAAA207",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_4"
+		],
 		"start_address": "0x000002840000"
 	},
 	{
@@ -1860,8 +2644,11 @@
 			2153
 		],
 		"memory": false,
-		"name": "Device_183",
+		"name": "AAAAAA208",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_5"
+		],
 		"start_address": "0x000002850000"
 	},
 	{
@@ -1870,8 +2657,11 @@
 			2154
 		],
 		"memory": false,
-		"name": "Device_184",
+		"name": "AAAAAA209",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_6"
+		],
 		"start_address": "0x000002860000"
 	},
 	{
@@ -1880,8 +2670,11 @@
 			2155
 		],
 		"memory": false,
-		"name": "Device_185",
+		"name": "AAAAAA210",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_7"
+		],
 		"start_address": "0x000002870000"
 	},
 	{
@@ -1890,8 +2683,11 @@
 			2156
 		],
 		"memory": false,
-		"name": "Device_186",
+		"name": "AAAAAA211",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_8"
+		],
 		"start_address": "0x000002880000"
 	},
 	{
@@ -1900,8 +2696,11 @@
 			2157
 		],
 		"memory": false,
-		"name": "Device_187",
+		"name": "AAAAAA212",
 		"num_regions": 1,
+		"protected_inst": [
+			"usart_main_9"
+		],
 		"start_address": "0x000002890000"
 	},
 	{
@@ -1910,8 +2709,11 @@
 			2160
 		],
 		"memory": false,
-		"name": "Device_188",
+		"name": "AAAAAA213",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_0"
+		],
 		"start_address": "0x000002700000"
 	},
 	{
@@ -1920,8 +2722,11 @@
 			2161
 		],
 		"memory": false,
-		"name": "Device_189",
+		"name": "AAAAAA214",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_1"
+		],
 		"start_address": "0x000002710000"
 	},
 	{
@@ -1930,8 +2735,11 @@
 			2162
 		],
 		"memory": false,
-		"name": "Device_190",
+		"name": "AAAAAA215",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_2"
+		],
 		"start_address": "0x000002720000"
 	},
 	{
@@ -1940,8 +2748,11 @@
 			2163
 		],
 		"memory": false,
-		"name": "Device_191",
+		"name": "AAAAAA216",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_3"
+		],
 		"start_address": "0x000002730000"
 	},
 	{
@@ -1950,8 +2761,11 @@
 			2164
 		],
 		"memory": false,
-		"name": "Device_192",
+		"name": "AAAAAA217",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_4"
+		],
 		"start_address": "0x000002740000"
 	},
 	{
@@ -1960,8 +2774,11 @@
 			2165
 		],
 		"memory": false,
-		"name": "Device_193",
+		"name": "AAAAAA218",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_5"
+		],
 		"start_address": "0x000002750000"
 	},
 	{
@@ -1970,8 +2787,11 @@
 			2166
 		],
 		"memory": false,
-		"name": "Device_194",
+		"name": "AAAAAA219",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_6"
+		],
 		"start_address": "0x000002760000"
 	},
 	{
@@ -1980,8 +2800,11 @@
 			2167
 		],
 		"memory": false,
-		"name": "Device_195",
+		"name": "AAAAAA220",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_7"
+		],
 		"start_address": "0x000002770000"
 	},
 	{
@@ -1990,8 +2813,11 @@
 			2168
 		],
 		"memory": false,
-		"name": "Device_196",
+		"name": "AAAAAA221",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_8"
+		],
 		"start_address": "0x000002780000"
 	},
 	{
@@ -2000,8 +2826,11 @@
 			2169
 		],
 		"memory": false,
-		"name": "Device_197",
+		"name": "AAAAAA222",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_9"
+		],
 		"start_address": "0x000002790000"
 	},
 	{
@@ -2010,8 +2839,11 @@
 			2170
 		],
 		"memory": false,
-		"name": "Device_198",
+		"name": "AAAAAA223",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_10"
+		],
 		"start_address": "0x0000027A0000"
 	},
 	{
@@ -2020,8 +2852,11 @@
 			2171
 		],
 		"memory": false,
-		"name": "Device_199",
+		"name": "AAAAAA224",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_11"
+		],
 		"start_address": "0x0000027B0000"
 	},
 	{
@@ -2030,8 +2865,11 @@
 			2172
 		],
 		"memory": false,
-		"name": "Device_200",
+		"name": "AAAAAA225",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_12"
+		],
 		"start_address": "0x0000027C0000"
 	},
 	{
@@ -2040,8 +2878,11 @@
 			2173
 		],
 		"memory": false,
-		"name": "Device_201",
+		"name": "AAAAAA226",
 		"num_regions": 4,
+		"protected_inst": [
+			"mcanss_main_13"
+		],
 		"start_address": "0x0000027D0000"
 	},
 	{
@@ -2050,8 +2891,11 @@
 			2176
 		],
 		"memory": false,
-		"name": "Device_202",
+		"name": "AAAAAA227",
 		"num_regions": 1,
+		"protected_inst": [
+			"pdma_j7_main_mcan_main_0"
+		],
 		"start_address": "0x0000027E0000"
 	},
 	{
@@ -2060,8 +2904,11 @@
 			2184
 		],
 		"memory": false,
-		"name": "Device_203",
+		"name": "AAAAAA228",
 		"num_regions": 1,
+		"protected_inst": [
+			"pdma_j7_main_misc_psilss_main_0"
+		],
 		"start_address": "0x000003404000"
 	},
 	{
@@ -2070,8 +2917,11 @@
 			2185
 		],
 		"memory": false,
-		"name": "Device_204",
+		"name": "AAAAAA229",
 		"num_regions": 1,
+		"protected_inst": [
+			"pdma_j7_main_usart_psilss_main_0"
+		],
 		"start_address": "0x000003400000"
 	},
 	{
@@ -2080,42 +2930,51 @@
 			2303
 		],
 		"memory": false,
-		"name": "Device_205",
+		"name": "AAAAAA230",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_ipphy_cbass_main_0"
+		],
 		"start_address": "0x000002A8F000"
 	},
 	{
 		"end_address": "0x004D80F07FFF",
 		"ids": [
-			2304,
-			2376
+			2304
 		],
 		"memory": false,
-		"name": "Device_206",
-		"num_regions": 1,
-		"start_address": "0x004D80000000"
+		"name": "AAAAAA231",
+		"num_regions": 8,
+		"protected_inst": [
+			"k3_c66_corepac_main_0"
+		],
+		"start_address": "0x004D80800000"
 	},
 	{
 		"end_address": "0x004D81F07FFF",
 		"ids": [
-			2305,
-			2377
+			2305
 		],
 		"memory": false,
-		"name": "Device_207",
-		"num_regions": 1,
-		"start_address": "0x004D81000000"
+		"name": "AAAAAA232",
+		"num_regions": 8,
+		"protected_inst": [
+			"k3_c66_corepac_main_1"
+		],
+		"start_address": "0x004D81800000"
 	},
 	{
 		"end_address": "0x00000367FFFF",
 		"ids": [
-			2308,
-			2402
+			2308
 		],
 		"memory": false,
-		"name": "Device_208",
-		"num_regions": 1,
-		"start_address": "0x000002A2F000"
+		"name": "AAAAAA233",
+		"num_regions": 8,
+		"protected_inst": [
+			"msram16kx256e_main_0"
+		],
+		"start_address": "0x000003600000"
 	},
 	{
 		"end_address": "0x000027FFFFFF",
@@ -2123,8 +2982,11 @@
 			2310
 		],
 		"memory": false,
-		"name": "Device_209",
+		"name": "AAAAAA234",
 		"num_regions": 8,
+		"protected_inst": [
+			"gpmc_main_0"
+		],
 		"start_address": "0x000005390000"
 	},
 	{
@@ -2133,35 +2995,142 @@
 			2312
 		],
 		"memory": false,
-		"name": "Device_210",
+		"name": "AAAAAA235",
 		"num_regions": 8,
+		"protected_inst": [
+			"DOMAIN_ISOLATION_MAIN"
+		],
 		"start_address": "0x000040000000"
+	},
+	{
+		"end_address": "0x004E00FFFFFF",
+		"ids": [
+			2314
+		],
+		"memory": false,
+		"name": "AAAAAA236",
+		"num_regions": 4,
+		"protected_inst": [
+			"pulsar_sl_main_0"
+		],
+		"start_address": "0x000005C00000"
 	},
 	{
 		"end_address": "0x004E01FFFFFF",
 		"ids": [
-			2314,
-			2315,
-			2368,
-			2369
+			2315
 		],
 		"memory": false,
-		"name": "Device_211",
-		"num_regions": 1,
-		"start_address": "0x000002A68000"
+		"name": "AAAAAA237",
+		"num_regions": 4,
+		"protected_inst": [
+			"pulsar_sl_main_0"
+		],
+		"start_address": "0x000005D00000"
+	},
+	{
+		"end_address": "0x004E10FFFFFF",
+		"ids": [
+			2316
+		],
+		"memory": false,
+		"name": "AAAAAA238",
+		"num_regions": 4,
+		"protected_inst": [
+			"pulsar_sl_main_1"
+		],
+		"start_address": "0x000005E00000"
 	},
 	{
 		"end_address": "0x004E11FFFFFF",
 		"ids": [
-			2316,
-			2317,
-			2370,
+			2317
+		],
+		"memory": false,
+		"name": "AAAAAA239",
+		"num_regions": 4,
+		"protected_inst": [
+			"pulsar_sl_main_1"
+		],
+		"start_address": "0x000005F00000"
+	},
+	{
+		"end_address": "0x000005B000FF",
+		"ids": [
+			2368
+		],
+		"memory": false,
+		"name": "AAAAAA240",
+		"num_regions": 2,
+		"protected_inst": [
+			"pulsar_sl_main_0"
+		],
+		"start_address": "0x000002A68000"
+	},
+	{
+		"end_address": "0x000005B103FF",
+		"ids": [
+			2369
+		],
+		"memory": false,
+		"name": "AAAAAA241",
+		"num_regions": 1,
+		"protected_inst": [
+			"pulsar_sl_main_0"
+		],
+		"start_address": "0x000005B10000"
+	},
+	{
+		"end_address": "0x000005B200FF",
+		"ids": [
+			2370
+		],
+		"memory": false,
+		"name": "AAAAAA242",
+		"num_regions": 2,
+		"protected_inst": [
+			"pulsar_sl_main_1"
+		],
+		"start_address": "0x000002A69000"
+	},
+	{
+		"end_address": "0x000005B303FF",
+		"ids": [
 			2371
 		],
 		"memory": false,
-		"name": "Device_212",
+		"name": "AAAAAA243",
 		"num_regions": 1,
-		"start_address": "0x000002A69000"
+		"protected_inst": [
+			"pulsar_sl_main_1"
+		],
+		"start_address": "0x000005B30000"
+	},
+	{
+		"end_address": "0x004D8000FFFF",
+		"ids": [
+			2376
+		],
+		"memory": false,
+		"name": "AAAAAA244",
+		"num_regions": 1,
+		"protected_inst": [
+			"k3_c66_corepac_main_0"
+		],
+		"start_address": "0x004D80000000"
+	},
+	{
+		"end_address": "0x004D8100FFFF",
+		"ids": [
+			2377
+		],
+		"memory": false,
+		"name": "AAAAAA245",
+		"num_regions": 1,
+		"protected_inst": [
+			"k3_c66_corepac_main_1"
+		],
+		"start_address": "0x004D81000000"
 	},
 	{
 		"end_address": "0x000004FB83FF",
@@ -2169,8 +3138,11 @@
 			2380
 		],
 		"memory": false,
-		"name": "Device_213",
+		"name": "AAAAAA246",
 		"num_regions": 4,
+		"protected_inst": [
+			"emmcsd4ss_main_0"
+		],
 		"start_address": "0x000002A26000"
 	},
 	{
@@ -2179,8 +3151,11 @@
 			2381
 		],
 		"memory": false,
-		"name": "Device_214",
+		"name": "AAAAAA247",
 		"num_regions": 4,
+		"protected_inst": [
+			"emmcsd4ss_main_1"
+		],
 		"start_address": "0x000002A70000"
 	},
 	{
@@ -2189,8 +3164,11 @@
 			2384
 		],
 		"memory": false,
-		"name": "Device_215",
+		"name": "AAAAAA248",
 		"num_regions": 1,
+		"protected_inst": [
+			"elm_main_0"
+		],
 		"start_address": "0x000005380000"
 	},
 	{
@@ -2199,8 +3177,11 @@
 			2386
 		],
 		"memory": false,
-		"name": "Device_216",
+		"name": "AAAAAA249",
 		"num_regions": 8,
+		"protected_inst": [
+			"icss_g_16ffc_main_0"
+		],
 		"start_address": "0x00000B000000"
 	},
 	{
@@ -2209,8 +3190,11 @@
 			2387
 		],
 		"memory": false,
-		"name": "Device_217",
+		"name": "AAAAAA250",
 		"num_regions": 8,
+		"protected_inst": [
+			"icss_g_16ffc_main_1"
+		],
 		"start_address": "0x00000B100000"
 	},
 	{
@@ -2219,8 +3203,11 @@
 			2390
 		],
 		"memory": false,
-		"name": "Device_218",
+		"name": "AAAAAA251",
 		"num_regions": 2,
+		"protected_inst": [
+			"cpsw_9xuss_main_0"
+		],
 		"start_address": "0x000002A21000"
 	},
 	{
@@ -2229,35 +3216,50 @@
 			2392
 		],
 		"memory": false,
-		"name": "Device_219",
+		"name": "AAAAAA252",
 		"num_regions": 5,
+		"protected_inst": [
+			"sa2_ul_main_0"
+		],
 		"start_address": "0x000002A23000"
+	},
+	{
+		"end_address": "0x000002F00FFF",
+		"ids": [
+			2394
+		],
+		"memory": false,
+		"name": "AAAAAA253",
+		"num_regions": 1,
+		"protected_inst": [
+			"vpfe_main_0"
+		],
+		"start_address": "0x000002F00000"
 	},
 	{
 		"end_address": "0x000002F08FFF",
 		"ids": [
-			2394,
 			2395
 		],
 		"memory": false,
-		"name": "Device_220",
+		"name": "AAAAAA254",
 		"num_regions": 1,
-		"start_address": "0x000002F00000"
+		"protected_inst": [
+			"vpfe_main_0"
+		],
+		"start_address": "0x000002F08000"
 	},
 	{
-		"end_address": "0x000FFFFFFFFF",
+		"end_address": "0x0000038100FF",
 		"ids": [
-			2398,
-			4161,
-			4624,
-			4760,
-			4761,
-			4762,
-			4763
+			2398
 		],
 		"memory": false,
-		"name": "Device_221",
-		"num_regions": 1,
+		"name": "AAAAAA255",
+		"num_regions": 7,
+		"protected_inst": [
+			"navss512l_main_0"
+		],
 		"start_address": "0x000003800000"
 	},
 	{
@@ -2266,9 +3268,25 @@
 			2400
 		],
 		"memory": false,
-		"name": "Device_222",
+		"name": "AAAAAA256",
 		"num_regions": 16,
+		"protected_inst": [
+			"compute_cluster_j7es_tb_vdc_main_0"
+		],
 		"start_address": "0x000001000000"
+	},
+	{
+		"end_address": "0x000002A2F3FF",
+		"ids": [
+			2402
+		],
+		"memory": false,
+		"name": "AAAAAA257",
+		"num_regions": 1,
+		"protected_inst": [
+			"msram16kx256e_main_0"
+		],
+		"start_address": "0x000002A2F000"
 	},
 	{
 		"end_address": "0x000002AFB3FF",
@@ -2276,8 +3294,11 @@
 			2408
 		],
 		"memory": false,
-		"name": "Device_223",
+		"name": "AAAAAA258",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rcnavss_11"
+		],
 		"start_address": "0x000002AFB000"
 	},
 	{
@@ -2286,8 +3307,11 @@
 			2409
 		],
 		"memory": false,
-		"name": "Device_224",
+		"name": "AAAAAA259",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rc_4"
+		],
 		"start_address": "0x000002AF4000"
 	},
 	{
@@ -2296,8 +3320,11 @@
 			2410
 		],
 		"memory": false,
-		"name": "Device_225",
+		"name": "AAAAAA260",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rc_r5_0_0"
+		],
 		"start_address": "0x000002AF0000"
 	},
 	{
@@ -2306,8 +3333,11 @@
 			2411
 		],
 		"memory": false,
-		"name": "Device_226",
+		"name": "AAAAAA261",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rc_r5_1_1"
+		],
 		"start_address": "0x000002AF1000"
 	},
 	{
@@ -2316,8 +3346,11 @@
 			2412
 		],
 		"memory": false,
-		"name": "Device_227",
+		"name": "AAAAAA262",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rc_r5_2_2"
+		],
 		"start_address": "0x000002AF2000"
 	},
 	{
@@ -2326,8 +3359,11 @@
 			2413
 		],
 		"memory": false,
-		"name": "Device_228",
+		"name": "AAAAAA263",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rc_r5_3_3"
+		],
 		"start_address": "0x000002AF3000"
 	},
 	{
@@ -2336,8 +3372,11 @@
 			2415
 		],
 		"memory": false,
-		"name": "Device_229",
+		"name": "AAAAAA264",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_rcnavss_10"
+		],
 		"start_address": "0x000002AFA000"
 	},
 	{
@@ -2346,8 +3385,11 @@
 			2416
 		],
 		"memory": false,
-		"name": "Device_230",
+		"name": "AAAAAA265",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_main_rc_navss"
+		],
 		"start_address": "0x000003360000"
 	},
 	{
@@ -2356,8 +3398,11 @@
 			2418
 		],
 		"memory": false,
-		"name": "Device_231",
+		"name": "AAAAAA266",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_main_rc_pulsar_0"
+		],
 		"start_address": "0x000003380000"
 	},
 	{
@@ -2366,8 +3411,11 @@
 			2419
 		],
 		"memory": false,
-		"name": "Device_232",
+		"name": "AAAAAA267",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_main_rc_pulsar_1"
+		],
 		"start_address": "0x000003390000"
 	},
 	{
@@ -2376,8 +3424,11 @@
 			2430
 		],
 		"memory": false,
-		"name": "Device_233",
+		"name": "AAAAAA268",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_rc_cbass_main_0"
+		],
 		"start_address": "0x000002A8C000"
 	},
 	{
@@ -2386,8 +3437,11 @@
 			2431
 		],
 		"memory": false,
-		"name": "Device_234",
+		"name": "AAAAAA269",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_rc_cfg_cbass_main_0"
+		],
 		"start_address": "0x000002A8D000"
 	},
 	{
@@ -2396,8 +3450,11 @@
 			2432
 		],
 		"memory": false,
-		"name": "Device_235",
+		"name": "AAAAAA270",
 		"num_regions": 4,
+		"protected_inst": [
+			"csi_rx_if_main_0"
+		],
 		"start_address": "0x000002A30000"
 	},
 	{
@@ -2406,8 +3463,11 @@
 			2433
 		],
 		"memory": false,
-		"name": "Device_236",
+		"name": "AAAAAA271",
 		"num_regions": 4,
+		"protected_inst": [
+			"csi_rx_if_main_1"
+		],
 		"start_address": "0x000002A31000"
 	},
 	{
@@ -2416,8 +3476,11 @@
 			2436
 		],
 		"memory": false,
-		"name": "Device_237",
+		"name": "AAAAAA272",
 		"num_regions": 2,
+		"protected_inst": [
+			"K3_DPHY_RX_main_0"
+		],
 		"start_address": "0x000004580000"
 	},
 	{
@@ -2426,8 +3489,11 @@
 			2437
 		],
 		"memory": false,
-		"name": "Device_238",
+		"name": "AAAAAA273",
 		"num_regions": 2,
+		"protected_inst": [
+			"K3_DPHY_RX_main_1"
+		],
 		"start_address": "0x000004590000"
 	},
 	{
@@ -2436,8 +3502,11 @@
 			2440
 		],
 		"memory": false,
-		"name": "Device_239",
+		"name": "AAAAAA274",
 		"num_regions": 4,
+		"protected_inst": [
+			"csi_tx_if_main_0"
+		],
 		"start_address": "0x000002A38000"
 	},
 	{
@@ -2446,8 +3515,11 @@
 			2442
 		],
 		"memory": false,
-		"name": "Device_240",
+		"name": "AAAAAA275",
 		"num_regions": 1,
+		"protected_inst": [
+			"wiz16b8m4cdt_main_0"
+		],
 		"start_address": "0x000004480000"
 	},
 	{
@@ -2456,8 +3528,11 @@
 			2446
 		],
 		"memory": false,
-		"name": "Device_241",
+		"name": "AAAAAA276",
 		"num_regions": 1,
+		"protected_inst": [
+			"csi_psilss_main_0"
+		],
 		"start_address": "0x000003410000"
 	},
 	{
@@ -2466,8 +3541,11 @@
 			2463
 		],
 		"memory": false,
-		"name": "Device_242",
+		"name": "AAAAAA277",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_csi_cbass_main_0"
+		],
 		"start_address": "0x000002A88000"
 	},
 	{
@@ -2476,8 +3554,11 @@
 			2464
 		],
 		"memory": false,
-		"name": "Device_243",
+		"name": "AAAAAA278",
 		"num_regions": 2,
+		"protected_inst": [
+			"cxstm500ss_main_0"
+		],
 		"start_address": "0x000009000000"
 	},
 	{
@@ -2486,8 +3567,11 @@
 			2465
 		],
 		"memory": false,
-		"name": "Device_244",
+		"name": "AAAAAA279",
 		"num_regions": 1,
+		"protected_inst": [
+			"debugss_k3_wrap_cv0_main_0"
+		],
 		"start_address": "0x004C00000000"
 	},
 	{
@@ -2496,8 +3580,11 @@
 			2466
 		],
 		"memory": false,
-		"name": "Device_245",
+		"name": "AAAAAA280",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_debug_cell_main_0"
+		],
 		"start_address": "0x000008004000"
 	},
 	{
@@ -2506,8 +3593,11 @@
 			2467
 		],
 		"memory": false,
-		"name": "Device_246",
+		"name": "AAAAAA281",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_cc_debug_cell_main_0"
+		],
 		"start_address": "0x000008008000"
 	},
 	{
@@ -2516,8 +3606,11 @@
 			2468
 		],
 		"memory": false,
-		"name": "Device_247",
+		"name": "AAAAAA282",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_debug_cell_main_1"
+		],
 		"start_address": "0x000008000000"
 	},
 	{
@@ -2526,8 +3619,11 @@
 			2469
 		],
 		"memory": false,
-		"name": "Device_248",
+		"name": "AAAAAA283",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_c66_debug_cell_main_0"
+		],
 		"start_address": "0x000008010000"
 	},
 	{
@@ -2536,8 +3632,11 @@
 			2470
 		],
 		"memory": false,
-		"name": "Device_249",
+		"name": "AAAAAA284",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_c66_debug_cell_main_1"
+		],
 		"start_address": "0x000008020000"
 	},
 	{
@@ -2546,8 +3645,11 @@
 			2472
 		],
 		"memory": false,
-		"name": "Device_250",
+		"name": "AAAAAA285",
 		"num_regions": 1,
+		"protected_inst": [
+			"pdma_j7_main_debug_psilss_main_0"
+		],
 		"start_address": "0x000003408000"
 	},
 	{
@@ -2556,8 +3658,11 @@
 			2494
 		],
 		"memory": false,
-		"name": "Device_251",
+		"name": "AAAAAA286",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_main_dbg_cbass_main_0"
+		],
 		"start_address": "0x000002A80000"
 	},
 	{
@@ -2566,108 +3671,246 @@
 			2495
 		],
 		"memory": false,
-		"name": "Device_252",
+		"name": "AAAAAA287",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_debug_cbass_main_0"
+		],
 		"start_address": "0x000002A86000"
+	},
+	{
+		"end_address": "0x000002B31FFF",
+		"ids": [
+			2496
+		],
+		"memory": false,
+		"name": "AAAAAA288",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_3"
+		],
+		"start_address": "0x000002B30000"
 	},
 	{
 		"end_address": "0x000002B383FF",
 		"ids": [
-			2496,
 			2497
 		],
 		"memory": false,
-		"name": "Device_253",
+		"name": "AAAAAA289",
 		"num_regions": 1,
-		"start_address": "0x000002B30000"
+		"protected_inst": [
+			"mcasp_main_3"
+		],
+		"start_address": "0x000002B38000"
+	},
+	{
+		"end_address": "0x000002B41FFF",
+		"ids": [
+			2498
+		],
+		"memory": false,
+		"name": "AAAAAA290",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_4"
+		],
+		"start_address": "0x000002B40000"
 	},
 	{
 		"end_address": "0x000002B483FF",
 		"ids": [
-			2498,
 			2499
 		],
 		"memory": false,
-		"name": "Device_254",
+		"name": "AAAAAA291",
 		"num_regions": 1,
-		"start_address": "0x000002B40000"
+		"protected_inst": [
+			"mcasp_main_4"
+		],
+		"start_address": "0x000002B48000"
+	},
+	{
+		"end_address": "0x000002B51FFF",
+		"ids": [
+			2500
+		],
+		"memory": false,
+		"name": "AAAAAA292",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_5"
+		],
+		"start_address": "0x000002B50000"
 	},
 	{
 		"end_address": "0x000002B583FF",
 		"ids": [
-			2500,
 			2501
 		],
 		"memory": false,
-		"name": "Device_255",
+		"name": "AAAAAA293",
 		"num_regions": 1,
-		"start_address": "0x000002B50000"
+		"protected_inst": [
+			"mcasp_main_5"
+		],
+		"start_address": "0x000002B58000"
+	},
+	{
+		"end_address": "0x000002B61FFF",
+		"ids": [
+			2502
+		],
+		"memory": false,
+		"name": "AAAAAA294",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_6"
+		],
+		"start_address": "0x000002B60000"
 	},
 	{
 		"end_address": "0x000002B683FF",
 		"ids": [
-			2502,
 			2503
 		],
 		"memory": false,
-		"name": "Device_256",
+		"name": "AAAAAA295",
 		"num_regions": 1,
-		"start_address": "0x000002B60000"
+		"protected_inst": [
+			"mcasp_main_6"
+		],
+		"start_address": "0x000002B68000"
+	},
+	{
+		"end_address": "0x000002B71FFF",
+		"ids": [
+			2504
+		],
+		"memory": false,
+		"name": "AAAAAA296",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_7"
+		],
+		"start_address": "0x000002B70000"
 	},
 	{
 		"end_address": "0x000002B783FF",
 		"ids": [
-			2504,
 			2505
 		],
 		"memory": false,
-		"name": "Device_257",
+		"name": "AAAAAA297",
 		"num_regions": 1,
-		"start_address": "0x000002B70000"
+		"protected_inst": [
+			"mcasp_main_7"
+		],
+		"start_address": "0x000002B78000"
+	},
+	{
+		"end_address": "0x000002B81FFF",
+		"ids": [
+			2506
+		],
+		"memory": false,
+		"name": "AAAAAA298",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_8"
+		],
+		"start_address": "0x000002B80000"
 	},
 	{
 		"end_address": "0x000002B883FF",
 		"ids": [
-			2506,
 			2507
 		],
 		"memory": false,
-		"name": "Device_258",
+		"name": "AAAAAA299",
 		"num_regions": 1,
-		"start_address": "0x000002B80000"
+		"protected_inst": [
+			"mcasp_main_8"
+		],
+		"start_address": "0x000002B88000"
+	},
+	{
+		"end_address": "0x000002B91FFF",
+		"ids": [
+			2508
+		],
+		"memory": false,
+		"name": "AAAAAA300",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_9"
+		],
+		"start_address": "0x000002B90000"
 	},
 	{
 		"end_address": "0x000002B983FF",
 		"ids": [
-			2508,
 			2509
 		],
 		"memory": false,
-		"name": "Device_259",
+		"name": "AAAAAA301",
 		"num_regions": 1,
-		"start_address": "0x000002B90000"
+		"protected_inst": [
+			"mcasp_main_9"
+		],
+		"start_address": "0x000002B98000"
+	},
+	{
+		"end_address": "0x000002BA1FFF",
+		"ids": [
+			2510
+		],
+		"memory": false,
+		"name": "AAAAAA302",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_10"
+		],
+		"start_address": "0x000002BA0000"
 	},
 	{
 		"end_address": "0x000002BA83FF",
 		"ids": [
-			2510,
 			2511
 		],
 		"memory": false,
-		"name": "Device_260",
+		"name": "AAAAAA303",
 		"num_regions": 1,
-		"start_address": "0x000002BA0000"
+		"protected_inst": [
+			"mcasp_main_10"
+		],
+		"start_address": "0x000002BA8000"
+	},
+	{
+		"end_address": "0x000002BB1FFF",
+		"ids": [
+			2512
+		],
+		"memory": false,
+		"name": "AAAAAA304",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_11"
+		],
+		"start_address": "0x000002BB0000"
 	},
 	{
 		"end_address": "0x000002BB83FF",
 		"ids": [
-			2512,
 			2513
 		],
 		"memory": false,
-		"name": "Device_261",
+		"name": "AAAAAA305",
 		"num_regions": 1,
-		"start_address": "0x000002BB0000"
+		"protected_inst": [
+			"mcasp_main_11"
+		],
+		"start_address": "0x000002BB8000"
 	},
 	{
 		"end_address": "0x000002A8B3FF",
@@ -2675,79 +3918,220 @@
 			2527
 		],
 		"memory": false,
-		"name": "Device_262",
+		"name": "AAAAAA306",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcasp_g1_cbass_main_0"
+		],
 		"start_address": "0x000002A8B000"
 	},
 	{
 		"end_address": "0x0040FFFFFFFF",
 		"ids": [
-			2528,
-			2529,
-			2560
+			2528
 		],
 		"memory": false,
-		"name": "Device_263",
-		"num_regions": 8,
+		"name": "AAAAAA307",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_0"
+		],
+		"start_address": "0x000000000000"
+	},
+	{
+		"end_address": "0x0040FFFFFFFF",
+		"ids": [
+			2529
+		],
+		"memory": false,
+		"name": "AAAAAA308",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_0"
+		],
 		"start_address": "0x000000000000"
 	},
 	{
 		"end_address": "0x0041FFFFFFFF",
 		"ids": [
-			2530,
-			2531,
-			2561
+			2530
 		],
 		"memory": false,
-		"name": "Device_264",
-		"num_regions": 8,
+		"name": "AAAAAA309",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_1"
+		],
+		"start_address": "0x000000000000"
+	},
+	{
+		"end_address": "0x0041FFFFFFFF",
+		"ids": [
+			2531
+		],
+		"memory": false,
+		"name": "AAAAAA310",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_1"
+		],
 		"start_address": "0x000000000000"
 	},
 	{
 		"end_address": "0x004407FFFFFF",
 		"ids": [
-			2532,
-			2533,
-			2562
+			2532
 		],
 		"memory": false,
-		"name": "Device_265",
-		"num_regions": 8,
+		"name": "AAAAAA311",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_2"
+		],
+		"start_address": "0x000000000000"
+	},
+	{
+		"end_address": "0x004407FFFFFF",
+		"ids": [
+			2533
+		],
+		"memory": false,
+		"name": "AAAAAA312",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_2"
+		],
 		"start_address": "0x000000000000"
 	},
 	{
 		"end_address": "0x004417FFFFFF",
 		"ids": [
-			2534,
-			2535,
+			2534
+		],
+		"memory": false,
+		"name": "AAAAAA313",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_3"
+		],
+		"start_address": "0x000000000000"
+	},
+	{
+		"end_address": "0x004417FFFFFF",
+		"ids": [
+			2535
+		],
+		"memory": false,
+		"name": "AAAAAA314",
+		"num_regions": 24,
+		"protected_inst": [
+			"pcie_g4x2_main_3"
+		],
+		"start_address": "0x000000000000"
+	},
+	{
+		"end_address": "0x00000D7FFFFF",
+		"ids": [
+			2560
+		],
+		"memory": false,
+		"name": "AAAAAA315",
+		"num_regions": 8,
+		"protected_inst": [
+			"pcie_g4x2_main_0"
+		],
+		"start_address": "0x000002900000"
+	},
+	{
+		"end_address": "0x00000DFFFFFF",
+		"ids": [
+			2561
+		],
+		"memory": false,
+		"name": "AAAAAA316",
+		"num_regions": 8,
+		"protected_inst": [
+			"pcie_g4x2_main_1"
+		],
+		"start_address": "0x000002910000"
+	},
+	{
+		"end_address": "0x00000E7FFFFF",
+		"ids": [
+			2562
+		],
+		"memory": false,
+		"name": "AAAAAA317",
+		"num_regions": 8,
+		"protected_inst": [
+			"pcie_g4x2_main_2"
+		],
+		"start_address": "0x000002920000"
+	},
+	{
+		"end_address": "0x00000EFFFFFF",
+		"ids": [
 			2563
 		],
 		"memory": false,
-		"name": "Device_266",
+		"name": "AAAAAA318",
 		"num_regions": 8,
-		"start_address": "0x000000000000"
+		"protected_inst": [
+			"pcie_g4x2_main_3"
+		],
+		"start_address": "0x000002930000"
 	},
 	{
 		"end_address": "0x0000063FFFFF",
 		"ids": [
-			2568,
+			2568
+		],
+		"memory": false,
+		"name": "AAAAAA319",
+		"num_regions": 4,
+		"protected_inst": [
+			"usb3p0ss_16ffc_main_0"
+		],
+		"start_address": "0x000002A10000"
+	},
+	{
+		"end_address": "0x0000041083FF",
+		"ids": [
 			2569
 		],
 		"memory": false,
-		"name": "Device_267",
+		"name": "AAAAAA320",
 		"num_regions": 1,
-		"start_address": "0x000002A10000"
+		"protected_inst": [
+			"usb3p0ss_16ffc_main_0"
+		],
+		"start_address": "0x000004108000"
 	},
 	{
 		"end_address": "0x0000067FFFFF",
 		"ids": [
-			2570,
+			2570
+		],
+		"memory": false,
+		"name": "AAAAAA321",
+		"num_regions": 4,
+		"protected_inst": [
+			"usb3p0ss_16ffc_main_1"
+		],
+		"start_address": "0x000002A16000"
+	},
+	{
+		"end_address": "0x0000041183FF",
+		"ids": [
 			2571
 		],
 		"memory": false,
-		"name": "Device_268",
+		"name": "AAAAAA322",
 		"num_regions": 1,
-		"start_address": "0x000002A16000"
+		"protected_inst": [
+			"usb3p0ss_16ffc_main_1"
+		],
+		"start_address": "0x000004118000"
 	},
 	{
 		"end_address": "0x000004F883FF",
@@ -2755,8 +4139,11 @@
 			2576
 		],
 		"memory": false,
-		"name": "Device_269",
+		"name": "AAAAAA323",
 		"num_regions": 4,
+		"protected_inst": [
+			"emmc8ss_16ffc_main_0"
+		],
 		"start_address": "0x000002A24000"
 	},
 	{
@@ -2765,8 +4152,11 @@
 			2578
 		],
 		"memory": false,
-		"name": "Device_270",
+		"name": "AAAAAA324",
 		"num_regions": 4,
+		"protected_inst": [
+			"mlbss2p0_main_0"
+		],
 		"start_address": "0x000002F80000"
 	},
 	{
@@ -2775,8 +4165,11 @@
 			2580
 		],
 		"memory": false,
-		"name": "Device_271",
+		"name": "AAAAAA325",
 		"num_regions": 4,
+		"protected_inst": [
+			"ufshci2p1ss_16ffc_main_0"
+		],
 		"start_address": "0x000002A28000"
 	},
 	{
@@ -2785,8 +4178,11 @@
 			2583
 		],
 		"memory": false,
-		"name": "Device_272",
+		"name": "AAAAAA326",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_hc_5"
+		],
 		"start_address": "0x000002AF5000"
 	},
 	{
@@ -2795,8 +4191,11 @@
 			2584
 		],
 		"memory": false,
-		"name": "Device_273",
+		"name": "AAAAAA327",
 		"num_regions": 1,
+		"protected_inst": [
+			"wiz16b4m4cs_main_0"
+		],
 		"start_address": "0x000005000000"
 	},
 	{
@@ -2805,8 +4204,11 @@
 			2585
 		],
 		"memory": false,
-		"name": "Device_274",
+		"name": "AAAAAA328",
 		"num_regions": 1,
+		"protected_inst": [
+			"wiz16b4m4cs_main_1"
+		],
 		"start_address": "0x000005010000"
 	},
 	{
@@ -2815,8 +4217,11 @@
 			2586
 		],
 		"memory": false,
-		"name": "Device_275",
+		"name": "AAAAAA329",
 		"num_regions": 1,
+		"protected_inst": [
+			"wiz16b4m4cs_main_2"
+		],
 		"start_address": "0x000005020000"
 	},
 	{
@@ -2825,8 +4230,11 @@
 			2587
 		],
 		"memory": false,
-		"name": "Device_276",
+		"name": "AAAAAA330",
 		"num_regions": 1,
+		"protected_inst": [
+			"wiz16b4m4cs_main_3"
+		],
 		"start_address": "0x000005030000"
 	},
 	{
@@ -2835,8 +4243,11 @@
 			2588
 		],
 		"memory": false,
-		"name": "Device_277",
+		"name": "AAAAAA331",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_main_hc_0"
+		],
 		"start_address": "0x000003370000"
 	},
 	{
@@ -2845,8 +4256,11 @@
 			2589
 		],
 		"memory": false,
-		"name": "Device_278",
+		"name": "AAAAAA332",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_hc2_cbass_main_0"
+		],
 		"start_address": "0x000002A83000"
 	},
 	{
@@ -2855,8 +4269,11 @@
 			2590
 		],
 		"memory": false,
-		"name": "Device_279",
+		"name": "AAAAAA333",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_hc_cbass_main_0"
+		],
 		"start_address": "0x000002A87000"
 	},
 	{
@@ -2865,42 +4282,90 @@
 			2591
 		],
 		"memory": false,
-		"name": "Device_280",
+		"name": "AAAAAA334",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_hc_cfg_cbass_main_0"
+		],
 		"start_address": "0x000002A89000"
+	},
+	{
+		"end_address": "0x000002B01FFF",
+		"ids": [
+			2592
+		],
+		"memory": false,
+		"name": "AAAAAA335",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_0"
+		],
+		"start_address": "0x000002B00000"
 	},
 	{
 		"end_address": "0x000002B083FF",
 		"ids": [
-			2592,
 			2593
 		],
 		"memory": false,
-		"name": "Device_281",
+		"name": "AAAAAA336",
 		"num_regions": 1,
-		"start_address": "0x000002B00000"
+		"protected_inst": [
+			"mcasp_main_0"
+		],
+		"start_address": "0x000002B08000"
+	},
+	{
+		"end_address": "0x000002B11FFF",
+		"ids": [
+			2594
+		],
+		"memory": false,
+		"name": "AAAAAA337",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_1"
+		],
+		"start_address": "0x000002B10000"
 	},
 	{
 		"end_address": "0x000002B183FF",
 		"ids": [
-			2594,
 			2595
 		],
 		"memory": false,
-		"name": "Device_282",
+		"name": "AAAAAA338",
 		"num_regions": 1,
-		"start_address": "0x000002B10000"
+		"protected_inst": [
+			"mcasp_main_1"
+		],
+		"start_address": "0x000002B18000"
+	},
+	{
+		"end_address": "0x000002B21FFF",
+		"ids": [
+			2596
+		],
+		"memory": false,
+		"name": "AAAAAA339",
+		"num_regions": 1,
+		"protected_inst": [
+			"mcasp_main_2"
+		],
+		"start_address": "0x000002B20000"
 	},
 	{
 		"end_address": "0x000002B283FF",
 		"ids": [
-			2596,
 			2597
 		],
 		"memory": false,
-		"name": "Device_283",
+		"name": "AAAAAA340",
 		"num_regions": 1,
-		"start_address": "0x000002B20000"
+		"protected_inst": [
+			"mcasp_main_2"
+		],
+		"start_address": "0x000002B28000"
 	},
 	{
 		"end_address": "0x00000340CFFF",
@@ -2908,8 +4373,11 @@
 			2606
 		],
 		"memory": false,
-		"name": "Device_284",
+		"name": "AAAAAA341",
 		"num_regions": 1,
+		"protected_inst": [
+			"pdma_j7_main_aasrc_psilss_main_0"
+		],
 		"start_address": "0x00000340C000"
 	},
 	{
@@ -2918,20 +4386,38 @@
 			2607
 		],
 		"memory": false,
-		"name": "Device_285",
+		"name": "AAAAAA342",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mcasp_g0_cbass_main_0"
+		],
 		"start_address": "0x000002A8A000"
+	},
+	{
+		"end_address": "0x000002D03FFF",
+		"ids": [
+			2608
+		],
+		"memory": false,
+		"name": "AAAAAA343",
+		"num_regions": 1,
+		"protected_inst": [
+			"k3_aasrc_main_0"
+		],
+		"start_address": "0x000002D00000"
 	},
 	{
 		"end_address": "0x000002D23FFF",
 		"ids": [
-			2608,
 			2609
 		],
 		"memory": false,
-		"name": "Device_286",
-		"num_regions": 1,
-		"start_address": "0x000002D00000"
+		"name": "AAAAAA344",
+		"num_regions": 2,
+		"protected_inst": [
+			"k3_aasrc_main_0"
+		],
+		"start_address": "0x000002D10000"
 	},
 	{
 		"end_address": "0x000002A8E3FF",
@@ -2939,8 +4425,11 @@
 			2623
 		],
 		"memory": false,
-		"name": "Device_287",
+		"name": "AAAAAA345",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_aasrc_cbass_main_0"
+		],
 		"start_address": "0x000002A8E000"
 	},
 	{
@@ -2949,8 +4438,11 @@
 			2696
 		],
 		"memory": false,
-		"name": "Device_288",
+		"name": "AAAAAA346",
 		"num_regions": 36,
+		"protected_inst": [
+			"k3_d5520mp2_main_0"
+		],
 		"start_address": "0x000004300000"
 	},
 	{
@@ -2959,8 +4451,11 @@
 			2698
 		],
 		"memory": false,
-		"name": "Device_289",
+		"name": "AAAAAA347",
 		"num_regions": 12,
+		"protected_inst": [
+			"k3_vxe384mp2_main_0"
+		],
 		"start_address": "0x000004200000"
 	},
 	{
@@ -2969,8 +4464,11 @@
 			2700
 		],
 		"memory": false,
-		"name": "Device_290",
+		"name": "AAAAAA348",
 		"num_regions": 17,
+		"protected_inst": [
+			"k3_dss_main_0"
+		],
 		"start_address": "0x000004A00000"
 	},
 	{
@@ -2979,8 +4477,11 @@
 			2704
 		],
 		"memory": false,
-		"name": "Device_291",
+		"name": "AAAAAA349",
 		"num_regions": 3,
+		"protected_inst": [
+			"k3_dss_dsi_main_0"
+		],
 		"start_address": "0x000004700000"
 	},
 	{
@@ -2989,8 +4490,11 @@
 			2706
 		],
 		"memory": false,
-		"name": "Device_292",
+		"name": "AAAAAA350",
 		"num_regions": 6,
+		"protected_inst": [
+			"k3_dss_edp_main_0"
+		],
 		"start_address": "0x000002AC0000"
 	},
 	{
@@ -2999,19 +4503,37 @@
 			2710
 		],
 		"memory": false,
-		"name": "Device_293",
+		"name": "AAAAAA351",
 		"num_regions": 1,
+		"protected_inst": [
+			"wiz16b8m4ct_main_0"
+		],
 		"start_address": "0x000005050000"
 	},
 	{
 		"end_address": "0x004E2007FFFF",
 		"ids": [
-			2728,
+			2728
+		],
+		"memory": false,
+		"name": "AAAAAA352",
+		"num_regions": 1,
+		"protected_inst": [
+			"j7_lascar_gpu_wrap_main_0"
+		],
+		"start_address": "0x004E20000000"
+	},
+	{
+		"end_address": "0x0000033A03FF",
+		"ids": [
 			2729
 		],
 		"memory": false,
-		"name": "Device_294",
+		"name": "AAAAAA353",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_lascar_gpu_wrap_main_0"
+		],
 		"start_address": "0x0000033A0000"
 	},
 	{
@@ -3020,8 +4542,11 @@
 			2732
 		],
 		"memory": false,
-		"name": "Device_295",
+		"name": "AAAAAA354",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_4c28p_wrap_main_ac_decoder"
+		],
 		"start_address": "0x000003320000"
 	},
 	{
@@ -3030,8 +4555,11 @@
 			2733
 		],
 		"memory": false,
-		"name": "Device_296",
+		"name": "AAAAAA355",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_4c28p_wrap_main_ac_dmpac"
+		],
 		"start_address": "0x000003300000"
 	},
 	{
@@ -3040,8 +4568,11 @@
 			2734
 		],
 		"memory": false,
-		"name": "Device_297",
+		"name": "AAAAAA356",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_8c28p_wrap_main_ac_edpdsi"
+		],
 		"start_address": "0x000003340000"
 	},
 	{
@@ -3050,8 +4581,11 @@
 			2735
 		],
 		"memory": false,
-		"name": "Device_298",
+		"name": "AAAAAA357",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_4c28p_wrap_main_ac_encoder"
+		],
 		"start_address": "0x000003330000"
 	},
 	{
@@ -3060,8 +4594,11 @@
 			2736
 		],
 		"memory": false,
-		"name": "Device_299",
+		"name": "AAAAAA358",
 		"num_regions": 1,
+		"protected_inst": [
+			"k3_pbist_4c28p_wrap_main_ac_vpac"
+		],
 		"start_address": "0x000003310000"
 	},
 	{
@@ -3070,8 +4607,11 @@
 			2738
 		],
 		"memory": false,
-		"name": "Device_300",
+		"name": "AAAAAA359",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_mainclk2_ecc_aggr_main_ac_6"
+		],
 		"start_address": "0x000002AF6000"
 	},
 	{
@@ -3080,8 +4620,11 @@
 			2750
 		],
 		"memory": false,
-		"name": "Device_301",
+		"name": "AAAAAA360",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_ac_cbass_main_0"
+		],
 		"start_address": "0x000002A85000"
 	},
 	{
@@ -3090,40 +4633,25 @@
 			2751
 		],
 		"memory": false,
-		"name": "Device_302",
+		"name": "AAAAAA361",
 		"num_regions": 1,
+		"protected_inst": [
+			"j7_ac_cfg_cbass_main_0"
+		],
 		"start_address": "0x000002A84000"
 	},
 	{
-		"end_address": "0x00003C3FFFFF",
+		"end_address": "0x00003000FFFF",
 		"ids": [
-			4160,
-			4288
+			4161
 		],
 		"memory": false,
-		"name": "Device_303",
+		"name": "AAAAAA363",
 		"num_regions": 1,
-		"start_address": "0x000031080000"
-	},
-	{
-		"end_address": "0x000033DFFFFF",
-		"ids": [
-			4352
+		"protected_inst": [
+			"navss512l_main_0"
 		],
-		"memory": false,
-		"name": "Device_304",
-		"num_regions": 7,
-		"start_address": "0x000030802000"
-	},
-	{
-		"end_address": "0x0000351FFFFF",
-		"ids": [
-			4384
-		],
-		"memory": false,
-		"name": "Device_305",
-		"num_regions": 6,
-		"start_address": "0x000030B00000"
+		"start_address": "0x000030000000"
 	},
 	{
 		"end_address": "0x0000310013FF",
@@ -3131,8 +4659,11 @@
 			4385
 		],
 		"memory": false,
-		"name": "Device_306",
+		"name": "AAAAAA367",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdw_ecc_aggr_1"
+		],
 		"start_address": "0x000031001000"
 	},
 	{
@@ -3141,21 +4672,51 @@
 			4386
 		],
 		"memory": false,
-		"name": "Device_307",
+		"name": "AAAAAA368",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_psilcfg_0"
+		],
 		"start_address": "0x000031F78000"
+	},
+	{
+		"end_address": "0x000031170FFF",
+		"ids": [
+			4387
+		],
+		"memory": false,
+		"name": "AAAAAA369",
+		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_psilss_0"
+		],
+		"start_address": "0x000031170000"
+	},
+	{
+		"end_address": "0x000031180FFF",
+		"ids": [
+			4388
+		],
+		"memory": false,
+		"name": "AAAAAA370",
+		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_psilss_0"
+		],
+		"start_address": "0x000031180000"
 	},
 	{
 		"end_address": "0x000031190FFF",
 		"ids": [
-			4387,
-			4388,
 			4389
 		],
 		"memory": false,
-		"name": "Device_308",
+		"name": "AAAAAA371",
 		"num_regions": 1,
-		"start_address": "0x000031170000"
+		"protected_inst": [
+			"navss512l_main_0_ksdma_psilss_0"
+		],
+		"start_address": "0x000031190000"
 	},
 	{
 		"end_address": "0x000030A020FF",
@@ -3163,8 +4724,11 @@
 			4608
 		],
 		"memory": false,
-		"name": "Device_309",
+		"name": "AAAAAA372",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_virtid_0"
+		],
 		"start_address": "0x000030A02000"
 	},
 	{
@@ -3173,8 +4737,11 @@
 			4609
 		],
 		"memory": false,
-		"name": "Device_310",
+		"name": "AAAAAA373",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_virtid_1"
+		],
 		"start_address": "0x000030A03000"
 	},
 	{
@@ -3183,8 +4750,11 @@
 			4610
 		],
 		"memory": false,
-		"name": "Device_311",
+		"name": "AAAAAA374",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_cpts_0"
+		],
 		"start_address": "0x0000310D0000"
 	},
 	{
@@ -3193,9 +4763,25 @@
 			4611
 		],
 		"memory": false,
-		"name": "Device_312",
+		"name": "AAAAAA375",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksipc_spinlock_0"
+		],
 		"start_address": "0x000030E00000"
+	},
+	{
+		"end_address": "0x000031F8B1FF",
+		"ids": [
+			4624
+		],
+		"memory": false,
+		"name": "AAAAAA376",
+		"num_regions": 12,
+		"protected_inst": [
+			"navss512l_main_0"
+		],
+		"start_address": "0x000031F80000"
 	},
 	{
 		"end_address": "0x00003223FFFF",
@@ -3203,8 +4789,11 @@
 			4632
 		],
 		"memory": false,
-		"name": "Device_313",
+		"name": "AAAAAA377",
 		"num_regions": 3,
+		"protected_inst": [
+			"navss512l_main_0_timer_mgr_0"
+		],
 		"start_address": "0x000030E80000"
 	},
 	{
@@ -3213,51 +4802,12 @@
 			4640
 		],
 		"memory": false,
-		"name": "Device_314",
+		"name": "AAAAAA378",
 		"num_regions": 3,
+		"protected_inst": [
+			"navss512l_main_0_timer_mgr_1"
+		],
 		"start_address": "0x000030E81000"
-	},
-	{
-		"end_address": "0x000033C3FFFF",
-		"ids": [
-			4648
-		],
-		"memory": false,
-		"name": "Device_315",
-		"num_regions": 3,
-		"start_address": "0x000030800000"
-	},
-	{
-		"end_address": "0x000033C7FFFF",
-		"ids": [
-			4656
-		],
-		"memory": false,
-		"name": "Device_316",
-		"num_regions": 3,
-		"start_address": "0x000030801000"
-	},
-	{
-		"end_address": "0x00003343FFFF",
-		"ids": [
-			4664,
-			4688
-		],
-		"memory": false,
-		"name": "Device_317",
-		"num_regions": 1,
-		"start_address": "0x000031120000"
-	},
-	{
-		"end_address": "0x000032CFFFFF",
-		"ids": [
-			4680,
-			4704
-		],
-		"memory": false,
-		"name": "Device_318",
-		"num_regions": 1,
-		"start_address": "0x000031140000"
 	},
 	{
 		"end_address": "0x0000310003FF",
@@ -3265,8 +4815,11 @@
 			4681
 		],
 		"memory": false,
-		"name": "Device_319",
+		"name": "AAAAAA383",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdw_ecc_aggr_0"
+		],
 		"start_address": "0x000031000000"
 	},
 	{
@@ -3275,8 +4828,11 @@
 			4682
 		],
 		"memory": false,
-		"name": "Device_320",
+		"name": "AAAAAA384",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksintr_router_0"
+		],
 		"start_address": "0x0000310E0000"
 	},
 	{
@@ -3285,8 +4841,11 @@
 			4683
 		],
 		"memory": false,
-		"name": "Device_321",
+		"name": "AAAAAA385",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_mcrc64_0"
+		],
 		"start_address": "0x000031F70000"
 	},
 	{
@@ -3295,8 +4854,11 @@
 			4736
 		],
 		"memory": false,
-		"name": "Device_322",
+		"name": "AAAAAA388",
 		"num_regions": 6,
+		"protected_inst": [
+			"navss512l_main_0_ksbus_pat_0"
+		],
 		"start_address": "0x000031010000"
 	},
 	{
@@ -3305,8 +4867,11 @@
 			4737
 		],
 		"memory": false,
-		"name": "Device_323",
+		"name": "AAAAAA389",
 		"num_regions": 6,
+		"protected_inst": [
+			"navss512l_main_0_ksbus_pat_1"
+		],
 		"start_address": "0x000031011000"
 	},
 	{
@@ -3315,8 +4880,11 @@
 			4738
 		],
 		"memory": false,
-		"name": "Device_324",
+		"name": "AAAAAA390",
 		"num_regions": 6,
+		"protected_inst": [
+			"navss512l_main_0_ksbus_pat_2"
+		],
 		"start_address": "0x000031012000"
 	},
 	{
@@ -3325,8 +4893,11 @@
 			4739
 		],
 		"memory": false,
-		"name": "Device_325",
+		"name": "AAAAAA391",
 		"num_regions": 6,
+		"protected_inst": [
+			"navss512l_main_0_ksbus_pat_3"
+		],
 		"start_address": "0x000031013000"
 	},
 	{
@@ -3335,8 +4906,11 @@
 			4740
 		],
 		"memory": false,
-		"name": "Device_326",
+		"name": "AAAAAA392",
 		"num_regions": 6,
+		"protected_inst": [
+			"navss512l_main_0_ksbus_pat_4"
+		],
 		"start_address": "0x000031014000"
 	},
 	{
@@ -3345,8 +4919,11 @@
 			4744
 		],
 		"memory": false,
-		"name": "Device_327",
+		"name": "AAAAAA393",
 		"num_regions": 2,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_pvu_0"
+		],
 		"start_address": "0x000030F80000"
 	},
 	{
@@ -3355,8 +4932,11 @@
 			4745
 		],
 		"memory": false,
-		"name": "Device_328",
+		"name": "AAAAAA394",
 		"num_regions": 2,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_pvu_1"
+		],
 		"start_address": "0x000030F81000"
 	},
 	{
@@ -3365,8 +4945,11 @@
 			4747
 		],
 		"memory": false,
-		"name": "Device_329",
+		"name": "AAAAAA395",
 		"num_regions": 2,
+		"protected_inst": [
+			"navss512l_main_0_ksdma_pvu_2"
+		],
 		"start_address": "0x000030F83000"
 	},
 	{
@@ -3375,8 +4958,11 @@
 			4752
 		],
 		"memory": false,
-		"name": "Device_330",
+		"name": "AAAAAA396",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_tcu_0"
+		],
 		"start_address": "0x000036600000"
 	},
 	{
@@ -3385,20 +4971,64 @@
 			4753
 		],
 		"memory": false,
-		"name": "Device_331",
+		"name": "AAAAAA397",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss512l_main_0_ksdw_ecc_aggr_3"
+		],
 		"start_address": "0x000031002000"
+	},
+	{
+		"end_address": "0x000FFFFFFFFF",
+		"ids": [
+			4762
+		],
+		"memory": false,
+		"name": "AAAAAA400",
+		"num_regions": 24,
+		"protected_inst": [
+			"navss512l_main_0"
+		],
+		"start_address": "0x000080000000"
+	},
+	{
+		"end_address": "0x000FFFFFFFFF",
+		"ids": [
+			4763
+		],
+		"memory": false,
+		"name": "AAAAAA401",
+		"num_regions": 24,
+		"protected_inst": [
+			"navss512l_main_0"
+		],
+		"start_address": "0x000080000000"
+	},
+	{
+		"end_address": "0x000002A6A3FF",
+		"ids": [
+			5984
+		],
+		"memory": false,
+		"name": "AAAAAA402",
+		"num_regions": 1,
+		"protected_inst": [
+			"dmpac_top_main_0"
+		],
+		"start_address": "0x000002A6A000"
 	},
 	{
 		"end_address": "0x00000F4003FF",
 		"ids": [
-			5984,
 			5985
 		],
 		"memory": false,
-		"name": "Device_332",
+		"name": "AAAAAA403",
 		"num_regions": 1,
-		"start_address": "0x000002A6A000"
+		"protected_inst": [
+			"dmpac_top_main_0"
+		],
+		"start_address": "0x00000F400000"
 	},
 	{
 		"end_address": "0x00000F401FFF",
@@ -3406,8 +5036,11 @@
 			5986
 		],
 		"memory": false,
-		"name": "Device_333",
+		"name": "AAAAAA404",
 		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_cp_intd_0"
+		],
 		"start_address": "0x00000F401000"
 	},
 	{
@@ -3416,8 +5049,11 @@
 			5987
 		],
 		"memory": false,
-		"name": "Device_334",
+		"name": "AAAAAA405",
 		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_hts_0"
+		],
 		"start_address": "0x00000F408000"
 	},
 	{
@@ -3426,8 +5062,11 @@
 			5988
 		],
 		"memory": false,
-		"name": "Device_335",
+		"name": "AAAAAA406",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmpac_top_main_0_ctset2_0"
+		],
 		"start_address": "0x00000F420000"
 	},
 	{
@@ -3436,8 +5075,11 @@
 			5989
 		],
 		"memory": false,
-		"name": "Device_336",
+		"name": "AAAAAA407",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmpac_top_main_0_foco_0"
+		],
 		"start_address": "0x00000F424000"
 	},
 	{
@@ -3446,22 +5088,24 @@
 			5990
 		],
 		"memory": false,
-		"name": "Device_337",
+		"name": "AAAAAA408",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmpac_top_main_0_foco_1"
+		],
 		"start_address": "0x00000F428000"
 	},
 	{
-		"end_address": "0x004F0107FFFF",
+		"end_address": "0x00000F4FFFFF",
 		"ids": [
-			5991,
-			6016,
-			6017,
-			6018,
-			6019
+			5991
 		],
 		"memory": false,
-		"name": "Device_338",
+		"name": "AAAAAA409",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmpac_top_main_0_dof_0"
+		],
 		"start_address": "0x00000F480000"
 	},
 	{
@@ -3470,8 +5114,11 @@
 			5992
 		],
 		"memory": false,
-		"name": "Device_339",
+		"name": "AAAAAA410",
 		"num_regions": 1,
+		"protected_inst": [
+			"dmpac_top_main_0_sde_0"
+		],
 		"start_address": "0x00000F500000"
 	},
 	{
@@ -3480,86 +5127,259 @@
 			5993
 		],
 		"memory": false,
-		"name": "Device_340",
+		"name": "AAAAAA411",
 		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_dru_0"
+		],
 		"start_address": "0x00000F600000"
+	},
+	{
+		"end_address": "0x004F0107FFFF",
+		"ids": [
+			6016
+		],
+		"memory": false,
+		"name": "AAAAAA412",
+		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_dof_0"
+		],
+		"start_address": "0x004F01000000"
+	},
+	{
+		"end_address": "0x004F0107FFFF",
+		"ids": [
+			6017
+		],
+		"memory": false,
+		"name": "AAAAAA413",
+		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_dof_0"
+		],
+		"start_address": "0x004F01000000"
+	},
+	{
+		"end_address": "0x004F0107FFFF",
+		"ids": [
+			6018
+		],
+		"memory": false,
+		"name": "AAAAAA414",
+		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_dof_0"
+		],
+		"start_address": "0x004F01000000"
+	},
+	{
+		"end_address": "0x004F0107FFFF",
+		"ids": [
+			6019
+		],
+		"memory": false,
+		"name": "AAAAAA415",
+		"num_regions": 4,
+		"protected_inst": [
+			"dmpac_top_main_0_dof_0"
+		],
+		"start_address": "0x004F01000000"
+	},
+	{
+		"end_address": "0x000002A603FF",
+		"ids": [
+			6048
+		],
+		"memory": false,
+		"name": "AAAAAA416",
+		"num_regions": 2,
+		"protected_inst": [
+			"vpac_top_main_0_ksdw_ecc_aggr_0"
+		],
+		"start_address": "0x000002A60000"
+	},
+	{
+		"end_address": "0x00000F0003FF",
+		"ids": [
+			6049
+		],
+		"memory": false,
+		"name": "AAAAAA417",
+		"num_regions": 1,
+		"protected_inst": [
+			"vpac_top_main_0"
+		],
+		"start_address": "0x00000F000000"
+	},
+	{
+		"end_address": "0x00000F004FFF",
+		"ids": [
+			6050
+		],
+		"memory": false,
+		"name": "AAAAAA418",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0_cp_intd_0"
+		],
+		"start_address": "0x00000F004000"
+	},
+	{
+		"end_address": "0x00000F00FFFF",
+		"ids": [
+			6051
+		],
+		"memory": false,
+		"name": "AAAAAA419",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0_hts_0"
+		],
+		"start_address": "0x00000F008000"
+	},
+	{
+		"end_address": "0x00000F003FFF",
+		"ids": [
+			6052
+		],
+		"memory": false,
+		"name": "AAAAAA420",
+		"num_regions": 1,
+		"protected_inst": [
+			"vpac_top_main_0_ctset2_0"
+		],
+		"start_address": "0x00000F002000"
+	},
+	{
+		"end_address": "0x00000F0D7FFF",
+		"ids": [
+			6053
+		],
+		"memory": false,
+		"name": "AAAAAA421",
+		"num_regions": 4,
+		"protected_inst": [
+			"vpac_top_main_0_vpac_viss_0"
+		],
+		"start_address": "0x000002A61000"
+	},
+	{
+		"end_address": "0x00000F037FFF",
+		"ids": [
+			6055
+		],
+		"memory": false,
+		"name": "AAAAAA422",
+		"num_regions": 4,
+		"protected_inst": [
+			"vpac_top_main_0_vpac_ldc_0"
+		],
+		"start_address": "0x000002A63000"
+	},
+	{
+		"end_address": "0x00000F1C09FF",
+		"ids": [
+			6057
+		],
+		"memory": false,
+		"name": "AAAAAA423",
+		"num_regions": 2,
+		"protected_inst": [
+			"vpac_top_main_0_vpac_msc_0"
+		],
+		"start_address": "0x00000F1C0000"
+	},
+	{
+		"end_address": "0x00000F1C31FF",
+		"ids": [
+			6058
+		],
+		"memory": false,
+		"name": "AAAAAA424",
+		"num_regions": 1,
+		"protected_inst": [
+			"vpac_top_main_0_vpac_nf_0"
+		],
+		"start_address": "0x00000F1C2000"
+	},
+	{
+		"end_address": "0x00000F2FFFFF",
+		"ids": [
+			6059
+		],
+		"memory": false,
+		"name": "AAAAAA425",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0_utc_0"
+		],
+		"start_address": "0x00000F200000"
+	},
+	{
+		"end_address": "0x00000F3FFFFF",
+		"ids": [
+			6060
+		],
+		"memory": false,
+		"name": "AAAAAA426",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0_utc_1"
+		],
+		"start_address": "0x00000F300000"
 	},
 	{
 		"end_address": "0x004F0007FFFF",
 		"ids": [
-			6048,
-			6049,
-			6050,
-			6051,
-			6052,
-			6053,
-			6055,
-			6057,
-			6058,
-			6059,
-			6060,
-			6080,
-			6081,
-			6082,
+			6080
+		],
+		"memory": false,
+		"name": "AAAAAA427",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0"
+		],
+		"start_address": "0x004F00000000"
+	},
+	{
+		"end_address": "0x004F0007FFFF",
+		"ids": [
+			6081
+		],
+		"memory": false,
+		"name": "AAAAAA428",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0"
+		],
+		"start_address": "0x004F00000000"
+	},
+	{
+		"end_address": "0x004F0007FFFF",
+		"ids": [
+			6082
+		],
+		"memory": false,
+		"name": "AAAAAA429",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0"
+		],
+		"start_address": "0x004F00000000"
+	},
+	{
+		"end_address": "0x004F0007FFFF",
+		"ids": [
 			6083
 		],
 		"memory": false,
-		"name": "VPAC",
-		"num_regions": 1,
-		"start_address": "0x000002A60000"
-	},
-	{
-		"end_address": "0x00002A5BFFFF",
-		"ids": [
-			6148,
-			6260
+		"name": "AAAAAA430",
+		"num_regions": 8,
+		"protected_inst": [
+			"vpac_top_main_0"
 		],
-		"memory": false,
-		"name": "Device_352",
-		"num_regions": 1,
-		"start_address": "0x000028590000"
-	},
-	{
-		"end_address": "0x00002A4FFFFF",
-		"ids": [
-			6156,
-			6268
-		],
-		"memory": false,
-		"name": "Device_353",
-		"num_regions": 1,
-		"start_address": "0x0000285B0000"
-	},
-	{
-		"end_address": "0x00002BBFFFFF",
-		"ids": [
-			6176,
-			6288
-		],
-		"memory": false,
-		"name": "Device_354",
-		"num_regions": 1,
-		"start_address": "0x000028440000"
-	},
-	{
-		"end_address": "0x00002A7FFFFF",
-		"ids": [
-			6240
-		],
-		"memory": false,
-		"name": "Device_355",
-		"num_regions": 7,
-		"start_address": "0x0000283C0000"
-	},
-	{
-		"end_address": "0x00002AA3FFFF",
-		"ids": [
-			6248
-		],
-		"memory": false,
-		"name": "Device_356",
-		"num_regions": 6,
-		"start_address": "0x000028400000"
+		"start_address": "0x004F00000000"
 	},
 	{
 		"end_address": "0x0000283813FF",
@@ -3567,8 +5387,11 @@
 			6249
 		],
 		"memory": false,
-		"name": "Device_357",
+		"name": "AAAAAA436",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_ksdw_ecc_aggr_0"
+		],
 		"start_address": "0x000028381000"
 	},
 	{
@@ -3577,8 +5400,11 @@
 			6250
 		],
 		"memory": false,
-		"name": "Device_358",
+		"name": "AAAAAA437",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_ksdma_psilcfg_0"
+		],
 		"start_address": "0x00002A268000"
 	},
 	{
@@ -3587,8 +5413,11 @@
 			6251
 		],
 		"memory": false,
-		"name": "Device_359",
+		"name": "AAAAAA438",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_ksdma_psilss_0"
+		],
 		"start_address": "0x0000285E0000"
 	},
 	{
@@ -3597,8 +5426,11 @@
 			6252
 		],
 		"memory": false,
-		"name": "Device_360",
+		"name": "AAAAAA439",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_ksdw_ecc_aggr_1"
+		],
 		"start_address": "0x000028380000"
 	},
 	{
@@ -3607,8 +5439,11 @@
 			6253
 		],
 		"memory": false,
-		"name": "Device_361",
+		"name": "AAAAAA440",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_ksintr_router_0"
+		],
 		"start_address": "0x000028540000"
 	},
 	{
@@ -3617,19 +5452,24 @@
 			6254
 		],
 		"memory": false,
-		"name": "Device_362",
+		"name": "AAAAAA441",
 		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_mcrc64_0"
+		],
 		"start_address": "0x00002A264000"
 	},
 	{
 		"end_address": "0x000028017FFF",
 		"ids": [
-			6269,
 			6270
 		],
 		"memory": false,
-		"name": "Device_363",
+		"name": "AAAAAA445",
 		"num_regions": 1,
-		"start_address": "0x000028000000"
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0"
+		],
+		"start_address": "0x000028010000"
 	}
 ]
