@@ -6,36 +6,24 @@ var resources = system.getScript("/data/" + socName + "/Resources.json");
 var { mapByResources } = system.getScript("/scripts/allocation.js");
 
 var cssString = `<style>
-.column {
-          border: 1px solid black;
-          text-align: center;
-          width: 80px;
+.cell {
+        border: solid 1px #000000;
+        text-align: center;
 }
 
-.utypeColor {
-        background-color: #00FFFF;   
+.header {
+        background-color: #DDDDDD;
+        border: solid 1px black;   
 }
 
-.emptyCellColor {
-        background-color: #9400D3;
-}
-
-.hostIDAllColor {
-        background-color: #FF7F50;
-}
-
-.cellWithOneEntry {
-        background-color: #FFEBCD;
-}
-
-.cellWithTwoEntry {
-        background-color: #CD5C5C;
+.activeCell {
+        background-color: #008C99;
+        color: #FFFFFF;
 }
 
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 .tooltip .tooltiptext {
@@ -46,14 +34,14 @@ var cssString = `<style>
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
-  top: -5px;
-  right: 105%;
+  top: 120%;
+  left: 120%;
  
   position: absolute;
   z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+.cell:hover .tooltiptext {
   visibility: visible;
 }
 </style>`;
@@ -72,25 +60,16 @@ function getHtml() {
                                 return r.hostName;
                         })
 
-                        row += "<td class=\"column utypeColor\">" + resource.utype + "</td>\n";
+                        row += "<td class=\"cell header\">" + resource.utype + "</td>\n";
                         if (system.modules["/modules/sysfwResPart"]) {
                                 for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
                                         var resHostInfo = perHost[inst.hostName];
 
-                                        row += "<td class=\"column ";
-                                        if (resHostInfo) {
-                                                if (resHostInfo.length === 1) {
-                                                        row += "cellWithOneEntry";
-                                                }
-                                                else {
-                                                        row += "cellWithTwoEntry";
-                                                }
-                                        }
-                                        else {
-                                                row += "emptyCellColor";
-                                        }
-
-                                        row += "\">";
+					if (resHostInfo && resHostInfo.length) {
+                                        	row += "<td class=\"cell activeCell\">";
+					} else {
+                                        	row += "<td class=\"cell\">";
+					}
                                         _.each(resHostInfo, (entry, index) => {
                                                 row += "<div class=\"tooltip\">";
                                                 row += entry.count;
@@ -104,7 +83,7 @@ function getHtml() {
                                                         row += "/" + inst.shareResource + " ";
                                                 }
                                                 row += "<br>";
-                                                row += "Start = " + entry.start + "<br>";
+                                                row += "Start = " + entry.start;
                                                 row += "Count = " + entry.count + " ";
                                                 row += `</span>
                                                 </div>`;
@@ -114,7 +93,7 @@ function getHtml() {
                                 }
                         }
                         if (perHost["ALL"]) {
-                                row += "<td class=\"column hostIDAllColor\">";
+                                row += "<td class=\"cell header\">";
                                 row += "<div class=\"tooltip\">";
                                 row += perHost["ALL"][0].count + "  \n";
                                 row += "<span class=\"tooltiptext\">";
@@ -127,7 +106,7 @@ function getHtml() {
                                 row += "</td>\n";
                         }
                         else {
-                                row += "<td class=\"column emptyCellColor\">";
+                                row += "<td class=\"cell header\">";
                                 row += "</td>\n";
                         }
                         row += "</tr>\n";
