@@ -21,7 +21,7 @@ function createRAMSizeOptions(){
 }
 
 exports = {
-        displayName: "SYSFW Board Config",
+        displayName: devData[deviceSelected].shortName + " Global Configuration",
         config: [
                 {
                         name: "ramSize",

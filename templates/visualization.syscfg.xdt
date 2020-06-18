@@ -1,0 +1,4 @@
+%%{
+        var {getHtml} = system.getScript("/scripts/visualization.js");
+%%}
+`getHtml()`

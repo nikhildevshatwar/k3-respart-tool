@@ -265,6 +265,52 @@ function duplicateHostAndShareHost(instance,report){
         }
 }
 
+// Check if the Supervisor tree is cyclic or not
+
+function checkCyclicDependencyForSupervisor(instance,report){
+
+        if(instance.supervisorhost === "none")
+                return;
+
+        var moduleInstances = instance.$module.$instances;
+        var supervisor = [];
+
+        _.each(moduleInstances, i => {
+                if(i.supervisorhost !== "none"){
+                        supervisor.push({
+                                node: i.hostName,
+                                parent: i.supervisorhost
+                        })
+                }
+        })
+
+        var supervisorOf = _.keyBy(supervisor , (s) => s.node);
+
+        var visited = new Map();
+
+        visited[instance.hostName] = true;
+
+        var curr = instance.hostName;
+
+        var cycleDetected = false;
+
+        while(supervisorOf[curr]){
+                var par = supervisorOf[curr].parent;
+
+                if(visited[par]){
+                        cycleDetected = true;
+                        break;
+                }
+                
+                visited[par] = true;
+                curr = par;
+        }
+
+        if(cycleDetected){
+                report.logError("Cycle Detected in Supervisor Tree", instance,"supervisorhost");
+        }
+}
+
 // Check for overlap and overflow
 
 function overlapAndOverflow(instance,report){
@@ -535,6 +581,8 @@ exports = {
                         duplicateHostAndShareHost(instance,report);
 
                         overlapAndOverflow(instance,report);
+
+                        checkCyclicDependencyForSupervisor(instance,report);
                 }
 };
 

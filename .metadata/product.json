@@ -43,13 +43,18 @@
 			"name": "/templates/sysfw_img_cfg.syscfg.xdt",
 			"outputPath": "sysfw_img_cfg.h",
 			"alwaysRun": true
+		},
+		{
+			"name": "/templates/visualization.syscfg.xdt",
+			"outputPath": "Visual.html",
+			"alwaysRun": true
 		}
 	],
 	"topModules": [
+		"/modules/globalConfig",
 		"/modules/sysfwResPart",
 		"/modules/qosConfig",
-		"/modules/firewallConfig",
-		"/modules/sysfwBoardcfg"
+		"/modules/firewallConfig"
 	],
 	"views": [
 		{

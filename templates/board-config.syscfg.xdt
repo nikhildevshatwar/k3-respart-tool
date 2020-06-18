@@ -115,8 +115,8 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
          * be given in steps of 4, which makes the size of cache to be
          * configured in steps on X/8 MB.
          */
-%if (system.modules["/modules/sysfwBoardcfg"]) {
-%        for (let inst of system.modules["/modules/sysfwBoardcfg"].$instances) {
+%if (system.modules["/modules/globalConfig"]) {
+%        for (let inst of system.modules["/modules/globalConfig"].$instances) {
 %
         .msmc_cache_size = `utils.getNumber(inst.ramSize)`,
 %
@@ -134,8 +134,8 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
          * debug.
          */
 
-%if (system.modules["/modules/sysfwBoardcfg"]) {
-%        for (let inst of system.modules["/modules/sysfwBoardcfg"].$instances) {
+%if (system.modules["/modules/globalConfig"]) {
+%        for (let inst of system.modules["/modules/globalConfig"].$instances) {
 %                if(inst.debugEnable){
         .trace_dst_enables = (TISCI_BOARDCFG_TRACE_DST_UART0 |
                               TISCI_BOARDCFG_TRACE_DST_ITM |

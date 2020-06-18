@@ -83,5 +83,25 @@ exports = {
 			useArray: true,
 			collapsed: false
 		}]
+	},
+	validate : (inst,report) => {
+		if(inst.regionAlloc){
+			var startAdd = inst.addrStart;
+			var endAdd = inst.addrEnd;
+			startAdd = parseInt(startAdd);
+			endAdd = parseInt(endAdd);
+
+			if(endAdd < startAdd){
+				report.logError("End Address must be greater than Start Address",inst,"addrEnd");
+			}
+
+			if(startAdd % (0x1000)){
+				report.logError("Start Address is not aligned on 4K boundary",inst,"addrStart");
+			}
+
+			if(endAdd % (0x1000)){
+				report.logError("End Address is not aligned on 4K boundary",inst,"addrEnd");
+			}
+		}
 	}
 }
