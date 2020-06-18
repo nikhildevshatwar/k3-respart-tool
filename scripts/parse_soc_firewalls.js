@@ -101,7 +101,7 @@ function parseAndMergeFirewallData() {
                                 memory = namesMap[item.protected_inst].memory;
                         }
                         else {
-                                devName = "AAAAAA" + notFoundCount;
+                                devName = "AAAAAA_" + notFoundCount;
                                 notFoundCount++;
                         }
 
@@ -275,11 +275,78 @@ function removeUsedFirewalls(firewallData,usedFirewalls){
         return afterRemoving;
 }
 
+function mergeInterfaces(firewallData){
+        var devicesWithoutName = [];
+        var dataAfterMerging = [];
+
+        firewallData.forEach( f => {
+                var t = f.name.split("_");
+
+                if(t[0] === "AAAAAA"){
+                        devicesWithoutName.push(f);
+                }
+                else{
+                        dataAfterMerging.push(f);
+                }
+        })
+
+        var uniqueInterfaceName = [];
+        devicesWithoutName.forEach( d => {
+                var n = d.protected_inst[0];
+                n = n.split("_");
+                n.pop();
+                d.tempName = n.join("_");
+                uniqueInterfaceName.push(d.tempName);
+        })
+
+        uniqueInterfaceName = uniqueInterfaceName.filter(onlyUnique);
+
+        var index = 0;
+        uniqueInterfaceName.forEach( i => {
+                var sameDevice = [];
+                devicesWithoutName.forEach( d => {
+                        if(i === d.tempName){
+                                sameDevice.push(d);
+                        }
+                })
+
+                if(sameDevice.length){
+                        var start = parseInt(sameDevice[0].start_address);
+                        var end = parseInt(sameDevice[0].end_address);
+                        var r = sameDevice[0].num_regions;
+
+                        var ids = [];
+                        var inst = [];
+                        sameDevice.forEach( s => {
+                                start = Math.min(start,parseInt(s.start_address));
+                                end = Math.max(end,parseInt(s.end_address));
+                                ids.push(s.ids[0]);
+                                inst.push(s.protected_inst[0]);
+                                r = Math.min(r,s.num_regions);
+                        })
+                        dataAfterMerging.push({
+                                name: "ZZZZ_" + index,
+                                ids: ids,
+                                protected_inst: inst,
+                                num_regions: r,
+                                start_address: start,
+                                end_address: end,
+                                memory: sameDevice[0].memory
+                        })
+                        index++;
+                }
+        })
+
+        return dataAfterMerging;
+}
+
 var firewallData = parseAndMergeFirewallData();
 
 var usedFirewalls = getUsedFirewalls();
 
 firewallData = removeUsedFirewalls(firewallData,usedFirewalls);
+
+firewallData = mergeInterfaces(firewallData);
 
 
 createOutputFile(firewallData, args.soc);
