@@ -49,7 +49,24 @@
 			{
 				"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
 				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
-				"utype": "Main NAVSS UDMA extended Tx channels"
+				"utype": "Main NAVSS UDMA extended Tx channels for DRU",
+				"resRange": [
+					{
+						"resCount": 32,
+						"resStart": 140
+					}
+				]
+			},
+			{
+				"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
+				"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
+				"utype": "Main NAVSS UDMA extended Tx channels for HWA",
+				"resRange": [
+					{
+						"resCount": 128,
+						"resStart": 172
+					}
+				]
 			},
 			{
 				"deviceName": "J721E_DEV_NAVSS0_UDMAP_0",
@@ -142,8 +159,26 @@
 			{
 				"deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_EXT",
-				"utype": "Main NAVSS Ringacc rings for extended Tx channels",
-				"copyFromUtype": "Main NAVSS UDMA extended Tx channels"
+				"utype": "Main NAVSS Ringacc rings for extended Tx channels for DRU",
+				"copyFromUtype": "Main NAVSS UDMA extended Tx channels for DRU",
+				"resRange": [
+					{
+						"resCount": 32,
+						"resStart": 140
+					}
+				]
+			},
+			{
+				"deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
+				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_EXT",
+				"utype": "Main NAVSS Ringacc rings for extended Tx channels for HWA",
+				"copyFromUtype": "Main NAVSS UDMA extended Tx channels for HWA",
+				"resRange": [
+					{
+						"resCount": 128,
+						"resStart": 172
+					}
+				]
 			}
 		]
 	},
