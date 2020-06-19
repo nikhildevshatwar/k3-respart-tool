@@ -58,6 +58,16 @@ soc=$1
 	fi
 }
 
+gen_initial_user_json() {
+soc=$1
+
+	jq --tab --sort-keys "[.[] | {name: .name, protected_inst: .protected_inst}]" \
+	  data/$soc/Firewall.json > data/$soc/DeviceName.json
+
+	jq --tab --sort-keys "[.[] | {deviceName: .deviceName, subtypeName: .subtypeName, utype: .utype}]" \
+	  data/$soc/Resources.json > data/$soc/ResDependencies.json
+}
+
 if [ "$1" = "" ]; then
 	echo "Specify which soc to build"
 	exit
