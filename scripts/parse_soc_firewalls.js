@@ -329,8 +329,8 @@ function mergeInterfaces(firewallData){
                                 ids: ids,
                                 protected_inst: inst,
                                 num_regions: r,
-                                start_address: start,
-                                end_address: end,
+                                start_address: getInHexa(start),
+                                end_address: getInHexa(end),
                                 memory: sameDevice[0].memory
                         })
                         index++;
