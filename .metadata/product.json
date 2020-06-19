@@ -43,11 +43,6 @@
 			"name": "/templates/sysfw_img_cfg.syscfg.xdt",
 			"outputPath": "sysfw_img_cfg.h",
 			"alwaysRun": true
-		},
-		{
-			"name": "/templates/visualization.syscfg.xdt",
-			"outputPath": "Visual.html",
-			"alwaysRun": true
 		}
 	],
 	"topModules": [
@@ -60,6 +55,12 @@
 		{
 			"name": "/templates/resourceallocation.xdt",
 			"displayName": "Resource Allocation",
+			"viewType": "markdown",
+			"ignoreErrors": true
+		},
+		{
+			"name": "/templates/visualization.xdt",
+			"displayName": "Chart",
 			"viewType": "markdown",
 			"ignoreErrors": true
 		}

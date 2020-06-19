@@ -125,6 +125,13 @@ _.each(groupNames,(gName) => {
                                                 var dest = _.join(_.split(r.blockCopyTo," "),"_");
                                                 var src = _.join(_.split(r.utype," "),"_");
                                                 inst[dest + "_blockCount"] = inst[src + "_blockCount"];
+
+                                                if(resources[r.blockCopyTo].copyToUtype){
+                                                        var to = _.join(_.split(resources[r.blockCopyTo].copyToUtype," "),"_");
+                                                        var from = _.join(_.split(r.blockCopyTo," "),"_");
+
+                                                        inst[to + "_blockCount"] = inst[from + "_blockCount"];
+                                                }
                                         }
 
                                         // TODO :- Block Copy Channels are not working correctly 

@@ -137,7 +137,7 @@ function addDependencies(resources){
                                         if(resources[parseRes].deviceName === depResource[res].deviceName &&
                                                 resources[parseRes].subtypeName === depResource[res].subtypeName ){
 
-                                                        var temp = resources[parseRes];
+                                                        var temp = Object.assign({},resources[parseRes]);
                                                         resources[parseRes].found = 1;
                                                         temp.utype = depResource[res].utype;
                                                         temp.groupName = gName;
@@ -167,6 +167,7 @@ function addDependencies(resources){
                                 }
                         }
                 }
+
                 var resourcesNotFound = [];
                 resources.forEach( r => {
                         if(!r.found){
@@ -215,13 +216,13 @@ function createOutputFile(resources,soc){
 
 // Call each function defined above
 
-var resources  = createResources(args.doc);
+var finalOutput  = createResources(args.doc);
 
-resources = createResourceRange(resources);
+finalOutput = createResourceRange(finalOutput);
 
-resources = addDependencies(resources);
+finalOutput = addDependencies(finalOutput);
 
-createOutputFile(resources,args.soc);
+createOutputFile(finalOutput,args.soc);
 
 
 

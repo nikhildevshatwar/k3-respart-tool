@@ -1,0 +1,194 @@
+%%{     
+        const deviceSelected = system.deviceData.device;
+        const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+        const socName = devData[deviceSelected].shortName;
+
+        const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
+        var {mapByResources} = system.getScript("/scripts/allocation.js");
+
+        var resAlloc = mapByResources(true,false);
+
+        var groupNames = [];
+
+        _.each(resources,(resource) => {
+                groupNames.push(resource.groupName);
+        })
+
+        groupNames = _.uniq(groupNames);
+
+        var byGroup = _.groupBy(resources,(r) => {
+                return r.groupName;
+        })
+
+        function getCount(resHostInfo){
+
+                var str = "";
+                _.each(resHostInfo ,(r,idx) => {
+                        str += r.count;
+                        if(idx !== resHostInfo.length - 1){
+                                str += ","
+                        }
+                })
+
+                return str;
+        }
+
+        function getToolTipText(resHostInfo,inst){
+
+                var str = "";
+                str += "HOST = " + inst.hostName + "<br>";
+                if (inst.shareResource !== "none") {
+                        str += "/" + inst.shareResource + "<br>";
+                 }
+
+                 _.each(resHostInfo, r => {
+                        str += "Start = " + r.start + "<br>";
+                        str += "Count = " + r.count + "<br>";
+                 })
+
+                 return str;
+        }
+
+        function getCellClass(resHostInfo){
+                var str = "cell";
+                if(resHostInfo && resHostInfo.length){
+                        str += " activeCell";
+                }
+
+                return str;
+        }
+
+        function getDisplayPrefix(toBeRemoved , removeFrom){
+        
+        var finalPrefix = "" , idx = 0;
+
+        var split1 = _.split(toBeRemoved," ");
+        var split2 = _.split(removeFrom," ");
+
+        for(var i = 0 ; i < split2.length ; i++){
+                if(split1[i] !== split2[i]){
+                        idx = i;
+                        break;
+                }
+        }
+
+        for(var i = idx ; i < split2.length ; i++){
+                finalPrefix += split2[i];
+                finalPrefix += " ";
+        }
+
+        return finalPrefix;
+}
+%%}
+<style>
+.cell {
+        border: solid 1px #000000;
+        text-align: center;
+}
+
+.header {
+        background-color: #DDDDDD;
+        border: solid 1px black;   
+}
+
+.main {
+        table-layout: fixed;
+}
+
+.head {
+        padding-top: 30px;
+        padding-bottom: 30px;
+}
+
+.activeCell {
+        background-color: #008C99;
+        color: #FFFFFF;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 120%;
+  left: 120%;
+ 
+  position: absolute;
+  z-index: 1;
+}
+
+.cell:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<table class="main">
+        <tr>
+%        if (system.modules["/modules/sysfwResPart"]) {
+                <th class="cell">HOST/RESOURCES</th>
+%                for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+                <th class="cell">
+                        `inst.hostName`
+%                        if(inst.shareResource !== "none"){
+                                \`inst.shareResource`
+%                        }
+                 </th>
+%                }
+%        }
+                <th class="cell">HOST ID ALL</th>
+        </tr>
+%        _.each(groupNames, g => {
+                <tr>
+                    <th class ="cell head" colspan="2">
+                        `g`
+                    </th>
+                </tr>
+%                var groupResources = byGroup[g];
+%                
+%                _.each(groupResources, gr => {
+                        <tr>
+                            <td class="cell header">
+                                `getDisplayPrefix(g,gr.utype)`
+                            </td>
+%                            if(resAlloc){
+%        
+%                                    var utypeAlloc = resAlloc[gr.utype];
+%                                    var perHost = _.groupBy(utypeAlloc, (r) => {
+%                                           return r.hostName;
+%                                    }) 
+%        
+%                                    if (system.modules["/modules/sysfwResPart"]) {
+%                                            for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+%                                                    var resHostInfo = perHost[inst.hostName];
+                                                <td class="`getCellClass(resHostInfo)`">
+                                                        <div class="tooltip">`getCount(resHostInfo)`
+                                                        <span class="tooltiptext">
+                                                                `getToolTipText(resHostInfo,inst)`
+                                                        </span>
+                                                        </div>
+                                                </td>
+%                                            }
+%                                    }
+                                <td class="cell header">
+%                                    if(perHost["ALL"]){
+                                        <div class="tooltip">`perHost["ALL"][0].count`
+                                        <span class="tooltiptext">
+                                                HOST = HOST ID ALL
+                                                Start = `perHost["ALL"][0].start`
+                                                count = `perHost["ALL"][0].count`
+                                        </span>
+                                        </div>
+%                            }
+                            </td>
+%                            }
+                        </tr>
+%                })
+%        })
+</table>
