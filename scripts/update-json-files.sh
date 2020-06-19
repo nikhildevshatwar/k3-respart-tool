@@ -4,7 +4,15 @@ autogen_repo=`cd $topdir/../system-firmware-autogen; pwd`
 
 prettify_json() {
 file=$1
-	jq --tab --sort-keys . $file > pretty.json
+sortkey=$2
+
+	if [ "$sortkey" != "" ]; then
+		filter="sort_by(.$sortkey)"
+	else
+		filter="."
+	fi
+
+	jq --tab --sort-keys "$filter" $file > pretty.json
 	mv pretty.json $file
 	echo "  Converted to pretty format"
 }
@@ -48,13 +56,13 @@ soc=$1
 	if [ -f $soc_json ]; then
 		node $topdir/scripts/parse_soc_qos.js --soc $soc --doc $soc_json
 		echo "Generated data/$soc/Qos.json"
-		prettify_json $topdir/data/$soc/Qos.json 
+		prettify_json $topdir/data/$soc/Qos.json deviceName
 
 		node $topdir/scripts/parse_soc_firewalls.js --soc $soc --doc $soc_json \
 		  --dname $topdir/data/$soc/DeviceName.json \
 		  --firewall $sysfw_repo/docs/public/5_soc_doc/$sysfw_soc/firewalls.rst
 		echo "Generated data/$soc/Firewall.json"
-		prettify_json $topdir/data/$soc/Firewall.json 
+		prettify_json $topdir/data/$soc/Firewall.json name
 	fi
 }
 
