@@ -119,14 +119,14 @@
 		"groupName": "Main NAVSS UDMA",
 		"resRange": [
 			{
-				"resCount": 128,
-				"resStart": 172
+				"resCount": 32,
+				"resStart": 140
 			}
 		],
 		"subtypeId": 14,
 		"subtypeName": "RESASG_SUBTYPE_UDMAP_TX_ECHAN",
 		"uniqueId": 13582,
-		"utype": "Main NAVSS UDMA extended Tx channels for HWA"
+		"utype": "Main NAVSS UDMA extended Tx channels for DRU"
 	},
 	{
 		"deviceId": 212,
@@ -367,20 +367,20 @@
 		"utype": "Main NAVSS Ringacc rings for Normal capacity Tx channels"
 	},
 	{
-		"copyFromUtype": "Main NAVSS UDMA extended Tx channels for HWA",
+		"copyFromUtype": "Main NAVSS UDMA extended Tx channels for DRU",
 		"deviceId": 211,
 		"deviceName": "J721E_DEV_NAVSS0_RINGACC_0",
 		"groupName": "Main NAVSS Ring accelerator",
 		"resRange": [
 			{
-				"resCount": 128,
-				"resStart": 172
+				"resCount": 32,
+				"resStart": 140
 			}
 		],
 		"subtypeId": 4,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_EXT",
 		"uniqueId": 13508,
-		"utype": "Main NAVSS Ringacc rings for extended Tx channels for HWA"
+		"utype": "Main NAVSS Ringacc rings for extended Tx channels for DRU"
 	},
 	{
 		"copyFromUtype": "Main NAVSS UDMA extended Tx channels for HWA",
