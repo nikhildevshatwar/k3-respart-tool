@@ -53,14 +53,14 @@
 	],
 	"views": [
 		{
-			"name": "/templates/resourceallocation.xdt",
-			"displayName": "Resource Allocation",
+			"name": "/templates/resAllocMarkdown.xdt",
+			"displayName": "Resource Allocation Markwodn",
 			"viewType": "markdown",
 			"ignoreErrors": true
 		},
 		{
-			"name": "/templates/visualization.xdt",
-			"displayName": "Chart",
+			"name": "/templates/resAllocTable.xdt",
+			"displayName": "Resource Allocation Table",
 			"viewType": "markdown",
 			"ignoreErrors": true
 		}

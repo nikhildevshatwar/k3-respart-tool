@@ -1,0 +1,217 @@
+%%{
+
+const deviceSelected = system.deviceData.device;
+const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+const socName = devData[deviceSelected].shortName;
+const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
+
+var {mapByResources} = system.getScript("/scripts/allocation.js");
+var resAlloc = mapByResources(true,false);
+var hostlist = [];
+var groupNames = [];
+var groups = [];
+var groups, resgroup;
+var n_cols = 0;
+
+function populate_cell(entries, hostName) {
+	var tooltip = "";
+	var text = "";
+	var count = 0;
+	_.each(entries, entry => {
+		if (hostName != entry.hostName)
+			return;
+
+		if (text != "")
+			text += ", ";
+		text += entry.count;
+		if (tooltip != "")
+			tooltip += "<br>";
+
+		tooltip += "Start = " + entry.start + ", Count = " + entry.count;
+		count += 1;
+	})
+	if (count == 0) {
+		text = "&nbsp";
+		tooltip = null;
+	}
+	var cell = {
+		"cssClass": count ? "ActiveCell" : "",
+		"text": text,
+		"tooltip": tooltip
+	};
+	return cell;
+}
+
+function getDisplayPrefix(toBeRemoved , removeFrom){
+
+	var finalPrefix = "" , idx = 0;
+	var split1 = _.split(toBeRemoved," ");
+	var split2 = _.split(removeFrom," ");
+
+	for(var i = 0 ; i < split2.length ; i++){
+		if(split1[i] !== split2[i]){
+			idx = i;
+			break;
+		}
+	}
+
+	for(var i = idx ; i < split2.length ; i++){
+		finalPrefix += split2[i];
+		finalPrefix += " ";
+	}
+
+	return finalPrefix;
+}
+
+_.each(resources, resource => {
+	groupNames.push(resource.groupName);
+})
+groupNames = _.uniq(groupNames);
+
+resgroup = _.groupBy(resources, r => {
+	return r.groupName;
+})
+
+if (system.modules["/modules/sysfwResPart"]) {
+	for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+
+		var header = inst.hostName;
+		if(inst.shareResource !== "none"){
+			header += ", " + inst.shareResource;
+		}
+		hostlist.push({
+			"hostName": inst.hostName,
+			"header": header
+		});
+	}
+}
+n_cols = 1 + hostlist.length + 1;
+
+_.each(groupNames, groupName=> {
+	var group = {
+		"name": groupName,
+		"resources": []
+	}
+	_.each(resgroup[groupName], res => {
+		var entries = resAlloc[res.utype]
+		res.allocation = {};
+		_.each(hostlist, host => {
+			var cell = populate_cell(entries, host.hostName);
+			res.allocation[host.hostName] = cell;
+		})
+		res.displayName = getDisplayPrefix(groupName, res.utype);
+		group.resources.push(res)
+	})
+	groups.push(group)
+})
+
+
+%%}
+
+<style>
+.Main {
+	table-layout: fixed;
+}
+
+.Cell {
+	border: solid 1px #000000;
+	text-align: center;
+}
+
+.ActiveCell {
+	background-color: #008C99;
+	color: #FFFFFF;
+}
+
+.ColHeader {
+	background-color: #DDDDDD;
+	border: solid 1px black;
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	white-space: nowrap;
+}
+
+.RowHeader {
+	background-color: #DDDDDD;
+	text-align: left;
+}
+
+.SubHeader {
+	color: #990000;
+	font-size: 120%;
+}
+
+.Tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.Tooltip .Tooltiptext {
+	visibility: hidden;
+	background-color: black;
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	width: 120px;
+	top: 120%;
+	left: 120%;
+
+	position: absolute;
+	z-index: 1;
+}
+
+.Cell:hover .Tooltiptext {
+	visibility: visible;
+}
+</style>
+
+<table class="Main">
+	<tr>
+		<th class="Cell RowHeader">
+			Resources
+		</th>
+%	_.each(hostlist, host => {
+		<th>
+			<span class="Cell ColHeader">
+				`host.header`
+			</span>
+		</th>
+%	})
+		<th>
+			<span class="Cell ColHeader">
+				HOST ID ALL
+			</span>
+		</th>
+	</tr>
+%_.each(groups, group => {
+ 	<tr>
+ 		<th class ="Cell SubHeader" colspan="`n_cols`">
+ 			`group.name`
+ 		</th>
+ 	</tr>
+%	_.each(group.resources, res => {
+		<tr>
+			<th class="Cell RowHeader">
+				`res.displayName`
+			</th>
+%			_.each(hostlist, host => {
+%				var cell = res.allocation[host.hostName];
+%				if (cell == null) { cell = { "text": "&nbsp", "tooltip": "&nbsp" }; }
+				<th class="Cell `cell.cssClass`">
+					`cell.text`
+%					if (cell.tooltip) {
+						<div class="Tooltip">
+							<span class="Tooltiptext">
+								`cell.tooltip`
+							</span>
+						</div>
+%					}
+				</th>
+%			})
+		</tr>
+%	})
+%})
+</table>
