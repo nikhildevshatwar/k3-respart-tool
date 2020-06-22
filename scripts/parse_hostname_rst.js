@@ -1,137 +1,135 @@
-const args = require('yargs')
-        .options({
-                "doc" : {
-                        alias : "document",
-                        describe : "Path to hostName.rst file",
-                        demandOption : true,
-                        type : "string"
-                },
-                "soc" : {
-                        describe : "Soc name",
-                        demandOption : true,
-                        type : "string"
-                },
-                "firewall" : {
-                        describe : "Path to firewall.rst file",
-                        demandOption : true,
-                        type : "string"
-                }
-        })
-        .help()
-        .alias('help', 'h')
-        .argv;
+const args = require("yargs")
+	.options({
+		doc: {
+			alias: "document",
+			describe: "Path to hostName.rst file",
+			demandOption: true,
+			type: "string",
+		},
+		soc: {
+			describe: "Soc name",
+			demandOption: true,
+			type: "string",
+		},
+		firewall: {
+			describe: "Path to firewall.rst file",
+			demandOption: true,
+			type: "string",
+		},
+	})
+	.help()
+	.alias("help", "h").argv;
 
+// Parse the host rst file
 
-function createHostArray(path){
-
+function createHostArray(path) {
 	var hostArray = [];
 	var fs = require("fs");
-	var textByLine = fs.readFileSync(path)
-	.toString().split("\n");
+	var textByLine = fs.readFileSync(path).toString().split("\n");
 
-	for( var line = 0 ; line < textByLine.length ; line++ ){
-		
-		if(textByLine[line][0] != '|') continue;
+	// Split each line using | character and read data
 
+	for (var line = 0; line < textByLine.length; line++) {
+		if (textByLine[line][0] != "|") continue;
 
-		var newText = textByLine[line].split('|');  
-		
-		for( var data = 0 ; data < newText.length ; data++ ){
+		var newText = textByLine[line].split("|");
+
+		for (var data = 0; data < newText.length; data++) {
 			newText[data] = newText[data].trim();
 		}
 
 		var newhost = {
-			hostId : parseInt(newText[1]),
-			hostName : newText[2],
-			Security : newText[3],
-			Description : newText[4],
+			hostId: parseInt(newText[1]),
+			hostName: newText[2],
+			Security: newText[3],
+			Description: newText[4],
 		};
-		
+
 		hostArray.push(newhost);
-        }
-        while(Number.isNaN(hostArray[0].hostId))
-                hostArray.shift();
-        
-        var newArr = [];
-        for(var idx = 0 ; idx < hostArray.length ; idx++){
-                if(Number.isNaN(hostArray[idx].hostId)){
-                        newArr[ newArr.length - 1 ].Description += " ";
-                        newArr[ newArr.length - 1 ].Description += hostArray[idx].Description;
-                }
-                else{
-                        newArr.push(hostArray[idx]);
-                }
-        }
-        
-        hostArray = newArr;
+	}
+
+	// Remove invalid entries at begining
+
+	while (Number.isNaN(hostArray[0].hostId)) hostArray.shift();
+
+	// Merge if there are multiline description of hosts
+
+	var afterMerging = [];
+	for (var idx = 0; idx < hostArray.length; idx++) {
+		if (Number.isNaN(hostArray[idx].hostId)) {
+			afterMerging[afterMerging.length - 1].Description += " ";
+			afterMerging[afterMerging.length - 1].Description += hostArray[idx].Description;
+		} else {
+			afterMerging.push(hostArray[idx]);
+		}
+	}
+
+	hostArray = afterMerging;
+
 	return hostArray;
 }
 
+// Parse firewall file to get priv-Ids of hosts
 
-function addPrivIds(hostArray,path){
-
+function addPrivIds(hostArray, path) {
 	var fs = require("fs");
-	var textByLine = fs.readFileSync(path)
-        .toString().split("\n");
-        
-        var temp = [] , privTable = 0;
+	var textByLine = fs.readFileSync(path).toString().split("\n");
 
-        textByLine.forEach((line) => {
-                if(privTable){
-                        temp.push(line);
-                }
-                else{
-                        if(line.trim() === "List of priv-ids")
-                                privTable = 1;
-                }
-        })
+	var privEntries = [],
+		privTableStart = 0;
 
-        textByLine = temp;
+	textByLine.forEach((line) => {
+		if (privTableStart) {
+			privEntries.push(line);
+		} else {
+			if (line.trim() === "List of priv-ids") privTableStart = 1;
+		}
+	});
 
-        textByLine.forEach((line) => {
-                if(line[0] === "|"){
-                        var newText = line.split('|');
-                        var privId = parseInt(newText[2],10);
-                        if(privId){
-                                var hostsId = newText[7];
-                                var t = hostsId.split(",").map((id) => {
-                                        return parseInt(id,10);
-                                })
-                                hostsId = t;
-                                hostsId.forEach((id) => {
-                                        hostArray.forEach((h) => {
-                                                if(h.hostId === id){
-                                                        h.privId = privId;
-                                                }
-                                        })
-                                })
-                        }
-                }
-        })
+	textByLine = privEntries;
 
-        return hostArray;
+	textByLine.forEach((line) => {
+		if (line[0] === "|") {
+			var newText = line.split("|");
+			var privId = parseInt(newText[2], 10);
+			if (privId) {
+				var hostsId = newText[7];
+				var t = hostsId.split(",").map((id) => {
+					return parseInt(id, 10);
+				});
+				hostsId = t;
+				hostsId.forEach((id) => {
+					hostArray.forEach((h) => {
+						if (h.hostId === id) {
+							h.privId = privId;
+						}
+					});
+				});
+			}
+		}
+	});
+
+	return hostArray;
 }
 
+function createOutputFile(hosts, soc) {
+	var fs = require("fs");
 
-function createOutputFile(hosts,soc){
+	// Make json string from object
+	var jsonString = JSON.stringify(hosts);
 
-        var fs = require('fs');
+	// write the data to file
+	var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf("/"));
 
-        // Make json string from object
-        var jsonString = JSON.stringify(hosts);
+	var path = dir + "/../data/" + soc + "/Hosts.json";
 
-        // write the data to file
-        var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
-
-        var path = dir + "/../data/" + soc + "/Hosts.json" ;
-
-        fs.writeFile(path, jsonString, (err) => { 
-                if (err) throw err; 
-        })
+	fs.writeFile(path, jsonString, (err) => {
+		if (err) throw err;
+	});
 }
 
 var hostArray = createHostArray(args.doc);
 
-hostArray = addPrivIds(hostArray,args.firewall);
+hostArray = addPrivIds(hostArray, args.firewall);
 
-createOutputFile(hostArray,args.soc);
+createOutputFile(hostArray, args.soc);

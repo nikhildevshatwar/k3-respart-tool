@@ -4,20 +4,30 @@ const socName = devData[deviceSelected].shortName;
 
 var devices = _.keyBy(system.getScript("/data/" + socName + "/Firewall.json"), (d) => d.name);
 
-var uniqDevices = _.map(devices, (d) => {
-	return d.name;
-})
+function getDeviceNameOptions() {
+	var uniqDevices = _.map(devices, (d) => {
+		return d.name;
+	});
 
+	var devOpt = _.map(uniqDevices, (d) => {
+		return {
+			name: d,
+			displayName: d,
+		};
+	});
 
-var devOpt = _.map(uniqDevices, (d) => {
-	return {
-		name: d,
-		displayName: d
-	}
-})
+	devOpt.unshift({
+		name: "unknown",
+		displayName: "Select",
+	});
 
+	return devOpt;
+}
 
-var start = "0", end = "0", regions = 1, customAlloc = false;
+var start = "0",
+	end = "0",
+	regions = 1,
+	customAlloc = false;
 
 var documentation = `
 **Firewall configuration**
@@ -55,7 +65,7 @@ Following steps allow to do this:
 	*TISCI_MSG_FWL_SET_REGION* which can be directly passed in TISCI calls.
 	Bootloader should simply iterate over this to program all the firewalls.
 
-`
+`;
 
 exports = {
 	displayName: "Firewall Configuration",
@@ -64,72 +74,67 @@ exports = {
 		{
 			name: "device",
 			displayName: "Device to be protected",
-			options: [
-				{
-					name: "unknown",
-					displayName: "Select"
-				},
-				...devOpt
-			],
+			options: getDeviceNameOptions(),
 			default: "unknown",
 			onChange: (inst, ui) => {
-				start = devices[inst.device].start_address, end = devices[inst.device].end_address;
+				(start = devices[inst.device].start_address), (end = devices[inst.device].end_address);
 
 				if (devices[inst.device].memory) {
 					regions = devices[inst.device].num_regions;
 					customAlloc = true;
-				}
-				else {
-					regions = 1
+				} else {
+					regions = 1;
 					customAlloc = false;
 				}
 				var instances = devices[inst.device].protected_inst;
 				instances = _.uniq(instances);
 
-				inst.instanceName = _.map(instances,i => {
+				inst.instanceName = _.map(instances, (i) => {
 					return i;
-				})
-			}
+				});
+			},
 		},
 		{
 			name: "instanceName",
 			displayName: "Instance Name",
 			default: ["none"],
 			options: (inst) => {
-				if(!devices[inst.device]){
+				if (!devices[inst.device]) {
 					return [];
 				}
 				var instances = devices[inst.device].protected_inst;
 				instances = _.uniq(instances);
-				return _.map(instances, i => {
+				return _.map(instances, (i) => {
 					return {
 						name: i,
-						displayName: i
-					}
-				})
-			}
-		}
+						displayName: i,
+					};
+				});
+			},
+		},
 	],
 	moduleInstances: (inst) => {
-		return [{
-			name: "regions",
-			displayName: "Firewall Regions",
-			moduleName: "/modules/firewallRegion",
-			minInstanceCount: 1,
-			maxInstanceCount: regions,
-			useArray: true,
-			collapsed: false,
-			args: {
-				defaultStart: start,
-				defaultEnd: end,
-				regionAlloc: customAlloc,
-				memory: customAlloc
-			}
-		}]
+		return [
+			{
+				name: "regions",
+				displayName: "Firewall Regions",
+				moduleName: "/modules/firewallRegion",
+				minInstanceCount: 1,
+				maxInstanceCount: regions,
+				useArray: true,
+				collapsed: false,
+				args: {
+					defaultStart: start,
+					defaultEnd: end,
+					regionAlloc: customAlloc,
+					memory: customAlloc,
+				},
+			},
+		];
 	},
 	validate: (inst, report) => {
 		if (inst.device === "unknown") {
 			report.logError("Select a Device", inst, "device");
 		}
-	}
-}
+	},
+};

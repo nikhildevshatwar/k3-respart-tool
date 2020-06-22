@@ -1,178 +1,192 @@
 const args = require('yargs')
-        .options({
-                "doc": {
-                        alias: "document",
-                        describe : "Path to SOC JSON file",
-                        demandOption: true,
-                        type: "string"
-                },
-                "soc": {
-                        describe: "Soc name",
-                        demandOption: true,
-                        type: "string"
-                },
-                "dname": {
-                        describe: "Path to DeviceName.json file",
-                        demandOption: true,
-                        type: "string"
-                },
-                "firewall": {
-                        describe: "Path to firewall.rst file",
-                        demandOption: true,
-                        type: "string"
-                }
-        })
-        .help()
-        .alias('help', 'h')
-        .argv;
+	.options({
+		"doc": {
+			alias: "document",
+			describe: "Path to SOC JSON file",
+			demandOption: true,
+			type: "string"
+		},
+		"soc": {
+			describe: "Soc name",
+			demandOption: true,
+			type: "string"
+		},
+		"dname": {
+			describe: "Path to DeviceName.json file",
+			demandOption: true,
+			type: "string"
+		},
+		"firewall": {
+			describe: "Path to firewall.rst file",
+			demandOption: true,
+			type: "string"
+		}
+	})
+	.help()
+	.alias('help', 'h')
+	.argv;
 
 function onlyUnique(value, index, self) {
-        return self.indexOf(value) === index;
+	return self.indexOf(value) === index;
 }
 
 function getInHexa(val) {
-        var hex = val.toString(16).toUpperCase();
+	var hex = val.toString(16).toUpperCase();
 
-        var prefix = "0x";
-        for (var idx = 0; idx < (12 - hex.length); idx++) {
-                prefix += "0";
-        }
+	var prefix = "0x";
+	for (var idx = 0; idx < (12 - hex.length); idx++) {
+		prefix += "0";
+	}
 
-        return prefix + hex;
+	return prefix + hex;
+}
+
+function MinMaxOfRange(array) {
+	var start = parseInt(array[0].start_address, 16);
+	var end = parseInt(array[0].end_address, 16);
+
+	array.forEach(r => {
+		start = Math.min(start, parseInt(r.start_address, 16));
+		end = Math.max(end, parseInt(r.end_address, 16));
+	});
+
+	return {
+		start: getInHexa(start),
+		end: getInHexa(end)
+	}
 }
 
 function parseAndMergeFirewallData() {
 
-        var fs = require('fs');
+	var fs = require('fs');
 
-        var firewall = fs.readFileSync(args.doc).toString();
+	var firewall = fs.readFileSync(args.doc).toString();
 
-        var names = fs.readFileSync(args.dname).toString();
+	var names = fs.readFileSync(args.dname).toString();
 
-        names = JSON.parse(names);
-        firewall = JSON.parse(firewall);
+	names = JSON.parse(names);
+	firewall = JSON.parse(firewall);
 
-        firewall = firewall.security.std_slave_firewalls;
+	firewall = firewall.security.std_slave_firewalls;
 
-        var deviceNames = [];
+	var deviceNames = [];
 
-        names.forEach(n => {
-                deviceNames.push(n.name);
+	names.forEach(n => {
+		deviceNames.push(n.name);
 
-                if (!n.memory) {
-                        n.memory = false;
-                }
-        })
+		if (!n.memory) {
+			n.memory = false;
+		}
+	})
 
-        var deviceNames = deviceNames.filter(onlyUnique)
+	var deviceNames = deviceNames.filter(onlyUnique)
 
-        var namesMap = new Map();
+	// Create map of device names
 
-        for (var idx = 0; idx < names.length; idx++) {
+	var namesMap = new Map();
 
-                var inst = names[idx].protected_inst;
+	for (var idx = 0; idx < names.length; idx++) {
 
-                inst.forEach(i => {
-                        namesMap[i] = {
-                                name: names[idx].name,
-                                memory: names[idx].memory
-                        }
-                })
-        }
-        var finalData = [];
+		var inst = names[idx].protected_inst;
 
-        var notFoundCount = 0;
+		inst.forEach(i => {
+			namesMap[i] = {
+				name: names[idx].name,
+				memory: names[idx].memory
+			}
+		})
+	}
+	var finalData = [];
 
-        firewall.forEach(item => {
+	var notFoundCount = 0;
 
-                if (item.protected_regions.length > 0) {
-                        var start = parseInt(item.protected_regions[0].start_address, 16);
-                        var end = parseInt(item.protected_regions[0].end_address, 16);
+	firewall.forEach(item => {
 
-                        item.protected_regions.forEach(r => {
-                                start = Math.min(start, parseInt(r.start_address, 16));
-                                end = Math.max(end, parseInt(r.end_address, 16));
-                        })
+		if (item.protected_regions.length > 0) {
 
-                        var devName = "", memory = false;
+			var values = MinMaxOfRange(item.protected_regions);
+			var start = values.start;
+			var end = values.end;
 
-                        if (namesMap[item.protected_inst]) {
-                                devName = namesMap[item.protected_inst].name;
-                                memory = namesMap[item.protected_inst].memory;
-                        }
-                        else {
-                                devName = "AAAAAA_" + notFoundCount;
-                                notFoundCount++;
-                        }
+			var devName = "",
+				memory = false;
 
-                        finalData.push({
-                                id: item.id,
-                                num_regions: item.num_regions,
-                                protected_inst: item.protected_inst,
-                                name: devName,
-                                start_address: start,
-                                end_address: end,
-                                memory: memory
-                        })
-                }
-        })
+			if (namesMap[item.protected_inst]) {
+				devName = namesMap[item.protected_inst].name;
+				memory = namesMap[item.protected_inst].memory;
+			} else {
+				devName = "AAAAAA_" + notFoundCount;
+				notFoundCount++;
+			}
 
+			finalData.push({
+				id: item.id,
+				num_regions: item.num_regions,
+				protected_inst: item.protected_inst,
+				name: devName,
+				start_address: start,
+				end_address: end,
+				memory: memory
+			})
+		}
+	})
 
-        var temp = [];
+	// Merge instances having same device name
 
-        deviceNames.forEach(n => {
-                var interface = [];
-                finalData.forEach(f => {
-                        if (n === f.name) {
-                                interface.push(f);
-                                f.found = 1;
-                        }
-                })
+	var instancesAfterMerging = [];
 
-                if (interface.length) {
-                        var start = interface[0].start_address;
-                        var end = interface[0].end_address;
-                        var ids = [];
-                        var region = interface[0].num_regions;
-                        var protected_inst = [];
+	deviceNames.forEach(n => {
+		var interface = [];
+		finalData.forEach(f => {
+			if (n === f.name) {
+				interface.push(f);
+				f.found = 1;
+			}
+		})
 
-                        interface.forEach(i => {
-                                start = Math.min(start, i.start_address);
-                                end = Math.max(end, i.end_address);
-                                ids.push(i.id);
-                                region = Math.min(region, i.num_regions);
-                                protected_inst.push(i.protected_inst);
-                        })
-                        temp.push({
-                                ids: ids,
-                                num_regions: region,
-                                //protected_inst: item.protected_inst,
-                                name: n,
-                                start_address: getInHexa(start),
-                                end_address: getInHexa(end),
-                                memory: interface[0].memory,
-                                protected_inst: protected_inst
-                        })
-                }
-        })
+		if (interface.length) {
+			var ids = [];
+			var region = interface[0].num_regions;
+			var protected_inst = [];
 
-        finalData.forEach(f => {
-                if (!f.found) {
-                        temp.push({
-                                ids: [f.id],
-                                num_regions: f.num_regions,
-                                name: f.name,
-                                start_address: getInHexa(f.start_address),
-                                end_address: getInHexa(f.end_address),
-                                memory: f.memory,
-                                protected_inst: [f.protected_inst]
-                        })
-                }
-        })
+			interface.forEach(i => {
+				ids.push(i.id);
+				region = Math.min(region, i.num_regions);
+				protected_inst.push(i.protected_inst);
+			})
 
-        finalData = temp;
+			var values = MinMaxOfRange(interface);
+			instancesAfterMerging.push({
+				ids: ids,
+				num_regions: region,
+				name: n,
+				start_address: values.start,
+				end_address: values.end,
+				memory: interface[0].memory,
+				protected_inst: protected_inst
+			})
+		}
+	})
 
-        return finalData;
+	// Handle the case where device name is not found
+
+	finalData.forEach(f => {
+		if (!f.found) {
+			instancesAfterMerging.push({
+				ids: [f.id],
+				num_regions: f.num_regions,
+				name: f.name,
+				start_address: getInHexa(f.start_address),
+				end_address: getInHexa(f.end_address),
+				memory: f.memory,
+				protected_inst: [f.protected_inst]
+			})
+		}
+	})
+
+	finalData = instancesAfterMerging;
+
+	return finalData;
 }
 
 
@@ -180,171 +194,177 @@ function parseAndMergeFirewallData() {
 
 function createOutputFile(data, soc) {
 
-        var fs = require('fs');
+	var fs = require('fs');
 
-        // Make json string from object
-        var jsonString = JSON.stringify(data);
+	// Make json string from object
+	var jsonString = JSON.stringify(data);
 
-        // write the data to file
-        var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
+	// write the data to file
+	var dir = process.argv[1].substring(0, process.argv[1].lastIndexOf('/'));
 
-        var path = dir + "/../data/" + soc + "/Firewall.json";
+	var path = dir + "/../data/" + soc + "/Firewall.json";
 
-        fs.writeFile(path, jsonString, (err) => {
-                if (err) throw err;
-        })
+	fs.writeFile(path, jsonString, (err) => {
+		if (err) throw err;
+	})
 }
+// Get firewalls used by dmsc and rm
 
-function getUsedFirewalls(){
+function getUsedFirewalls() {
 
-        var fs = require("fs");
+	var fs = require("fs");
 	var textByLine = fs.readFileSync(args.firewall)
-        .toString().split("\n");
-        
-        var startIndex = 0,endIndex = 0;
+		.toString().split("\n");
 
-        for(var idx = 0 ; idx < textByLine.length ; idx++){
-                if(textByLine[idx].trim() === "List of Region Based Firewalls"){
-                        startIndex = idx;
-                }
-                if(textByLine[idx].trim() === "List of Channelized Firewalls"){
-                        endIndex = idx;
-                }
-        }
+	var startIndex = 0,
+		endIndex = 0;
 
-        var temp = [];
+	for (var idx = 0; idx < textByLine.length; idx++) {
+		if (textByLine[idx].trim() === "List of Region Based Firewalls") {
+			startIndex = idx;
+		}
+		if (textByLine[idx].trim() === "List of Channelized Firewalls") {
+			endIndex = idx;
+		}
+	}
 
-        for(var idx = startIndex ; idx < endIndex ; idx++){
-                if(textByLine[idx][0] === "|"){
-                        temp.push(textByLine[idx]);
-                }
-        }
+	var table = [];
 
-        textByLine = temp;
+	for (var idx = startIndex; idx < endIndex; idx++) {
+		if (textByLine[idx][0] === "|") {
+			table.push(textByLine[idx]);
+		}
+	}
 
-        var firewallId = [];
+	textByLine = table;
 
-        textByLine.forEach( t => {
-                var arr = t.split("|");
-                var fId = parseInt(arr[1].trim());
+	var firewallId = [];
 
-                if(fId){
-                        if(arr[2].trim() !== "none"){
-                                firewallId.push(fId);
-                        }
-                }
-        })
+	textByLine.forEach(t => {
+		var arr = t.split("|");
+		var fId = parseInt(arr[1].trim());
 
-        return firewallId;
+		if (fId) {
+			if (arr[2].trim() !== "none") {
+				firewallId.push(fId);
+			}
+		}
+	})
+
+	return firewallId;
 
 }
 
-function removeUsedFirewalls(firewallData,usedFirewalls){
+// Remove firewalls used by dmsc 
 
-        var afterRemoving  = [];
-        
-        firewallData.forEach( f => {
-                var ids = f.ids;
-                var inst = f.protected_inst;
+function removeUsedFirewalls(firewallData, usedFirewalls) {
 
-                var nonUsedIds = [];
-                var nonUsedInst = [];
+	var afterRemoving = [];
 
-                for(var idx = 0 ; idx < ids.length ; idx++){
-                        var found = 0, i = ids[idx];
+	firewallData.forEach(f => {
+		var ids = f.ids;
+		var inst = f.protected_inst;
 
-                        usedFirewalls.forEach( u => {
-                                if(u === i){
-                                        found = 1;
-                                }
-                        })
+		var nonUsedIds = [];
+		var nonUsedInst = [];
 
-                        if(!found){
-                                nonUsedIds.push(i);
-                                nonUsedInst.push(inst[idx]);
-                        }
-                }
+		for (var idx = 0; idx < ids.length; idx++) {
+			var found = 0,
+				i = ids[idx];
 
-                if(nonUsedIds.length){
-                        f.ids = nonUsedIds;
-                        f.protected_inst = nonUsedInst;
-                        afterRemoving.push(f);
-                }
-        })
+			usedFirewalls.forEach(u => {
+				if (u === i) {
+					found = 1;
+				}
+			})
 
-        return afterRemoving;
+			if (!found) {
+				nonUsedIds.push(i);
+				nonUsedInst.push(inst[idx]);
+			}
+		}
+
+		if (nonUsedIds.length) {
+			f.ids = nonUsedIds;
+			f.protected_inst = nonUsedInst;
+			afterRemoving.push(f);
+		}
+	})
+
+	return afterRemoving;
 }
 
-function mergeInterfaces(firewallData){
-        var devicesWithoutName = [];
-        var dataAfterMerging = [];
+// Merge instances having similar instances names 
 
-        firewallData.forEach( f => {
-                var t = f.name.split("_");
+function mergeInterfaces(firewallData) {
+	var devicesWithoutName = [];
+	var dataAfterMerging = [];
 
-                if(t[0] === "AAAAAA"){
-                        devicesWithoutName.push(f);
-                }
-                else{
-                        dataAfterMerging.push(f);
-                }
-        })
+	firewallData.forEach(f => {
+		var t = f.name.split("_");
 
-        var uniqueInterfaceName = [];
-        devicesWithoutName.forEach( d => {
-                var n = d.protected_inst[0];
-                n = n.split("_");
-                n.pop();
-                d.tempName = n.join("_");
-                uniqueInterfaceName.push(d.tempName);
-        })
+		if (t[0] === "AAAAAA") {
+			devicesWithoutName.push(f);
+		} else {
+			dataAfterMerging.push(f);
+		}
+	})
 
-        uniqueInterfaceName = uniqueInterfaceName.filter(onlyUnique);
+	var uniqueInterfaceName = [];
+	devicesWithoutName.forEach(d => {
+		var n = d.protected_inst[0];
+		n = n.split("_");
+		n.pop();
+		d.tempName = n.join("_");
+		uniqueInterfaceName.push(d.tempName);
+	})
 
-        var index = 0;
-        uniqueInterfaceName.forEach( i => {
-                var sameDevice = [];
-                devicesWithoutName.forEach( d => {
-                        if(i === d.tempName){
-                                sameDevice.push(d);
-                        }
-                })
+	uniqueInterfaceName = uniqueInterfaceName.filter(onlyUnique);
 
-                if(sameDevice.length){
-                        var start = parseInt(sameDevice[0].start_address);
-                        var end = parseInt(sameDevice[0].end_address);
-                        var r = sameDevice[0].num_regions;
+	var index = 0;
+	uniqueInterfaceName.forEach(i => {
+		var sameDevice = [];
+		devicesWithoutName.forEach(d => {
+			if (i === d.tempName) {
+				sameDevice.push(d);
+			}
+		})
 
-                        var ids = [];
-                        var inst = [];
-                        sameDevice.forEach( s => {
-                                start = Math.min(start,parseInt(s.start_address));
-                                end = Math.max(end,parseInt(s.end_address));
-                                ids.push(s.ids[0]);
-                                inst.push(s.protected_inst[0]);
-                                r = Math.min(r,s.num_regions);
-                        })
-                        dataAfterMerging.push({
-                                name: "ZZZZ_" + index,
-                                ids: ids,
-                                protected_inst: inst,
-                                num_regions: r,
-                                start_address: getInHexa(start),
-                                end_address: getInHexa(end),
-                                memory: sameDevice[0].memory
-                        })
-                        index++;
-                }
-        })
+		if (sameDevice.length) {
 
-        return dataAfterMerging;
+			var values = MinMaxOfRange(sameDevice);
+			var start = values.start;
+			var end = values.end;
+			var r = sameDevice[0].num_regions;
+
+			var ids = [];
+			var inst = [];
+			sameDevice.forEach(s => {
+				ids.push(s.ids[0]);
+				inst.push(s.protected_inst[0]);
+				r = Math.min(r, s.num_regions);
+			})
+			dataAfterMerging.push({
+				name: "ZZZZ_" + index,
+				ids: ids,
+				protected_inst: inst,
+				num_regions: r,
+				start_address: getInHexa(start),
+				end_address: getInHexa(end),
+				memory: sameDevice[0].memory
+			})
+			index++;
+		}
+	})
+
+	return dataAfterMerging;
 }
 
 var firewallData = parseAndMergeFirewallData();
 
 var usedFirewalls = getUsedFirewalls();
 
-firewallData = removeUsedFirewalls(firewallData,usedFirewalls);
+firewallData = removeUsedFirewalls(firewallData, usedFirewalls);
 
 firewallData = mergeInterfaces(firewallData);
 

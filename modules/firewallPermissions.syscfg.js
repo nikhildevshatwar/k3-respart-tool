@@ -1,28 +1,32 @@
 const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
 const socName = devData[deviceSelected].shortName;
 
-var hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"),(h) => h.hostName);
+var hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (h) => h.hostName);
 
-var hostopt = [];
-_.each(hosts,(h) => {
-	if(h.privId){
-		hostopt.push({
-			name: h.hostName,
-			displayName: h.hostName
-		})
-	}
-});
+function getHostNameOptions() {
+	var hostopt = [];
+	_.each(hosts, (h) => {
+		if (h.privId) {
+			hostopt.push({
+				name: h.hostName,
+				displayName: h.hostName,
+			});
+		}
+	});
 
-hostopt.unshift({
-	name: "wildCard",
-	displayName: "Wild Card"
-});
+	hostopt.unshift({
+		name: "wildCard",
+		displayName: "Wild Card",
+	});
 
-hostopt.unshift({
-	name: "custom",
-	displayName: "Custom Priv Id"
-});
+	hostopt.unshift({
+		name: "custom",
+		displayName: "Custom Priv Id",
+	});
+
+	return hostopt;
+}
 
 exports = {
 	displayName: "Permissions",
@@ -31,21 +35,19 @@ exports = {
 			name: "hostName",
 			displayName: "Host Name",
 			default: "custom",
-			options: hostopt,
-			onChange : (inst,ui) => {
-				if(inst.hostName === "custom"){
+			options: getHostNameOptions(),
+			onChange: (inst, ui) => {
+				if (inst.hostName === "custom") {
 					inst.privid = 0;
 					ui.privid.readOnly = false;
-				}
-				else if(inst.hostName === "wildCard"){
+				} else if (inst.hostName === "wildCard") {
 					inst.privid = devData[deviceSelected].wildCardPrivId;
 					ui.privid.readOnly = true;
-				}
-				else{
+				} else {
 					inst.privid = hosts[inst.hostName].privId;
 					ui.privid.readOnly = true;
 				}
-			}
+			},
 		},
 		{
 			name: "privid",
@@ -133,16 +135,16 @@ exports = {
 			default: true,
 		},
 	],
-	validate: (inst,report) => {
+	validate: (inst, report) => {
 		var privHosts = "";
-		_.each(hosts,(h) => {
-			if(h.privId === inst.privid){
+		_.each(hosts, (h) => {
+			if (h.privId === inst.privid) {
 				privHosts += h.hostName;
 				privHosts += ", ";
 			}
-		})
-		if(privHosts.length){
-			report.logInfo("INFO : " + "This Priv Id is used by " + privHosts ,inst,"privid");
+		});
+		if (privHosts.length) {
+			report.logInfo("INFO : " + "This Priv Id is used by " + privHosts, inst, "privid");
 		}
-	}
-}
+	},
+};
