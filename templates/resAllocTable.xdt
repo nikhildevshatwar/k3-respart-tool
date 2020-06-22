@@ -39,6 +39,13 @@ function populate_cell(entries, hostName) {
 		"text": text,
 		"tooltip": tooltip
 	};
+
+	if (hostName == "ALL") {
+		cell.cssClass = "RowHeader";
+		if (count == 0)
+			cell.text = "0"
+	}
+
 	return cell;
 }
 
@@ -84,8 +91,12 @@ if (system.modules["/modules/sysfwResPart"]) {
 			"header": header
 		});
 	}
+	hostlist.push({
+		"hostName": "ALL",
+		"header": "ALL"
+	});
 }
-n_cols = 1 + hostlist.length + 1;
+n_cols = 1 + hostlist.length;
 
 _.each(groupNames, groupName=> {
 	var group = {
@@ -135,7 +146,6 @@ _.each(groupNames, groupName=> {
 
 .RowHeader {
 	background-color: #DDDDDD;
-	text-align: left;
 }
 
 .SubHeader {
@@ -180,11 +190,6 @@ _.each(groupNames, groupName=> {
 			</span>
 		</th>
 %	})
-		<th>
-			<span class="Cell ColHeader">
-				HOST ID ALL
-			</span>
-		</th>
 	</tr>
 %_.each(groups, group => {
  	<tr>
@@ -199,7 +204,6 @@ _.each(groupNames, groupName=> {
 			</th>
 %			_.each(hostlist, host => {
 %				var cell = res.allocation[host.hostName];
-%				if (cell == null) { cell = { "text": "&nbsp", "tooltip": "&nbsp" }; }
 				<th class="Cell `cell.cssClass`">
 					`cell.text`
 %					if (cell.tooltip) {
