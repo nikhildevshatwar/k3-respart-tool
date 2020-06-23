@@ -1,0 +1,12 @@
+
+        const {createHostModule} = system.getScript("/scripts/createHostModule.js");
+        const hostInfo = {
+  "Description": "ICSSG context 0 on Main island",
+  "Security": "Non Secure",
+  "hostId": 50,
+  "hostName": "ICSSG_0",
+  "privId": 136
+};
+        const modDef = createHostModule(hostInfo);
+        exports = modDef;
+        

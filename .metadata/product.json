@@ -1,69 +1,95 @@
 {
-	"name": "K3-Respart-Tool",
-	"displayName": "Keystone3 Resource Partitioning Tool",
-	"version": "version_1",
-	"includePaths": [
-		".."
-	],
-	"devices": [
-		".*J721E.*",
-		".*J7200.*",
-		"VF211x",
-		"AM65xx.*",
-		"AM64x.*",
-		"AM437x"
-	],
-	"templates": [
-		{
-			"name": "/templates/rm-cfg.syscfg.xdt",
-			"outputPath": "rm-cfg.c",
-			"alwaysRun": true
-		},
-		{
-			"name": "/templates/sciclient_defaultBoardcfg_rm.syscfg.xdt",
-			"outputPath": "sciclient_defaultBoardcfg_rm.c",
-			"alwaysRun": true
-		},
-		{
-			"name": "/templates/qos-config.syscfg.xdt",
-			"outputPath": "qos-config.c",
-			"alwaysRun": true
-		},
-		{
-			"name": "/templates/firewall-config.syscfg.xdt",
-			"outputPath": "firewall-config.c",
-			"alwaysRun": true
-		},
-		{
-			"name": "/templates/board-config.syscfg.xdt",
-			"outputPath": "board-config.c",
-			"alwaysRun": true
-		},
-		{
-			"name": "/templates/sysfw_img_cfg.syscfg.xdt",
-			"outputPath": "sysfw_img_cfg.h",
-			"alwaysRun": true
-		}
-	],
-	"topModules": [
-		"/modules/globalConfig",
-		"/modules/sysfwResPart",
-		"/modules/qosConfig",
-		"/modules/firewallConfig"
-	],
-	"views": [
-		{
-			"name": "/templates/resAllocMarkdown.xdt",
-			"displayName": "Resource Allocation Markwodn",
-			"viewType": "markdown",
-			"ignoreErrors": true
-		},
-		{
-			"name": "/templates/resAllocTable.xdt",
-			"displayName": "Resource Allocation Table",
-			"viewType": "markdown",
-			"ignoreErrors": true
-		}
-	],
-	"documentationPath": "docs/"
+  "name": "K3-Respart-Tool",
+  "displayName": "Keystone3 Resource Partitioning Tool",
+  "version": "version_1",
+  "includePaths": [
+    ".."
+  ],
+  "devices": [
+    ".*J721E.*",
+    ".*J7200.*",
+    "VF211x",
+    "AM65xx.*",
+    "AM64x.*",
+    "AM437x"
+  ],
+  "templates": [
+    {
+      "name": "/templates/rm-cfg.syscfg.xdt",
+      "outputPath": "rm-cfg.c",
+      "alwaysRun": true
+    },
+    {
+      "name": "/templates/sciclient_defaultBoardcfg_rm.syscfg.xdt",
+      "outputPath": "sciclient_defaultBoardcfg_rm.c",
+      "alwaysRun": true
+    },
+    {
+      "name": "/templates/qos-config.syscfg.xdt",
+      "outputPath": "qos-config.c",
+      "alwaysRun": true
+    },
+    {
+      "name": "/templates/firewall-config.syscfg.xdt",
+      "outputPath": "firewall-config.c",
+      "alwaysRun": true
+    },
+    {
+      "name": "/templates/board-config.syscfg.xdt",
+      "outputPath": "board-config.c",
+      "alwaysRun": true
+    },
+    {
+      "name": "/templates/sysfw_img_cfg.syscfg.xdt",
+      "outputPath": "sysfw_img_cfg.h",
+      "alwaysRun": true
+    }
+  ],
+  "topModules": [
+    "/modules/globalConfig",
+    "/modules/sysfwResPart",
+    "/modules/qosConfig",
+    "/modules/firewallConfig",
+    "/modules/j721e/DMSC",
+    "/modules/j721e/MCU_0_R5_0",
+    "/modules/j721e/MCU_0_R5_1",
+    "/modules/j721e/MCU_0_R5_2",
+    "/modules/j721e/MCU_0_R5_3",
+    "/modules/j721e/A72_0",
+    "/modules/j721e/A72_1",
+    "/modules/j721e/A72_2",
+    "/modules/j721e/A72_3",
+    "/modules/j721e/A72_4",
+    "/modules/j721e/C7X_0",
+    "/modules/j721e/C7X_1",
+    "/modules/j721e/C6X_0_0",
+    "/modules/j721e/C6X_0_1",
+    "/modules/j721e/C6X_1_0",
+    "/modules/j721e/C6X_1_1",
+    "/modules/j721e/GPU_0",
+    "/modules/j721e/MAIN_0_R5_0",
+    "/modules/j721e/MAIN_0_R5_1",
+    "/modules/j721e/MAIN_0_R5_2",
+    "/modules/j721e/MAIN_0_R5_3",
+    "/modules/j721e/MAIN_1_R5_0",
+    "/modules/j721e/MAIN_1_R5_1",
+    "/modules/j721e/MAIN_1_R5_2",
+    "/modules/j721e/MAIN_1_R5_3",
+    "/modules/j721e/ICSSG_0"
+  ],
+  "views": [
+    {
+      "name": "/templates/resAllocMarkdown.xdt",
+      "displayName": "Resource Allocation Markwodn",
+      "viewType": "markdown",
+      "ignoreErrors": true
+    },
+    {
+      "name": "/templates/resAllocTable.xdt",
+      "displayName": "Resource Allocation Table",
+      "viewType": "markdown",
+      "ignoreErrors": true
+    }
+  ],
+  "documentationPath": "docs/"
 }
