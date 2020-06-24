@@ -21,17 +21,17 @@ function createRAMSizeOptions() {
 }
 
 exports = {
-	displayName: devData[deviceSelected].shortName + " Global Configuration",
+	displayName: devData[deviceSelected].shortName.toUpperCase() + " SYSFW Board Config",
 	config: [
 		{
 			name: "ramSize",
-			displayName: "sRAM Size",
+			displayName: "SRAM Size",
 			options: createRAMSizeOptions(),
 			default: 0,
 		},
 		{
 			name: "debugEnable",
-			displayName: "Debug Enable",
+			displayName: "SYSFW Debug Enable",
 			default: false,
 		},
 	],

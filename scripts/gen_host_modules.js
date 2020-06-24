@@ -22,7 +22,7 @@ hosts = JSON.parse(hosts);
 
 hosts.forEach((host) => {
 	const def = `
-        const {createHostModule} = system.getScript("/scripts/host_module.js");
+        const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
         const hostInfo = ${JSON.stringify(host, null, 2)};
         const modDef = createHostModule(hostInfo);
         exports = modDef;
