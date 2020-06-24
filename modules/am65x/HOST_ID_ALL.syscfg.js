@@ -1,5 +1,5 @@
 
-        const {createHostModule} = system.getScript("/scripts/host_module.js");
+        const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
         const hostInfo = {
   "Description": "Host catch all. Used in board configuration resource assignments to define resource ranges useable by all hosts. Cannot be used",
   "Security": "N/A",

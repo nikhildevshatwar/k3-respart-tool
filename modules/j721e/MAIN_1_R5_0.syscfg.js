@@ -1,5 +1,5 @@
 
-        const {createHostModule} = system.getScript("/scripts/host_module.js");
+        const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
         const hostInfo = {
   "Description": "Cortex R5_1 context 0 on Main island",
   "Security": "Non Secure",

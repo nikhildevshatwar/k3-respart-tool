@@ -1,5 +1,5 @@
 
-        const {createHostModule} = system.getScript("/scripts/host_module.js");
+        const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
         const hostInfo = {
   "Description": "Device Management and Security Control",
   "Security": "Secure",
