@@ -33,16 +33,17 @@ This module allows to generate the data required for configuring CBASS QoS (Qual
 #### Firewall configuration
 
 Currently, this is work in progress. Stay tuned for more updates.
+This module allows to generate the data required for Firewall configuration. This is very much useful to ensure peripheral partitioning across CPU cores. User can describe if a certain peripheral needs to be accessible ONLY from a certain hosts. Each peripheral is protected by a list of firewalls. User can select what all firewalls need to be programmed. Each firewall has different numbers of regions availalbe. The region describes the address range where the filter rules are applicable. By default, the tool will automatically set the required start/end addresses to be configured in the region, optionally allowing the user to definf custom region. Each region can be programmed to define access rules for upto 3 permission slots. Multiple CPUs can have the same priv_id and this would means one slot should be sufficient. The permission slot describes if a transaction from a CPU cores with slected priv_id is allowed or not. You can define this for different values of security, privilege level and transaction types. e.g. Allow Secure writes, Secure reads, but do not allow Non secure writes from A72 to MMC.
 
 ## Developer notes
 
 ### directory structure
-* **.metadata/product.json** - This file describes all the modules and templates that needs to be loaded by the SysConfig tool. It also describes the supported platforms.
-* **modules** - This contains the UI module definition for different configurables, their grouping and organization
-* **templates** - This contains the xdt files which describe the output file formats and small code snippets to generate the data using templates.
-* **scripts*** - These are the Javascripts for parsing different input data files which generate the SoC specific JSON objects for the usage in the modules. It also implements few utility functions which are frequently called by modules and templates.
-* **data/** - This contains the JSON objects that the tool uses to populate the UI items with SoC specific data. Many of these are auto generated using the parsing scripts.
+* **.metadata/product.json** - This file describes all the modules and templates that needs to be loaded by the SysConfig tool. It also describes the supported platforms. `product.json` describes the components and the components describe the list of modules and templates that are applicable for the selected device.
+* **modules** - This contains the UI module definition for different configurables, their grouping, organization, and the Javascripts for handling onChange events and validations.
+* **templates** - This contains the xdt files which describe the output file formats and small code snippets to generate the data using templates. It also has few views to  describe the data in a more visual format like a Markdown table or HTML table.
+* **scripts** - These are the Javascripts for parsing different input data files which generate the SoC specific JSON objects for the usage in the modules. It also implements few utility functions which are frequently called by modules and templates.
+* **data** - This contains the JSON objects that the tool uses to populate the UI items with SoC specific data. Many of these are auto generated using the parsing scripts.
 
 ### Generating parsing data
 
-Use different `scripts/parse*.js` scripts to generate the JSON objects for different modules for individual SoCs. There is a utility script `scripts/update-json-files.sh` to generate all the required JSON objects for all the supported SoCs.
+Use different `scripts/parse*.js` scripts to generate the JSON objects for different modules for individual SoCs. There is a utility script `scripts/generate-data.sh` to generate all the required JSON objects for all the supported SoCs.
