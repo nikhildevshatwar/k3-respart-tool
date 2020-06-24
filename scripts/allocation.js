@@ -87,7 +87,7 @@ function resourceAllocate(utype, addShareResourceEntries) {
 				var moduleName = "/modules/" + socName + "/" + host.hostName;
 				if (system.modules[moduleName]) {
 					var inst = system.modules[moduleName].$static;
-					var hCount = hostCount(utype, host);
+					var hCount = hostCount(utype, host.hostName);
 
 					if (hCount.length === 1) {
 						var index = hCount[0];
