@@ -64,6 +64,11 @@ soc=$1
 		echo "Generated data/$soc/Firewall.json"
 		prettify_json $topdir/data/$soc/Firewall.json name
 	fi
+
+	# Generate host modules
+	mkdir -p $topdir/modules/$soc
+	node $topdir/scripts/gen_host_modules.js --soc $soc
+	echo "Generated modules/$soc/XXX.syscfg.js"
 }
 
 gen_initial_user_json() {
