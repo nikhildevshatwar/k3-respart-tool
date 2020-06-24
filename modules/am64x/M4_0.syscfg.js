@@ -1,11 +1,11 @@
 
         const {createHostModule} = system.getScript("/scripts/host_module.js");
         const hostInfo = {
-  "Description": "Cortex R5 Context 2 on MCU island",
+  "Description": "M4",
   "Security": "Non Secure",
-  "hostId": 5,
-  "hostName": "R5_2",
-  "privId": 97
+  "hostId": 30,
+  "hostName": "M4_0",
+  "privId": 184
 };
         const modDef = createHostModule(hostInfo);
         exports = modDef;

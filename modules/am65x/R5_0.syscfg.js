@@ -1,5 +1,5 @@
 
-        const {createHostModule} = system.getScript("/scripts/createHostModule.js");
+        const {createHostModule} = system.getScript("/scripts/host_module.js");
         const hostInfo = {
   "Description": "Cortex R5 Context 0 on MCU island",
   "Security": "Non Secure",

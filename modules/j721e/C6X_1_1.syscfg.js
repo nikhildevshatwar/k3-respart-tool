@@ -1,5 +1,5 @@
 
-        const {createHostModule} = system.getScript("/scripts/createHostModule.js");
+        const {createHostModule} = system.getScript("/scripts/host_module.js");
         const hostInfo = {
   "Description": "C6x_1 context 1 on Main island",
   "Security": "Non Secure",

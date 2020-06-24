@@ -1,5 +1,5 @@
 
-        const {createHostModule} = system.getScript("/scripts/createHostModule.js");
+        const {createHostModule} = system.getScript("/scripts/host_module.js");
         const hostInfo = {
   "Description": "Cortex A53 context 4 on Main island",
   "Security": "Non Secure",
