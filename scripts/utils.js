@@ -226,6 +226,42 @@ function getNumber(val) {
 	return "0x" + val.toString(16).toUpperCase();
 }
 
+function getDisplayPrefix(toBeRemoved, removeFrom) {
+	var finalPrefix = "",
+		idx = 0;
+
+	var split1 = _.split(toBeRemoved, " ");
+	var split2 = _.split(removeFrom, " ");
+
+	for (var i = 0; i < split2.length; i++) {
+		if (split1[i] !== split2[i]) {
+			idx = i;
+			break;
+		}
+	}
+
+	for (var i = idx; i < split2.length; i++) {
+		finalPrefix += split2[i];
+		finalPrefix += " ";
+	}
+
+	return finalPrefix;
+}
+
+function getBlockCopyDisplayName(name) {
+	var chunk = _.split(name, " ");
+	name = "";
+	_.each(chunk, (c) => {
+		if (c === "Rx" || c === "Tx");
+		else {
+			name += c;
+			name += " ";
+		}
+	});
+
+	return name;
+}
+
 exports = {
 	setBit,
 	decimalToBinary,
@@ -238,4 +274,6 @@ exports = {
 	endPoint,
 	generateFirewallEntries,
 	getNumber,
+	getDisplayPrefix,
+	getBlockCopyDisplayName,
 };

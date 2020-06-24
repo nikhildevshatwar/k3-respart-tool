@@ -5,6 +5,7 @@ const socName = devData[deviceSelected].shortName;
 const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
 const { checkOverlap, resourceAllocate } = system.getScript("/scripts/allocation.js");
 var hosts = system.getScript("/data/" + socName + "/Hosts.json");
+var utils = system.getScript("/scripts/utils.js");
 
 _.each(resources, (resource) => {
 	if (resource.copyFromUtype) {
@@ -86,28 +87,6 @@ due to overflow in allocation.
 
 `;
 
-function getDisplayPrefix(toBeRemoved, removeFrom) {
-	var finalPrefix = "",
-		idx = 0;
-
-	var split1 = _.split(toBeRemoved, " ");
-	var split2 = _.split(removeFrom, " ");
-
-	for (var i = 0; i < split2.length; i++) {
-		if (split1[i] !== split2[i]) {
-			idx = i;
-			break;
-		}
-	}
-
-	for (var i = idx; i < split2.length; i++) {
-		finalPrefix += split2[i];
-		finalPrefix += " ";
-	}
-
-	return finalPrefix;
-}
-
 // Find all unique group names
 
 var groupNames = [];
@@ -140,7 +119,7 @@ function getHostConfigurables(hostName) {
 
 		_.each(groupResources, (r) => {
 			var canBeRouted = checkRestrictHost(hostName, r);
-			var displayPrefix = getDisplayPrefix(gName, r.utype);
+			var displayPrefix = utils.getDisplayPrefix(gName, r.utype);
 			def.config.push({
 				name: _.join(_.split(r.utype, " "), "_") + "_start",
 				displayName: displayPrefix + " Start",
@@ -174,9 +153,10 @@ function getHostConfigurables(hostName) {
 			});
 
 			if (r.blockCopy) {
+				var blockCopyDisplayName = utils.getBlockCopyDisplayName(displayPrefix);
 				def.config.push({
 					name: _.join(_.split(r.utype, " "), "_") + "_blockCount",
-					displayName: "========> Block-copy count",
+					displayName: blockCopyDisplayName + "Block-copy count",
 					default: 0,
 					readOnly: r.copyFromUtype ? true : false,
 					hidden: r.blockCopyFrom || r.copyFromUtype ? true : false,
@@ -277,6 +257,12 @@ function createHostModule(hostInfo) {
 					name: "HostCapabilities",
 					displayName: "Host Capabilities",
 					config: [
+						// Host Name
+						{
+							name: "hostName",
+							default: hostInfo.hostName,
+							hidden: true,
+						},
 						// Allowed atypes
 						{
 							name: "allowedAtype",
@@ -359,10 +345,189 @@ function createHostModule(hostInfo) {
 				},
 				...configurables,
 			],
+			validate: (instance, report) => {
+				validateDmsc(instance, report);
+
+				duplicateHost(instance, report);
+
+				duplicateShareResourceWithHost(instance, report);
+
+				duplicateHostAndShareHost(instance, report);
+
+				overlapAndOverflow(instance, report);
+
+				checkCyclicDependencyForSupervisor(instance, report);
+			},
 		},
 	};
 
 	return def;
+}
+
+// Functions for validation
+
+// Show error if host is dmsc
+
+function validateDmsc(instance, report) {
+	if (instance.hostName === "DMSC") {
+		report.logError("Cannot select DMSC as Host", instance);
+	}
+	if (instance.supervisorhost === "DMSC") {
+		report.logError("Cannot select DMSC as Supervisor Host", instance, "supervisorhost");
+	}
+}
+
+// Check if same host is selected to share resource with different hosts
+
+function duplicateShareResourceWithHost(instance, report) {
+	var moduleInstances = [];
+
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			moduleInstances.push(system.modules[moduleName].$static);
+		}
+	});
+
+	for (var idx = 0; idx < moduleInstances.length; idx++) {
+		if (
+			instance.shareResource !== "none" &&
+			instance.shareResource === moduleInstances[idx].shareResource &&
+			instance != moduleInstances[idx]
+		) {
+			report.logError("Cannot Share resources with same host twice", instance, "shareResource");
+		}
+	}
+}
+
+// Check for duplicate hosts
+
+function duplicateHost(instance, report) {
+	var moduleInstances = [];
+
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			moduleInstances.push(system.modules[moduleName].$static);
+		}
+	});
+	for (var idx = 0; idx < moduleInstances.length; idx++) {
+		if (instance.hostName === moduleInstances[idx].hostName && instance != moduleInstances[idx]) {
+			report.logError("Cannot select same host twice", instance, "hostName");
+		}
+	}
+}
+
+// Check if same host is selected as Host as well as Share resource with
+
+function duplicateHostAndShareHost(instance, report) {
+	var moduleInstances = [];
+
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			moduleInstances.push(system.modules[moduleName].$static);
+		}
+	});
+
+	for (var idx = 0; idx < moduleInstances.length; idx++) {
+		if (instance.shareResource === moduleInstances[idx].hostName) {
+			report.logError("Resources are already assigned to host", instance, "shareResource");
+		}
+	}
+}
+
+// Check if the Supervisor tree is cyclic or not
+
+function checkCyclicDependencyForSupervisor(instance, report) {
+	if (instance.supervisorhost === "none") return;
+
+	var moduleInstances = [];
+
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			moduleInstances.push(system.modules[moduleName].$static);
+		}
+	});
+	var supervisor = [];
+
+	_.each(moduleInstances, (i) => {
+		if (i.supervisorhost !== "none") {
+			supervisor.push({
+				node: i.hostName,
+				parent: i.supervisorhost,
+			});
+		}
+	});
+
+	var supervisorOf = _.keyBy(supervisor, (s) => s.node);
+
+	var visited = new Map();
+
+	visited[instance.hostName] = true;
+
+	var curr = instance.hostName;
+
+	var cycleDetected = false;
+
+	while (supervisorOf[curr]) {
+		var par = supervisorOf[curr].parent;
+
+		if (visited[par]) {
+			cycleDetected = true;
+			break;
+		}
+
+		visited[par] = true;
+		curr = par;
+	}
+
+	if (cycleDetected) {
+		report.logError("Cycle Detected in Supervisor Tree", instance, "supervisorhost");
+	}
+}
+
+// Check for overlap and overflow
+
+function overlapAndOverflow(instance, report) {
+	_.each(resources, (resource) => {
+		var name = _.join(_.split(resource.utype, " "), "_");
+
+		if (instance[name + "_count"] > 0 || instance[name + "_blockCount"] > 0) {
+			if (resource.autoAlloc === false) {
+				var overlapInstance = checkOverlap(resource.utype, instance);
+				if (overlapInstance.length) {
+					const conflicting = _.join(
+						_.map(overlapInstance, (inst) => system.getReference(inst)),
+						", "
+					);
+
+					report.logWarning(`WARNING : Overlap with ${conflicting}`, instance, name + "_count");
+				}
+			}
+			var over = resourceAllocate(resource.utype).overflowCount;
+
+			var index = -1,
+				id = 0;
+			_.each(resource.resRange, (range) => {
+				if (range.restrictHosts) {
+					_.each(range.restrictHosts, (res) => {
+						if (res === instance.hostName) {
+							index = id;
+						}
+					});
+				} else {
+					index = id;
+				}
+				id++;
+			});
+
+			if (index !== -1 && over[index] > 0) {
+				report.logError("ERROR : Assigned resource count exceeds by " + over[index], instance, name + "_count");
+			}
+		}
+	});
 }
 
 exports = {

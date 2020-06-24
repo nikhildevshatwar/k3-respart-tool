@@ -3,7 +3,10 @@
 const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 const socName = devData[deviceSelected].shortName;
+
 const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
+const hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
+var utils = system.getScript("/scripts/utils.js");
 
 var {mapByResources} = system.getScript("/scripts/allocation.js");
 var resAlloc = mapByResources(true,false);
@@ -49,27 +52,6 @@ function populate_cell(entries, hostName) {
 	return cell;
 }
 
-function getDisplayPrefix(toBeRemoved , removeFrom){
-
-	var finalPrefix = "" , idx = 0;
-	var split1 = _.split(toBeRemoved," ");
-	var split2 = _.split(removeFrom," ");
-
-	for(var i = 0 ; i < split2.length ; i++){
-		if(split1[i] !== split2[i]){
-			idx = i;
-			break;
-		}
-	}
-
-	for(var i = idx ; i < split2.length ; i++){
-		finalPrefix += split2[i];
-		finalPrefix += " ";
-	}
-
-	return finalPrefix;
-}
-
 _.each(resources, resource => {
 	groupNames.push(resource.groupName);
 })
@@ -79,23 +61,27 @@ resgroup = _.groupBy(resources, r => {
 	return r.groupName;
 })
 
-if (system.modules["/modules/sysfwResPart"]) {
-	for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+_.each(hosts, (host) => {
+	var moduleName = "/modules/" + socName + "/" + host.hostName;
+	if(system.modules[moduleName]){
+		var inst = system.modules[moduleName].$static;
 
-		var header = inst.hostName;
+		var header = host.hostName;
 		if(inst.shareResource !== "none"){
 			header += ", " + inst.shareResource;
 		}
 		hostlist.push({
-			"hostName": inst.hostName,
+			"hostName": host.hostName,
 			"header": header
 		});
 	}
-	hostlist.push({
-		"hostName": "ALL",
-		"header": "ALL"
-	});
-}
+})
+
+hostlist.push({
+	"hostName": "ALL",
+	"header": "ALL"
+});
+
 n_cols = 1 + hostlist.length;
 
 _.each(groupNames, groupName=> {
@@ -110,7 +96,7 @@ _.each(groupNames, groupName=> {
 			var cell = populate_cell(entries, host.hostName);
 			res.allocation[host.hostName] = cell;
 		})
-		res.displayName = getDisplayPrefix(groupName, res.utype);
+		res.displayName = utils.getDisplayPrefix(groupName, res.utype);
 		group.resources.push(res)
 	})
 	groups.push(group)
@@ -142,6 +128,8 @@ _.each(groupNames, groupName=> {
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
 	white-space: nowrap;
+	width: 100%,
+	height: 100%
 }
 
 .RowHeader {

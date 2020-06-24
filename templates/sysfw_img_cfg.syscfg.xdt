@@ -1,4 +1,4 @@
-%%{
+%%{     
         const {allocateAndSort} = system.getScript("/scripts/allocation.js");
         var allocation = allocateAndSort(true,true);
         var rmConfigEntries = 0;

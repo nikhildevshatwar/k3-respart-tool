@@ -30,5 +30,5 @@ hosts.forEach((host) => {
 	var path = dir + "/../modules/" + soc + "/" + host.hostName + ".syscfg.js";
 	fs.writeFileSync(path, def);
 
-	modulePath.push(`/modules/${soc}/${host.hostName}`);
+	modulePath.push("/modules/" + soc + "/" + host.hostName);
 });

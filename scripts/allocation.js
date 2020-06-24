@@ -10,17 +10,19 @@ function checkOverlap(utype, inst1) {
 	var start1 = inst1[name + "_start"],
 		last1 = start1 + inst1[name + "_count"];
 
-	if (system.modules["/modules/sysfwResPart"]) {
-		for (let inst2 of system.modules["/modules/sysfwResPart"].$instances) {
-			if (inst1 === inst2) continue;
-
-			var start2 = inst2[name + "_start"],
-				last2 = start2 + inst2[name + "_count"];
-			if (Math.max(start1, start2) < Math.min(last1, last2)) {
-				overlap.push(inst2);
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			var inst2 = system.modules[moduleName].$static;
+			if (inst1 !== inst2) {
+				var start2 = inst2[name + "_start"],
+					last2 = start2 + inst2[name + "_count"];
+				if (Math.max(start1, start2) < Math.min(last1, last2)) {
+					overlap.push(inst2);
+				}
 			}
 		}
-	}
+	});
 
 	return overlap;
 }
@@ -47,11 +49,13 @@ function resourceAllocate(utype, addShareResourceEntries) {
 
 	if (resources[utype].autoAlloc === false) {
 		var total = 0;
-		if (system.modules["/modules/sysfwResPart"]) {
-			for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+		_.each(hosts, (host) => {
+			var moduleName = "/modules/" + socName + "/" + host.hostName;
+			if (system.modules[moduleName]) {
+				var inst = system.modules[moduleName].$static;
 				eachResource.push({
 					utype: utype,
-					hostName: inst.hostName,
+					hostName: host.hostName,
 					start: inst[name + "_start"],
 					count: inst[name + "_count"],
 				});
@@ -68,7 +72,7 @@ function resourceAllocate(utype, addShareResourceEntries) {
 				}
 				total += inst[name + "_count"];
 			}
-		}
+		});
 		over.push(Math.max(0, total - resources[utype].resRange[0].resCount));
 	} else {
 		if (resources[utype].resRange.length > 1) {
@@ -79,15 +83,17 @@ function resourceAllocate(utype, addShareResourceEntries) {
 				rCount.push(r.resCount);
 			});
 
-			if (system.modules["/modules/sysfwResPart"]) {
-				for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
-					var hCount = hostCount(utype, inst.hostName);
+			_.each(hosts, (host) => {
+				var moduleName = "/modules/" + socName + "/" + host.hostName;
+				if (system.modules[moduleName]) {
+					var inst = system.modules[moduleName].$static;
+					var hCount = hostCount(utype, host);
 
 					if (hCount.length === 1) {
 						var index = hCount[0];
 						eachResource.push({
 							utype: utype,
-							hostName: inst.hostName,
+							hostName: host.hostName,
 							start: rStart[index],
 							count: inst[name + "_count"],
 						});
@@ -107,7 +113,7 @@ function resourceAllocate(utype, addShareResourceEntries) {
 						rCount[index] -= inst[name + "_count"];
 					}
 				}
-			}
+			});
 
 			_.each(rCount, (r) => {
 				var val = Math.min(0, r);
@@ -116,12 +122,14 @@ function resourceAllocate(utype, addShareResourceEntries) {
 		} else {
 			var total = 0;
 			var startValue = resources[utype].resRange[0].resStart;
-			if (system.modules["/modules/sysfwResPart"]) {
-				if (resources[utype].blockCopy) {
-					for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+			_.each(hosts, (host) => {
+				var moduleName = "/modules/" + socName + "/" + host.hostName;
+				if (system.modules[moduleName]) {
+					if (resources[utype].blockCopy) {
+						var inst = system.modules[moduleName].$static;
 						eachResource.push({
 							utype: utype,
-							hostName: inst.hostName,
+							hostName: host.hostName,
 							start: startValue,
 							count: inst[name + "_blockCount"],
 						});
@@ -141,10 +149,15 @@ function resourceAllocate(utype, addShareResourceEntries) {
 						total += inst[name + "_blockCount"];
 					}
 				}
-				for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
+			});
+
+			_.each(hosts, (host) => {
+				var moduleName = "/modules/" + socName + "/" + host.hostName;
+				if (system.modules[moduleName]) {
+					var inst = system.modules[moduleName].$static;
 					eachResource.push({
 						utype: utype,
-						hostName: inst.hostName,
+						hostName: host.hostName,
 						start: startValue,
 						count: inst[name + "_count"],
 					});
@@ -163,13 +176,14 @@ function resourceAllocate(utype, addShareResourceEntries) {
 					startValue += inst[name + "_count"];
 					total += inst[name + "_count"];
 				}
-				eachResource.push({
-					utype: utype,
-					hostName: "ALL",
-					start: startValue,
-					count: resources[utype].resRange[0].resCount - total,
-				});
-			}
+			});
+
+			eachResource.push({
+				utype: utype,
+				hostName: "ALL",
+				start: startValue,
+				count: resources[utype].resRange[0].resCount - total,
+			});
 			over.push(Math.max(0, total - resources[utype].resRange[0].resCount));
 		}
 	}

@@ -4,16 +4,21 @@ const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
 const socName = devData[deviceSelected].shortName;
 
+const hostsArray = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
 var resources = system.getScript("/data/" + socName + "/Resources.json");
 var {mapByResources} = system.getScript("/scripts/allocation.js");
+
 
 var resAlloc = mapByResources(true,false);
 var table = "";
 var hosts = "| Resources/Hosts | ";
 var pipes = "| --- | ";
-if (system.modules["/modules/sysfwResPart"]) {
-        for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
-                hosts += inst.hostName;
+
+_.each(hostsArray, (host) => {
+        var moduleName = "/modules/" + socName + "/" + host.hostName;
+        if (system.modules[moduleName]) {
+                var inst = system.modules[moduleName].$static;
+                hosts += host.hostName;
                 if(inst.shareResource !== "none"){
                         hosts += "/";
                         hosts += inst.shareResource;
@@ -21,7 +26,7 @@ if (system.modules["/modules/sysfwResPart"]) {
                 hosts += " | ";
                 pipes += "--- | ";
         }
-}
+})
 hosts += "HOST_ID_ALL";
 hosts += " | ";
 pipes += "--- | "
@@ -36,9 +41,11 @@ _.each(resources, (resource) => {
                 var perHost = _.groupBy(utypeAlloc, (r) => {
                         return r.hostName;
                 })
-                if (system.modules["/modules/sysfwResPart"]) {
-                        for (let inst of system.modules["/modules/sysfwResPart"].$instances) {
-                                var resHostInfo = perHost[inst.hostName];
+                _.each(hostsArray, (host) => {
+                        var moduleName = "/modules/" + socName + "/" + host.hostName;
+                        if(system.modules[moduleName]){
+                                var inst = system.modules[moduleName].$static;
+                                var resHostInfo = perHost[host.hostName];
                                 var cell = "";
                                 _.each(resHostInfo, (entry) => {
                                         cell += "S = " + entry.start + ", " + "C = " + entry.count + "<br>";
@@ -51,7 +58,7 @@ _.each(resources, (resource) => {
                                 cell += " | ";
                                 line += cell;
                         }
-                }
+                })
                 if(perHost["ALL"]){
                         line += "S = " + perHost["ALL"][0].start + ", " + "C = " + perHost["ALL"][0].count + " | ";
                 }
