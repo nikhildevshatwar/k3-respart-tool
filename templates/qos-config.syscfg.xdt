@@ -11,7 +11,10 @@
  * K3 Quality of Service (QoS) Configuration Data
  * Auto generated from K3 Resource Partitioning tool
  */
-struct qos_data j721e_qos_data[] = {
+
+#define `socName.toUpperCase()`_QOS_COUNT	(sizeof(`socName`_qos_data) / sizeof(`socName`_qos_data[0]))
+
+struct qos_data `socName`_qos_data[] = {
 %if (system.modules["/modules/qosConfig"]) {
 %	for (let inst of system.modules["/modules/qosConfig"].$instances) {
 %		_.each(inst.qosdev,(e) => {

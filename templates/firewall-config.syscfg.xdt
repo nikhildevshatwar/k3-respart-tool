@@ -1,4 +1,7 @@
 %%{     
+	const deviceSelected = system.deviceData.device;
+	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+	const socName = devData[deviceSelected].shortName;
 	var utils = system.getScript("/scripts/utils.js");
 	var entries = utils.generateFirewallEntries();
 %%}
@@ -9,9 +12,9 @@
 
 #include <tisci/security/tisci_firewall.h>
 
-#define FWL_LIST_COUNT	(sizeof(fwl_list) / sizeof(fwl_list[0]))
+#define `socName.toUpperCase()`_FWL_COUNT	(sizeof(`socName`_fwl_data) / sizeof(`socName`_fwl_data[0]))
 
-struct tisci_msg_fwl_set_firewall_region_req fwl_list[] = {
+struct tisci_msg_fwl_set_firewall_region_req `socName`_fwl_data[] = {
 %_.each(entries,(e) => {
 	{
 		.fwl_id = `e.fwl_id`,
