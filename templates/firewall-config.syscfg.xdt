@@ -1,19 +1,26 @@
 %%{     
-        var utils = system.getScript("/scripts/utils.js");
-
-        var entries = utils.generateFirewallEntries();
-        
+	var utils = system.getScript("/scripts/utils.js");
+	var entries = utils.generateFirewallEntries();
 %%}
+/*
+ * K3 Quality of Service (QoS) Configuration Data
+ * Auto generated from K3 Resource Partitioning tool
+ */
 
+#include <tisci/security/tisci_firewall.h>
+
+#define FWL_LIST_COUNT	(sizeof(fwl_list) / sizeof(fwl_list[0]))
+
+struct tisci_msg_fwl_set_firewall_region_req fwl_list[] = {
 %_.each(entries,(e) => {
-        {
-                .fwl_id = `e.fwl_id`,
-                .region = `e.region`,
-                .n_permission_regs = `e.n_permission_regs`,
-                .control = `e.control`,
-                .start_address = `e.start`,
-                .end_address = `e.end`,
-                .permissions = [ `e.permissions` ]
-                
-        },
+	{
+		.fwl_id = `e.fwl_id`,
+		.region = `e.region`,
+		.n_permission_regs = `e.n_permission_regs`,
+		.control = `e.control`,
+		.start_address = `e.start`,
+		.end_address = `e.end`,
+		.permissions = { `e.permissions` },
+	},
 %})
+};

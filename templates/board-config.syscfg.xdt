@@ -1,9 +1,12 @@
 %%{     
-        const deviceSelected = system.deviceData.device;
-        const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
-        const utils = system.getScript("/scripts/utils.js");
+	const deviceSelected = system.deviceData.device;
+	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
+	const utils = system.getScript("/scripts/utils.js");
 %%}
 /*
+ * K3 System Firmware Board Config Data
+ * Auto generated from K3 Resource Partitioning tool
+ *
  * Copyright (c) 2018-2020, Texas Instruments Incorporated
  * All rights reserved.
  *
@@ -110,12 +113,6 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
             .magic = TISCI_BOARDCFG_MSMC_MAGIC_NUM,
             .size = (uint16_t) sizeof(struct tisci_boardcfg_msmc),
         },
-        /* If the whole memory is X MB the value you write to this field is n.
-         * The value of n sets the cache size as n * X/32. The value of n should
-         * be given in steps of 4, which makes the size of cache to be
-         * configured in steps on X/8 MB.
-         */
-%if (system.modules["/modules/globalConfig"]) {
 %        for (let inst of system.modules["/modules/globalConfig"].$instances) {
 %
         .msmc_cache_size = `utils.getNumber(inst.ramSize)`,

@@ -1,14 +1,16 @@
-%%{     
-        const {allocateAndSort} = system.getScript("/scripts/allocation.js");
-        var allocation = allocateAndSort(true,true);
-        var rmConfigEntries = 0;
+%%{
+	const {allocateAndSort} = system.getScript("/scripts/allocation.js");
+	var allocation = allocateAndSort(true,true);
+	var rmConfigEntries = 0;
 
-        _.each(allocation, a => {
-                rmConfigEntries += a.length;
-        })
+	_.each(allocation, a => {
+		rmConfigEntries += a.length;
+	})
 %%}
 /*
- * K3 System Firmware Configuration Data
+ * K3 System Firmware Resource Management Board Config Data
+ * Auto generated from K3 Resource Partitioning tool
+ *
  *
  * Copyright (C) 2019-2020 Texas Instruments Incorporated - http://www.ti.com/
  *
