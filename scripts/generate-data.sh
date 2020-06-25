@@ -50,7 +50,7 @@ soc=$1
 	  --doc $sysfw_repo/docs/public/5_soc_doc/$sysfw_soc/hosts.rst \
 	  --firewall $sysfw_repo/docs/public/5_soc_doc/$sysfw_soc/firewalls.rst
 	echo "Generated data/$soc/Hosts.json"
-	prettify_json $topdir/data/$soc/Hosts.json 
+	prettify_json $topdir/data/$soc/Hosts.json hostId 
 
 	# Parse SoC json to generate QoS and firewall data
 	if [ -f $soc_json ]; then

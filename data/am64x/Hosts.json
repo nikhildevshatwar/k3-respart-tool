@@ -6,30 +6,6 @@
 		"hostName": "DMSC"
 	},
 	{
-		"Description": "Cortex R5_0 context 0 on Main island(BOOT)",
-		"Security": "Secure",
-		"hostId": 35,
-		"hostName": "MAIN_0_R5_0"
-	},
-	{
-		"Description": "Cortex R5_0 context 1 on Main island",
-		"Security": "Non Secure",
-		"hostId": 36,
-		"hostName": "MAIN_0_R5_1"
-	},
-	{
-		"Description": "Cortex R5_0 context 2 on Main island",
-		"Security": "Secure",
-		"hostId": 37,
-		"hostName": "MAIN_0_R5_2"
-	},
-	{
-		"Description": "Cortex R5_0 context 3 on Main island",
-		"Security": "Non Secure",
-		"hostId": 38,
-		"hostName": "MAIN_0_R5_3"
-	},
-	{
 		"Description": "Cortex a53 context 0 on Main islana - ATF",
 		"Security": "Secure",
 		"hostId": 10,
@@ -63,6 +39,30 @@
 		"hostId": 30,
 		"hostName": "M4_0",
 		"privId": 184
+	},
+	{
+		"Description": "Cortex R5_0 context 0 on Main island(BOOT)",
+		"Security": "Secure",
+		"hostId": 35,
+		"hostName": "MAIN_0_R5_0"
+	},
+	{
+		"Description": "Cortex R5_0 context 1 on Main island",
+		"Security": "Non Secure",
+		"hostId": 36,
+		"hostName": "MAIN_0_R5_1"
+	},
+	{
+		"Description": "Cortex R5_0 context 2 on Main island",
+		"Security": "Secure",
+		"hostId": 37,
+		"hostName": "MAIN_0_R5_2"
+	},
+	{
+		"Description": "Cortex R5_0 context 3 on Main island",
+		"Security": "Non Secure",
+		"hostId": 38,
+		"hostName": "MAIN_0_R5_3"
 	},
 	{
 		"Description": "Cortex R5_1 context 0 on Main island",
