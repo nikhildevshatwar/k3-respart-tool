@@ -106,7 +106,7 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
 %		_.each(all,(entry) => {
         {
             .num_resource = `entry.count`,
-            .type = RESASG_UTYPE (`utils.addPrefix(utils.removePrefix(resources[utype].deviceName))`, `utils.addPrefix(resources[utype].subtypeName)`),
+            .type = TISCI_RESASG_UTYPE (`utils.addPrefix(utils.removePrefix(resources[utype].deviceName))`, `utils.addPrefix(resources[utype].subtypeName)`),
             .start_resource = `entry.start`,
             .host_id = `utils.addPrefix("HOST_ID_" + entry.hostName)`,
         },
