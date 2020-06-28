@@ -1,8 +1,9 @@
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
-const socName = devData[deviceSelected].shortName;
+const utils = system.getScript("/scripts/utils.js");
 
-var devices = _.keyBy(system.getScript("/data/" + socName + "/Firewall.json"), (d) => d.name);
+const deviceSelected = utils.deviceSelected;
+const devData = utils.devData;
+const socName = utils.socName;
+var devices = utils.FirewallDevices;
 
 function getDeviceNameOptions() {
 	var uniqDevices = _.map(devices, (d) => {

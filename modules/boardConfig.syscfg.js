@@ -1,5 +1,7 @@
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
+const utils = system.getScript("/scripts/utils.js");
+
+const deviceSelected = utils.deviceSelected;
+const devData = utils.devData;
 
 function createRAMSizeOptions() {
 	var opt = [];

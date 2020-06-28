@@ -1,11 +1,15 @@
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
-const socName = devData[deviceSelected].shortName;
-
-const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
-const { checkOverlap, resourceAllocate } = system.getScript("/scripts/allocation.js");
-var hosts = system.getScript("/data/" + socName + "/Hosts.json");
 var utils = system.getScript("/scripts/utils.js");
+const { checkOverlap, resourceAllocate } = system.getScript("/scripts/allocation.js");
+
+const deviceSelected = utils.deviceSelected;
+const devData = utils.devData;
+const socName = utils.socName;
+const resources = utils.resources;
+var hosts = utils.hosts;
+var resGroup = utils.resourcesByGroup;
+var groupNames = utils.groupNames;
+
+var resourcesErrorInfo = [];
 
 _.each(resources, (resource) => {
 	if (resource.copyFromUtype) {
@@ -14,7 +18,14 @@ _.each(resources, (resource) => {
 	if (resource.blockCopyFrom) {
 		resources[resource.blockCopyFrom].blockCopyTo = resource.utype;
 	}
+
+	resourcesErrorInfo.push({
+		res: resource.utype,
+		changed: false,
+	});
 });
+
+resourcesErrorInfo = _.keyBy(resourcesErrorInfo, (r) => r.res);
 
 var documentation = `
 **SYSFW Resource Partitioning**
@@ -87,28 +98,13 @@ due to overflow in allocation.
 
 `;
 
-// Find all unique group names
-
-var groupNames = [];
-
-_.each(resources, (resource) => {
-	groupNames.push(resource.groupName);
-});
-groupNames = _.uniq(groupNames);
-
-// Create map of groupName to resources
-
-var byGroup = _.groupBy(resources, (r) => {
-	return r.groupName;
-});
-
 function getHostConfigurables(hostName) {
 	// Create configurable for each resource
 
 	var configurables = [];
 
 	_.each(groupNames, (gName) => {
-		var groupResources = byGroup[gName];
+		var groupResources = resGroup[gName];
 
 		var def = {
 			name: _.join(_.split(gName, " "), "_"),
@@ -149,6 +145,8 @@ function getHostConfigurables(hostName) {
 						var src = _.join(_.split(r.utype, " "), "_");
 						inst[dest + "_count"] = inst[src + "_count"];
 					}
+					resourcesErrorInfo[r.utype].changed = true;
+					resourcesErrorInfo[r.utype].inst = inst;
 				},
 			});
 
@@ -182,6 +180,9 @@ function getHostConfigurables(hostName) {
 								inst[to + "_blockCount"] = inst[from + "_blockCount"];
 							}
 						}
+
+						resourcesErrorInfo[r.utype].changed = true;
+						resourcesErrorInfo[r.utype].inst = inst;
 					},
 				});
 			}
@@ -197,14 +198,12 @@ function getHostConfigurables(hostName) {
 
 var hostName = [];
 
-for (var data = 0; data < hosts.length; data++) {
-	var newHostName = {
-		name: hosts[data].hostName,
-		displayName: hosts[data].hostName,
-	};
-
-	hostName.push(newHostName);
-}
+_.each(hosts, (h) => {
+	hostName.push({
+		name: h.hostName,
+		displayName: h.hostName,
+	});
+});
 
 function optionValues(val) {
 	var option = [];
@@ -506,25 +505,35 @@ function overlapAndOverflow(instance, report) {
 					report.logWarning(`WARNING : Overlap with ${conflicting}`, instance, name + "_count");
 				}
 			}
-			var over = resourceAllocate(resource.utype).overflowCount;
+			if (resourcesErrorInfo[resource.utype].changed) {
+				if (resourcesErrorInfo[resource.utype].inst === instance) {
+					var over = resourceAllocate(resource.utype).overflowCount;
 
-			var index = -1,
-				id = 0;
-			_.each(resource.resRange, (range) => {
-				if (range.restrictHosts) {
-					_.each(range.restrictHosts, (res) => {
-						if (res === instance.hostName) {
+					var index = -1,
+						id = 0;
+					_.each(resource.resRange, (range) => {
+						if (range.restrictHosts) {
+							_.each(range.restrictHosts, (res) => {
+								if (res === instance.hostName) {
+									index = id;
+								}
+							});
+						} else {
 							index = id;
 						}
+						id++;
 					});
-				} else {
-					index = id;
-				}
-				id++;
-			});
 
-			if (index !== -1 && over[index] > 0) {
-				report.logError("ERROR : Assigned resource count exceeds by " + over[index], instance, name + "_count");
+					if (index !== -1 && over[index] > 0) {
+						report.logError(
+							"ERROR : Assigned resource count exceeds by " + over[index],
+							instance,
+							name + "_count"
+						);
+					} else {
+						resourcesErrorInfo[resource.utype].changed = false;
+					}
+				}
 			}
 		}
 	});

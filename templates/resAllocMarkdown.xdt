@@ -1,12 +1,13 @@
 %%{    
-
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
-const socName = devData[deviceSelected].shortName;
-
-const hostsArray = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
-var resources = system.getScript("/data/" + socName + "/Resources.json");
+var utils = system.getScript("/scripts/utils.js");
 var {mapByResources} = system.getScript("/scripts/allocation.js");
+
+const deviceSelected = utils.deviceSelected;
+const devData = utils.devData;
+const socName = utils.socName;
+
+const hostsArray = utils.getSelectedHostInstances();
+var resources = utils.resources;
 
 
 var resAlloc = mapByResources(true,false);

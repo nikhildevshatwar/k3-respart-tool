@@ -1,7 +1,7 @@
-%%{     
-	const deviceSelected = system.deviceData.device;
-	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
-	const utils = system.getScript("/scripts/utils.js");
+%%{    
+    const utils = system.getScript("/scripts/utils.js");
+	const deviceSelected = utils.deviceSelected;
+	const devData = utils.devData;
 %%}
 /*
  * K3 System Firmware Board Config Data
@@ -113,7 +113,8 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
             .magic = TISCI_BOARDCFG_MSMC_MAGIC_NUM,
             .size = (uint16_t) sizeof(struct tisci_boardcfg_msmc),
         },
-%        for (let inst of system.modules["/modules/globalConfig"].$instances) {
+%        if (system.modules["/modules/boardConfig"]) {
+%        for (let inst of system.modules["/modules/boardConfig"].$instances) {
 %
         .msmc_cache_size = `utils.getNumber(inst.ramSize)`,
 %
@@ -131,8 +132,8 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
          * debug.
          */
 
-%if (system.modules["/modules/globalConfig"]) {
-%        for (let inst of system.modules["/modules/globalConfig"].$instances) {
+%if (system.modules["/modules/boardConfig"]) {
+%        for (let inst of system.modules["/modules/boardConfig"].$instances) {
 %                if(inst.debugEnable){
         .trace_dst_enables = (TISCI_BOARDCFG_TRACE_DST_UART0 |
                               TISCI_BOARDCFG_TRACE_DST_ITM |

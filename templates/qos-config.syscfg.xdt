@@ -1,9 +1,10 @@
 %%{
-	const deviceSelected = system.deviceData.device;
-	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
-	const socName = devData[deviceSelected].shortName;
-	const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.endpointName);
 	var utils = system.getScript("/scripts/utils.js");
+	const deviceSelected = utils.deviceSelected;
+	const devData = utils.devData;
+	const socName = utils.socName;
+	const qos = utils.qos;
+	
 	var uniqueEndPoint = _.uniq(utils.endPoint());
 %%}
 

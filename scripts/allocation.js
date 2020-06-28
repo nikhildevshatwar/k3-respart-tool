@@ -1,25 +1,23 @@
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
-const socName = devData[deviceSelected].shortName;
-const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
-const hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
+var utils = system.getScript("/scripts/utils.js");
+
+const resources = utils.resources;
+const socName = utils.socName;
+const hosts = utils.hosts;
 
 function checkOverlap(utype, inst1) {
+	var hostsInstances = utils.getSelectedHostInstances();
 	var overlap = [];
 	var name = _.join(_.split(utype, " "), "_");
 	var start1 = inst1[name + "_start"],
 		last1 = start1 + inst1[name + "_count"];
 
-	_.each(hosts, (host) => {
-		var moduleName = "/modules/" + socName + "/" + host.hostName;
-		if (system.modules[moduleName]) {
-			var inst2 = system.modules[moduleName].$static;
-			if (inst1 !== inst2) {
-				var start2 = inst2[name + "_start"],
-					last2 = start2 + inst2[name + "_count"];
-				if (Math.max(start1, start2) < Math.min(last1, last2)) {
-					overlap.push(inst2);
-				}
+	_.each(hostsInstances, (host) => {
+		var inst2 = host;
+		if (inst1 !== inst2) {
+			var start2 = inst2[name + "_start"],
+				last2 = start2 + inst2[name + "_count"];
+			if (Math.max(start1, start2) < Math.min(last1, last2)) {
+				overlap.push(inst2);
 			}
 		}
 	});
@@ -43,35 +41,33 @@ function hostCount(utype, hostName) {
 }
 
 function resourceAllocate(utype, addShareResourceEntries) {
+	var hostsInstances = utils.getSelectedHostInstances();
 	var eachResource = [];
 	var name = _.join(_.split(utype, " "), "_");
 	var over = [];
 
 	if (resources[utype].autoAlloc === false) {
 		var total = 0;
-		_.each(hosts, (host) => {
-			var moduleName = "/modules/" + socName + "/" + host.hostName;
-			if (system.modules[moduleName]) {
-				var inst = system.modules[moduleName].$static;
-				eachResource.push({
-					utype: utype,
-					hostName: host.hostName,
-					start: inst[name + "_start"],
-					count: inst[name + "_count"],
-				});
+		_.each(hostsInstances, (host) => {
+			var inst = host;
+			eachResource.push({
+				utype: utype,
+				hostName: host.hostName,
+				start: inst[name + "_start"],
+				count: inst[name + "_count"],
+			});
 
-				if (addShareResourceEntries) {
-					if (inst.shareResource !== "none") {
-						eachResource.push({
-							utype: utype,
-							hostName: inst.shareResource,
-							start: inst[name + "_start"],
-							count: inst[name + "_count"],
-						});
-					}
+			if (addShareResourceEntries) {
+				if (inst.shareResource !== "none") {
+					eachResource.push({
+						utype: utype,
+						hostName: inst.shareResource,
+						start: inst[name + "_start"],
+						count: inst[name + "_count"],
+					});
 				}
-				total += inst[name + "_count"];
 			}
+			total += inst[name + "_count"];
 		});
 		over.push(Math.max(0, total - resources[utype].resRange[0].resCount));
 	} else {
@@ -83,35 +79,32 @@ function resourceAllocate(utype, addShareResourceEntries) {
 				rCount.push(r.resCount);
 			});
 
-			_.each(hosts, (host) => {
-				var moduleName = "/modules/" + socName + "/" + host.hostName;
-				if (system.modules[moduleName]) {
-					var inst = system.modules[moduleName].$static;
-					var hCount = hostCount(utype, host.hostName);
+			_.each(hostsInstances, (host) => {
+				var inst = host;
+				var hCount = hostCount(utype, host.hostName);
 
-					if (hCount.length === 1) {
-						var index = hCount[0];
-						eachResource.push({
-							utype: utype,
-							hostName: host.hostName,
-							start: rStart[index],
-							count: inst[name + "_count"],
-						});
+				if (hCount.length === 1) {
+					var index = hCount[0];
+					eachResource.push({
+						utype: utype,
+						hostName: host.hostName,
+						start: rStart[index],
+						count: inst[name + "_count"],
+					});
 
-						if (addShareResourceEntries) {
-							if (inst.shareResource !== "none") {
-								eachResource.push({
-									utype: utype,
-									hostName: inst.shareResource,
-									start: rStart[index],
-									count: inst[name + "_count"],
-								});
-							}
+					if (addShareResourceEntries) {
+						if (inst.shareResource !== "none") {
+							eachResource.push({
+								utype: utype,
+								hostName: inst.shareResource,
+								start: rStart[index],
+								count: inst[name + "_count"],
+							});
 						}
-
-						rStart[index] += inst[name + "_count"];
-						rCount[index] -= inst[name + "_count"];
 					}
+
+					rStart[index] += inst[name + "_count"];
+					rCount[index] -= inst[name + "_count"];
 				}
 			});
 
@@ -122,44 +115,14 @@ function resourceAllocate(utype, addShareResourceEntries) {
 		} else {
 			var total = 0;
 			var startValue = resources[utype].resRange[0].resStart;
-			_.each(hosts, (host) => {
-				var moduleName = "/modules/" + socName + "/" + host.hostName;
-				if (system.modules[moduleName]) {
-					if (resources[utype].blockCopy) {
-						var inst = system.modules[moduleName].$static;
-						eachResource.push({
-							utype: utype,
-							hostName: host.hostName,
-							start: startValue,
-							count: inst[name + "_blockCount"],
-						});
-
-						if (addShareResourceEntries) {
-							if (inst.shareResource !== "none") {
-								eachResource.push({
-									utype: utype,
-									hostName: inst.shareResource,
-									start: startValue,
-									count: inst[name + "_blockCount"],
-								});
-							}
-						}
-
-						startValue += inst[name + "_blockCount"];
-						total += inst[name + "_blockCount"];
-					}
-				}
-			});
-
-			_.each(hosts, (host) => {
-				var moduleName = "/modules/" + socName + "/" + host.hostName;
-				if (system.modules[moduleName]) {
-					var inst = system.modules[moduleName].$static;
+			_.each(hostsInstances, (host) => {
+				if (resources[utype].blockCopy) {
+					var inst = host;
 					eachResource.push({
 						utype: utype,
 						hostName: host.hostName,
 						start: startValue,
-						count: inst[name + "_count"],
+						count: inst[name + "_blockCount"],
 					});
 
 					if (addShareResourceEntries) {
@@ -168,14 +131,38 @@ function resourceAllocate(utype, addShareResourceEntries) {
 								utype: utype,
 								hostName: inst.shareResource,
 								start: startValue,
-								count: inst[name + "_count"],
+								count: inst[name + "_blockCount"],
 							});
 						}
 					}
 
-					startValue += inst[name + "_count"];
-					total += inst[name + "_count"];
+					startValue += inst[name + "_blockCount"];
+					total += inst[name + "_blockCount"];
 				}
+			});
+
+			_.each(hostsInstances, (host) => {
+				var inst = host;
+				eachResource.push({
+					utype: utype,
+					hostName: host.hostName,
+					start: startValue,
+					count: inst[name + "_count"],
+				});
+
+				if (addShareResourceEntries) {
+					if (inst.shareResource !== "none") {
+						eachResource.push({
+							utype: utype,
+							hostName: inst.shareResource,
+							start: startValue,
+							count: inst[name + "_count"],
+						});
+					}
+				}
+
+				startValue += inst[name + "_count"];
+				total += inst[name + "_count"];
 			});
 
 			eachResource.push({

@@ -2,7 +2,25 @@ const deviceSelected = system.deviceData.device;
 const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
 const socName = devData[deviceSelected].shortName;
 
-var devices = _.keyBy(system.getScript("/data/" + socName + "/Firewall.json"), (d) => d.name);
+const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
+var FirewallDevices = _.keyBy(system.getScript("/data/" + socName + "/Firewall.json"), (d) => d.name);
+const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.endpointName);
+const hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
+
+// Find all unique group names
+
+var groupNames = [];
+
+_.each(resources, (resource) => {
+	groupNames.push(resource.groupName);
+});
+groupNames = _.uniq(groupNames);
+
+// Create map of groupName to resources
+
+var resourcesByGroup = _.groupBy(resources, (r) => {
+	return r.groupName;
+});
 
 // Set the bits to 10 if a option is selected else to 01
 
@@ -180,12 +198,29 @@ function getControlMask(r) {
 	return "0x" + val.toString(16).toUpperCase();
 }
 
+function getIdsOfSelectedInstances(selectedDeviceInstances, device) {
+	var selectedIds = [];
+
+	var deviceInstances = device.protected_inst;
+	var deviceIds = device.ids;
+
+	_.each(deviceInstances, (i, idx) => {
+		_.each(selectedDeviceInstances, (d) => {
+			if (i === d) {
+				selectedIds.push(deviceIds[idx]);
+			}
+		});
+	});
+
+	return selectedIds;
+}
+
 function generateFirewallEntries() {
 	var entries = [];
 	if (system.modules["/modules/firewallConfig"]) {
 		for (let inst of system.modules["/modules/firewallConfig"].$instances) {
-			var device = devices[inst.device];
-			var ids = device.ids;
+			var device = FirewallDevices[inst.device];
+			var ids = getIdsOfSelectedInstances(inst.instanceName, device);
 
 			_.each(ids, (id) => {
 				var regions = inst.regions;
@@ -262,6 +297,21 @@ function getBlockCopyDisplayName(name) {
 	return name;
 }
 
+function getSelectedHostInstances() {
+	var allModules = system.modules;
+	var instances = [];
+
+	_.each(allModules, (m) => {
+		// Filter Out those modules having static instance
+		var staticInstance = m.$static;
+		if (staticInstance) {
+			instances.push(staticInstance);
+		}
+	});
+
+	return instances;
+}
+
 exports = {
 	setBit,
 	decimalToBinary,
@@ -276,4 +326,14 @@ exports = {
 	getNumber,
 	getDisplayPrefix,
 	getBlockCopyDisplayName,
+	getSelectedHostInstances,
+	deviceSelected,
+	devData,
+	socName,
+	resources,
+	FirewallDevices,
+	hosts,
+	qos,
+	resourcesByGroup,
+	groupNames,
 };

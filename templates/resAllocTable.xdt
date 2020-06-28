@@ -1,19 +1,20 @@
 %%{
-
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
-const socName = devData[deviceSelected].shortName;
-
-const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
-const hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
 var utils = system.getScript("/scripts/utils.js");
+
+const deviceSelected = utils.deviceSelected;
+const devData = utils.devData;
+const socName = utils.socName;
+const resources = utils.resources;
+const hosts = utils.getSelectedHostInstances();
+const resgroup = utils.resourcesByGroup;
+const groupNames = utils.groupNames;
+
 
 var {mapByResources} = system.getScript("/scripts/allocation.js");
 var resAlloc = mapByResources(true,false);
 var hostlist = [];
-var groupNames = [];
 var groups = [];
-var groups, resgroup;
+var groups;
 var n_cols = 0;
 
 function populate_cell(entries, hostName) {
@@ -52,29 +53,18 @@ function populate_cell(entries, hostName) {
 	return cell;
 }
 
-_.each(resources, resource => {
-	groupNames.push(resource.groupName);
-})
-groupNames = _.uniq(groupNames);
-
-resgroup = _.groupBy(resources, r => {
-	return r.groupName;
-})
-
 _.each(hosts, (host) => {
-	var moduleName = "/modules/" + socName + "/" + host.hostName;
-	if(system.modules[moduleName]){
-		var inst = system.modules[moduleName].$static;
+	var inst = host;
 
-		var header = host.hostName;
-		if(inst.shareResource !== "none"){
-			header += ", " + inst.shareResource;
-		}
-		hostlist.push({
-			"hostName": host.hostName,
-			"header": header
-		});
+	var header = host.hostName;
+	if(inst.shareResource !== "none"){
+		header += ", " + inst.shareResource;
 	}
+	hostlist.push({
+		"hostName": host.hostName,
+		"header": header
+	});
+	
 })
 
 hostlist.push({

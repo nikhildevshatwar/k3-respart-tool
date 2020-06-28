@@ -1,8 +1,9 @@
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
-const socName = devData[deviceSelected].shortName;
+const utils = system.getScript("/scripts/utils.js");
 
-var hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (h) => h.hostName);
+const deviceSelected = utils.deviceSelected;
+const devData = utils.devData;
+const socName = utils.socName;
+var hosts = utils.hosts;
 
 function getHostNameOptions() {
 	var hostopt = [];

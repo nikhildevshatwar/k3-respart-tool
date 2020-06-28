@@ -1,11 +1,12 @@
 %%{
-	const deviceSelected = system.deviceData.device;
-	const devData = _.keyBy(system.getScript("/data/SOC.json"),(r) => r.soc);
-	const socName = devData[deviceSelected].shortName;
-	const {allocateAndSort} = system.getScript("/scripts/allocation.js");
-	const resources = _.keyBy(system.getScript("/data/" + socName + "/Resources.json"), (r) => r.utype);
 	const utils = system.getScript("/scripts/utils.js");
-	const hosts = _.keyBy(system.getScript("/data/" + socName + "/Hosts.json"), (r) => r.hostName);
+	const {allocateAndSort} = system.getScript("/scripts/allocation.js");
+
+	const deviceSelected = utils.deviceSelected;
+	const devData = utils.devData;
+	const socName = utils.socName;
+	const resources = utils.resources;
+	const hosts = utils.hosts;
 %%}
 /*
  * K3 System Firmware Resource Management Configuration Data

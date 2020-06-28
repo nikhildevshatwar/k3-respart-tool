@@ -1,8 +1,9 @@
-const deviceSelected = system.deviceData.device;
-const devData = _.keyBy(system.getScript("/data/SOC.json"), (r) => r.soc);
-const socName = devData[deviceSelected].shortName;
+const utils = system.getScript("/scripts/utils.js");
 
-const qos = _.keyBy(system.getScript("/data/" + socName + "/Qos.json"), (r) => r.endpointName);
+const deviceSelected = utils.socName;
+const devData = utils.devData;
+const socName = utils.socName;
+const qos = utils.qos;
 
 var properties = ["atype", "virtId", "orderId", "qos", "epriority", "asel"];
 
