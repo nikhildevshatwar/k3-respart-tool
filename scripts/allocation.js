@@ -204,6 +204,8 @@ function allocateAndSort(skipZeroEntries, addShareResourceEntries) {
 			} else {
 				var h1 = a.hostName,
 					h2 = b.hostName;
+				if (h1 === "ALL") return 1;
+				if (h2 === "ALL") return -1;
 				return hosts[h1].hostId - hosts[h2].hostId;
 			}
 		});

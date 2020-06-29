@@ -84,7 +84,7 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
                 {
                     .allowed_atype = `utils.decimalToBinary(utils.setBit(inst.allowedAtype,3))`,
                     .allowed_qos   = `utils.decimalToHexadecimal(utils.setBit(inst.allowedqos,8))`,
-                    .allowed_orderid = `utils.toHexa(utils.unsignedToBinary(utils.inst.allowedorderid))`,
+                    .allowed_orderid = `utils.toHexa(utils.unsignedToBinary(inst.allowedorderid))`,
                     .allowed_priority = `utils.decimalToHexadecimal(utils.setBit(inst.allowedpriority,8))`,
                     .allowed_sched_priority = `utils.decimalToHexadecimal(utils.setBit(inst.allowedschedpriority,4))`
                 },

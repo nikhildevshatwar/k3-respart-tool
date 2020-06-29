@@ -123,8 +123,7 @@ _.each(groupNames, groupName=> {
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
 	white-space: nowrap;
-	width: 100%,
-	height: 100%
+	height: 250px;
 }
 
 .RowHeader {
@@ -148,7 +147,7 @@ _.each(groupNames, groupName=> {
 	text-align: center;
 	border-radius: 6px;
 	padding: 5px 0;
-	width: 120px;
+	width: 170px;
 	top: 120%;
 	left: 120%;
 

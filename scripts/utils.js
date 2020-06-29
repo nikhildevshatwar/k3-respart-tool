@@ -304,7 +304,7 @@ function getSelectedHostInstances() {
 	_.each(allModules, (m) => {
 		// Filter Out those modules having static instance
 		var staticInstance = m.$static;
-		if (staticInstance) {
+		if (staticInstance && staticInstance.hostName) {
 			instances.push(staticInstance);
 		}
 	});

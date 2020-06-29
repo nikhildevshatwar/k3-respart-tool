@@ -42,12 +42,12 @@ function getInHexa(val) {
 }
 
 function MinMaxOfRange(array) {
-	var start = parseInt(array[0].start_address, 16);
-	var end = parseInt(array[0].end_address, 16);
+	var start = parseInt(array[0].start_address);
+	var end = parseInt(array[0].end_address);
 
 	array.forEach(r => {
-		start = Math.min(start, parseInt(r.start_address, 16));
-		end = Math.max(end, parseInt(r.end_address, 16));
+		start = Math.min(start, parseInt(r.start_address));
+		end = Math.max(end, parseInt(r.end_address));
 	});
 
 	return {
@@ -176,8 +176,8 @@ function parseAndMergeFirewallData() {
 				ids: [f.id],
 				num_regions: f.num_regions,
 				name: f.name,
-				start_address: getInHexa(f.start_address),
-				end_address: getInHexa(f.end_address),
+				start_address: f.start_address,
+				end_address: f.end_address,
 				memory: f.memory,
 				protected_inst: [f.protected_inst]
 			})
@@ -349,8 +349,8 @@ function mergeInterfaces(firewallData) {
 				ids: ids,
 				protected_inst: inst,
 				num_regions: r,
-				start_address: getInHexa(start),
-				end_address: getInHexa(end),
+				start_address: start,
+				end_address: end,
 				memory: sameDevice[0].memory
 			})
 			index++;
