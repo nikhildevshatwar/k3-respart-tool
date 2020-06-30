@@ -116,14 +116,10 @@ _.each(groupNames, groupName=> {
 }
 
 .ColHeader {
-	background-color: #DDDDDD;
-	border: solid 1px black;
 	-ms-writing-mode: tb-rl;
 	-webkit-writing-mode: vertical-rl;
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
-	white-space: nowrap;
-	height: 250px;
 }
 
 .RowHeader {
@@ -166,9 +162,9 @@ _.each(groupNames, groupName=> {
 			Resources
 		</th>
 %	_.each(hostlist, host => {
-		<th>
-			<span class="Cell ColHeader">
-				`host.header`
+		<th class="Cell RowHeader">
+			<span class="ColHeader">
+				`host.hostName`
 			</span>
 		</th>
 %	})
