@@ -7,6 +7,13 @@
 	const socName = utils.socName;
 	const resources = utils.resources;
 	const hosts = utils.hosts;
+
+	var allocation = allocateAndSort(true,true);
+	var numEntries = 0;
+
+	_.each(allocation, a => {
+		numEntries += a.length;
+	})
 %%}
 /*
  * K3 System Firmware Resource Management Configuration Data
@@ -97,7 +104,7 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
                 .magic = TISCI_BOARDCFG_RM_RESASG_MAGIC_NUM,
                 .size = (uint16_t) sizeof(struct tisci_boardcfg_rm_resasg),
             },
-            .resasg_entries_size = TISCI_RESASG_UTYPE_CNT * sizeof(struct tisci_boardcfg_rm_resasg_entry),
+            .resasg_entries_size = `numEntries` * sizeof(struct tisci_boardcfg_rm_resasg_entry),
         },
     },
     .resasg_entries = {
