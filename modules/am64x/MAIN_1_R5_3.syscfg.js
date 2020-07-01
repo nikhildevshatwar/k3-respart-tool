@@ -1,11 +1,11 @@
 
-        const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
-        const hostInfo = {
+const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
+const hostInfo = {
   "Description": "Cortex R5_1 context 3 on Main island",
   "Security": "Non Secure",
+  "displayName": "Main R5F1 core1 Secure host",
   "hostId": 43,
   "hostName": "MAIN_1_R5_3"
 };
-        const modDef = createHostModule(hostInfo);
-        exports = modDef;
-        
+const modDef = createHostModule(hostInfo);
+exports = modDef;

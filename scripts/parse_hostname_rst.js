@@ -11,6 +11,10 @@ const args = require("yargs")
 		demandOption: true,
 		type: "string",
 	},
+	names: {
+		describe: "Host names",
+		type: "string",
+	},
 	firewall: {
 		describe: "Path to firewall.rst file",
 		demandOption: true,
@@ -112,6 +116,22 @@ function addPrivIds(hostArray, path) {
 	return hostArray;
 }
 
+function addDisplayName(hostArray, path) {
+	var fs = require("fs");
+	var data = fs.readFileSync(path);
+	var names = JSON.parse(data);
+
+	hostArray.forEach((h) => {
+		h.displayName = h.hostName;
+		names.forEach((n) => {
+			if (h.hostName == n.hostName) {
+				h.displayName = n.displayName
+			}
+		})
+	});
+	return hostArray;
+}
+
 function createOutputFile(hosts, soc) {
 	var fs = require("fs");
 
@@ -131,5 +151,9 @@ function createOutputFile(hosts, soc) {
 var hostArray = createHostArray(args.doc);
 
 hostArray = addPrivIds(hostArray, args.firewall);
+
+if (args.names) {
+	hostArray = addDisplayName(hostArray, args.names);
+}
 
 createOutputFile(hostArray, args.soc);

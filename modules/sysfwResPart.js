@@ -238,13 +238,14 @@ function checkRestrictHost(hostName, resource) {
 function createHostModule(hostInfo) {
 	var configurables = getHostConfigurables(hostInfo.hostName);
 	var hostDocumentation = `
-	**${hostInfo.hostName}**
-	===============================================
+**${hostInfo.displayName}**
 
-	*	Host Name - HOST_ID_${hostInfo.hostName}
-	*	Host ID - ${hostInfo.hostId}
-	*	Security - ${hostInfo.Security}
-	*	Description - ${hostInfo.Description}
+---
+
+*	Host Name - HOST_ID_${hostInfo.hostName}
+*	Host ID - ${hostInfo.hostId}
+*	Security - ${hostInfo.Security}
+*	Description - ${hostInfo.Description}
 	`;
 	var def = {
 		displayName: hostInfo.hostName,

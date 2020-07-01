@@ -54,6 +54,7 @@ gen_files() {
 	# Parse SYSFW documentation Host descriptions
 	node $topdir/scripts/parse_hostname_rst.js --soc $soc \
 		--doc $sysfw_repo/docs/public/5_soc_doc/$sysfw_soc/hosts.rst \
+		--names $topdir/data/$soc/HostNames.json \
 		--firewall $sysfw_repo/docs/public/5_soc_doc/$sysfw_soc/firewalls.rst
 	echo "Generated data/$soc/Hosts.json"
 	prettify_json $topdir/data/$soc/Hosts.json hostId
@@ -75,16 +76,23 @@ gen_files() {
 	mkdir -p $topdir/modules/$soc
 	node $topdir/scripts/gen_host_modules.js --soc $soc
 	echo "Generated modules/$soc/XXX.syscfg.js"
+	echo
 }
 
 gen_initial_user_json() {
 	soc=$1
 
+	# Copy original Firewall.json to generate the DeviceName.json
 	jq --tab --sort-keys "[.[] | {name: .name, protected_inst: .protected_inst}]" \
 		data/$soc/Firewall.json >data/$soc/DeviceName.json
 
+	# Copy original Resource.json to generate the ResDependencies.json
 	jq --tab --sort-keys "[.[] | {deviceName: .deviceName, subtypeName: .subtypeName, utype: .utype}]" \
 		data/$soc/Resources.json >data/$soc/ResDependencies.json
+
+	# Copy original Hosts.json to generate the HostNames.json
+	jq --tab --sort-keys "[.[] | {hostName: .hostName, displayName: \"FILL\"}]" \
+		data/$soc/Hosts.json >data/$soc/HostNames.json
 }
 
 if [ "$1" = "" ]; then
