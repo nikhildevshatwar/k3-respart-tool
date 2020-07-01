@@ -8,8 +8,8 @@ function checkOverlap(utype, inst1) {
 	var hostsInstances = utils.getSelectedHostInstances();
 	var overlap = [];
 	var name = _.join(_.split(utype, " "), "_");
-	var start1 = inst1[name + "_start"],
-		last1 = start1 + inst1[name + "_count"];
+	var start1 = inst1[name + "_start"];
+	var last1 = start1 + inst1[name + "_count"];
 
 	_.each(hostsInstances, (host) => {
 		var inst2 = host;

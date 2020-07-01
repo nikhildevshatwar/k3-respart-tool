@@ -255,7 +255,7 @@ function getUsedFirewalls() {
 
 }
 
-// Remove firewalls used by dmsc 
+// Remove firewalls used by dmsc
 
 function removeUsedFirewalls(firewallData, usedFirewalls) {
 
@@ -294,7 +294,7 @@ function removeUsedFirewalls(firewallData, usedFirewalls) {
 	return afterRemoving;
 }
 
-// Merge instances having similar instances names 
+// Merge instances having similar instances names
 
 function mergeInterfaces(firewallData) {
 	var devicesWithoutName = [];

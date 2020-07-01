@@ -72,7 +72,7 @@ function createResourceRange(resources) {
 
 	// For resources where deviceName and subtypename are same create a single entry
 
-	for (var idx = 0; idx < resources.length; ) {
+	for (var idx = 0; idx < resources.length;) {
 		var deviceName = resources[idx].deviceName;
 		var subtypeName = resources[idx].subtypeName;
 		var deviceId = resources[idx].deviceId;

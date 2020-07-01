@@ -32,26 +32,40 @@ var deviceEndPoints = _.groupBy(qos, (d) => {
 	return d.deviceName;
 });
 
-function optionValues(max, stringifyName = false) {
-	var option = [];
-	var val;
+function defaultOptionValues(max) {
+	var options = [];
+
 	for (var i = 0; i < max; i++) {
-		if (stringifyName) val = i.toString();
-		else val = i;
-		option.push({
+		options.push(i);
+	}
+	return options;
+}
+
+function optionValues(max, stringifyName = false) {
+	var options = [];
+	var val;
+
+	for (var i = 0; i < max; i++) {
+		if (stringifyName)
+			val = i.toString();
+		else
+			val = i;
+		options.push({
 			name: val,
 			displayName: i.toString(),
 		});
 	}
-	return option;
+	return options;
 }
 
 function showValidParameters(inst, ui) {
-	if (inst.deviceName === "unknown") return;
 	var maxINT = 100000;
 	var parametersCount = {
 		channels: maxINT,
 	};
+
+	if (inst.deviceName === "unknown")
+		return;
 
 	_.each(properties, (p) => {
 		parametersCount[p] = 0;
@@ -89,12 +103,12 @@ Following steps allow you to achieve this:
 *	Click on ADD button to program a device QoS endpoint
 *	Select the device from the drop down list
 *	Select a list of endpoints to be programmed. By default, all the
-	endpoints are selected. You can add more instances with same device
-	and select different set of endpoints to program the QoS differently.
+endpoints are selected. You can add more instances with same device
+and select different set of endpoints to program the QoS differently.
 *	Select the channel number for programming the exact QoS register.
 *	For the selected channel, tool will present a set of parameters which
-	are applicable for it. Select the appropriate value that you wish
-	to program.
+are applicable for it. Select the appropriate value that you wish
+to program.
 
 **Endpoint and Channel ID selection**
 
@@ -110,9 +124,9 @@ the channel_id is driven for a device is different for different device.
 ---
 
 *	\`qos-config.c\` - This file should be copied to the bootloader for
-	configuring the QoS registers. This file has a simple address, value
-	pairs in an array. The bootloader is supposed to iterate over the
-	array and program the QoS registers one-time as part of the bootup.
+configuring the QoS registers. This file has a simple address, value
+pairs in an array. The bootloader is supposed to iterate over the
+array and program the QoS registers one-time as part of the bootup.
 
 `;
 
@@ -169,7 +183,7 @@ exports = {
 			default: "0",
 			hidden: true,
 			options: (inst) => {
-				return optionValues(parseInt(inst.numChan), true);
+				return optionValues(inst.numChan, true);
 			},
 		},
 		{

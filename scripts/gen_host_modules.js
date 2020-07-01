@@ -1,13 +1,13 @@
 const args = require("yargs")
-	.options({
-		soc: {
-			describe: "Soc name",
-			demandOption: true,
-			type: "string",
-		},
-	})
-	.help()
-	.alias("help", "h").argv;
+.options({
+	soc: {
+		describe: "Soc name",
+		demandOption: true,
+		type: "string",
+	},
+})
+.help()
+.alias("help", "h").argv;
 
 var soc = args.soc;
 
@@ -22,11 +22,11 @@ hosts = JSON.parse(hosts);
 
 hosts.forEach((host) => {
 	const def = `
-        const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
-        const hostInfo = ${JSON.stringify(host, null, 2)};
-        const modDef = createHostModule(hostInfo);
-        exports = modDef;
-        `;
+const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
+const hostInfo = ${JSON.stringify(host, null, 2)};
+const modDef = createHostModule(hostInfo);
+exports = modDef;
+`;
 	var path = dir + "/../modules/" + soc + "/" + host.hostName + ".syscfg.js";
 	fs.writeFileSync(path, def);
 

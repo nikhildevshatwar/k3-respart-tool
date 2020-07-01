@@ -1,24 +1,24 @@
 const args = require("yargs")
-	.options({
-		doc: {
-			alias: "document",
-			describe: "Path to hostName.rst file",
-			demandOption: true,
-			type: "string",
-		},
-		soc: {
-			describe: "Soc name",
-			demandOption: true,
-			type: "string",
-		},
-		firewall: {
-			describe: "Path to firewall.rst file",
-			demandOption: true,
-			type: "string",
-		},
-	})
-	.help()
-	.alias("help", "h").argv;
+.options({
+	doc: {
+		alias: "document",
+		describe: "Path to hostName.rst file",
+		demandOption: true,
+		type: "string",
+	},
+	soc: {
+		describe: "Soc name",
+		demandOption: true,
+		type: "string",
+	},
+	firewall: {
+		describe: "Path to firewall.rst file",
+		demandOption: true,
+		type: "string",
+	},
+})
+.help()
+.alias("help", "h").argv;
 
 // Parse the host rst file
 
@@ -75,8 +75,8 @@ function addPrivIds(hostArray, path) {
 	var fs = require("fs");
 	var textByLine = fs.readFileSync(path).toString().split("\n");
 
-	var privEntries = [],
-		privTableStart = 0;
+	var privEntries = [];
+	var privTableStart = 0;
 
 	textByLine.forEach((line) => {
 		if (privTableStart) {

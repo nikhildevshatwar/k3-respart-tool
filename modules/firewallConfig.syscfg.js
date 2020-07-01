@@ -1,9 +1,13 @@
 const utils = system.getScript("/scripts/utils.js");
-
 const deviceSelected = utils.deviceSelected;
 const devData = utils.devData;
 const socName = utils.socName;
 var devices = utils.FirewallDevices;
+
+var start = "0";
+var end = "0";
+var regions = 1;
+var customAlloc = false;
 
 function getDeviceNameOptions() {
 	var uniqDevices = _.map(devices, (d) => {
@@ -25,11 +29,6 @@ function getDeviceNameOptions() {
 	return devOpt;
 }
 
-var start = "0",
-	end = "0",
-	regions = 1,
-	customAlloc = false;
-
 var documentation = `
 **Firewall configuration**
 
@@ -47,14 +46,14 @@ Following steps allow to do this:
 *	Click on ADD button and add an instance for firewall configuration.
 *	Select a device to be firewalled or protected.
 *	For slave firewalls, the tool automatically fills up a firewall
-	region with start and end addresses to cover all the slave interfaces
-	of the device.
+region with start and end addresses to cover all the slave interfaces
+of the device.
 *	For every region, upto 3 permission slots can be added. A permission
-	slot defines access permissions for a host_id. For simplicity, you
-	can select a host_id for automatically filling the priv_id or provide
-	a custom priv_id in the permission slot.
+slot defines access permissions for a host_id. For simplicity, you
+can select a host_id for automatically filling the priv_id or provide
+a custom priv_id in the permission slot.
 *	By default, for any slot, all permissions are enabled. Modify this as
-	required.
+required.
 
 
 **Output files**
@@ -62,9 +61,9 @@ Following steps allow to do this:
 ---
 
 *	\`firewall-config.c\` -	This file describes the firewall configuration
-	for a bootloader. It contains an array of the struct
-	*TISCI_MSG_FWL_SET_REGION* which can be directly passed in TISCI calls.
-	Bootloader should simply iterate over this to program all the firewalls.
+for a bootloader. It contains an array of the struct
+*TISCI_MSG_FWL_SET_REGION* which can be directly passed in TISCI calls.
+Bootloader should simply iterate over this to program all the firewalls.
 
 `;
 
