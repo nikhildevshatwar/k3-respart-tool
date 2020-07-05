@@ -309,6 +309,10 @@ function getSelectedHostInstances() {
 		}
 	});
 
+	instances.sort(function (a, b) {
+		return a.allocOrder - b.allocOrder;
+	})
+
 	return instances;
 }
 

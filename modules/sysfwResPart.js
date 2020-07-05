@@ -340,6 +340,12 @@ function createHostModule(hostInfo) {
 							],
 							default: "none",
 						},
+						{
+							name: "allocOrder",
+							displayName: "Allocation order",
+							longDescription: "This value is used to sort the hosts and allocate the resources in the ascending order of allocOrder. This ensures that the allocation is always predictable irrespective of the sequence of adding hosts or sequence of adding resource counts.",
+							default: 0
+						},
 					],
 				},
 				...configurables,
@@ -356,6 +362,8 @@ function createHostModule(hostInfo) {
 				overlapAndOverflow(instance, report);
 
 				checkCyclicDependencyForSupervisor(instance, report);
+
+				checkValidOrder(instance, report);
 			},
 		},
 	};
@@ -537,6 +545,24 @@ function overlapAndOverflow(instance, report) {
 			}
 		}
 	});
+}
+
+function checkValidOrder(inst, report) {
+	var valid = true;
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			var inst2 = system.modules[moduleName].$static;
+			if (inst2 == inst)
+				return;
+			if (inst2.allocOrder == inst.allocOrder) {
+				valid = false;
+			}
+		}
+	});
+	if (!valid) {
+		report.logError("Invalid Allocation order", inst, "allocOrder");
+	}
 }
 
 exports = {
