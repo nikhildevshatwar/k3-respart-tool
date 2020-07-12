@@ -35,7 +35,7 @@ var deviceEndPoints = _.groupBy(qos, (d) => {
 function defaultOptionValues(max) {
 	var options = [];
 
-	for (var i = 0; i < max; i++) {
+	for (var i = 0; max < 10 && i < max; i++) {
 		options.push(i);
 	}
 	return options;
@@ -150,6 +150,7 @@ exports = {
 				});
 
 				showValidParameters(inst, ui);
+				inst.chan = defaultOptionValues(inst.numChan);
 			},
 		},
 		{
@@ -174,13 +175,13 @@ exports = {
 		{
 			name: "numChan",
 			displayName: "Available number of channels",
-			readOnly: true,
+			hidden: true,
 			default: 0,
 		},
 		{
 			name: "chan",
 			displayName: "Channel ID",
-			default: "0",
+			default: [],
 			hidden: true,
 			options: (inst) => {
 				return optionValues(inst.numChan, true);
@@ -256,21 +257,25 @@ exports = {
 		}
 
 		showParameterInfo(inst, report);
-		uniqueEndAndChannel(inst, report);
+		check_overlapped_ep_ch(inst, report);
 	},
 };
 
 // functions for validation
 
-function uniqueEndAndChannel(inst, report) {
+function check_overlapped_ep_ch(inst, report) {
 	var moduleInstance = inst.$module.$instances;
 
 	_.each(moduleInstance, (i) => {
 		if (i !== inst) {
-			if (i.deviceName === inst.deviceName && i.chan === inst.chan) {
-				var intersection = _.intersection(i.qosdev, inst.qosdev);
-				if (intersection.length && intersection[0] !== "none") {
-					report.logError("This endPoint is used more than once for same channel", inst, "qosdev");
+			if (i.deviceName === inst.deviceName) {
+				var common_eps = _.intersection(i.qosdev, inst.qosdev);
+				var common_chans = _.intersection(i.chan, inst.chan);
+				if (common_eps.length && commone_eps[0] !== "none" &&
+				    common_chans.length && common_chans[0] != "none") {
+					report.logError("This endpoint(" + common_eps[0] +
+					") + channel(" + common_chans[0] +
+					") is used more than once", inst, "qosdev");
 				}
 			}
 		}

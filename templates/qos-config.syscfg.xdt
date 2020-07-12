@@ -20,10 +20,13 @@ struct qos_data `socName`_qos_data[] = {
 %	for (let inst of system.modules["/modules/qosConfig"].$instances) {
 %		_.each(inst.qosdev,(e) => {
 %			var n = inst.deviceName + "_" + e;
+%			for (var c = 0; c < inst.chan.length; c++) {
+%				var channel = inst.chan[c];
 	{
-		.reg = `qos[n].baseAddress` + `inst.chan` * 0x4,
+		.reg = `qos[n].baseAddress` + `channel` * 0x4,
 		.val = `utils.decimalToHexadecimal(utils.getValue(inst))`
 	},
+%			}
 %		})
 %	}
 %}
