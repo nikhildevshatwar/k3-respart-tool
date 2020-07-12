@@ -12,22 +12,24 @@
  * K3 Quality of Service (QoS) Configuration Data
  * Auto generated from K3 Resource Partitioning tool
  */
-
+#include <`socName`_qos.h>
 #define `socName.toUpperCase()`_QOS_COUNT	(sizeof(`socName`_qos_data) / sizeof(`socName`_qos_data[0]))
 
 struct qos_data `socName`_qos_data[] = {
 %if (system.modules["/modules/qosConfig"]) {
 %	for (let inst of system.modules["/modules/qosConfig"].$instances) {
+	/* `inst.$name` */
 %		_.each(inst.qosdev,(e) => {
 %			var n = inst.deviceName + "_" + e;
 %			for (var c = 0; c < inst.chan.length; c++) {
 %				var channel = inst.chan[c];
 	{
-		.reg = `qos[n].baseAddress` + `channel` * 0x4,
-		.val = `utils.decimalToHexadecimal(utils.getValue(inst))`
+		.reg = `qos[n].endpointName` + `channel` * 0x4,
+		.val = `utils.getQosValue(inst)`
 	},
 %			}
 %		})
+
 %	}
 %}
 
@@ -36,11 +38,11 @@ struct qos_data `socName`_qos_data[] = {
 %	var group = qos[u].groupCount;
 %	for(var g = 0 ; g < group ; g++ ){
 	{
-		.reg = `qos[u].baseAddress` + `g` * 0x400 + 0x0
+		.reg = `qos[u].endpointName` + `g` * 0x400 + 0x0
 		.val = 0x76543210,
 	},
 	{
-		.reg = `qos[u].baseAddress` + `g` * 0x400 + 0x4
+		.reg = `qos[u].endpointName` + `g` * 0x400 + 0x4
 		.val = 0xfedcba98,
 	},
 %	}

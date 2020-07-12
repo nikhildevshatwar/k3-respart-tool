@@ -116,16 +116,26 @@ function addPrefix(str) {
 
 // return mask for qos parameters
 
-function getValue(inst) {
-	var mask = 0;
-	mask |= inst.qos;
-	mask |= inst.orderId << 4;
-	mask |= inst.asel << 8;
-	mask |= inst.epriority << 12;
-	mask |= inst.virtId << 16;
-	mask |= inst.atype << 28;
+function getQosValue(inst) {
+	var value = "";
 
-	return mask;
+	if (inst.atype)
+		value += " | ATYPE_" + inst.atype;
+	if (inst.virtId)
+		value += " | VIRTID_" + inst.virtId;
+	if (inst.epriority)
+		value += " | EPRIORITY_" + inst.epriority;
+	if (inst.asel)
+		value += " | ASEL_" + inst.asel;
+	if (inst.orderId)
+		value += " | ORDERID_" + inst.orderId;
+	if (inst.qos)
+		value += " | QOS_" + inst.qos;
+
+	if (value == "")
+		return "0;"
+	value = value.replace(" | ", "") + ";";
+	return value;
 }
 
 // Return all the selected endpoints
@@ -324,7 +334,7 @@ exports = {
 	toHexa,
 	removePrefix,
 	addPrefix,
-	getValue,
+	getQosValue,
 	endPoint,
 	generateFirewallEntries,
 	getNumber,
