@@ -232,6 +232,7 @@ function generateFirewallEntries() {
 			var device = FirewallDevices[inst.device];
 			var ids = getIdsOfSelectedInstances(inst.instanceName, device);
 
+			var comment = `${inst.device} - ${ids.length} firewalls and ${inst.regions.length} with regions each`;
 			_.each(ids, (id) => {
 				var regions = inst.regions;
 
@@ -251,7 +252,9 @@ function generateFirewallEntries() {
 						permissions: premissionArray,
 						n_permission_regs: params.length,
 						control: getControlMask(r),
+						comment: comment,
 					});
+					comment = "";
 				});
 			});
 		}

@@ -9,8 +9,6 @@ exports = {
 				if (inst.regionAlloc) {
 					ui.addrStart.readOnly = false;
 					ui.addrEnd.readOnly = false;
-					inst.addrStart = "0";
-					inst.addrEnd = "0";
 				} else {
 					inst.addrStart = inst.defaultStart;
 					inst.addrEnd = inst.defaultEnd;

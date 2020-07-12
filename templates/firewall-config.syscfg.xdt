@@ -17,6 +17,10 @@
 
 struct tisci_msg_fwl_set_firewall_region_req `socName`_fwl_data[] = {
 %_.each(entries,(e) => {
+%	if (e.comment != "") {
+
+	/* `e.comment` */
+%	}
 	{
 		.fwl_id = `e.fwl_id`,
 		.region = `e.region`,
