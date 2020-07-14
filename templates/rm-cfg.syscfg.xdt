@@ -74,7 +74,7 @@ const struct boardcfg_rm_local `socName`_boardcfg_rm_data = {
 					.allowed_orderid = `utils.toHexa(utils.unsignedToBinary(inst.allowedorderid))`,
 					.allowed_priority = `utils.decimalToHexadecimal(utils.setBit(inst.allowedpriority,8))`,
 					.allowed_sched_priority = `utils.decimalToHexadecimal(utils.setBit(inst.allowedschedpriority,4))`,
- 				},
+				},
 %			}
 %		})
 			}
