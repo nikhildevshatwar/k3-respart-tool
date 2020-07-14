@@ -129,6 +129,8 @@ MCU_0_R5_0.allocOrder                                               = 3;
 MCU_0_R5_0.shareResource                                            = "MCU_0_R5_1";
 MCU_0_R5_0.Main_GPIO_Interrupt_router_count                         = 8;
 MCU_0_R5_0.Wakeup_GPIO_Interrupt_router_count                       = 8;
+MCU_0_R5_0.MCU_NAVSS_UDMA_High_capacity_Rx_channels_count           = 2;
+MCU_0_R5_0.MCU_NAVSS_UDMA_High_capacity_Tx_channels_count           = 2;
 
 MCU_0_R5_2.Main_2_MCU_Level_Interrupt_router_count                  = 32;
 MCU_0_R5_2.Main_2_MCU_Pulse_Interrupt_router_count                  = 24;
