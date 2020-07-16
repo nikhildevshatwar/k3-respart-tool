@@ -271,7 +271,7 @@ function check_overlapped_ep_ch(inst, report) {
 			if (i.deviceName === inst.deviceName) {
 				var common_eps = _.intersection(i.qosdev, inst.qosdev);
 				var common_chans = _.intersection(i.chan, inst.chan);
-				if (common_eps.length && commone_eps[0] !== "none" &&
+				if (common_eps.length && common_eps[0] !== "none" &&
 				    common_chans.length && common_chans[0] != "none") {
 					report.logError("This endpoint(" + common_eps[0] +
 					") + channel(" + common_chans[0] +
