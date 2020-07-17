@@ -49,4 +49,4 @@ mv temp k3-respart-tool/data/SOC.json
 
 # Create final package
 version=`jq -r '.version' .metadata/product.json`
-zip -r k3-respart-tool-$version.tar.gz k3-respart-tool
+zip -r k3-respart-tool-$version.zip k3-respart-tool
