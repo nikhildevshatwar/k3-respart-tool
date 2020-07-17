@@ -1,18 +1,19 @@
 {
-	"name": "K3-Respart-Tool",
-	"displayName": "Keystone3 Resource Partitioning Tool",
-	"version": "0.5",
-	"includePaths": [
-		".."
-	],
-	"devices": [
-		".*J721E.*",
-		"VF211x",
-		"AM65xx.*",
-		"AM437x"
-	],
 	"components": [
 		"/modules/respart"
 	],
-	"documentationPath": "docs/"
+	"devices": [
+		"AM437x",
+		"AM65xx_SR1.0",
+		"AM65xx_SR2.0_beta",
+		"J721E_DRA829_TDA4VM_AM752x",
+		"VF211x"
+	],
+	"displayName": "Keystone3 Resource Partitioning Tool",
+	"documentationPath": "docs/",
+	"includePaths": [
+		".."
+	],
+	"name": "K3-Respart-Tool",
+	"version": "0.5"
 }

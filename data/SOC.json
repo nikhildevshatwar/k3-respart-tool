@@ -1,47 +1,47 @@
 [
 	{
-		"soc" : "J721E_DRA829_TDA4VM_AM752x",
-		"shortName" : "j721e",
-		"sciClientSocVersion" : "V1",
-		"sciClientPrefixReplacement" : "TISCI_",
-		"wildCardPrivId" : 195,
-		"sRAMSize" : 8,
-		"sRamGranularity" : 1
+		"sRAMSize": 8,
+		"sRamGranularity": 1,
+		"sciClientPrefixReplacement": "TISCI_",
+		"sciClientSocVersion": "V3",
+		"shortName": "am64x",
+		"soc": "AM437x",
+		"wildCardPrivId": 195
 	},
 	{
-		"soc" : "VF211x",
-		"shortName" : "j7200",
-		"sciClientSocVersion" : "V1",
-		"sciClientPrefixReplacement" : "TISCI_",
-		"wildCardPrivId" : 195,
-		"sRAMSize" : 8,
-		"sRamGranularity" : 1
+		"sRAMSize": 8,
+		"sRamGranularity": 1,
+		"sciClientPrefixReplacement": "TISCI_",
+		"sciClientSocVersion": "V0",
+		"shortName": "am65x",
+		"soc": "AM65xx_SR1.0",
+		"wildCardPrivId": 195
 	},
 	{
-		"soc" : "AM65xx_SR1.0",
-		"shortName" : "am65x",
-		"sciClientSocVersion" : "V0",
-		"sciClientPrefixReplacement" : "TISCI_",
-		"wildCardPrivId" : 195,
-		"sRAMSize" : 8,
-		"sRamGranularity" : 1
+		"sRAMSize": 8,
+		"sRamGranularity": 1,
+		"sciClientPrefixReplacement": "TISCI_",
+		"sciClientSocVersion": "V0",
+		"shortName": "am65x",
+		"soc": "AM65xx_SR2.0_beta",
+		"wildCardPrivId": 195
 	},
 	{
-		"soc" : "AM65xx_SR2.0_beta",
-		"shortName" : "am65x",
-		"sciClientSocVersion" : "V0",
-		"sciClientPrefixReplacement" : "TISCI_",
-		"wildCardPrivId" : 195,
-		"sRAMSize" : 8,
-		"sRamGranularity" : 1
+		"sRAMSize": 8,
+		"sRamGranularity": 1,
+		"sciClientPrefixReplacement": "TISCI_",
+		"sciClientSocVersion": "V1",
+		"shortName": "j721e",
+		"soc": "J721E_DRA829_TDA4VM_AM752x",
+		"wildCardPrivId": 195
 	},
 	{
-		"soc" : "AM437x",
-		"shortName" : "am64x",
-		"sciClientSocVersion" : "V3",
-		"sciClientPrefixReplacement" : "TISCI_",
-		"wildCardPrivId" : 195,
-		"sRAMSize" : 8,
-		"sRamGranularity" : 1
+		"sRAMSize": 8,
+		"sRamGranularity": 1,
+		"sciClientPrefixReplacement": "TISCI_",
+		"sciClientSocVersion": "V1",
+		"shortName": "j7200",
+		"soc": "VF211x",
+		"wildCardPrivId": 195
 	}
 ]
