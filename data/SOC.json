@@ -10,7 +10,6 @@
 	},
 	{
 		"soc" : "VF211x",
-		"comment": "^^^ This is HACK to add the presil device",
 		"shortName" : "j7200",
 		"sciClientSocVersion" : "V1",
 		"sciClientPrefixReplacement" : "TISCI_",
@@ -38,7 +37,6 @@
 	},
 	{
 		"soc" : "AM437x",
-		"comment": "^^^ This is HACK to add the presil device",
 		"shortName" : "am64x",
 		"sciClientSocVersion" : "V3",
 		"sciClientPrefixReplacement" : "TISCI_",

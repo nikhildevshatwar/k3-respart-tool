@@ -1,16 +1,14 @@
 {
 	"name": "K3-Respart-Tool",
 	"displayName": "Keystone3 Resource Partitioning Tool",
-	"version": "version_1",
+	"version": "0.5",
 	"includePaths": [
 		".."
 	],
 	"devices": [
 		".*J721E.*",
-		".*J7200.*",
 		"VF211x",
 		"AM65xx.*",
-		"AM64x.*",
 		"AM437x"
 	],
 	"components": [
