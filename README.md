@@ -10,6 +10,7 @@ To start using this tool, follow these instructions:
 * Download SysConfig tool from [TI Internal jenkins build](http://tgddsbuild2.toro.design.ti.com:8080/view/SysConfig/job/sysconfig.build.installers/) or from [Public download links](https://www.ti.com/tool/download/SYSCONFIG)
 * Download the file setup.exe or setup.run for Windows or Linux machine respectively.
 * If you have the k3-resource-partitioning packaged in the SDK, use this or clone from TI internal [bitbucket project](https://bitbucket.itg.ti.com/projects/PSDKLA/repos/k3-resource-partitioning/browse)
+* Run the setup script `./scripts/setup.py -s /path/to/sysconfig/installation` to patch the tool to enable HTML tables.
 * Open the SysConfig tool GUI from the desktop shortcut and select the software product by navigating to the path where the k3-resource-partitioning is available.
 
 
