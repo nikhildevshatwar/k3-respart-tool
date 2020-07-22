@@ -1,7 +1,7 @@
 /**
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
- * @cliArgs --device "VF211x" --package "ZDN" --part "Default" --product "K3-Respart-Tool@version_1"
+ * @cliArgs --device "VF211x" --package "ZDN" --part "Default" --product "K3-Respart-Tool@0.5"
  * @versions {"data":"2020052503","timestamp":"2020052503","tool":"1.6.0+1393","templates":"2020052503"}
  */
 

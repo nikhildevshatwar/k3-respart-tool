@@ -1,7 +1,7 @@
 /**
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
- * @cliArgs --device "J721E_DRA829_TDA4VM_AM752x" --package "ALF" --part "Default" --product "K3-Respart-Tool@version_1"
+ * @cliArgs --device "J721E_DRA829_TDA4VM_AM752x" --package "ALF" --part "Default" --product "K3-Respart-Tool@0.5"
  * @versions {"data":"20181113","timestamp":"2020052503","tool":"1.6.0+1393","templates":"20190604"}
  */
 
