@@ -23,8 +23,6 @@ const MCU_0_R5_2  = scripting.addModule("/modules/j721e/MCU_0_R5_2");
 /**
  * Write custom configuration values to the imported modules.
  */
-A72_2.Main_GPIO_Interrupt_router_count                              = 16;
-A72_2.Wakeup_GPIO_Interrupt_router_count                            = 4;
 A72_2.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 86;
 A72_2.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 1024;
 A72_2.Main_NAVSS_Non_secure_proxies_count                           = 4;
@@ -49,9 +47,9 @@ A72_2.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 12;
 A72_2.Main_NAVSS_Ringacc_virt_id_range_start                        = 2;
 A72_2.Main_NAVSS_Ringacc_virt_id_range_count                        = 1;
 A72_2.allocOrder                                                    = 1;
+A72_2.Main_GPIO_Interrupt_router_count                              = 12;
+A72_2.Wakeup_GPIO_Interrupt_router_count                            = 6;
 
-A72_3.Main_GPIO_Interrupt_router_count                              = 4;
-A72_3.Wakeup_GPIO_Interrupt_router_count                            = 2;
 A72_3.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 32;
 A72_3.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 512;
 A72_3.Main_NAVSS_Non_secure_proxies_count                           = 4;
@@ -72,6 +70,8 @@ A72_3.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 6;
 A72_3.Main_NAVSS_Ringacc_virt_id_range_start                        = 3;
 A72_3.Main_NAVSS_Ringacc_virt_id_range_count                        = 1;
 A72_3.allocOrder                                                    = 2;
+A72_3.Main_GPIO_Interrupt_router_count                              = 12;
+A72_3.Wakeup_GPIO_Interrupt_router_count                            = 6;
 
 C6X_0_1.Interrupt_router_for_C6X_subsystem0_count                     = 93;
 C6X_0_1.Main_GPIO_Interrupt_router_count                              = 4;
@@ -113,8 +113,6 @@ C6X_1_1.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count              = 2;
 C6X_1_1.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count              = 2;
 C6X_1_1.allocOrder                                                    = 9;
 
-C7X_1.Main_GPIO_Interrupt_router_count                              = 4;
-C7X_1.Wakeup_GPIO_Interrupt_router_count                            = 2;
 C7X_1.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 12;
 C7X_1.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 256;
 C7X_1.Main_NAVSS_Non_secure_proxies_count                           = 4;
@@ -183,7 +181,6 @@ MAIN_0_R5_2.allocOrder                                                    = 11;
 
 MAIN_1_R5_0.Main_GPIO_Interrupt_router_count                              = 4;
 MAIN_1_R5_0.Interrupt_router_for_Main_R5F_Subsystem1_count                = 128;
-MAIN_1_R5_0.Wakeup_GPIO_Interrupt_router_count                            = 2;
 MAIN_1_R5_0.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 12;
 MAIN_1_R5_0.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 256;
 MAIN_1_R5_0.Main_NAVSS_Non_secure_proxies_count                           = 4;
@@ -204,7 +201,6 @@ MAIN_1_R5_0.allocOrder                                                    = 5;
 
 MAIN_1_R5_2.Main_GPIO_Interrupt_router_count                              = 4;
 MAIN_1_R5_2.Interrupt_router_for_Main_R5F_Subsystem1_count                = 128;
-MAIN_1_R5_2.Wakeup_GPIO_Interrupt_router_count                            = 2;
 MAIN_1_R5_2.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 12;
 MAIN_1_R5_2.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 256;
 MAIN_1_R5_2.Main_NAVSS_Non_secure_proxies_count                           = 4;
