@@ -31,6 +31,8 @@ function populate_cell(entries, hostName) {
 		if (tooltip != "")
 			tooltip += "<br>";
 
+		if (tooltip == "")
+			tooltip += hostName + "<br>";
 		tooltip += "Start = " + entry.start + ", Count = " + entry.count;
 		count += 1;
 	})
