@@ -9,7 +9,24 @@ var hosts = utils.hosts;
 var resGroup = utils.resourcesByGroup;
 var groupNames = utils.groupNames;
 
-var resourcesErrorInfo = [];
+var hostNames = [];
+_.each(hosts, (h) => {
+	hostNames.push({
+		name: h.hostName,
+		displayName: h.hostName,
+	});
+});
+
+var moduleInstances = [];
+function updateModuleInstances() {
+	moduleInstances = [];
+	_.each(hosts, (host) => {
+		var moduleName = "/modules/" + socName + "/" + host.hostName;
+		if (system.modules[moduleName]) {
+			moduleInstances.push(system.modules[moduleName].$static);
+		}
+	});
+}
 
 _.each(resources, (resource) => {
 	if (resource.copyFromUtype) {
@@ -18,23 +35,17 @@ _.each(resources, (resource) => {
 	if (resource.blockCopyFrom) {
 		resources[resource.blockCopyFrom].blockCopyTo = resource.utype;
 	}
-
-	resourcesErrorInfo.push({
-		res: resource.utype,
-		changed: false,
-	});
 });
-
-resourcesErrorInfo = _.keyBy(resourcesErrorInfo, (r) => r.res);
 
 var documentation = `
 **SYSFW Resource Partitioning**
 
 ---
 
-This module allows to partition resources managed by System firmware
-across different software entities. Typically, resources related to
-DMA channels, rings, proxies, and interrupts are managed by SYSFW.
+This module allows to assign resources managed by System firmware
+for the selected host. Each host is a dedicated context for SYSFW.
+Typically, resources related to DMA channels, rings, proxies, and
+interrupts are managed by SYSFW.
 
 Following steps allow you to achieve this:
 
@@ -91,7 +102,7 @@ Boot Loader (SBL) RM board config files.
 ---
 
 The tool shows the current allocation of each resource for each host in a table.
-Click on the three dots in the top right corner to open the *Resource Allocation*
+Click on the three dots in the top right corner to open the *Resource Allocation Table*
 pane to view this table. This table gets updated automatically whenever some
 allocation is changed. This is especially useful when trying to solve errors
 due to overflow in allocation.
@@ -145,8 +156,6 @@ function getHostConfigurables(hostName) {
 						var src = _.join(_.split(r.utype, " "), "_");
 						inst[dest + "_count"] = inst[src + "_count"];
 					}
-					resourcesErrorInfo[r.utype].changed = true;
-					resourcesErrorInfo[r.utype].inst = inst;
 				},
 			});
 
@@ -180,9 +189,6 @@ function getHostConfigurables(hostName) {
 								inst[to + "_blockCount"] = inst[from + "_blockCount"];
 							}
 						}
-
-						resourcesErrorInfo[r.utype].changed = true;
-						resourcesErrorInfo[r.utype].inst = inst;
 					},
 				});
 			}
@@ -193,17 +199,6 @@ function getHostConfigurables(hostName) {
 
 	return configurables;
 }
-
-// Extract hostname of all hosts
-
-var hostName = [];
-
-_.each(hosts, (h) => {
-	hostName.push({
-		name: h.hostName,
-		displayName: h.hostName,
-	});
-});
 
 function optionValues(val) {
 	var option = [];
@@ -323,7 +318,7 @@ function createHostModule(hostInfo) {
 									name: "none",
 									displayName: "None",
 								},
-								...hostName,
+								...hostNames,
 							],
 							default: "none",
 						},
@@ -336,7 +331,7 @@ function createHostModule(hostInfo) {
 									name: "none",
 									displayName: "None",
 								},
-								...hostName,
+								...hostNames,
 							],
 							default: "none",
 						},
@@ -351,18 +346,12 @@ function createHostModule(hostInfo) {
 				...configurables,
 			],
 			validate: (instance, report) => {
-				validateDmsc(instance, report);
 
-				duplicateHost(instance, report);
-
-				duplicateShareResourceWithHost(instance, report);
-
-				duplicateHostAndShareHost(instance, report);
-
+				updateModuleInstances();
 				overlapAndOverflow(instance, report);
-
-				checkCyclicDependencyForSupervisor(instance, report);
-
+				duplicateShareResourceWithHost(instance, report);
+				duplicateHostAndShareHost(instance, report);
+				checkSupervisorTreeCyclic(instance, report);
 				checkValidOrder(instance, report);
 			},
 		},
@@ -373,29 +362,8 @@ function createHostModule(hostInfo) {
 
 // Functions for validation
 
-// Show error if host is dmsc
-
-function validateDmsc(instance, report) {
-	if (instance.hostName === "DMSC") {
-		report.logError("Cannot select DMSC as Host", instance);
-	}
-	if (instance.supervisorhost === "DMSC") {
-		report.logError("Cannot select DMSC as Supervisor Host", instance, "supervisorhost");
-	}
-}
-
 // Check if same host is selected to share resource with different hosts
-
 function duplicateShareResourceWithHost(instance, report) {
-	var moduleInstances = [];
-
-	_.each(hosts, (host) => {
-		var moduleName = "/modules/" + socName + "/" + host.hostName;
-		if (system.modules[moduleName]) {
-			moduleInstances.push(system.modules[moduleName].$static);
-		}
-	});
-
 	for (var idx = 0; idx < moduleInstances.length; idx++) {
 		if (
 			instance.shareResource !== "none" &&
@@ -407,36 +375,8 @@ function duplicateShareResourceWithHost(instance, report) {
 	}
 }
 
-// Check for duplicate hosts
-
-function duplicateHost(instance, report) {
-	var moduleInstances = [];
-
-	_.each(hosts, (host) => {
-		var moduleName = "/modules/" + socName + "/" + host.hostName;
-		if (system.modules[moduleName]) {
-			moduleInstances.push(system.modules[moduleName].$static);
-		}
-	});
-	for (var idx = 0; idx < moduleInstances.length; idx++) {
-		if (instance.hostName === moduleInstances[idx].hostName && instance != moduleInstances[idx]) {
-			report.logError("Cannot select same host twice", instance, "hostName");
-		}
-	}
-}
-
 // Check if same host is selected as Host as well as Share resource with
-
 function duplicateHostAndShareHost(instance, report) {
-	var moduleInstances = [];
-
-	_.each(hosts, (host) => {
-		var moduleName = "/modules/" + socName + "/" + host.hostName;
-		if (system.modules[moduleName]) {
-			moduleInstances.push(system.modules[moduleName].$static);
-		}
-	});
-
 	for (var idx = 0; idx < moduleInstances.length; idx++) {
 		if (instance.shareResource === moduleInstances[idx].hostName) {
 			report.logError("Resources are already assigned to host", instance, "shareResource");
@@ -445,123 +385,78 @@ function duplicateHostAndShareHost(instance, report) {
 }
 
 // Check if the Supervisor tree is cyclic or not
+function checkSupervisorTreeCyclic(instance, report) {
+	var node = instance;
+	var count = hostNames.length + 2;
 
-function checkCyclicDependencyForSupervisor(instance, report) {
-	if (instance.supervisorhost === "none") return;
-
-	var moduleInstances = [];
-
-	_.each(hosts, (host) => {
-		var moduleName = "/modules/" + socName + "/" + host.hostName;
-		if (system.modules[moduleName]) {
-			moduleInstances.push(system.modules[moduleName].$static);
-		}
-	});
-	var supervisor = [];
-
-	_.each(moduleInstances, (i) => {
-		if (i.supervisorhost !== "none") {
-			supervisor.push({
-				node: i.hostName,
-				parent: i.supervisorhost,
-			});
-		}
-	});
-
-	var supervisorOf = _.keyBy(supervisor, (s) => s.node);
-
-	var visited = new Map();
-
-	visited[instance.hostName] = true;
-
-	var curr = instance.hostName;
-
-	var cycleDetected = false;
-
-	while (supervisorOf[curr]) {
-		var par = supervisorOf[curr].parent;
-
-		if (visited[par]) {
-			cycleDetected = true;
+	while(node.supervisorhost != "none" && count > 0) {
+		var moduleName = "/modules/" + socName + "/" + node.supervisorhost
+		if (!system.modules[moduleName])
+			break;
+		node = system.modules[moduleName].$static;
+		if (node == instance) {
+			report.logError("Supervisor tree is Tree is cyclic", instance, "supervisorhost");
 			break;
 		}
-
-		visited[par] = true;
-		curr = par;
-	}
-
-	if (cycleDetected) {
-		report.logError("Cycle Detected in Supervisor Tree", instance, "supervisorhost");
+		count--;
 	}
 }
 
 // Check for overlap and overflow
-
 function overlapAndOverflow(instance, report) {
 	_.each(resources, (resource) => {
 		var name = _.join(_.split(resource.utype, " "), "_");
 
-		if (instance[name + "_count"] > 0 || instance[name + "_blockCount"] > 0) {
-			if (resource.autoAlloc === false) {
-				var overlapInstance = checkOverlap(resource.utype, instance);
-				if (overlapInstance.length) {
-					const conflicting = _.join(
-						_.map(overlapInstance, (inst) => system.getReference(inst)),
-						", "
-					);
+		if (instance[name + "_count"] == 0 && instance[name + "_blockCount"] == 0) {
+			return;
+		}
+		if (resource.autoAlloc === false) {
+			var overlapInstance = checkOverlap(resource.utype, instance);
+			if (overlapInstance.length) {
+				const conflicting = _.join(
+					_.map(overlapInstance, (inst) => system.getReference(inst)),
+					", "
+				);
 
-					report.logWarning(`WARNING : Overlap with ${conflicting}`, instance, name + "_count");
-				}
+				report.logWarning(`WARNING : Overlap with ${conflicting}`, instance, name + "_count");
 			}
-			if (resourcesErrorInfo[resource.utype].changed) {
-				if (resourcesErrorInfo[resource.utype].inst === instance) {
-					var over = resourceAllocate(resource.utype).overflowCount;
+			return;
+		}
 
-					var index = -1,
-						id = 0;
-					_.each(resource.resRange, (range) => {
-						if (range.restrictHosts) {
-							_.each(range.restrictHosts, (res) => {
-								if (res === instance.hostName) {
-									index = id;
-								}
-							});
-						} else {
-							index = id;
-						}
-						id++;
-					});
+		var over = resourceAllocate(resource.utype).overflowCount;
 
-					if (index !== -1 && over[index] > 0) {
-						report.logError(
-							"ERROR : Assigned resource count exceeds by " + over[index],
-							instance,
-							name + "_count"
-						);
-					} else {
-						resourcesErrorInfo[resource.utype].changed = false;
+		var index = -1, id = 0;
+		_.each(resource.resRange, (range) => {
+			if (range.restrictHosts) {
+				_.each(range.restrictHosts, (res) => {
+					if (res === instance.hostName) {
+						index = id;
 					}
-				}
+				});
+			} else {
+				index = id;
 			}
+			id++;
+		});
+
+		if (index !== -1 && over[index] > 0) {
+			report.logError(
+				"ERROR : Assigned resource count exceeds by " + over[index],
+				instance,
+				name + "_count"
+			);
 		}
 	});
 }
 
 function checkValidOrder(inst, report) {
-	var valid = true;
-	_.each(hosts, (host) => {
-		var moduleName = "/modules/" + socName + "/" + host.hostName;
-		if (system.modules[moduleName]) {
-			var inst2 = system.modules[moduleName].$static;
-			if (inst2 == inst)
-				return;
-			if (inst2.allocOrder == inst.allocOrder) {
-				valid = false;
-			}
+	for (var idx = 0; idx < moduleInstances.length; idx++) {
+		var other = moduleInstances[idx];
+		if (other == inst)
+			continue;
+		if (other.allocOrder == inst.allocOrder) {
+			report.logError("Invalid Allocation order", inst, "allocOrder");
 		}
-	});
-	if (!valid) {
-		report.logError("Invalid Allocation order", inst, "allocOrder");
 	}
 }
 
