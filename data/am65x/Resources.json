@@ -143,7 +143,7 @@
 	{
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 464,
@@ -153,12 +153,12 @@
 		"subtypeId": 1,
 		"subtypeName": "RESASG_SUBTYPE_RA_GP",
 		"uniqueId": 11969,
-		"utype": "Main NAVSS Ringacc free rings"
+		"utype": "Main NAVSS Ring accelerator Free rings"
 	},
 	{
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 32,
@@ -173,7 +173,7 @@
 	{
 		"deviceId": 185,
 		"deviceName": "AM6_DEV_NAVSS0_PROXY0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 63,
@@ -189,7 +189,7 @@
 		"autoAlloc": false,
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 4096,
@@ -199,12 +199,12 @@
 		"subtypeId": 10,
 		"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
 		"uniqueId": 11978,
-		"utype": "Main NAVSS Ringacc virt_id range"
+		"utype": "Main NAVSS Ring accelerator virt_id range"
 	},
 	{
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 1,
@@ -214,14 +214,14 @@
 		"subtypeId": 0,
 		"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
 		"uniqueId": 11968,
-		"utype": "Main NAVSS Ringacc Error event config"
+		"utype": "Main NAVSS Ring accelerator Error event config"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "Main NAVSS UDMA High capacity Rx channels",
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 7,
@@ -231,14 +231,14 @@
 		"subtypeId": 5,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
 		"uniqueId": 11973,
-		"utype": "Main NAVSS Ringacc rings for High capacity Rx channels"
+		"utype": "Main NAVSS Rings for High capacity Rx channels"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "Main NAVSS UDMA Normal capacity Rx channels",
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 142,
@@ -248,14 +248,14 @@
 		"subtypeId": 2,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
 		"uniqueId": 11970,
-		"utype": "Main NAVSS Ringacc rings for Normal capacity Rx channels"
+		"utype": "Main NAVSS Rings for Normal capacity Rx channels"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "Main NAVSS UDMA High capacity Tx channels",
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 7,
@@ -265,14 +265,14 @@
 		"subtypeId": 7,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
 		"uniqueId": 11975,
-		"utype": "Main NAVSS Ringacc rings for High capacity Tx channels"
+		"utype": "Main NAVSS Rings for High capacity Tx channels"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "Main NAVSS UDMA Normal capacity Tx channels",
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 112,
@@ -282,13 +282,13 @@
 		"subtypeId": 3,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
 		"uniqueId": 11971,
-		"utype": "Main NAVSS Ringacc rings for Normal capacity Tx channels"
+		"utype": "Main NAVSS Rings for Normal capacity Tx channels"
 	},
 	{
 		"copyFromUtype": "Main NAVSS UDMA extended Tx channels",
 		"deviceId": 187,
 		"deviceName": "AM6_DEV_NAVSS0_RINGACC0",
-		"groupName": "Main NAVSS Ring accelerator",
+		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 32,
@@ -298,7 +298,7 @@
 		"subtypeId": 4,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_EXT",
 		"uniqueId": 11972,
-		"utype": "Main NAVSS Ringacc rings for extended Tx channels"
+		"utype": "Main NAVSS Rings for extended Tx channels"
 	},
 	{
 		"blockCopy": true,
@@ -429,7 +429,7 @@
 	{
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 160,
@@ -439,12 +439,12 @@
 		"subtypeId": 1,
 		"subtypeName": "RESASG_SUBTYPE_RA_GP",
 		"uniqueId": 12481,
-		"utype": "MCU NAVSS Ringacc free rings"
+		"utype": "MCU NAVSS Ring accelerator Free rings"
 	},
 	{
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 32,
@@ -459,7 +459,7 @@
 	{
 		"deviceId": 191,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_PROXY0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 64,
@@ -473,10 +473,10 @@
 	},
 	{
 		"autoAlloc": false,
-		"copyFromUtype": "Main NAVSS Ringacc virt_id range",
+		"copyFromUtype": "Main NAVSS Ring accelerator virt_id range",
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 4096,
@@ -486,12 +486,12 @@
 		"subtypeId": 10,
 		"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
 		"uniqueId": 12490,
-		"utype": "MCU NAVSS Ringacc virt_id range"
+		"utype": "MCU NAVSS Ring accelerator virt_id range"
 	},
 	{
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 1,
@@ -501,14 +501,14 @@
 		"subtypeId": 0,
 		"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
 		"uniqueId": 12480,
-		"utype": "MCU NAVSS Ringacc error event config"
+		"utype": "MCU NAVSS Ring accelerator error event config"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA Normal capacity Rx channels",
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 46,
@@ -518,14 +518,14 @@
 		"subtypeId": 2,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
 		"uniqueId": 12482,
-		"utype": "MCU NAVSS Ringacc rings for Normal capacity Rx channels"
+		"utype": "MCU NAVSS Rings for Normal capacity Rx channels"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA Normal capacity Tx channels",
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 46,
@@ -535,14 +535,14 @@
 		"subtypeId": 3,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
 		"uniqueId": 12483,
-		"utype": "MCU NAVSS Ringacc rings for Normal capacity Tx channels"
+		"utype": "MCU NAVSS Rings for Normal capacity Tx channels"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA High capacity Rx channels",
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 2,
@@ -552,14 +552,14 @@
 		"subtypeId": 5,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
 		"uniqueId": 12485,
-		"utype": "MCU NAVSS Ringacc rings for High capacity Rx channels"
+		"utype": "MCU NAVSS Rings for High capacity Rx channels"
 	},
 	{
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA High capacity Tx channels",
 		"deviceId": 195,
 		"deviceName": "AM6_DEV_MCU_NAVSS0_RINGACC0",
-		"groupName": "MCU NAVSS Ring accelerator",
+		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
 				"resCount": 2,
@@ -569,7 +569,7 @@
 		"subtypeId": 7,
 		"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
 		"uniqueId": 12487,
-		"utype": "MCU NAVSS Ringacc rings for High capacity Tx channels"
+		"utype": "MCU NAVSS Rings for High capacity Tx channels"
 	},
 	{
 		"deviceId": 182,
@@ -738,7 +738,7 @@
 		"subtypeId": 10,
 		"subtypeName": "RESASG_SUBTYPE_IA_VINT",
 		"uniqueId": 11530,
-		"utype": "MODSS Interrupt aggregator0 Virtual intettupts"
+		"utype": "MODSS Interrupt aggregator0 Virtual interrupts"
 	},
 	{
 		"deviceId": 180,
@@ -768,7 +768,7 @@
 		"subtypeId": 10,
 		"subtypeName": "RESASG_SUBTYPE_IA_VINT",
 		"uniqueId": 11594,
-		"utype": "MODSS Interrupt aggregator1 Virtual intettupts"
+		"utype": "MODSS Interrupt aggregator1 Virtual interrupts"
 	},
 	{
 		"deviceId": 181,
