@@ -64,17 +64,17 @@
 		]
 	},
 	{
-		"groupName" : "Main NAVSS Ring accelerator",
+		"groupName" : "Main NAVSS ring accelerator",
 		"resources" : [
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_GP",
-				"utype": "Main NAVSS Ringacc Free rings"
+				"utype": "Main NAVSS Ring accelerator Free rings"
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
-				"utype": "Main NAVSS Ringacc ring monitors"
+				"utype": "Main NAVSS Ring accelerator ring monitors"
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_PROXY_0",
@@ -84,53 +84,53 @@
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
-				"utype": "Main NAVSS Ringacc virt_id range",
+				"utype": "Main NAVSS Ring accelerator virt_id range",
 				"autoAlloc": false
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
-				"utype": "Main NAVSS Ringacc error event config"
+				"utype": "Main NAVSS Ring accelerator error event config"
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_UH",
-				"utype": "Main NAVSS Ringacc rings for Ultra high capacity Rx channels",
+				"utype": "Main NAVSS Rings for Ultra high capacity Rx channels",
 				"copyFromUtype": "Main NAVSS UDMA Ultra high capacity Rx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_UH",
-				"utype": "Main NAVSS Ringacc rings for Ultra high capacity Tx channels",
+				"utype": "Main NAVSS Rings for Ultra high capacity Tx channels",
 				"copyFromUtype": "Main NAVSS UDMA Ultra high capacity Tx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
-				"utype": "Main NAVSS Ringacc rings for High capacity Rx channels",
+				"utype": "Main NAVSS Rings for High capacity Rx channels",
 				"copyFromUtype": "Main NAVSS UDMA High capacity Rx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
-				"utype": "Main NAVSS Ringacc rings for High capacity Tx channels",
+				"utype": "Main NAVSS Rings for High capacity Tx channels",
 				"copyFromUtype": "Main NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
-				"utype": "Main NAVSS Ringacc rings for Normal capacity Rx channels",
+				"utype": "Main NAVSS Rings for Normal capacity Rx channels",
 				"copyFromUtype": "Main NAVSS UDMA Normal capacity Rx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
-				"utype": "Main NAVSS Ringacc rings for Normal capacity Tx channels",
+				"utype": "Main NAVSS Rings for Normal capacity Tx channels",
 				"copyFromUtype": "Main NAVSS UDMA Normal capacity Tx channels",
 				"blockCopy": true
 			}
@@ -188,17 +188,17 @@
 		]
 	},
 	{
-		"groupName" : "MCU NAVSS Ring accelerator",
+		"groupName" : "MCU NAVSS ring accelerator",
 		"resources" : [
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_GP",
-				"utype": "MCU NAVSS Ringacc free rings"
+				"utype": "MCU NAVSS Ring accelerator Free rings"
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
-				"utype": "MCU NAVSS Ringacc ring monitors"
+				"utype": "MCU NAVSS Ring accelerator ring monitors"
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_PROXY0",
@@ -208,40 +208,40 @@
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
-				"utype": "MCU NAVSS Ringacc virt_id range",
-				"copyFromUtype": "Main NAVSS Ringacc virt_id range",
+				"utype": "MCU NAVSS Ring accelerator virt_id range",
+				"copyFromUtype": "Main NAVSS Ring accelerator virt_id range",
 				"autoAlloc": false
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
-				"utype": "MCU NAVSS Ringacc error event config"
+				"utype": "MCU NAVSS Ring accelerator error event config"
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
-				"utype": "MCU NAVSS Ringacc rings for High capacity Rx channels",
+				"utype": "MCU NAVSS Rings for High capacity Rx channels",
 				"copyFromUtype": "MCU NAVSS UDMA High capacity Rx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
-				"utype": "MCU NAVSS Ringacc rings for High capacity Tx channels",
+				"utype": "MCU NAVSS Rings for High capacity Tx channels",
 				"copyFromUtype": "MCU NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
-				"utype": "MCU NAVSS Ringacc rings for Normal capacity Rx channels",
+				"utype": "MCU NAVSS Rings for Normal capacity Rx channels",
 				"copyFromUtype": "MCU NAVSS UDMA Normal capacity Rx channels",
 				"blockCopy": true
 			},
 			{
 				"deviceName": "J7200_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
-				"utype": "MCU NAVSS Ringacc rings for Normal capacity Tx channels",
+				"utype": "MCU NAVSS Rings for Normal capacity Tx channels",
 				"copyFromUtype": "MCU NAVSS UDMA Normal capacity Tx channels",
 				"blockCopy": true
 			}
@@ -480,7 +480,7 @@
 			{
 				"deviceName": "J7200_DEV_NAVSS0_MODSS_INTA_0",
 				"subtypeName": "RESASG_SUBTYPE_IA_VINT",
-				"utype": "MODSS Interrupt aggregator0 Virtual intettupts"
+				"utype": "MODSS Interrupt aggregator0 Virtual interrupts"
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_MODSS_INTA_0",
@@ -490,7 +490,7 @@
 			{
 				"deviceName": "J7200_DEV_NAVSS0_MODSS_INTA_1",
 				"subtypeName": "RESASG_SUBTYPE_IA_VINT",
-				"utype": "MODSS Interrupt aggregator1 Virtual intettupts"
+				"utype": "MODSS Interrupt aggregator1 Virtual interrupts"
 			},
 			{
 				"deviceName": "J7200_DEV_NAVSS0_MODSS_INTA_1",

@@ -108,7 +108,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_CPSW_TX_CHAN",
-				"utype": "Packet DMA rings for CPSW Tx channel"
+				"utype": "Packet DMA Rings for CPSW Tx channel"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
@@ -123,7 +123,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_CPSW_RX_CHAN",
-				"utype": "Packet DMA rings for CPSW Rx channel",
+				"utype": "Packet DMA Rings for CPSW Rx channel",
 				"copyFromUtype": "Packet DMA CPSW Rx flows"
 			},
 			{
@@ -134,7 +134,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_TX_0_CHAN",
-				"utype": "Packet DMA rings for SA2UL Tx channel 0"
+				"utype": "Packet DMA Rings for SA2UL Tx channel 0"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
@@ -149,7 +149,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_0_CHAN",
-				"utype": "Packet DMA rings for SA2UL Rx channel0",
+				"utype": "Packet DMA Rings for SA2UL Rx channel0",
 				"copyFromUtype": "Packet DMA SA2UL Rx channel0 flows"
 			},
 			{
@@ -160,7 +160,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_TX_1_CHAN",
-				"utype": "Packet DMA rings for SA2UL Tx channel 1"
+				"utype": "Packet DMA Rings for SA2UL Tx channel 1"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
@@ -175,7 +175,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_1_CHAN",
-				"utype": "Packet DMA rings for SA2UL Rx channel1",
+				"utype": "Packet DMA Rings for SA2UL Rx channel1",
 				"copyFromUtype": "Packet DMA SA2UL Rx channel1 flows"
 			},
 			{
@@ -191,7 +191,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_2_CHAN",
-				"utype": "Packet DMA rings for SA2UL Rx channel2",
+				"utype": "Packet DMA Rings for SA2UL Rx channel2",
 				"copyFromUtype": "Packet DMA SA2UL Rx channel2 flows"
 			},
 			{
@@ -207,7 +207,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_3_CHAN",
-				"utype": "Packet DMA rings for SA2UL Rx channel3",
+				"utype": "Packet DMA Rings for SA2UL Rx channel3",
 				"copyFromUtype": "Packet DMA SA2UL Rx channel3 flows"
 			},
 			{
@@ -218,7 +218,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_0_TX_CHAN",
-				"utype": "Packet DMA rings for ICSSG0 Tx channel"
+				"utype": "Packet DMA Rings for ICSSG0 Tx channel"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
@@ -233,7 +233,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_0_RX_CHAN",
-				"utype": "Packet DMA rings for ICSSG0 Rx channel",
+				"utype": "Packet DMA Rings for ICSSG0 Rx channel",
 				"copyFromUtype": "Packet DMA ICSSG0 Rx flows"
 			},
 			{
@@ -244,7 +244,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_1_TX_CHAN",
-				"utype": "Packet DMA rings for ICSSG1 Tx channel"
+				"utype": "Packet DMA Rings for ICSSG1 Tx channel"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
@@ -259,7 +259,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_1_RX_CHAN",
-				"utype": "Packet DMA rings for ICSSG1 Rx channel",
+				"utype": "Packet DMA Rings for ICSSG1 Rx channel",
 				"copyFromUtype": "Packet DMA ICSSG1 Rx flows"
 			},
 			{
@@ -280,12 +280,12 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_UNMAPPED_TX_CHAN",
-				"utype": "Packet DMA free rings for Tx channel"
+				"utype": "Packet DMA Free rings for Tx channel"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
 				"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_UNMAPPED_RX_CHAN",
-				"utype": "Packet DMA free rings for Rx channel"
+				"utype": "Packet DMA Free rings for Rx channel"
 			},
 			{
 				"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
@@ -306,7 +306,7 @@
 			{
 				"deviceName": "AM64X_DEV_DMASS0_RINGACC_0",
 				"subtypeName": "RESASG_SUBTYPE_RA_GENERIC_IPC",
-				"utype": "Packet DMA rings for MSI"
+				"utype": "Packet DMA Rings for MSI"
 			}
 		]
 	},
