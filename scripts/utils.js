@@ -134,7 +134,7 @@ function getQosValue(inst) {
 
 	if (value == "")
 		return "0;"
-	value = value.replace(" | ", "") + ";";
+	value = value.replace(" | ", "");
 	return value;
 }
 

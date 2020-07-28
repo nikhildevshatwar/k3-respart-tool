@@ -17,8 +17,8 @@ exports = {
 			alwaysRun: true,
 		},
 		{
-			name: "/templates/qos-config.syscfg.xdt",
-			outputPath: socName + "-qos-config.c",
+			name: "/templates/qos_config.syscfg.xdt",
+			outputPath: socName + "_qos_config.c",
 			alwaysRun: true,
 		},
 		{
