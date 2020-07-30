@@ -65,14 +65,17 @@ function to32Bit(str) {
 	return "0x" + t;
 }
 
-function getAddress(base, offset) {
+function grp_count_add(qosArray, base, offset) {
+
 	base = parseInt(base);
+	var ep_base = (base + offset) & ~0xff;
 
-	var val = (base + offset) & ~0xff;
-
-	val += 256;
-
-	return "0x" + val.toString(16).toUpperCase();
+	qosArray.forEach((qos) => {
+		var qos_base = parseInt(qos.baseAddress);
+		if (ep_base == qos_base || ep_base == (qos_base - 0x100)) {
+			qos.groupCount++;
+		}
+	});
 }
 
 function createQosArray(path) {
@@ -110,7 +113,8 @@ function createQosArray(path) {
 	allData.ip_instances.forEach((i) => {
 		if (i.regions) {
 			i.regions.forEach((r) => {
-				if (r.design_name === "qos_regs") qosRegs.push(r);
+				if (r.design_name.match(/qos_regs/g))
+					qosRegs.push(r);
 			});
 		}
 	});
@@ -121,12 +125,7 @@ function createQosArray(path) {
 			var name = r.name.split("_");
 			if (name.length >= 2) {
 				if (name[name.length - 1] === "map1" && name[name.length - 2] === "grp") {
-					var address = getAddress(base, r.offset);
-					finalData.forEach((f) => {
-						if (address === f.baseAddress) {
-							f.groupCount++;
-						}
-					});
+					grp_count_add(finalData, base, r.offset);
 				}
 			}
 		});
