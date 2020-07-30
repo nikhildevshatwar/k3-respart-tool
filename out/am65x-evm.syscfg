@@ -8,10 +8,13 @@
 /**
  * Import the modules used in this configuration.
  */
-const A53_2 = scripting.addModule("/modules/am65x/A53_2");
-const A53_3 = scripting.addModule("/modules/am65x/A53_3");
-const R5_0  = scripting.addModule("/modules/am65x/R5_0");
-const R5_2  = scripting.addModule("/modules/am65x/R5_2");
+const A53_2      = scripting.addModule("/modules/am65x/A53_2");
+const A53_3      = scripting.addModule("/modules/am65x/A53_3");
+const R5_0       = scripting.addModule("/modules/am65x/R5_0");
+const R5_2       = scripting.addModule("/modules/am65x/R5_2");
+const qosConfig  = scripting.addModule("/modules/qosConfig", {}, false);
+const qosConfig1 = qosConfig.addInstance();
+const qosConfig2 = qosConfig.addInstance();
 
 /**
  * Write custom configuration values to the imported modules.
@@ -123,3 +126,14 @@ R5_2.MCU_NAVSS_Interrupt_aggregator_Virtual_interrupts_count       = 50;
 R5_2.MCU_NAVSS_Interrupt_aggregator_Global_events_count            = 256;
 R5_2.Wakeup_GPIO_Interrupt_router_count                            = 4;
 R5_2.allocOrder                                                    = 4;
+
+qosConfig1.deviceName = "EMMC2SD3SS_GS80_MAIN_0";
+qosConfig1.chan       = ["0"];
+qosConfig1.atype      = 1;
+qosConfig1.virtId     = 3;
+qosConfig1.$name      = "EMMC_MMC0";
+
+qosConfig2.deviceName = "EMMC4SD3SS_GS80_MAIN_0";
+qosConfig2.atype      = 1;
+qosConfig2.virtId     = 2;
+qosConfig2.$name      = "SD_MMC1";
