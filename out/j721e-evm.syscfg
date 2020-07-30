@@ -19,6 +19,18 @@ const MAIN_1_R5_0 = scripting.addModule("/modules/j721e/MAIN_1_R5_0");
 const MAIN_1_R5_2 = scripting.addModule("/modules/j721e/MAIN_1_R5_2");
 const MCU_0_R5_0  = scripting.addModule("/modules/j721e/MCU_0_R5_0");
 const MCU_0_R5_2  = scripting.addModule("/modules/j721e/MCU_0_R5_2");
+const qosConfig   = scripting.addModule("/modules/qosConfig", {}, false);
+const qosConfig1  = qosConfig.addInstance();
+const qosConfig2  = qosConfig.addInstance();
+const qosConfig3  = qosConfig.addInstance();
+const qosConfig4  = qosConfig.addInstance();
+const qosConfig5  = qosConfig.addInstance();
+const qosConfig6  = qosConfig.addInstance();
+const qosConfig7  = qosConfig.addInstance();
+const qosConfig8  = qosConfig.addInstance();
+const qosConfig9  = qosConfig.addInstance();
+const qosConfig10 = qosConfig.addInstance();
+const qosConfig11 = qosConfig.addInstance();
 
 /**
  * Write custom configuration values to the imported modules.
@@ -265,3 +277,70 @@ MCU_0_R5_2.MCU_NAVSS_UDMA_Normal_capacity_Rx_channels_count         = 2;
 MCU_0_R5_2.MCU_NAVSS_UDMA_Normal_capacity_Tx_channels_count         = 2;
 MCU_0_R5_2.MCU_NAVSS_Interrupt_router_count                         = 28;
 MCU_0_R5_2.allocOrder                                               = 4;
+
+qosConfig1.deviceName = "K3_DSS_MAIN_0";
+qosConfig1.chan       = ["0","1"];
+qosConfig1.$name      = "DSS_PIPE_VID1";
+qosConfig1.orderId    = 15;
+qosConfig1.virtId     = 2;
+qosConfig1.atype      = 1;
+
+qosConfig2.deviceName = "K3_DSS_MAIN_0";
+qosConfig2.chan       = ["2","3"];
+qosConfig2.atype      = 1;
+qosConfig2.orderId    = 13;
+qosConfig2.$name      = "DSS_PIPE_VIDL1";
+qosConfig2.virtId     = 3;
+
+qosConfig3.deviceName = "K3_DSS_MAIN_0";
+qosConfig3.chan       = ["4","5"];
+qosConfig3.atype      = 1;
+qosConfig3.virtId     = 2;
+qosConfig3.orderId    = 11;
+qosConfig3.$name      = "DSS_PIPE_VID2";
+
+qosConfig4.$name      = "DSS_PIPE_VIDL2";
+qosConfig4.deviceName = "K3_DSS_MAIN_0";
+qosConfig4.chan       = ["6","7"];
+qosConfig4.virtId     = 2;
+qosConfig4.orderId    = 9;
+qosConfig4.atype      = 1;
+
+qosConfig5.$name      = "DSS_PIPE_WB";
+qosConfig5.deviceName = "K3_DSS_MAIN_0";
+qosConfig5.atype      = 1;
+qosConfig5.virtId     = 2;
+qosConfig5.orderId    = 7;
+qosConfig5.chan       = ["8","9"];
+
+qosConfig6.deviceName = "EMMC8SS_16FFC_MAIN_0";
+qosConfig6.$name      = "EMMC_MMC0";
+qosConfig6.atype      = 1;
+qosConfig6.virtId     = 3;
+
+qosConfig7.$name      = "SD_MMC1";
+qosConfig7.deviceName = "EMMCSD4SS_MAIN_0";
+qosConfig7.atype      = 1;
+qosConfig7.virtId     = 2;
+
+qosConfig8.$name      = "vGPU0";
+qosConfig8.deviceName = "J7_LASCAR_GPU_WRAP_MAIN_0";
+qosConfig8.chan       = ["0","1","2","3"];
+qosConfig8.atype      = 1;
+qosConfig8.virtId     = 2;
+
+qosConfig9.$name      = "vGPU1";
+qosConfig9.deviceName = "J7_LASCAR_GPU_WRAP_MAIN_0";
+qosConfig9.chan       = ["4","5","6","7"];
+qosConfig9.atype      = 1;
+qosConfig9.virtId     = 3;
+
+qosConfig10.$name      = "USB0";
+qosConfig10.deviceName = "USB3P0SS_16FFC_MAIN_0";
+qosConfig10.atype      = 1;
+qosConfig10.virtId     = 2;
+
+qosConfig11.$name      = "USB1";
+qosConfig11.deviceName = "USB3P0SS_16FFC_MAIN_1";
+qosConfig11.atype      = 1;
+qosConfig11.virtId     = 3;
