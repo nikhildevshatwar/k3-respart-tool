@@ -7,7 +7,7 @@
 	var entries = utils.generateFirewallEntries();
 %%}
 /*
- * K3 Firewall Configuration Data
+ * `socName` Firewall Configuration Data
  * Auto generated from K3 Resource Partitioning tool
  */
 

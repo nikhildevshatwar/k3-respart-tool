@@ -18,12 +18,12 @@ exports = {
 		},
 		{
 			name: "/templates/qos_config.syscfg.xdt",
-			outputPath: socName + "_qos_config.c",
+			outputPath: socName + "_qos_data.c",
 			alwaysRun: true,
 		},
 		{
 			name: "/templates/firewall_config.syscfg.xdt",
-			outputPath: socName + "_firewall_config.c",
+			outputPath: socName + "_firewall_data.c",
 			alwaysRun: true,
 		},
 		{

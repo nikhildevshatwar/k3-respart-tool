@@ -9,7 +9,7 @@
 %%}
 
 /*
- * K3 Quality of Service (QoS) Configuration Data
+ * `socName` Quality of Service (QoS) Configuration Data
  * Auto generated from K3 Resource Partitioning tool
  */
 #include <asm/arch/hardware.h>
