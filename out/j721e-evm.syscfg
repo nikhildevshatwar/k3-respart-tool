@@ -8,33 +8,53 @@
 /**
  * Import the modules used in this configuration.
  */
-const A72_2       = scripting.addModule("/modules/j721e/A72_2");
-const A72_3       = scripting.addModule("/modules/j721e/A72_3");
-const C6X_0_1     = scripting.addModule("/modules/j721e/C6X_0_1");
-const C6X_1_1     = scripting.addModule("/modules/j721e/C6X_1_1");
-const C7X_1       = scripting.addModule("/modules/j721e/C7X_1");
-const MAIN_0_R5_0 = scripting.addModule("/modules/j721e/MAIN_0_R5_0");
-const MAIN_0_R5_2 = scripting.addModule("/modules/j721e/MAIN_0_R5_2");
-const MAIN_1_R5_0 = scripting.addModule("/modules/j721e/MAIN_1_R5_0");
-const MAIN_1_R5_2 = scripting.addModule("/modules/j721e/MAIN_1_R5_2");
-const MCU_0_R5_0  = scripting.addModule("/modules/j721e/MCU_0_R5_0");
-const MCU_0_R5_2  = scripting.addModule("/modules/j721e/MCU_0_R5_2");
-const qosConfig   = scripting.addModule("/modules/qosConfig", {}, false);
-const qosConfig1  = qosConfig.addInstance();
-const qosConfig2  = qosConfig.addInstance();
-const qosConfig3  = qosConfig.addInstance();
-const qosConfig4  = qosConfig.addInstance();
-const qosConfig5  = qosConfig.addInstance();
-const qosConfig6  = qosConfig.addInstance();
-const qosConfig7  = qosConfig.addInstance();
-const qosConfig8  = qosConfig.addInstance();
-const qosConfig9  = qosConfig.addInstance();
-const qosConfig10 = qosConfig.addInstance();
-const qosConfig11 = qosConfig.addInstance();
+const firewallConfig  = scripting.addModule("/modules/firewallConfig", {}, false);
+const firewallConfig1 = firewallConfig.addInstance();
+const A72_2           = scripting.addModule("/modules/j721e/A72_2");
+const A72_3           = scripting.addModule("/modules/j721e/A72_3");
+const C6X_0_1         = scripting.addModule("/modules/j721e/C6X_0_1");
+const C6X_1_1         = scripting.addModule("/modules/j721e/C6X_1_1");
+const C7X_1           = scripting.addModule("/modules/j721e/C7X_1");
+const MAIN_0_R5_0     = scripting.addModule("/modules/j721e/MAIN_0_R5_0");
+const MAIN_0_R5_2     = scripting.addModule("/modules/j721e/MAIN_0_R5_2");
+const MAIN_1_R5_0     = scripting.addModule("/modules/j721e/MAIN_1_R5_0");
+const MAIN_1_R5_2     = scripting.addModule("/modules/j721e/MAIN_1_R5_2");
+const MCU_0_R5_0      = scripting.addModule("/modules/j721e/MCU_0_R5_0");
+const MCU_0_R5_2      = scripting.addModule("/modules/j721e/MCU_0_R5_2");
+const qosConfig       = scripting.addModule("/modules/qosConfig", {}, false);
+const qosConfig1      = qosConfig.addInstance();
+const qosConfig2      = qosConfig.addInstance();
+const qosConfig3      = qosConfig.addInstance();
+const qosConfig4      = qosConfig.addInstance();
+const qosConfig5      = qosConfig.addInstance();
+const qosConfig6      = qosConfig.addInstance();
+const qosConfig7      = qosConfig.addInstance();
+const qosConfig8      = qosConfig.addInstance();
+const qosConfig9      = qosConfig.addInstance();
+const qosConfig10     = qosConfig.addInstance();
+const qosConfig11     = qosConfig.addInstance();
 
 /**
  * Write custom configuration values to the imported modules.
  */
+firewallConfig1.$name                                  = "PVU";
+firewallConfig1.device                                 = "PVU";
+firewallConfig1.regions[0].$name                       = "modules_firewallRegion1";
+firewallConfig1.regions[0].perms[0].$name              = "modules_firewallPermissions1";
+firewallConfig1.regions[0].perms[0].s_user_rd          = false;
+firewallConfig1.regions[0].perms[0].s_user_wr          = false;
+firewallConfig1.regions[0].perms[0].s_user_cache       = false;
+firewallConfig1.regions[0].perms[0].s_user_debug       = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_wr    = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_debug = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_rd    = false;
+firewallConfig1.regions[0].perms[0].s_supervisor_cache = false;
+firewallConfig1.regions[0].perms[0].ns_user_deb        = false;
+firewallConfig1.regions[0].perms[0].ns_user_cache      = false;
+firewallConfig1.regions[0].perms[0].ns_user_wr         = false;
+firewallConfig1.regions[0].perms[0].ns_user_rd         = false;
+firewallConfig1.regions[0].perms[0].hostName           = "A72_2";
+
 A72_2.Main_NAVSS_UDMA_Interrupt_aggregator_Virtual_interrupts_count = 86;
 A72_2.Main_NAVSS_UDMA_Interrupt_aggregator_Global_events_count      = 1024;
 A72_2.Main_NAVSS_Non_secure_proxies_count                           = 4;
