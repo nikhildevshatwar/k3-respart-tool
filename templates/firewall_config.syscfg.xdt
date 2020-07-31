@@ -7,15 +7,14 @@
 	var entries = utils.generateFirewallEntries();
 %%}
 /*
- * K3 Quality of Service (QoS) Configuration Data
+ * K3 Firewall Configuration Data
  * Auto generated from K3 Resource Partitioning tool
  */
 
-#include <tisci/security/tisci_firewall.h>
+#include <common.h>
+#include "common.h"
 
-#define `socName.toUpperCase()`_FWL_COUNT	(sizeof(`socName`_fwl_data) / sizeof(`socName`_fwl_data[0]))
-
-struct tisci_msg_fwl_set_firewall_region_req `socName`_fwl_data[] = {
+struct ti_sci_msg_fwl_region `socName`_fwl_data[] = {
 %_.each(entries,(e) => {
 %	if (e.comment != "") {
 
@@ -32,3 +31,5 @@ struct tisci_msg_fwl_set_firewall_region_req `socName`_fwl_data[] = {
 	},
 %})
 };
+
+uint32_t `socName`_fwl_count = sizeof(`socName`_fwl_data) / sizeof(`socName`_fwl_data[0]);

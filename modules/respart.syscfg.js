@@ -22,8 +22,8 @@ exports = {
 			alwaysRun: true,
 		},
 		{
-			name: "/templates/firewall-config.syscfg.xdt",
-			outputPath: socName + "-firewall-config.c",
+			name: "/templates/firewall_config.syscfg.xdt",
+			outputPath: socName + "_firewall_config.c",
 			alwaysRun: true,
 		},
 		{

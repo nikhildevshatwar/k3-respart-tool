@@ -232,7 +232,7 @@ function generateFirewallEntries() {
 			var device = FirewallDevices[inst.device];
 			var ids = getIdsOfSelectedInstances(inst.instanceName, device);
 
-			var comment = `${inst.device} - ${ids.length} firewalls and ${inst.regions.length} with regions each`;
+			var comment = `${inst.$name} - ${ids.length} firewalls with ${inst.regions.length} regions each`;
 			_.each(ids, (id) => {
 				var regions = inst.regions;
 
