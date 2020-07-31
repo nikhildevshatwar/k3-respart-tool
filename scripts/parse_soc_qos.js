@@ -89,6 +89,12 @@ function createQosArray(path) {
 	var finalData = [];
 
 	qosArray.forEach((q) => {
+
+		if (q.control_region && q.control_region == "modss_dmsc_qos_regs")
+			return;
+		if (q.master_inst.match(/.*navss.*/g))
+			return;
+
 		finalData.push({
 			deviceName: q.master_inst.toUpperCase(),
 			endpointName: q.master_inst.toUpperCase() + "_" + q.master_intf.toUpperCase(),
