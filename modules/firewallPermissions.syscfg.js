@@ -26,6 +26,11 @@ function getHostNameOptions() {
 		displayName: "Custom Priv Id",
 	});
 
+	hostopt.unshift({
+		name: "unknown",
+		displayName: "Select host",
+	});
+
 	return hostopt;
 }
 
@@ -35,7 +40,7 @@ exports = {
 		{
 			name: "hostName",
 			displayName: "Host Name",
-			default: "custom",
+			default: "unknown",
 			options: getHostNameOptions(),
 			onChange: (inst, ui) => {
 				if (inst.hostName === "custom") {
@@ -137,6 +142,10 @@ exports = {
 		},
 	],
 	validate: (inst, report) => {
+		if (inst.hostName == "unknown") {
+			report.logError("Select a host to use known priv_id or select custom priv ID", inst, "hostName");
+		}
+
 		var privHosts = "";
 		_.each(hosts, (h) => {
 			if (h.privId === inst.privid) {
