@@ -224,8 +224,8 @@
 		"groupName": "Main NAVSS ring accelerator",
 		"resRange": [
 			{
-				"resCount": 7,
-				"resStart": 153
+				"resCount": 6,
+				"resStart": 154
 			}
 		],
 		"subtypeId": 5,

@@ -1,11 +1,12 @@
 
 const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
 const hostInfo = {
-  "Description": "Security Controller",
+  "Description": "DM to DMSC communication",
   "Security": "Secure",
-  "displayName": "Device Management Security Controller",
-  "hostId": 0,
-  "hostName": "DMSC"
+  "displayName": "DM to DMSC communication",
+  "hostId": 250,
+  "hostName": "DM2DMSC",
+  "privId": 96
 };
 const modDef = createHostModule(hostInfo);
 exports = modDef;

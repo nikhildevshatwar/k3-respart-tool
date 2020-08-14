@@ -98,5 +98,17 @@
 	{
 		"displayName": "Main R5F1 core1 Secure host",
 		"hostName": "MAIN_1_R5_3"
+	},
+	{
+		"displayName": "DM to DMSC communication",
+		"hostName": "DM2DMSC"
+	},
+	{
+		"displayName": "DMSC to DM communication",
+		"hostName": "DMSC2DM"
+	},
+	{
+		"displayName": "Device Management",
+		"hostName": "DM"
 	}
 ]

@@ -194,7 +194,6 @@
 	{
 		"end_address": "0x004C7FFFFFFF",
 		"ids": [
-			2465,
 			2468,
 			2494,
 			2495
@@ -203,7 +202,6 @@
 		"name": "DEBUGSS",
 		"num_regions": 1,
 		"protected_inst": [
-			"debugss_k3_wrap_cv0_main_0",
 			"j7vcl_debug_cell_main_0",
 			"j7vc_main_dbg_cbass_main_0",
 			"j7vc_debug_cbass_main_0"
@@ -734,19 +732,12 @@
 	{
 		"end_address": "0x004F03FFFFFF",
 		"ids": [
-			104,
-			105,
-			106,
-			107,
-			108,
-			168,
 			2231,
 			2232,
 			2236,
 			2302,
 			2303,
 			2398,
-			4386,
 			4387,
 			4608,
 			4609,
@@ -761,7 +752,6 @@
 			4764,
 			4765,
 			4766,
-			6250,
 			6251,
 			6252,
 			6253
@@ -770,19 +760,12 @@
 		"name": "NAVSS",
 		"num_regions": 1,
 		"protected_inst": [
-			"j7vc_main_gpiomux_introuter_main_0",
-			"j7_main2mcu_lvl_introuter_main_0",
-			"j7_main2mcu_pls_introuter_main_0",
-			"j7vcl_cmp_event_introuter_main_0",
-			"j7_timesync_event_introuter_main_0",
-			"j7_wkup_gpiomux_introuter_wkup_0",
 			"pdma_j7vc_main_spi_g0_main_0",
 			"pdma_j7vc_main_spi_g1_main_0",
 			"pdma_j7vc_main_usart_psilss_main_0",
 			"pdma_j7vc_main_spi_psilss_main_0",
 			"pdma_j7vc_main_mcan_main_0",
 			"navss256vcl_main_0",
-			"navss256vcl_main_0_psilcfg_0",
 			"navss256vcl_main_0_psilss_0",
 			"navss256vcl_main_0_dma_virtid_0",
 			"navss256vcl_main_0_dma_virtid_1",
@@ -797,7 +780,6 @@
 			"navss256vcl_main_0_virtss_0",
 			"navss256vcl_main_0_virtss_0",
 			"navss256vcl_main_0_virtss_0",
-			"navss_mcu_j7_mcu_0_psilcfg_0",
 			"navss_mcu_j7_mcu_0_psilss_0",
 			"navss_mcu_j7_mcu_0_modss_0",
 			"navss_mcu_j7_mcu_0_intr_0"

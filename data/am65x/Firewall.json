@@ -201,7 +201,6 @@
 	{
 		"end_address": "0x004C7FFFFFFF",
 		"ids": [
-			2384,
 			2480,
 			2481,
 			2482,
@@ -211,7 +210,6 @@
 		"name": "DEBUG",
 		"num_regions": 1,
 		"protected_inst": [
-			"debugss_k3_wrap_cv0_main_0",
 			"k3_cc_debug_cell_main_0",
 			"k3_main_debug_cell_main_0",
 			"k3_mcu_debug_cell_main_0",
@@ -637,12 +635,6 @@
 	{
 		"end_address": "0x000FFFFFFFFF",
 		"ids": [
-			56,
-			57,
-			58,
-			59,
-			60,
-			168,
 			1240,
 			1241,
 			2049,
@@ -656,25 +648,17 @@
 			4114,
 			4385,
 			4387,
-			4388,
 			4389,
 			4450,
 			4451,
 			6249,
 			6251,
-			6252,
 			6253
 		],
 		"memory": false,
 		"name": "NAVSS",
 		"num_regions": 1,
 		"protected_inst": [
-			"main_gpiomux_introuter_main_0",
-			"main2mcu_lvl_introuter_main_0",
-			"main2mcu_pls_introuter_main_0",
-			"cmp_event_introuter_main_0",
-			"timesync_event_introuter_main_0",
-			"wkup_gpiomux_introuter_wkup_0",
 			"pdma_mcu0_mcu_0",
 			"pdma_mcu1_mcu_0",
 			"navss256l_main_0",
@@ -688,13 +672,11 @@
 			"navss256l_main_0_mailbox_0",
 			"navss256l_main_0_modss_0",
 			"navss256l_main_0_intr_0",
-			"navss256l_main_0_psilcfg_0",
 			"navss256l_main_0_psilss_0",
 			"navss256l_main_0_nbss_0",
 			"navss256l_main_0_nbss_0",
 			"navss_mcu_mcu_0_modss_0",
 			"navss_mcu_mcu_0_intr_0",
-			"navss_mcu_mcu_0_psilcfg_0",
 			"navss_mcu_mcu_0_psilss_0"
 		],
 		"start_address": "0x000000A00000"

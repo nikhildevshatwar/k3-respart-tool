@@ -237,55 +237,55 @@
 		"groupName" : "MCU NAVSS ring accelerator",
 		"resources" : [
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_GP",
 				"utype": "MCU NAVSS Ring accelerator Free rings"
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_MONITORS",
 				"utype": "MCU NAVSS Ring accelerator ring monitors"
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_PROXY_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_PROXY0",
 				"subtypeName": "RESASG_SUBTYPE_PROXY_PROXIES",
 				"utype": "MCU NAVSS Non secure proxies"
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_VIRTID",
 				"utype": "MCU NAVSS Ring accelerator virt_id range",
 				"copyFromUtype": "Main NAVSS Ring accelerator virt_id range",
 				"autoAlloc": false
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
 				"utype": "MCU NAVSS Ring accelerator error event config"
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX_H",
 				"utype": "MCU NAVSS Rings for High capacity Rx channels",
 				"copyFromUtype": "MCU NAVSS UDMA High capacity Rx channels",
 				"blockCopy": true
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX_H",
 				"utype": "MCU NAVSS Rings for High capacity Tx channels",
 				"copyFromUtype": "MCU NAVSS UDMA High capacity Tx channels",
 				"blockCopy": true
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_RX",
 				"utype": "MCU NAVSS Rings for Normal capacity Rx channels",
 				"copyFromUtype": "MCU NAVSS UDMA Normal capacity Rx channels",
 				"blockCopy": true
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 				"subtypeName": "RESASG_SUBTYPE_RA_UDMAP_TX",
 				"utype": "MCU NAVSS Rings for Normal capacity Tx channels",
 				"copyFromUtype": "MCU NAVSS UDMA Normal capacity Tx channels",
@@ -382,7 +382,7 @@
 				]
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_INTR_0",
 				"subtypeName": "RESASG_SUBTYPE_IR_OUTPUT",
 				"utype": "MCU NAVSS Interrupt router",
 				"resRange": [
@@ -584,12 +584,12 @@
 				"utype": "Main NAVSS UDMA Interrupt aggregator Global events"
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_INTAGGR_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_UDMASS_INTA_0",
 				"subtypeName": "RESASG_SUBTYPE_IA_VINT",
 				"utype": "MCU NAVSS Interrupt aggregator Virtual interrupts"
 			},
 			{
-				"deviceName": "J721E_DEV_MCU_NAVSS0_INTAGGR_0",
+				"deviceName": "J721E_DEV_MCU_NAVSS0_UDMASS_INTA_0",
 				"subtypeName": "RESASG_SUBTYPE_GLOBAL_EVENT_SEVT",
 				"utype": "MCU NAVSS Interrupt aggregator Global events"
 			},

@@ -526,7 +526,7 @@
 	},
 	{
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -541,7 +541,7 @@
 	},
 	{
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -556,7 +556,7 @@
 	},
 	{
 		"deviceId": 234,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_PROXY_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_PROXY0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -573,7 +573,7 @@
 		"autoAlloc": false,
 		"copyFromUtype": "Main NAVSS Ring accelerator virt_id range",
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -588,7 +588,7 @@
 	},
 	{
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -605,7 +605,7 @@
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA High capacity Rx channels",
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -622,7 +622,7 @@
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA High capacity Tx channels",
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -639,7 +639,7 @@
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA Normal capacity Rx channels",
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -656,7 +656,7 @@
 		"blockCopy": true,
 		"copyFromUtype": "MCU NAVSS UDMA Normal capacity Tx channels",
 		"deviceId": 235,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_RINGACC0",
 		"groupName": "MCU NAVSS ring accelerator",
 		"resRange": [
 			{
@@ -760,7 +760,7 @@
 	},
 	{
 		"deviceId": 237,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_INTR_ROUTER_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_INTR_0",
 		"groupName": "Interrupt routers",
 		"resRange": [
 			{
@@ -1069,12 +1069,12 @@
 	},
 	{
 		"deviceId": 233,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_INTAGGR_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_UDMASS_INTA_0",
 		"groupName": "Interrupt aggregators",
 		"resRange": [
 			{
-				"resCount": 248,
-				"resStart": 8
+				"resCount": 240,
+				"resStart": 16
 			}
 		],
 		"subtypeId": 10,
@@ -1084,12 +1084,12 @@
 	},
 	{
 		"deviceId": 233,
-		"deviceName": "J721E_DEV_MCU_NAVSS0_INTAGGR_0",
+		"deviceName": "J721E_DEV_MCU_NAVSS0_UDMASS_INTA_0",
 		"groupName": "Interrupt aggregators",
 		"resRange": [
 			{
-				"resCount": 1528,
-				"resStart": 16392
+				"resCount": 1520,
+				"resStart": 16400
 			}
 		],
 		"subtypeId": 13,

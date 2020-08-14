@@ -1,6 +1,6 @@
 [
 	{
-		"Description": "Device Management and Security Control",
+		"Description": "Security Controller",
 		"Security": "Secure",
 		"displayName": "Device Management Security Controller",
 		"hostId": 0,
@@ -205,5 +205,28 @@
 		"hostId": 50,
 		"hostName": "ICSSG_0",
 		"privId": 136
+	},
+	{
+		"Description": "DM to DMSC communication",
+		"Security": "Secure",
+		"displayName": "DM to DMSC communication",
+		"hostId": 250,
+		"hostName": "DM2DMSC",
+		"privId": 96
+	},
+	{
+		"Description": "DMSC to DM communication",
+		"Security": "Non Secure",
+		"displayName": "DMSC to DM communication",
+		"hostId": 251,
+		"hostName": "DMSC2DM",
+		"privId": 96
+	},
+	{
+		"Description": "Device Management",
+		"Security": "Non Secure",
+		"displayName": "Device Management",
+		"hostId": 254,
+		"hostName": "DM"
 	}
 ]

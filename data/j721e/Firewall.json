@@ -333,7 +333,6 @@
 	{
 		"end_address": "0x004C7FFFFFFF",
 		"ids": [
-			2465,
 			2466,
 			2467,
 			2468,
@@ -344,7 +343,6 @@
 		"name": "DEBUGSS",
 		"num_regions": 1,
 		"protected_inst": [
-			"debugss_k3_wrap_cv0_main_0",
 			"j7_main_debug_cell_main_0",
 			"j7_cc_debug_cell_main_0",
 			"j7_main_debug_cell_main_1",
@@ -395,7 +393,6 @@
 	{
 		"end_address": "0x000045FFFFFF",
 		"ids": [
-			512,
 			528,
 			536,
 			537,
@@ -414,7 +411,6 @@
 		"name": "DMSC",
 		"num_regions": 1,
 		"protected_inst": [
-			"dmsc_wkup_0",
 			"dmsc_wkup_0",
 			"dmsc_wkup_0_dmtimer_dmc1ms_0",
 			"dmsc_wkup_0_dmtimer_dmc1ms_1",
@@ -1022,8 +1018,6 @@
 	{
 		"end_address": "0x0000422003FF",
 		"ids": [
-			168,
-			6250,
 			6251,
 			6253,
 			6270
@@ -1032,8 +1026,6 @@
 		"name": "NAVSS MCU WKUP",
 		"num_regions": 1,
 		"protected_inst": [
-			"j7_wkup_gpiomux_introuter_wkup_0",
-			"navss_mcu_j7_mcu_0_ksdma_psilcfg_0",
 			"navss_mcu_j7_mcu_0_ksdma_psilss_0",
 			"navss_mcu_j7_mcu_0_ksintr_router_0",
 			"navss_mcu_j7_mcu_0"
@@ -1043,15 +1035,6 @@
 	{
 		"end_address": "0x000FFFFFFFFF",
 		"ids": [
-			56,
-			57,
-			58,
-			59,
-			60,
-			62,
-			63,
-			64,
-			65,
 			2176,
 			2184,
 			2185,
@@ -1060,7 +1043,6 @@
 			2472,
 			2606,
 			4161,
-			4386,
 			4387,
 			4388,
 			4389,
@@ -1076,15 +1058,6 @@
 		"name": "NAVSS Main",
 		"num_regions": 1,
 		"protected_inst": [
-			"j7_main_gpiomux_introuter_main_0",
-			"j7_main2mcu_lvl_introuter_main_0",
-			"j7_main2mcu_pls_introuter_main_0",
-			"j7_cmp_event_introuter_main_0",
-			"j7_timesync_event_introuter_main_0",
-			"j7_main_pulsar1_introuter_main_0",
-			"j7_main_pulsar0_introuter_main_0",
-			"j7_c66_0_introuter_main_0",
-			"j7_c66_1_introuter_main_0",
 			"pdma_j7_main_mcan_main_0",
 			"pdma_j7_main_misc_psilss_main_0",
 			"pdma_j7_main_usart_psilss_main_0",
@@ -1093,7 +1066,6 @@
 			"pdma_j7_main_debug_psilss_main_0",
 			"pdma_j7_main_aasrc_psilss_main_0",
 			"navss512l_main_0",
-			"navss512l_main_0_ksdma_psilcfg_0",
 			"navss512l_main_0_ksdma_psilss_0",
 			"navss512l_main_0_ksdma_psilss_0",
 			"navss512l_main_0_ksdma_psilss_0",
