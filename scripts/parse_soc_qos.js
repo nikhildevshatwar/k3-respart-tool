@@ -72,7 +72,7 @@ function grp_count_add(qosArray, base, offset) {
 
 	qosArray.forEach((qos) => {
 		var qos_base = parseInt(qos.baseAddress);
-		if (ep_base == qos_base || ep_base == (qos_base - 0x100)) {
+		if (ep_base == qos_base) {
 			qos.groupCount++;
 		}
 	});

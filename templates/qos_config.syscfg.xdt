@@ -25,7 +25,7 @@ struct k3_qos_data `socName`_qos_data[] = {
 %			for (var c = 0; c < inst.chan.length; c++) {
 %				var channel = inst.chan[c];
 	{
-		.reg = `qos[n].endpointName` + 0x4 * `channel`,
+		.reg = `qos[n].endpointName` + 0x100 + 0x4 * `channel`,
 		.val = `utils.getQosValue(inst)`,
 	},
 %			}
@@ -46,7 +46,7 @@ struct k3_qos_data `socName`_qos_data[] = {
 %		var map1_offset = 0x0 + g * 0x8;
 %		var map2_offset = 0x4 + g * 0x8;
 	{
-		.reg = `qos[u].endpointName` - 0x100 + `map1_offset`,
+		.reg = `qos[u].endpointName` + `map1_offset`,
 		.val = 0x76543210,
 	},
 	{
