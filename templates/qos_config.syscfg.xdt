@@ -12,8 +12,8 @@
  * `socName` Quality of Service (QoS) Configuration Data
  * Auto generated from K3 Resource Partitioning tool
  */
-#include <asm/arch/hardware.h>
 #include <common.h>
+#include <asm/arch/hardware.h>
 #include "common.h"
 
 struct k3_qos_data `socName`_qos_data[] = {
