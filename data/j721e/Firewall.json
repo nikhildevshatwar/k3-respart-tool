@@ -26,10 +26,10 @@
 		"name": "ADC MCU",
 		"num_regions": 1,
 		"protected_inst": [
-			"adc12_core_mcu_0",
-			"adc12_core_mcu_0",
-			"adc12_core_mcu_1",
-			"adc12_core_mcu_1"
+			"adc12_16ffc_mcu_0",
+			"adc12_16ffc_mcu_0",
+			"adc12_16ffc_mcu_1",
+			"adc12_16ffc_mcu_1"
 		],
 		"start_address": "0x000040200000"
 	},
@@ -66,7 +66,7 @@
 		"start_address": "0x004D80000000"
 	},
 	{
-		"end_address": "0x000064FFFFFF",
+		"end_address": "0x000061FFFFFF",
 		"ids": [
 			264
 		],
@@ -76,7 +76,7 @@
 		"protected_inst": [
 			"compute_cluster_j7es_tb_vdc_main_0_p4_c711_512kb"
 		],
-		"start_address": "0x000064800000"
+		"start_address": "0x000061000000"
 	},
 	{
 		"end_address": "0x0000471083FF",
@@ -373,11 +373,11 @@
 		"name": "DMPAC",
 		"num_regions": 1,
 		"protected_inst": [
+			"dmpac_top_main_0_ecc_aggr_0",
 			"dmpac_top_main_0",
-			"dmpac_top_main_0",
-			"dmpac_top_main_0_cp_intd_0",
+			"dmpac_top_main_0_intd_0",
 			"dmpac_top_main_0_hts_0",
-			"dmpac_top_main_0_ctset2_0",
+			"dmpac_top_main_0_ctset_0",
 			"dmpac_top_main_0_foco_0",
 			"dmpac_top_main_0_foco_1",
 			"dmpac_top_main_0_dof_0",
@@ -391,7 +391,7 @@
 		"start_address": "0x000002A6A000"
 	},
 	{
-		"end_address": "0x000045FFFFFF",
+		"end_address": "0x00004441001F",
 		"ids": [
 			528,
 			536,
@@ -411,21 +411,21 @@
 		"name": "DMSC",
 		"num_regions": 1,
 		"protected_inst": [
-			"dmsc_wkup_0",
-			"dmsc_wkup_0_dmtimer_dmc1ms_0",
-			"dmsc_wkup_0_dmtimer_dmc1ms_1",
+			"dmsc_wkup_0_pwrctrl_0",
+			"dmsc_wkup_0_dmtimer_0",
+			"dmsc_wkup_0_dmtimer_1",
 			"dmsc_wkup_0_rti_0",
-			"dmsc_wkup_0_rti_0",
-			"dmsc_wkup_0_ksbus_rat_0",
-			"dmsc_wkup_0",
-			"dmsc_wkup_0_ks3_sec_mgr_0",
-			"dmsc_wkup_0",
-			"dmsc_wkup_0_dmtimer_dmc1ms_2",
-			"dmsc_wkup_0_dmtimer_dmc1ms_3",
-			"dmsc_wkup_0_aeseip38t_0",
-			"dmsc_wkup_0_ksdma_intaggr_0"
+			"dmsc_wkup_0_wdtctrl_0",
+			"dmsc_wkup_0_rat_0",
+			"dmsc_wkup_0_ecc_aggr_0",
+			"dmsc_wkup_0_secctrl_0",
+			"dmsc_wkup_0_dbg_auth_0",
+			"dmsc_wkup_0_dmtimer_2",
+			"dmsc_wkup_0_dmtimer_3",
+			"dmsc_wkup_0_aes_0",
+			"dmsc_wkup_0_intaggr_0"
 		],
-		"start_address": "0x000044000000"
+		"start_address": "0x000000232000"
 	},
 	{
 		"end_address": "0x0000404903FF",
@@ -510,28 +510,13 @@
 		"start_address": "0x000002400000"
 	},
 	{
-		"end_address": "0x0000FFFFFFFF",
-		"ids": [
-			1280,
-			2312
-		],
-		"memory": false,
-		"name": "DOMAIN ISOLATION",
-		"num_regions": 8,
-		"protected_inst": [
-			"DOMAIN_ISOLATION_MCU",
-			"DOMAIN_ISOLATION_MAIN"
-		],
-		"start_address": "0x000002000000"
-	},
-	{
-		"end_address": "0x00006D0FFFFF",
+		"end_address": "0x00006D61FFFF",
 		"ids": [
 			288
 		],
 		"memory": false,
 		"name": "DRU",
-		"num_regions": 3,
+		"num_regions": 2,
 		"protected_inst": [
 			"compute_cluster_j7es_tb_vdc_main_0_dru"
 		],
@@ -831,8 +816,8 @@
 		"name": "ICSSG Main",
 		"num_regions": 8,
 		"protected_inst": [
-			"icss_g_16ffc_main_0",
-			"icss_g_16ffc_main_1"
+			"icss_g_main_0",
+			"icss_g_main_1"
 		],
 		"start_address": "0x00000B000000"
 	},
@@ -950,19 +935,30 @@
 		"start_address": "0x000002B00000"
 	},
 	{
+		"end_address": "0x00002A264FFF",
+		"ids": [
+			6254
+		],
+		"memory": false,
+		"name": "MCRC MCU",
+		"num_regions": 1,
+		"protected_inst": [
+			"navss_mcu_j7_mcu_0_mcrc_0"
+		],
+		"start_address": "0x00002A264000"
+	},
+	{
 		"end_address": "0x000031F70FFF",
 		"ids": [
-			4683,
-			6254
+			4683
 		],
 		"memory": false,
 		"name": "MCRC Main",
 		"num_regions": 1,
 		"protected_inst": [
-			"navss512l_main_0_mcrc64_0",
-			"navss_mcu_j7_mcu_0_mcrc64_0"
+			"navss512l_main_0_mcrc_0"
 		],
-		"start_address": "0x00002A264000"
+		"start_address": "0x000031F70000"
 	},
 	{
 		"end_address": "0x000002F83FFF",
@@ -1000,37 +996,35 @@
 			4385,
 			4681,
 			4753,
-			6249,
-			6252
+			6249
 		],
 		"memory": false,
 		"name": "NAVSS ECC Aggregators",
 		"num_regions": 1,
 		"protected_inst": [
-			"navss512l_main_0_ksdw_ecc_aggr_1",
-			"navss512l_main_0_ksdw_ecc_aggr_0",
-			"navss512l_main_0_ksdw_ecc_aggr_3",
-			"navss_mcu_j7_mcu_0_ksdw_ecc_aggr_0",
-			"navss_mcu_j7_mcu_0_ksdw_ecc_aggr_1"
+			"navss512l_main_0_udmass_ecc_aggr_0",
+			"navss512l_main_0_modss_ecc_aggr_0",
+			"navss512l_main_0_virtss_ecc_aggr_0",
+			"navss_mcu_j7_mcu_0_udmass_ecc_aggr_0"
 		],
-		"start_address": "0x000028380000"
+		"start_address": "0x000028381000"
 	},
 	{
 		"end_address": "0x0000422003FF",
 		"ids": [
 			6251,
-			6253,
-			6270
+			6252,
+			6253
 		],
 		"memory": false,
 		"name": "NAVSS MCU WKUP",
 		"num_regions": 1,
 		"protected_inst": [
-			"navss_mcu_j7_mcu_0_ksdma_psilss_0",
-			"navss_mcu_j7_mcu_0_ksintr_router_0",
-			"navss_mcu_j7_mcu_0"
+			"navss_mcu_j7_mcu_0_psilss_0",
+			"navss_mcu_j7_mcu_0_modss_0",
+			"navss_mcu_j7_mcu_0_intr_0"
 		],
-		"start_address": "0x000028000000"
+		"start_address": "0x000028380000"
 	},
 	{
 		"end_address": "0x000FFFFFFFFF",
@@ -1065,17 +1059,17 @@
 			"csi_psilss_main_0",
 			"pdma_j7_main_debug_psilss_main_0",
 			"pdma_j7_main_aasrc_psilss_main_0",
-			"navss512l_main_0",
-			"navss512l_main_0_ksdma_psilss_0",
-			"navss512l_main_0_ksdma_psilss_0",
-			"navss512l_main_0_ksdma_psilss_0",
-			"navss512l_main_0_ksdma_virtid_0",
-			"navss512l_main_0_ksdma_virtid_1",
-			"navss512l_main_0_ksipc_spinlock_0",
-			"navss512l_main_0",
-			"navss512l_main_0_ksintr_router_0",
-			"navss512l_main_0",
-			"navss512l_main_0"
+			"navss512l_main_0_msram_0",
+			"navss512l_main_0_psilss_0",
+			"navss512l_main_0_psilss_0",
+			"navss512l_main_0_psilss_0",
+			"navss512l_main_0_dma_virtid_0",
+			"navss512l_main_0_dma_virtid_1",
+			"navss512l_main_0_spinlock_0",
+			"navss512l_main_0_mailbox_0",
+			"navss512l_main_0_intr_0",
+			"navss512l_main_0_virtss_0",
+			"navss512l_main_0_virtss_0"
 		],
 		"start_address": "0x000000A00000"
 	},
@@ -1092,11 +1086,11 @@
 		"name": "PAT",
 		"num_regions": 6,
 		"protected_inst": [
-			"navss512l_main_0_ksbus_pat_0",
-			"navss512l_main_0_ksbus_pat_1",
-			"navss512l_main_0_ksbus_pat_2",
-			"navss512l_main_0_ksbus_pat_3",
-			"navss512l_main_0_ksbus_pat_4"
+			"navss512l_main_0_pat_0",
+			"navss512l_main_0_pat_1",
+			"navss512l_main_0_pat_2",
+			"navss512l_main_0_pat_3",
+			"navss512l_main_0_pat_4"
 		],
 		"start_address": "0x000031010000"
 	},
@@ -1181,7 +1175,7 @@
 			"pcie_g4x2_main_2",
 			"pcie_g4x2_main_3"
 		],
-		"start_address": "0x000000000000"
+		"start_address": "0x000002900000"
 	},
 	{
 		"end_address": "0x000040F1FFFF",
@@ -1305,9 +1299,9 @@
 		"name": "PVU",
 		"num_regions": 2,
 		"protected_inst": [
-			"navss512l_main_0_ksdma_pvu_0",
-			"navss512l_main_0_ksdma_pvu_1",
-			"navss512l_main_0_ksdma_pvu_2"
+			"navss512l_main_0_pvu_0",
+			"navss512l_main_0_pvu_1",
+			"navss512l_main_0_pvu_2"
 		],
 		"start_address": "0x000030F80000"
 	},
@@ -1537,16 +1531,18 @@
 		"end_address": "0x000041CFFFFF",
 		"ids": [
 			1050,
-			1051
+			1051,
+			6270
 		],
 		"memory": false,
 		"name": "SRAM 128k MCU",
 		"num_regions": 1,
 		"protected_inst": [
 			"msram128kx64e_mcu_0",
-			"msram128kx64e_mcu_0"
+			"msram128kx64e_mcu_0",
+			"navss_mcu_j7_mcu_0_msram_1"
 		],
-		"start_address": "0x00004070B000"
+		"start_address": "0x000028010000"
 	},
 	{
 		"end_address": "0x00000367FFFF",
@@ -1616,8 +1612,8 @@
 		"name": "TIMERMGR Main",
 		"num_regions": 3,
 		"protected_inst": [
-			"navss512l_main_0_timer_mgr_0",
-			"navss512l_main_0_timer_mgr_1"
+			"navss512l_main_0_timermgr_0",
+			"navss512l_main_0_timermgr_1"
 		],
 		"start_address": "0x000030E80000"
 	},
@@ -1692,7 +1688,7 @@
 		"start_address": "0x000042300000"
 	},
 	{
-		"end_address": "0x0000067FFFFF",
+		"end_address": "0x0000041183FF",
 		"ids": [
 			2568,
 			2569,
@@ -1733,17 +1729,17 @@
 		"name": "VPAC",
 		"num_regions": 1,
 		"protected_inst": [
-			"vpac_top_main_0_ksdw_ecc_aggr_0",
+			"vpac_top_main_0_ecc_aggr_0",
 			"vpac_top_main_0",
-			"vpac_top_main_0_cp_intd_0",
+			"vpac_top_main_0_intd_0",
 			"vpac_top_main_0_hts_0",
-			"vpac_top_main_0_ctset2_0",
-			"vpac_top_main_0_vpac_viss_0",
-			"vpac_top_main_0_vpac_ldc_0",
-			"vpac_top_main_0_vpac_msc_0",
-			"vpac_top_main_0_vpac_nf_0",
-			"vpac_top_main_0_utc_0",
-			"vpac_top_main_0_utc_1",
+			"vpac_top_main_0_ctset_0",
+			"vpac_top_main_0_viss_0",
+			"vpac_top_main_0_ldc_0",
+			"vpac_top_main_0_msc_0",
+			"vpac_top_main_0_nf_0",
+			"vpac_top_main_0_utc_rt_0",
+			"vpac_top_main_0_utc_nrt_0",
 			"vpac_top_main_0",
 			"vpac_top_main_0",
 			"vpac_top_main_0",

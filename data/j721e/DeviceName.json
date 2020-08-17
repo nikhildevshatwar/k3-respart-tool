@@ -9,10 +9,10 @@
 	{
 		"name": "ADC MCU",
 		"protected_inst": [
-			"adc12_core_mcu_0",
-			"adc12_core_mcu_0",
-			"adc12_core_mcu_1",
-			"adc12_core_mcu_1"
+			"adc12_16ffc_mcu_0",
+			"adc12_16ffc_mcu_0",
+			"adc12_16ffc_mcu_1",
+			"adc12_16ffc_mcu_1"
 		]
 	},
 	{
@@ -171,9 +171,10 @@
 		"name": "DMPAC",
 		"protected_inst": [
 			"dmpac_top_main_0",
-			"dmpac_top_main_0_cp_intd_0",
+			"dmpac_top_main_0_ecc_aggr_0",
+			"dmpac_top_main_0_intd_0",
 			"dmpac_top_main_0_hts_0",
-			"dmpac_top_main_0_ctset2_0",
+			"dmpac_top_main_0_ctset_0",
 			"dmpac_top_main_0_foco_0",
 			"dmpac_top_main_0_foco_1",
 			"dmpac_top_main_0_dof_0",
@@ -184,17 +185,19 @@
 	{
 		"name": "DMSC",
 		"protected_inst": [
-			"dmsc_wkup_0",
-			"dmsc_wkup_0_dmtimer_dmc1ms_0",
-			"dmsc_wkup_0_dmtimer_dmc1ms_1",
-			"dmsc_wkup_0_dmtimer_dmc1ms_2",
-			"dmsc_wkup_0_dmtimer_dmc1ms_3",
+			"dmsc_wkup_0_pwrctrl_0",
+			"dmsc_wkup_0_dmtimer_0",
+			"dmsc_wkup_0_dmtimer_1",
+			"dmsc_wkup_0_dmtimer_2",
+			"dmsc_wkup_0_dmtimer_3",
 			"dmsc_wkup_0_rti_0",
-			"dmsc_wkup_0_rti_0",
-			"dmsc_wkup_0_ksbus_rat_0",
-			"dmsc_wkup_0_ks3_sec_mgr_0",
-			"dmsc_wkup_0_aeseip38t_0",
-			"dmsc_wkup_0_ksdma_intaggr_0"
+			"dmsc_wkup_0_wdtctrl_0",
+			"dmsc_wkup_0_rat_0",
+			"dmsc_wkup_0_ecc_aggr_0",
+			"dmsc_wkup_0_secctrl_0",
+			"dmsc_wkup_0_aes_0",
+			"dmsc_wkup_0_intaggr_0",
+			"dmsc_wkup_0_dbg_auth_0"
 		]
 	},
 	{
@@ -384,8 +387,8 @@
 	{
 		"name": "ICSSG Main",
 		"protected_inst": [
-			"icss_g_16ffc_main_0",
-			"icss_g_16ffc_main_1"
+			"icss_g_main_0",
+			"icss_g_main_1"
 		]
 	},
 	{
@@ -446,13 +449,13 @@
 	{
 		"name": "MCRC Main",
 		"protected_inst": [
-			"navss512l_main_0_mcrc64_0"
+			"navss512l_main_0_mcrc_0"
 		]
 	},
 	{
-		"name": "MCRC Main",
+		"name": "MCRC MCU",
 		"protected_inst": [
-			"navss_mcu_j7_mcu_0_mcrc64_0"
+			"navss_mcu_j7_mcu_0_mcrc_0"
 		]
 	},
 	{
@@ -472,7 +475,7 @@
 	{
 		"name": "SRAM 128k MCU",
 		"protected_inst": [
-			"msram128kx64e_mcu_0",
+			"navss_mcu_j7_mcu_0_msram_1",
 			"msram128kx64e_mcu_0"
 		]
 	},
@@ -486,20 +489,20 @@
 	{
 		"name": "NAVSS ECC Aggregators",
 		"protected_inst": [
-			"navss512l_main_0_ksdw_ecc_aggr_1",
-			"navss512l_main_0_ksdw_ecc_aggr_0",
-			"navss512l_main_0_ksdw_ecc_aggr_3",
-			"navss_mcu_j7_mcu_0_ksdw_ecc_aggr_0",
-			"navss_mcu_j7_mcu_0_ksdw_ecc_aggr_1"
+			"navss512l_main_0_udmass_ecc_aggr_0",
+			"navss512l_main_0_modss_ecc_aggr_0",
+			"navss512l_main_0_virtss_ecc_aggr_0",
+			"navss_mcu_j7_mcu_0_udmass_ecc_aggr_0",
+			"navss_mcu_j7_mcu_0_ecc_aggr_0"
 		]
 	},
 	{
 		"name": "NAVSS MCU WKUP",
 		"protected_inst": [
 			"j7_wkup_gpiomux_introuter_wkup_0",
-			"navss_mcu_j7_mcu_0_ksdma_psilss_0",
-			"navss_mcu_j7_mcu_0_ksdma_psilcfg_0",
-			"navss_mcu_j7_mcu_0_ksintr_router_0",
+			"navss_mcu_j7_mcu_0_psilss_0",
+			"navss_mcu_j7_mcu_0_intr_0",
+			"navss_mcu_j7_mcu_0_modss_0",
 			"navss_mcu_j7_mcu_0"
 		]
 	},
@@ -515,29 +518,32 @@
 			"j7_main_pulsar0_introuter_main_0",
 			"j7_c66_0_introuter_main_0",
 			"j7_c66_1_introuter_main_0",
-			"navss512l_main_0_ksintr_router_0",
+			"navss512l_main_0_intr_0",
 			"pdma_j7_main_debug_psilss_main_0",
 			"pdma_j7_main_aasrc_psilss_main_0",
 			"pdma_j7_main_mcan_main_0",
 			"pdma_j7_main_misc_psilss_main_0",
 			"pdma_j7_main_usart_psilss_main_0",
-			"navss512l_main_0_ksdma_psilss_0",
+			"navss512l_main_0_psilss_0",
 			"navss512l_main_0_ksdma_psilcfg_0",
-			"csi_psilss_main_0",
 			"navss512l_main_0",
-			"navss512l_main_0_ksdma_virtid_0",
-			"navss512l_main_0_ksdma_virtid_1",
-			"navss512l_main_0_ksipc_spinlock_0"
+			"csi_psilss_main_0",
+			"navss512l_main_0_msram_0",
+			"navss512l_main_0_dma_virtid_0",
+			"navss512l_main_0_dma_virtid_1",
+			"navss512l_main_0_spinlock_0",
+			"navss512l_main_0_mailbox_0",
+			"navss512l_main_0_virtss_0"
 		]
 	},
 	{
 		"name": "PAT",
 		"protected_inst": [
-			"navss512l_main_0_ksbus_pat_0",
-			"navss512l_main_0_ksbus_pat_1",
-			"navss512l_main_0_ksbus_pat_2",
-			"navss512l_main_0_ksbus_pat_3",
-			"navss512l_main_0_ksbus_pat_4"
+			"navss512l_main_0_pat_0",
+			"navss512l_main_0_pat_1",
+			"navss512l_main_0_pat_2",
+			"navss512l_main_0_pat_3",
+			"navss512l_main_0_pat_4"
 		]
 	},
 	{
@@ -637,9 +643,9 @@
 	{
 		"name": "PVU",
 		"protected_inst": [
-			"navss512l_main_0_ksdma_pvu_0",
-			"navss512l_main_0_ksdma_pvu_1",
-			"navss512l_main_0_ksdma_pvu_2"
+			"navss512l_main_0_pvu_0",
+			"navss512l_main_0_pvu_1",
+			"navss512l_main_0_pvu_2"
 		]
 	},
 	{
@@ -768,8 +774,8 @@
 	{
 		"name": "TIMERMGR Main",
 		"protected_inst": [
-			"navss512l_main_0_timer_mgr_0",
-			"navss512l_main_0_timer_mgr_1"
+			"navss512l_main_0_timermgr_0",
+			"navss512l_main_0_timermgr_1"
 		]
 	},
 	{
@@ -817,17 +823,17 @@
 	{
 		"name": "VPAC",
 		"protected_inst": [
-			"vpac_top_main_0_ksdw_ecc_aggr_0",
+			"vpac_top_main_0_ecc_aggr_0",
 			"vpac_top_main_0",
-			"vpac_top_main_0_cp_intd_0",
+			"vpac_top_main_0_intd_0",
 			"vpac_top_main_0_hts_0",
-			"vpac_top_main_0_ctset2_0",
-			"vpac_top_main_0_vpac_viss_0",
-			"vpac_top_main_0_vpac_ldc_0",
-			"vpac_top_main_0_vpac_msc_0",
-			"vpac_top_main_0_vpac_nf_0",
-			"vpac_top_main_0_utc_0",
-			"vpac_top_main_0_utc_1"
+			"vpac_top_main_0_ctset_0",
+			"vpac_top_main_0_viss_0",
+			"vpac_top_main_0_ldc_0",
+			"vpac_top_main_0_msc_0",
+			"vpac_top_main_0_nf_0",
+			"vpac_top_main_0_utc_rt_0",
+			"vpac_top_main_0_utc_nrt_0"
 		]
 	},
 	{
