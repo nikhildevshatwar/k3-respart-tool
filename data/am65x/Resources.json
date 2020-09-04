@@ -593,11 +593,19 @@
 		"resRange": [
 			{
 				"resCount": 28,
-				"resStart": 4
+				"resStart": 4,
+				"restrictHosts": [
+					"R5_0",
+					"R5_1"
+				]
 			},
 			{
 				"resCount": 28,
-				"resStart": 36
+				"resStart": 36,
+				"restrictHosts": [
+					"R5_2",
+					"R5_3"
+				]
 			}
 		],
 		"subtypeId": 0,
