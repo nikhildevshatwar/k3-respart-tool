@@ -89,6 +89,7 @@ __attribute__(( aligned(128), section(".boardcfg_data") )) =
 %    if (system.modules[moduleName]) {
 %        var inst = system.modules[moduleName].$static;
                 {
+                    .host_id = `utils.addPrefix("HOST_ID_" + host.hostName)`,
                     .allowed_atype = `utils.decimalToBinary(utils.setBit(inst.allowedAtype,3))`,
                     .allowed_qos   = `utils.decimalToHexadecimal(utils.setBit(inst.allowedqos,8))`,
                     .allowed_orderid = `utils.toHexa(utils.unsignedToBinary(inst.allowedorderid))`,
