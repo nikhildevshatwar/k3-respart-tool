@@ -2,33 +2,35 @@
 
 Resource Partitioning tool for K3 devices. This tool is based on Texas Instrument's SysConfig tool. It allows you to configure various system level parameters and generate the data which can be fed into many software components.
 
-Typical usage for this tool is for System integrators, where one would be  able to partition various resources across different software components. These resources includes DMA channels, rings, proxies, interrupts, etc. Apart from this, the tool supports configuration of QoS (Quality of Service) and Firewall parameters which helps in ensuring partitioning of peripherals across different CPUs or virtual machines.
+Typical usage for this tool is for System integrators, where one would be  able to partition **various resources** across different software components. These resources includes DMA channels, rings, proxies, interrupts, etc. Apart from this, the tool supports configuration of QoS (Quality of Service) and Firewall parameters which helps in ensuring partitioning of **peripheral devices** across different CPUs or virtual machines.
 
 ## Getting started
 
 To start using this tool, follow these instructions:
-* Download SysConfig tool from [TI Internal jenkins build](http://tgddsbuild2.toro.design.ti.com:8080/view/SysConfig/job/sysconfig.build.installers/) or from [Public download links](https://www.ti.com/tool/download/SYSCONFIG)
+* Get the SysConfig tool from [TI Internal jenkins build](http://tgddsbuild2.toro.design.ti.com:8080/view/SysConfig/job/sysconfig.build.installers/) or from [Public download links](https://www.ti.com/tool/download/SYSCONFIG)
 * Download the file setup.exe or setup.run for Windows or Linux machine respectively.
-* If you have the k3-resource-partitioning packaged in the SDK, use this or clone from TI internal [bitbucket project](https://bitbucket.itg.ti.com/projects/PSDKLA/repos/k3-resource-partitioning/browse)
-* Run the setup script `./scripts/setup.py -s /path/to/sysconfig/installation` to patch the tool to enable HTML tables.
-* Open the SysConfig tool GUI from the desktop shortcut and select the software product by navigating to the path where the k3-resource-partitioning is available.
+* If you have the **k3-resource-partitioning** packaged in the SDK, use this or clone from TI internal [bitbucket project](https://bitbucket.itg.ti.com/projects/PSDKLA/repos/k3-resource-partitioning/browse)
+* Run the setup script `./scripts/setup.py -s /path/to/sysconfig/installation` to patch the SysConfig tool.
+* Open the SysConfig tool GUI from the desktop shortcut and select the software product by navigating to the path where the **k3-resource-partitioning** is available.
+* Lastly, click on **Browse** button to open existing design for the platform that you are interested in. Navigate to the out/ directory and you will find baseline files for your platform. Use this as the starting point for any customization.
+* We do not recommend you to start from scratch, always load the baseline file out/XYZ-platform-name.syscfg
 
 
 ## Usage
 
-Once you have loaded the product in the SysConfig, you can accomplish following things.
+Once you have loaded the product in the SysConfig, and opened the baseline file, you can accomplish following things.
 
 ### NAVSS Resource partitioning
 
-This module allows to partition or allocate Navigator Subsystem (NAVSS) resources across different hosts in the System. A host is any software component which has a dedicated context for communication with System firmwarem (SYSFW). A Resource Management board config file describes how these resources are partitioned. This board config is passed by the bootloader to System firmware as part of the boot up sequence. This module allows you to automatically generate this file in an attempt to ease the NAVSS resource partitioning.
+This module allows to partition or allocate Navigator Subsystem (NAVSS) resources across different hosts in the System. A **host** is any software component which has a dedicated context for communication with **System firmwarem** (SYSFW). A **Resource Management board config** file describes how these resources are partitioned. This board config is passed by the bootloader to System firmware as part of the boot up sequence. This module allows you to automatically generate this file in an attempt to ease the NAVSS resource partitioning.
 
-In the left pane of GUI, you will see different hosts available and each host describes the resources allocated to it. All the NAVSS resources are organized in different groups, where user can specify the required count of resource for each. The tool automatically allocates the resources considering the counts for all the hosts.
+In the left pane of GUI, you will see different hosts available and each host describes the resources allocated to it. All the NAVSS resources are organized in different **groups**, where user can specify the required **count** for each resource. The tool automatically allocates the resources taaking into consideration all the counts for all the hosts.
 
-Apart from the resource allocation, the tool also has an option to configure different host capabilities. Click on the **?** sign next to the host name to read the detailed documentation for that host module.
+Apart from the resource allocation, the tool also has an option to configure different **host capabilities**. Click on the **?** sign next to the host name to read the detailed documentation for that host module.
 
 #### Review resource allocation
 
-At any point, user can review the current resource allocation done by the tool. Select the pane **Resource Allocation Table** from the three dots shown at the top right corner of the tool. Here, it presents an HTML table which shows the exact range of resources allocated for each host. Each column describes the resource ranges assigned for a certain host. Each row describes how a resource has been partitioned across different hosts.
+At any point, user can review the current resource allocation done by the tool. Select the pane **Resource Allocation Table** from the three dots shown at the top right corner of the tool. Here, it presents an HTML table which shows the exact range of resources allocated for each host. Each column describes the resource ranges assigned for a certain host. Each row describes how different host consume the give resource.
 
 ### QoS configuration
 
@@ -72,7 +74,7 @@ This tool generates different files which has the RM board config data, QoS conf
 
 ### Updating the device data
 
-This tool needs lot of hardware and software data to present the GUI, do the resource allocation and generate the output files. Majority of this data is auto generated using SoC JSON files, System firmware public documentation, etc. Most users do not need to update this data. This is required for adding support for a new SoC, migrating to new SYSFW version, migrating to new SoC JSON, etc.
+This tool needs lot of hardware and software data to present the GUI and to allocate resources. Majority of this data is auto generated using SoC JSON files, System firmware public documentation, etc. Most users do not need to update this data. This is required only when adding support for a new SoC, migrating to new SYSFW version or migrating to new SoC JSON, etc.
 
 Make sure to add symbolic links to the appropriate repositories as shown below:
 ```
@@ -83,4 +85,4 @@ ln -s <path/to/system firmware autogen repo> $dir/../system-firmware
 
 ```
 
-Use different `scripts/parse*.js` scripts to generate the JSON objects for different modules for individual SoCs. There is a utility script `scripts/generate-data.sh [SOC | all]` to generate all the required JSON objects for selected/all SoCs.
+There is a utility script `scripts/generate-data.sh [SOCNAME | all]` to generate all the required JSON objects for selected SoC or for all of them.
