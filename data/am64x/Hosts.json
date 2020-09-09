@@ -15,7 +15,7 @@
 		"privId": 1
 	},
 	{
-		"Description": "Cortex A72 context 1 on Main island - EL2/Hyp",
+		"Description": "Cortex A53 context 1 on Main island - EL2/Hyp",
 		"Security": "Non Secure",
 		"displayName": "A53 Secure host for OPTEE",
 		"hostId": 11,
@@ -44,63 +44,71 @@
 		"displayName": "M4 host",
 		"hostId": 30,
 		"hostName": "M4_0",
-		"privId": 184
+		"privId": 100
 	},
 	{
 		"Description": "Cortex R5_0 context 0 on Main island(BOOT)",
 		"Security": "Secure",
 		"displayName": "Main R5F0 core0 NonSecure host",
 		"hostId": 35,
-		"hostName": "MAIN_0_R5_0"
+		"hostName": "MAIN_0_R5_0",
+		"privId": 212
 	},
 	{
 		"Description": "Cortex R5_0 context 1 on Main island",
 		"Security": "Non Secure",
 		"displayName": "Main R5F0 core0 Secure host",
 		"hostId": 36,
-		"hostName": "MAIN_0_R5_1"
+		"hostName": "MAIN_0_R5_1",
+		"privId": 212
 	},
 	{
 		"Description": "Cortex R5_0 context 2 on Main island",
 		"Security": "Secure",
 		"displayName": "Main R5F0 core1 NonSecure host",
 		"hostId": 37,
-		"hostName": "MAIN_0_R5_2"
+		"hostName": "MAIN_0_R5_2",
+		"privId": 213
 	},
 	{
 		"Description": "Cortex R5_0 context 3 on Main island",
 		"Security": "Non Secure",
 		"displayName": "Main R5F0 core1 Secure host",
 		"hostId": 38,
-		"hostName": "MAIN_0_R5_3"
+		"hostName": "MAIN_0_R5_3",
+		"privId": 213
 	},
 	{
 		"Description": "Cortex R5_1 context 0 on Main island",
 		"Security": "Secure",
 		"displayName": "Main R5F1 core0 NonSecure host",
 		"hostId": 40,
-		"hostName": "MAIN_1_R5_0"
+		"hostName": "MAIN_1_R5_0",
+		"privId": 214
 	},
 	{
 		"Description": "Cortex R5_1 context 1 on Main island",
 		"Security": "Non Secure",
 		"displayName": "Main R5F1 core0 Secure host",
 		"hostId": 41,
-		"hostName": "MAIN_1_R5_1"
+		"hostName": "MAIN_1_R5_1",
+		"privId": 214
 	},
 	{
 		"Description": "Cortex R5_1 context 2 on Main island",
 		"Security": "Secure",
 		"displayName": "Main R5F1 core1 NonSecure host",
 		"hostId": 42,
-		"hostName": "MAIN_1_R5_2"
+		"hostName": "MAIN_1_R5_2",
+		"privId": 215
 	},
 	{
 		"Description": "Cortex R5_1 context 3 on Main island",
 		"Security": "Non Secure",
 		"displayName": "Main R5F1 core1 Secure host",
 		"hostId": 43,
-		"hostName": "MAIN_1_R5_3"
+		"hostName": "MAIN_1_R5_3",
+		"privId": 215
 	},
 	{
 		"Description": "ICSSG context 0 on Main island",

@@ -6,7 +6,7 @@ const hostInfo = {
   "displayName": "M4 host",
   "hostId": 30,
   "hostName": "M4_0",
-  "privId": 184
+  "privId": 100
 };
 const modDef = createHostModule(hostInfo);
 exports = modDef;

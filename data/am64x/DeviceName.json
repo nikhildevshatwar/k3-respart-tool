@@ -118,7 +118,8 @@
 			"dmsc_wkup_0_dbg_auth_0",
 			"dmsc_wkup_0_sec_mgr_0",
 			"dmsc_wkup_0_aes_0",
-			"dmsc_wkup_0_intaggr_0"
+			"dmsc_wkup_0_intaggr_0",
+			"dmsc_wkup_0_dram_1"
 		]
 	},
 	{
@@ -308,22 +309,34 @@
 			"wkup_gpiomux_introuter_wkup_0",
 			"navss256l_main_0_psilcfg_0",
 			"navss256l_main_0_psilss_0",
-			"navss_mcu_mcu_0_psilcfg_0",
-			"navss_mcu_mcu_0_psilss_0",
 			"pdma_main0_main_0",
 			"pdma_main1_main_0",
 			"pdma_mcu0_mcu_0",
 			"pdma_mcu1_mcu_0",
 			"navss256l_main_0",
 			"navss256l_main_0_modss_0",
+			"navss256l_main_0_modss_inta_0",
+			"navss256l_main_0_modss_inta_1",
 			"navss256l_main_0_dma_virtid_0",
 			"navss256l_main_0_dma_virtid_1",
 			"navss256l_main_0_spinlock_0",
 			"navss256l_main_0_mailbox_0",
+			"navss256l_main_0_proxy_0",
+			"navss256l_main_0_sec_proxy_0",
+			"navss256l_main_0_ringacc_0",
+			"navss256l_main_0_udmap_0",
+			"navss256l_main_0_udmass_inta_0",
 			"navss256l_main_0_intr_0",
 			"navss256l_main_0_nbss_0",
+			"navss_mcu_mcu_0_psilcfg_0",
+			"navss_mcu_mcu_0_psilss_0",
 			"navss_mcu_mcu_0_modss_0",
-			"navss_mcu_mcu_0_intr_0"
+			"navss_mcu_mcu_0_intr_0",
+			"navss_mcu_mcu_0_proxy_0",
+			"navss_mcu_mcu_0_sec_proxy_0",
+			"navss_mcu_mcu_0_ringacc_0",
+			"navss_mcu_mcu_0_udmap_0",
+			"navss_mcu_mcu_0_udmass_inta_0"
 		]
 	},
 	{
@@ -476,6 +489,7 @@
 	{
 		"name": "SRAM MCU",
 		"protected_inst": [
+			"navss_mcu_mcu_0_msram_0",
 			"navss_mcu_mcu_0_msram_1"
 		]
 	},

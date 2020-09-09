@@ -1,7 +1,7 @@
 
 const {createHostModule} = system.getScript("/modules/sysfwResPart.js");
 const hostInfo = {
-  "Description": "Cortex A72 context 1 on Main island - EL2/Hyp",
+  "Description": "Cortex A53 context 1 on Main island - EL2/Hyp",
   "Security": "Non Secure",
   "displayName": "A53 Secure host for OPTEE",
   "hostId": 11,

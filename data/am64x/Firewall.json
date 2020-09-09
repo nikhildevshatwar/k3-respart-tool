@@ -163,7 +163,6 @@
 		"ids": [
 			32,
 			33,
-			34,
 			35,
 			36,
 			37,
@@ -176,7 +175,6 @@
 		"protected_inst": [
 			"dcc_main_0",
 			"dcc_main_1",
-			"dcc_main_2",
 			"dcc_main_3",
 			"dcc_main_4",
 			"dcc_main_5",
@@ -222,7 +220,7 @@
 	{
 		"end_address": "0x00004441001F",
 		"ids": [
-			512,
+			515,
 			528,
 			536,
 			537,
@@ -232,7 +230,6 @@
 			562,
 			576,
 			578,
-			582,
 			592,
 			593,
 			602,
@@ -242,7 +239,7 @@
 		"name": "DMSC",
 		"num_regions": 1,
 		"protected_inst": [
-			"dmsc_wkup_0_rom_0",
+			"dmsc_wkup_0_dram_1",
 			"dmsc_wkup_0_pwrctrl_0",
 			"dmsc_wkup_0_dmtimer_0",
 			"dmsc_wkup_0_dmtimer_1",
@@ -252,7 +249,6 @@
 			"dmsc_wkup_0_ecc_aggr_0",
 			"dmsc_wkup_0_secctrl_0",
 			"dmsc_wkup_0_dbg_auth_0",
-			"dmsc_wkup_0_sec_mgr_0",
 			"dmsc_wkup_0_dmtimer_2",
 			"dmsc_wkup_0_dmtimer_3",
 			"dmsc_wkup_0_aes_0",
@@ -352,19 +348,6 @@
 			"elm_main_0"
 		],
 		"start_address": "0x000005380000"
-	},
-	{
-		"end_address": "0x000000700FFF",
-		"ids": [
-			24
-		],
-		"memory": false,
-		"name": "EMS Main",
-		"num_regions": 1,
-		"protected_inst": [
-			"esm_main_main_0"
-		],
-		"start_address": "0x000000700000"
 	},
 	{
 		"end_address": "0x0000032200FF",
@@ -656,16 +639,35 @@
 			4099,
 			4101,
 			4114,
+			4136,
+			4144,
+			4152,
+			4168,
+			4288,
+			4352,
+			4384,
 			4385,
 			4387,
 			4388,
 			4389,
+			4396,
+			4408,
+			4448,
+			4449,
 			4450,
 			4451,
+			6148,
+			6156,
+			6176,
+			6240,
+			6248,
 			6249,
 			6251,
 			6252,
-			6253
+			6253,
+			6260,
+			6268,
+			6288
 		],
 		"memory": false,
 		"name": "NAVSS",
@@ -688,16 +690,35 @@
 			"navss256l_main_0_dma_virtid_1",
 			"navss256l_main_0_spinlock_0",
 			"navss256l_main_0_mailbox_0",
+			"navss256l_main_0_modss_inta_0",
+			"navss256l_main_0_modss_inta_1",
+			"navss256l_main_0_proxy_0",
+			"navss256l_main_0_sec_proxy_0",
+			"navss256l_main_0_ringacc_0",
+			"navss256l_main_0_udmass_inta_0",
+			"navss256l_main_0_udmap_0",
 			"navss256l_main_0_modss_0",
 			"navss256l_main_0_intr_0",
 			"navss256l_main_0_psilcfg_0",
 			"navss256l_main_0_psilss_0",
+			"navss256l_main_0_proxy_0",
+			"navss256l_main_0_sec_proxy_0",
+			"navss256l_main_0_ringacc_0",
 			"navss256l_main_0_nbss_0",
 			"navss256l_main_0_nbss_0",
+			"navss256l_main_0_nbss_0",
+			"navss_mcu_mcu_0_proxy_0",
+			"navss_mcu_mcu_0_sec_proxy_0",
+			"navss_mcu_mcu_0_ringacc_0",
+			"navss_mcu_mcu_0_udmass_inta_0",
+			"navss_mcu_mcu_0_udmap_0",
 			"navss_mcu_mcu_0_modss_0",
 			"navss_mcu_mcu_0_intr_0",
 			"navss_mcu_mcu_0_psilcfg_0",
-			"navss_mcu_mcu_0_psilss_0"
+			"navss_mcu_mcu_0_psilss_0",
+			"navss_mcu_mcu_0_proxy_0",
+			"navss_mcu_mcu_0_sec_proxy_0",
+			"navss_mcu_mcu_0_ringacc_0"
 		],
 		"start_address": "0x000000A00000"
 	},
@@ -1022,15 +1043,17 @@
 	{
 		"end_address": "0x000028017FFF",
 		"ids": [
+			6269,
 			6270
 		],
 		"memory": false,
 		"name": "SRAM MCU",
 		"num_regions": 1,
 		"protected_inst": [
+			"navss_mcu_mcu_0_msram_0",
 			"navss_mcu_mcu_0_msram_1"
 		],
-		"start_address": "0x000028010000"
+		"start_address": "0x000028000000"
 	},
 	{
 		"end_address": "0x00003000FFFF",

@@ -135,7 +135,7 @@
 		"subtypeId": 23,
 		"subtypeName": "RESASG_SUBTYPE_IA_BCDMA_CHAN_DATA_COMPLETION_OES",
 		"uniqueId": 1815,
-		"utype": "Block copy DMA Block copy channel data completion event"
+		"utype": "Block copy DMA BC channel data completion event"
 	},
 	{
 		"deviceId": 28,
@@ -150,7 +150,7 @@
 		"subtypeId": 24,
 		"subtypeName": "RESASG_SUBTYPE_IA_BCDMA_CHAN_RING_COMPLETION_OES",
 		"uniqueId": 1816,
-		"utype": "Block copy DMA Block copy channel ring completion event"
+		"utype": "Block copy DMA BC channel ring completion event"
 	},
 	{
 		"deviceId": 28,
@@ -165,7 +165,7 @@
 		"subtypeId": 22,
 		"subtypeName": "RESASG_SUBTYPE_IA_BCDMA_CHAN_ERROR_OES",
 		"uniqueId": 1814,
-		"utype": "Block copy DMA Block copy channel error event"
+		"utype": "Block copy DMA BC channel error event"
 	},
 	{
 		"deviceId": 28,
@@ -263,6 +263,36 @@
 		"groupName": "Packet DMA",
 		"resRange": [
 			{
+				"resCount": 16,
+				"resStart": 0
+			}
+		],
+		"subtypeId": 35,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_UNMAPPED_TX_CHAN",
+		"uniqueId": 1955,
+		"utype": "Packet DMA Free Tx channels"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA",
+		"resRange": [
+			{
+				"resCount": 16,
+				"resStart": 0
+			}
+		],
+		"subtypeId": 41,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_UNMAPPED_RX_CHAN",
+		"uniqueId": 1961,
+		"utype": "Packet DMA Free Rx channels"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA",
+		"resRange": [
+			{
 				"resCount": 8,
 				"resStart": 16
 			}
@@ -271,21 +301,6 @@
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_CPSW_TX_CHAN",
 		"uniqueId": 1956,
 		"utype": "Packet DMA CPSW Tx channels"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 64,
-				"resStart": 16
-			}
-		],
-		"subtypeId": 17,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_CPSW_TX_CHAN",
-		"uniqueId": 1937,
-		"utype": "Packet DMA Rings for CPSW Tx channel"
 	},
 	{
 		"deviceId": 30,
@@ -308,106 +323,14 @@
 		"groupName": "Packet DMA",
 		"resRange": [
 			{
-				"resCount": 16,
-				"resStart": 16
-			}
-		],
-		"subtypeId": 44,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_CPSW_RX_CHAN",
-		"uniqueId": 1964,
-		"utype": "Packet DMA CPSW Rx flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA CPSW Rx flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 16,
-				"resStart": 128
-			}
-		],
-		"subtypeId": 23,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_CPSW_RX_CHAN",
-		"uniqueId": 1943,
-		"utype": "Packet DMA Rings for CPSW Rx channel"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 1,
-				"resStart": 24
+				"resCount": 0,
+				"resStart": 25
 			}
 		],
 		"subtypeId": 37,
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_TX_0_CHAN",
 		"uniqueId": 1957,
 		"utype": "Packet DMA SA2UL Tx channel0"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 80
-			}
-		],
-		"subtypeId": 18,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_TX_0_CHAN",
-		"uniqueId": 1938,
-		"utype": "Packet DMA Rings for SA2UL Tx channel 0"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 1,
-				"resStart": 17
-			}
-		],
-		"subtypeId": 45,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_RX_0_CHAN",
-		"uniqueId": 1965,
-		"utype": "Packet DMA SA2UL Rx channel0"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 32
-			}
-		],
-		"subtypeId": 46,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_0_CHAN",
-		"uniqueId": 1966,
-		"utype": "Packet DMA SA2UL Rx channel0 flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA SA2UL Rx channel0 flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 144
-			}
-		],
-		"subtypeId": 24,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_0_CHAN",
-		"uniqueId": 1944,
-		"utype": "Packet DMA Rings for SA2UL Rx channel0"
 	},
 	{
 		"deviceId": 30,
@@ -430,14 +353,14 @@
 		"groupName": "Packet DMA",
 		"resRange": [
 			{
-				"resCount": 8,
-				"resStart": 88
+				"resCount": 0,
+				"resStart": 18
 			}
 		],
-		"subtypeId": 19,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_TX_1_CHAN",
-		"uniqueId": 1939,
-		"utype": "Packet DMA Rings for SA2UL Tx channel 1"
+		"subtypeId": 45,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_RX_0_CHAN",
+		"uniqueId": 1965,
+		"utype": "Packet DMA SA2UL Rx channel0"
 	},
 	{
 		"deviceId": 30,
@@ -445,45 +368,14 @@
 		"groupName": "Packet DMA",
 		"resRange": [
 			{
-				"resCount": 1,
-				"resStart": 18
+				"resCount": 0,
+				"resStart": 19
 			}
 		],
 		"subtypeId": 47,
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_RX_1_CHAN",
 		"uniqueId": 1967,
 		"utype": "Packet DMA SA2UL Rx channel1"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 32
-			}
-		],
-		"subtypeId": 48,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_1_CHAN",
-		"uniqueId": 1968,
-		"utype": "Packet DMA SA2UL Rx channel1 flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA SA2UL Rx channel1 flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 144
-			}
-		],
-		"subtypeId": 25,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_1_CHAN",
-		"uniqueId": 1945,
-		"utype": "Packet DMA Rings for SA2UL Rx channel1"
 	},
 	{
 		"deviceId": 30,
@@ -499,37 +391,6 @@
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_RX_2_CHAN",
 		"uniqueId": 1969,
 		"utype": "Packet DMA SA2UL Rx channel2"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 40
-			}
-		],
-		"subtypeId": 50,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_2_CHAN",
-		"uniqueId": 1970,
-		"utype": "Packet DMA SA2UL Rx channel2 flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA SA2UL Rx channel2 flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 152
-			}
-		],
-		"subtypeId": 26,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_2_CHAN",
-		"uniqueId": 1946,
-		"utype": "Packet DMA Rings for SA2UL Rx channel2"
 	},
 	{
 		"deviceId": 30,
@@ -553,37 +414,6 @@
 		"resRange": [
 			{
 				"resCount": 8,
-				"resStart": 40
-			}
-		],
-		"subtypeId": 52,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_3_CHAN",
-		"uniqueId": 1972,
-		"utype": "Packet DMA SA2UL Rx channel3 flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA SA2UL Rx channel3 flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 152
-			}
-		],
-		"subtypeId": 27,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_3_CHAN",
-		"uniqueId": 1947,
-		"utype": "Packet DMA Rings for SA2UL Rx channel3"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
 				"resStart": 26
 			}
 		],
@@ -591,21 +421,6 @@
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_ICSSG_0_TX_CHAN",
 		"uniqueId": 1959,
 		"utype": "Packet DMA ICSSG0 Tx channels"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 96
-			}
-		],
-		"subtypeId": 20,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_0_TX_CHAN",
-		"uniqueId": 1940,
-		"utype": "Packet DMA Rings for ICSSG0 Tx channel"
 	},
 	{
 		"deviceId": 30,
@@ -628,37 +443,6 @@
 		"groupName": "Packet DMA",
 		"resRange": [
 			{
-				"resCount": 64,
-				"resStart": 48
-			}
-		],
-		"subtypeId": 54,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_ICSSG_0_RX_CHAN",
-		"uniqueId": 1974,
-		"utype": "Packet DMA ICSSG0 Rx flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA ICSSG0 Rx flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 64,
-				"resStart": 160
-			}
-		],
-		"subtypeId": 28,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_0_RX_CHAN",
-		"uniqueId": 1948,
-		"utype": "Packet DMA Rings for ICSSG0 Rx channel"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
 				"resCount": 8,
 				"resStart": 34
 			}
@@ -667,21 +451,6 @@
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_ICSSG_1_TX_CHAN",
 		"uniqueId": 1960,
 		"utype": "Packet DMA ICSSG1 Tx channels"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 8,
-				"resStart": 104
-			}
-		],
-		"subtypeId": 21,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_1_TX_CHAN",
-		"uniqueId": 1941,
-		"utype": "Packet DMA Rings for ICSSG1 Tx channel"
 	},
 	{
 		"deviceId": 30,
@@ -699,70 +468,10 @@
 		"utype": "Packet DMA ICSSG1 Rx channel"
 	},
 	{
+		"copyFromUtype": "Packet DMA Free Tx channels",
 		"deviceId": 30,
 		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 64,
-				"resStart": 112
-			}
-		],
-		"subtypeId": 56,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_ICSSG_1_RX_CHAN",
-		"uniqueId": 1976,
-		"utype": "Packet DMA ICSSG1 Rx flows"
-	},
-	{
-		"copyFromUtype": "Packet DMA ICSSG1 Rx flows",
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 64,
-				"resStart": 224
-			}
-		],
-		"subtypeId": 29,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_1_RX_CHAN",
-		"uniqueId": 1949,
-		"utype": "Packet DMA Rings for ICSSG1 Rx channel"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 16,
-				"resStart": 0
-			}
-		],
-		"subtypeId": 41,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_UNMAPPED_RX_CHAN",
-		"uniqueId": 1961,
-		"utype": "Packet DMA free Rx channels"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 16,
-				"resStart": 0
-			}
-		],
-		"subtypeId": 42,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_UNMAPPED_RX_CHAN",
-		"uniqueId": 1962,
-		"utype": "Packet DMA free flows for Rx channels"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA Ring accelerator",
+		"groupName": "Packet DMA ring accelerator",
 		"resRange": [
 			{
 				"resCount": 16,
@@ -775,9 +484,10 @@
 		"utype": "Packet DMA Free rings for Tx channel"
 	},
 	{
+		"copyFromUtype": "Packet DMA Free Rx channels",
 		"deviceId": 30,
 		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA Ring accelerator",
+		"groupName": "Packet DMA ring accelerator",
 		"resRange": [
 			{
 				"resCount": 16,
@@ -790,24 +500,317 @@
 		"utype": "Packet DMA Free rings for Rx channel"
 	},
 	{
+		"copyFromUtype": "Packet DMA Free Rx channels",
 		"deviceId": 30,
 		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA Ring accelerator",
+		"groupName": "Packet DMA ring accelerator",
 		"resRange": [
 			{
 				"resCount": 16,
 				"resStart": 0
 			}
 		],
-		"subtypeId": 35,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_UNMAPPED_TX_CHAN",
-		"uniqueId": 1955,
-		"utype": "Packet DMA free Tx channels"
+		"subtypeId": 42,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_UNMAPPED_RX_CHAN",
+		"uniqueId": 1962,
+		"utype": "Packet DMA Free flows for Rx channels"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 64,
+				"resStart": 16
+			}
+		],
+		"subtypeId": 17,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_CPSW_TX_CHAN",
+		"uniqueId": 1937,
+		"utype": "Packet DMA Rings for CPSW Tx channel"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 16,
+				"resStart": 128
+			}
+		],
+		"subtypeId": 23,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_CPSW_RX_CHAN",
+		"uniqueId": 1943,
+		"utype": "Packet DMA Rings for CPSW Rx channel"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for CPSW Rx channel",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 16,
+				"resStart": 16
+			}
+		],
+		"subtypeId": 44,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_CPSW_RX_CHAN",
+		"uniqueId": 1964,
+		"utype": "Packet DMA CPSW Rx flows"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 7,
+				"resStart": 81
+			}
+		],
+		"subtypeId": 18,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_TX_0_CHAN",
+		"uniqueId": 1938,
+		"utype": "Packet DMA Rings for SA2UL Tx channel0"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 88
+			}
+		],
+		"subtypeId": 19,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_TX_1_CHAN",
+		"uniqueId": 1939,
+		"utype": "Packet DMA Rings for SA2UL Tx channel1"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 7,
+				"resStart": 145
+			}
+		],
+		"subtypeId": 24,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_0_CHAN",
+		"uniqueId": 1944,
+		"utype": "Packet DMA Rings for SA2UL Rx channel0"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for SA2UL Rx channel0",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 32
+			}
+		],
+		"subtypeId": 46,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_0_CHAN",
+		"uniqueId": 1966,
+		"utype": "Packet DMA SA2UL Rx channel0 flows"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 144
+			}
+		],
+		"subtypeId": 25,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_1_CHAN",
+		"uniqueId": 1945,
+		"utype": "Packet DMA Rings for SA2UL Rx channel1"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for SA2UL Rx channel1",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 32
+			}
+		],
+		"subtypeId": 48,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_1_CHAN",
+		"uniqueId": 1968,
+		"utype": "Packet DMA SA2UL Rx channel1 flows"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 152
+			}
+		],
+		"subtypeId": 26,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_2_CHAN",
+		"uniqueId": 1946,
+		"utype": "Packet DMA Rings for SA2UL Rx channel2"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for SA2UL Rx channel2",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 40
+			}
+		],
+		"subtypeId": 50,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_2_CHAN",
+		"uniqueId": 1970,
+		"utype": "Packet DMA SA2UL Rx channel2 flows"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 152
+			}
+		],
+		"subtypeId": 27,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_SAUL_RX_3_CHAN",
+		"uniqueId": 1947,
+		"utype": "Packet DMA Rings for SA2UL Rx channel3"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for SA2UL Rx channel3",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 40
+			}
+		],
+		"subtypeId": 52,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_SAUL_RX_3_CHAN",
+		"uniqueId": 1972,
+		"utype": "Packet DMA SA2UL Rx channel3 flows"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 96
+			}
+		],
+		"subtypeId": 20,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_0_TX_CHAN",
+		"uniqueId": 1940,
+		"utype": "Packet DMA Rings for ICSSG0 Tx channel"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 64,
+				"resStart": 160
+			}
+		],
+		"subtypeId": 28,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_0_RX_CHAN",
+		"uniqueId": 1948,
+		"utype": "Packet DMA Rings for ICSSG0 Rx channel"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for ICSSG0 Rx channel",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 64,
+				"resStart": 48
+			}
+		],
+		"subtypeId": 54,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_ICSSG_0_RX_CHAN",
+		"uniqueId": 1974,
+		"utype": "Packet DMA ICSSG0 Rx flows"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 8,
+				"resStart": 104
+			}
+		],
+		"subtypeId": 21,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_1_TX_CHAN",
+		"uniqueId": 1941,
+		"utype": "Packet DMA Rings for ICSSG1 Tx channel"
+	},
+	{
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 64,
+				"resStart": 224
+			}
+		],
+		"subtypeId": 29,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_RING_ICSSG_1_RX_CHAN",
+		"uniqueId": 1949,
+		"utype": "Packet DMA Rings for ICSSG1 Rx channel"
+	},
+	{
+		"copyFromUtype": "Packet DMA Rings for ICSSG1 Rx channel",
+		"deviceId": 30,
+		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
+		"groupName": "Packet DMA ring accelerator",
+		"resRange": [
+			{
+				"resCount": 64,
+				"resStart": 112
+			}
+		],
+		"subtypeId": 56,
+		"subtypeName": "RESASG_SUBTYPE_PKTDMA_FLOW_ICSSG_1_RX_CHAN",
+		"uniqueId": 1976,
+		"utype": "Packet DMA ICSSG1 Rx flows"
 	},
 	{
 		"deviceId": 33,
 		"deviceName": "AM64X_DEV_DMASS0_RINGACC_0",
-		"groupName": "Packet DMA Ring accelerator",
+		"groupName": "Packet DMA ring accelerator",
 		"resRange": [
 			{
 				"resCount": 1,
@@ -817,13 +820,13 @@
 		"subtypeId": 0,
 		"subtypeName": "RESASG_SUBTYPE_RA_ERROR_OES",
 		"uniqueId": 2112,
-		"utype": "Packet DMA ring accelerator error event"
+		"utype": "Packet DMA Ring accelerator error event"
 	},
 	{
 		"autoAlloc": false,
 		"deviceId": 33,
 		"deviceName": "AM64X_DEV_DMASS0_RINGACC_0",
-		"groupName": "Packet DMA Ring accelerator",
+		"groupName": "Packet DMA ring accelerator",
 		"resRange": [
 			{
 				"resCount": 4096,
@@ -838,7 +841,7 @@
 	{
 		"deviceId": 33,
 		"deviceName": "AM64X_DEV_DMASS0_RINGACC_0",
-		"groupName": "Packet DMA Ring accelerator",
+		"groupName": "Packet DMA ring accelerator",
 		"resRange": [
 			{
 				"resCount": 12,
@@ -848,7 +851,7 @@
 		"subtypeId": 12,
 		"subtypeName": "RESASG_SUBTYPE_RA_GENERIC_IPC",
 		"uniqueId": 2124,
-		"utype": "Packet DMA Rings for MSI"
+		"utype": "Packet DMA Rings for IPC"
 	},
 	{
 		"deviceId": 28,
@@ -946,8 +949,34 @@
 		"groupName": "Interrupt aggregators and routers",
 		"resRange": [
 			{
-				"resCount": 43,
-				"resStart": 0
+				"resCount": 16,
+				"resStart": 0,
+				"restrictHosts": [
+					"A53_0",
+					"A53_1",
+					"A53_2",
+					"A53_3"
+				]
+			},
+			{
+				"resCount": 8,
+				"resStart": 16,
+				"restrictHosts": [
+					"MAIN_0_R5_0",
+					"MAIN_0_R5_1",
+					"MAIN_0_R5_2",
+					"MAIN_0_R5_3"
+				]
+			},
+			{
+				"resCount": 8,
+				"resStart": 24,
+				"restrictHosts": [
+					"MAIN_1_R5_0",
+					"MAIN_1_R5_1",
+					"MAIN_1_R5_2",
+					"MAIN_1_R5_3"
+				]
 			}
 		],
 		"subtypeId": 0,
@@ -961,8 +990,29 @@
 		"groupName": "Interrupt aggregators and routers",
 		"resRange": [
 			{
-				"resCount": 54,
-				"resStart": 0
+				"resCount": 16,
+				"resStart": 0,
+				"restrictHosts": [
+					"A53_0",
+					"A53_1",
+					"A53_2",
+					"A53_3",
+					"MAIN_0_R5_0",
+					"MAIN_0_R5_1",
+					"MAIN_0_R5_2",
+					"MAIN_0_R5_3",
+					"MAIN_1_R5_0",
+					"MAIN_1_R5_1",
+					"MAIN_1_R5_2",
+					"MAIN_1_R5_3"
+				]
+			},
+			{
+				"resCount": 12,
+				"resStart": 18,
+				"restrictHosts": [
+					"ICSSG_0"
+				]
 			}
 		],
 		"subtypeId": 0,
@@ -976,8 +1026,29 @@
 		"groupName": "Interrupt aggregators and routers",
 		"resRange": [
 			{
-				"resCount": 12,
-				"resStart": 0
+				"resCount": 4,
+				"resStart": 0,
+				"restrictHosts": [
+					"A53_0",
+					"A53_1",
+					"A53_2",
+					"A53_3",
+					"MAIN_0_R5_0",
+					"MAIN_0_R5_1",
+					"MAIN_0_R5_2",
+					"MAIN_0_R5_3",
+					"MAIN_1_R5_0",
+					"MAIN_1_R5_1",
+					"MAIN_1_R5_2",
+					"MAIN_1_R5_3"
+				]
+			},
+			{
+				"resCount": 4,
+				"resStart": 4,
+				"restrictHosts": [
+					"M4_0"
+				]
 			}
 		],
 		"subtypeId": 0,
@@ -1007,19 +1078,47 @@
 		"resRange": [
 			{
 				"resCount": 36,
-				"resStart": 4
+				"resStart": 4,
+				"restrictHosts": [
+					"A53_0",
+					"A53_1",
+					"A53_2",
+					"A53_3"
+				]
 			},
 			{
-				"resCount": 44,
-				"resStart": 44
+				"resCount": 28,
+				"resStart": 44,
+				"restrictHosts": [
+					"MAIN_0_R5_0",
+					"MAIN_0_R5_1",
+					"MAIN_0_R5_2",
+					"MAIN_0_R5_3"
+				]
 			},
 			{
-				"resCount": 44,
-				"resStart": 92
+				"resCount": 28,
+				"resStart": 92,
+				"restrictHosts": [
+					"MAIN_1_R5_0",
+					"MAIN_1_R5_1",
+					"MAIN_1_R5_2",
+					"MAIN_1_R5_3"
+				]
 			},
 			{
-				"resCount": 45,
-				"resStart": 139
+				"resCount": 16,
+				"resStart": 152,
+				"restrictHosts": [
+					"ICSSG_0"
+				]
+			},
+			{
+				"resCount": 16,
+				"resStart": 168,
+				"restrictHosts": [
+					"M4_0"
+				]
 			}
 		],
 		"subtypeId": 10,

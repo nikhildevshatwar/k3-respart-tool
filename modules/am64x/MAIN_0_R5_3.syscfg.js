@@ -5,7 +5,8 @@ const hostInfo = {
   "Security": "Non Secure",
   "displayName": "Main R5F0 core1 Secure host",
   "hostId": 38,
-  "hostName": "MAIN_0_R5_3"
+  "hostName": "MAIN_0_R5_3",
+  "privId": 213
 };
 const modDef = createHostModule(hostInfo);
 exports = modDef;
