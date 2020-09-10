@@ -29,11 +29,16 @@ function updateModuleInstances() {
 }
 
 _.each(resources, (resource) => {
+	resource.copyToUtype = [];
+	resource.blockCopyTo = [];
+});
+
+_.each(resources, (resource) => {
 	if (resource.copyFromUtype) {
-		resources[resource.copyFromUtype].copyToUtype = resource.utype;
+		resources[resource.copyFromUtype].copyToUtype.push(resource.utype);
 	}
 	if (resource.blockCopyFrom) {
-		resources[resource.blockCopyFrom].blockCopyTo = resource.utype;
+		resources[resource.blockCopyFrom].blockCopyTo.push(resource.utype);
 	}
 });
 
@@ -133,11 +138,7 @@ function getHostConfigurables(hostName) {
 				default: 0,
 				hidden: r.autoAlloc === false && !r.copyFromUtype ? false : true,
 				onChange: (inst, ui) => {
-					if (r.copyToUtype && r.autoAlloc === false) {
-						var dest = _.join(_.split(r.copyToUtype, " "), "_");
-						var src = _.join(_.split(r.utype, " "), "_");
-						inst[dest + "_start"] = inst[src + "_start"];
-					}
+					update_dependencies(inst, r);
 				},
 			});
 
@@ -151,11 +152,7 @@ function getHostConfigurables(hostName) {
 					? "Count of this resource is automatically matched with resource " + r.copyFromUtype
 					: "",
 				onChange: (inst, ui) => {
-					if (r.copyToUtype) {
-						var dest = _.join(_.split(r.copyToUtype, " "), "_");
-						var src = _.join(_.split(r.utype, " "), "_");
-						inst[dest + "_count"] = inst[src + "_count"];
-					}
+					update_dependencies(inst, r);
 				},
 			});
 
@@ -171,24 +168,7 @@ function getHostConfigurables(hostName) {
 						? "Block Count of this resource is automatically matched with resource " + r.copyFromUtype
 						: "",
 					onChange: (inst, ui) => {
-						if (r.copyToUtype) {
-							var dest = _.join(_.split(r.copyToUtype, " "), "_");
-							var src = _.join(_.split(r.utype, " "), "_");
-							inst[dest + "_blockCount"] = inst[src + "_blockCount"];
-						}
-
-						if (r.blockCopyTo) {
-							var dest = _.join(_.split(r.blockCopyTo, " "), "_");
-							var src = _.join(_.split(r.utype, " "), "_");
-							inst[dest + "_blockCount"] = inst[src + "_blockCount"];
-
-							if (resources[r.blockCopyTo].copyToUtype) {
-								var to = _.join(_.split(resources[r.blockCopyTo].copyToUtype, " "), "_");
-								var from = _.join(_.split(r.blockCopyTo, " "), "_");
-
-								inst[to + "_blockCount"] = inst[from + "_blockCount"];
-							}
-						}
+						update_dependencies(inst, r);
 					},
 				});
 			}
@@ -360,6 +340,33 @@ function createHostModule(hostInfo) {
 	return def;
 }
 
+function update_dependencies(inst, r) {
+	var src, dest;
+
+	src = _.join(_.split(r.utype, " "), "_");
+
+	// Update block copy dependencies first
+	for (var i = 0; i < r.blockCopyTo.length; i++) {
+		dest = _.join(_.split(r.blockCopyTo[i], " "), "_");
+
+		inst[dest + "_blockCount"] = inst[src + "_blockCount"];
+		update_dependencies(inst, resources[r.blockCopyTo[i]]);
+	}
+
+	for (var i = 0; i < r.copyToUtype.length; i++) {
+		dest = _.join(_.split(r.copyToUtype[i], " "), "_");
+
+		if (r.autoAlloc === false) {
+			inst[dest + "_start"] = inst[src + "_start"];
+		}
+
+		inst[dest + "_count"] = inst[src + "_count"];
+
+		if (r.blockCopy) {
+			inst[dest + "_blockCount"] = inst[src + "_blockCount"];
+		}
+	}
+}
 // Functions for validation
 
 // Check if same host is selected to share resource with different hosts
