@@ -80,15 +80,21 @@ function createResourceRange(resources) {
 		var uniqueId = resources[idx].uniqueId;
 
 		var resArray = [];
+		var count  = 0;
 
 		while (idx < resources.length && resources[idx].deviceName === deviceName && resources[idx].subtypeName === subtypeName) {
 			resArray.push({
 				resStart: resources[idx].resStart,
 				resCount: resources[idx].resCount,
 			});
+			count += resources[idx].resCount;
 
 			idx++;
 		}
+
+		if (count == 0)
+			continue;
+
 		newResources.push({
 			deviceName: deviceName,
 			deviceId: deviceId,

@@ -323,21 +323,6 @@
 		"groupName": "Packet DMA",
 		"resRange": [
 			{
-				"resCount": 0,
-				"resStart": 25
-			}
-		],
-		"subtypeId": 37,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_TX_0_CHAN",
-		"uniqueId": 1957,
-		"utype": "Packet DMA SA2UL Tx channel0"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
 				"resCount": 1,
 				"resStart": 25
 			}
@@ -346,36 +331,6 @@
 		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_TX_1_CHAN",
 		"uniqueId": 1958,
 		"utype": "Packet DMA SA2UL Tx channel1"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 0,
-				"resStart": 18
-			}
-		],
-		"subtypeId": 45,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_RX_0_CHAN",
-		"uniqueId": 1965,
-		"utype": "Packet DMA SA2UL Rx channel0"
-	},
-	{
-		"deviceId": 30,
-		"deviceName": "AM64X_DEV_DMASS0_PKTDMA_0",
-		"groupName": "Packet DMA",
-		"resRange": [
-			{
-				"resCount": 0,
-				"resStart": 19
-			}
-		],
-		"subtypeId": 47,
-		"subtypeName": "RESASG_SUBTYPE_PKTDMA_SAUL_RX_1_CHAN",
-		"uniqueId": 1967,
-		"utype": "Packet DMA SA2UL Rx channel1"
 	},
 	{
 		"deviceId": 30,
