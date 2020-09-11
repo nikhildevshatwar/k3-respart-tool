@@ -2,7 +2,7 @@
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
  * @cliArgs --device "AM437x" --package "ZDN" --part "Default" --product "K3-Respart-Tool@0.5"
- * @versions {"data":"2020052503","timestamp":"2020052503","tool":"1.6.0+1393","templates":"2020052503"}
+ * @versions {"data":"2020072103","timestamp":"2020072103","tool":"1.6.0+1465","templates":"2020072103"}
  */
 
 /**
@@ -18,14 +18,113 @@ const MAIN_1_R5_2 = scripting.addModule("/modules/am64x/MAIN_1_R5_2");
 /**
  * Write custom configuration values to the imported modules.
  */
-A53_2.allocOrder = 1;
+A53_2.allocOrder                                          = 1;
+A53_2.Compare_event_Interrupt_Router_count                = 16;
+A53_2.Main_GPIO_Interrupt_Router_count                    = 8;
+A53_2.MCU_GPIO_Interrupt_Router_count                     = 4;
+A53_2.Block_Copy_DMA_Block_copy_channels_count            = 12;
+A53_2.Block_Copy_DMA_Split_TR_Rx_channels_count           = 6;
+A53_2.Block_Copy_DMA_Split_TR_Tx_channels_count           = 6;
+A53_2.DMASS_Interrupt_aggregator_Virtual_interrupts_count = 36;
+A53_2.DMASS_Interrupt_aggregator_Global_events_count      = 512;
+A53_2.Packet_DMA_Rings_for_CPSW_Tx_channel_count          = 16;
+A53_2.Packet_DMA_Rings_for_SA2UL_Tx_channel1_count        = 8;
+A53_2.Packet_DMA_Rings_for_ICSSG0_Tx_channel_count        = 4;
+A53_2.Packet_DMA_Rings_for_ICSSG1_Tx_channel_count        = 4;
+A53_2.Packet_DMA_Rings_for_CPSW_Rx_channel_count          = 11;
+A53_2.Packet_DMA_Rings_for_SA2UL_Rx_channel2_count        = 8;
+A53_2.Packet_DMA_Rings_for_SA2UL_Rx_channel3_count        = 8;
+A53_2.Packet_DMA_Rings_for_ICSSG0_Rx_channel_count        = 32;
+A53_2.Packet_DMA_Rings_for_ICSSG1_Rx_channel_count        = 32;
+A53_2.Packet_DMA_Free_Tx_channels_count                   = 4;
+A53_2.Packet_DMA_CPSW_Tx_channels_count                   = 2;
+A53_2.Packet_DMA_SA2UL_Tx_channel1_count                  = 1;
+A53_2.Packet_DMA_ICSSG0_Tx_channels_count                 = 4;
+A53_2.Packet_DMA_ICSSG1_Tx_channels_count                 = 4;
+A53_2.Packet_DMA_Free_Rx_channels_count                   = 4;
+A53_2.Packet_DMA_CPSW_Rx_channel_count                    = 1;
+A53_2.Packet_DMA_SA2UL_Rx_channel2_count                  = 1;
+A53_2.Packet_DMA_SA2UL_Rx_channel3_count                  = 1;
+A53_2.Packet_DMA_ICSSG0_Rx_channel_count                  = 2;
+A53_2.Packet_DMA_ICSSG1_Rx_channel_count                  = 2;
+A53_2.Packet_DMA_virt_id_range_start                      = 2;
+A53_2.Packet_DMA_virt_id_range_count                      = 2;
 
-M4_0.allocOrder = 6;
+M4_0.allocOrder                                          = 6;
+M4_0.MCU_GPIO_Interrupt_Router_count                     = 4;
+M4_0.Block_Copy_DMA_Block_copy_channels_count            = 1;
+M4_0.DMASS_Interrupt_aggregator_Virtual_interrupts_count = 16;
+M4_0.DMASS_Interrupt_aggregator_Global_events_count      = 96;
+M4_0.Packet_DMA_Rings_for_CPSW_Tx_channel_count          = 8;
+M4_0.Packet_DMA_Rings_for_CPSW_Rx_channel_count          = 1;
+M4_0.Packet_DMA_Free_Tx_channels_count                   = 1;
+M4_0.Packet_DMA_CPSW_Tx_channels_count                   = 1;
+M4_0.Packet_DMA_Free_Rx_channels_count                   = 1;
 
-MAIN_0_R5_0.allocOrder = 2;
+MAIN_0_R5_0.allocOrder                                          = 2;
+MAIN_0_R5_0.Compare_event_Interrupt_Router_count                = 4;
+MAIN_0_R5_0.Main_GPIO_Interrupt_Router_count                    = 2;
+MAIN_0_R5_0.Block_Copy_DMA_Block_copy_channels_count            = 6;
+MAIN_0_R5_0.Block_Copy_DMA_Split_TR_Rx_channels_count           = 6;
+MAIN_0_R5_0.Block_Copy_DMA_Split_TR_Tx_channels_count           = 6;
+MAIN_0_R5_0.DMASS_Interrupt_aggregator_Virtual_interrupts_count = 14;
+MAIN_0_R5_0.DMASS_Interrupt_aggregator_Global_events_count      = 256;
+MAIN_0_R5_0.Packet_DMA_Rings_for_CPSW_Tx_channel_count          = 16;
+MAIN_0_R5_0.Packet_DMA_Rings_for_ICSSG0_Tx_channel_count        = 4;
+MAIN_0_R5_0.Packet_DMA_Rings_for_ICSSG1_Tx_channel_count        = 4;
+MAIN_0_R5_0.Packet_DMA_Rings_for_CPSW_Rx_channel_count          = 1;
+MAIN_0_R5_0.Packet_DMA_Rings_for_ICSSG0_Rx_channel_count        = 32;
+MAIN_0_R5_0.Packet_DMA_Rings_for_ICSSG1_Rx_channel_count        = 32;
+MAIN_0_R5_0.Packet_DMA_Free_Tx_channels_count                   = 3;
+MAIN_0_R5_0.Packet_DMA_CPSW_Tx_channels_count                   = 2;
+MAIN_0_R5_0.Packet_DMA_ICSSG0_Tx_channels_count                 = 4;
+MAIN_0_R5_0.Packet_DMA_ICSSG1_Tx_channels_count                 = 4;
+MAIN_0_R5_0.Packet_DMA_Free_Rx_channels_count                   = 3;
+MAIN_0_R5_0.Packet_DMA_ICSSG0_Rx_channel_count                  = 2;
+MAIN_0_R5_0.Packet_DMA_ICSSG1_Rx_channel_count                  = 2;
+MAIN_0_R5_0.Packet_DMA_Rings_for_IPC_count                      = 2;
 
-MAIN_0_R5_2.allocOrder = 3;
+MAIN_0_R5_2.allocOrder                                          = 3;
+MAIN_0_R5_2.Compare_event_Interrupt_Router_count                = 4;
+MAIN_0_R5_2.Main_GPIO_Interrupt_Router_count                    = 2;
+MAIN_0_R5_2.Block_Copy_DMA_Block_copy_channels_count            = 2;
+MAIN_0_R5_2.Block_Copy_DMA_Split_TR_Rx_channels_count           = 2;
+MAIN_0_R5_2.Block_Copy_DMA_Split_TR_Tx_channels_count           = 2;
+MAIN_0_R5_2.DMASS_Interrupt_aggregator_Virtual_interrupts_count = 14;
+MAIN_0_R5_2.DMASS_Interrupt_aggregator_Global_events_count      = 192;
+MAIN_0_R5_2.Packet_DMA_Rings_for_CPSW_Tx_channel_count          = 8;
+MAIN_0_R5_2.Packet_DMA_Rings_for_CPSW_Rx_channel_count          = 1;
+MAIN_0_R5_2.Packet_DMA_Free_Tx_channels_count                   = 2;
+MAIN_0_R5_2.Packet_DMA_CPSW_Tx_channels_count                   = 1;
+MAIN_0_R5_2.Packet_DMA_Free_Rx_channels_count                   = 2;
+MAIN_0_R5_2.Packet_DMA_Rings_for_IPC_count                      = 2;
 
-MAIN_1_R5_0.allocOrder = 4;
+MAIN_1_R5_0.allocOrder                                          = 4;
+MAIN_1_R5_0.Compare_event_Interrupt_Router_count                = 4;
+MAIN_1_R5_0.Main_GPIO_Interrupt_Router_count                    = 2;
+MAIN_1_R5_0.Block_Copy_DMA_Block_copy_channels_count            = 4;
+MAIN_1_R5_0.Block_Copy_DMA_Split_TR_Rx_channels_count           = 4;
+MAIN_1_R5_0.Block_Copy_DMA_Split_TR_Tx_channels_count           = 4;
+MAIN_1_R5_0.DMASS_Interrupt_aggregator_Virtual_interrupts_count = 14;
+MAIN_1_R5_0.DMASS_Interrupt_aggregator_Global_events_count      = 256;
+MAIN_1_R5_0.Packet_DMA_Rings_for_CPSW_Tx_channel_count          = 8;
+MAIN_1_R5_0.Packet_DMA_Rings_for_CPSW_Rx_channel_count          = 1;
+MAIN_1_R5_0.Packet_DMA_Free_Tx_channels_count                   = 4;
+MAIN_1_R5_0.Packet_DMA_CPSW_Tx_channels_count                   = 1;
+MAIN_1_R5_0.Packet_DMA_Free_Rx_channels_count                   = 4;
+MAIN_1_R5_0.Packet_DMA_Rings_for_IPC_count                      = 2;
 
-MAIN_1_R5_2.allocOrder = 5;
+MAIN_1_R5_2.allocOrder                                          = 5;
+MAIN_1_R5_2.Compare_event_Interrupt_Router_count                = 4;
+MAIN_1_R5_2.Main_GPIO_Interrupt_Router_count                    = 2;
+MAIN_1_R5_2.Block_Copy_DMA_Block_copy_channels_count            = 2;
+MAIN_1_R5_2.Block_Copy_DMA_Split_TR_Rx_channels_count           = 2;
+MAIN_1_R5_2.Block_Copy_DMA_Split_TR_Tx_channels_count           = 2;
+MAIN_1_R5_2.DMASS_Interrupt_aggregator_Virtual_interrupts_count = 14;
+MAIN_1_R5_2.DMASS_Interrupt_aggregator_Global_events_count      = 192;
+MAIN_1_R5_2.Packet_DMA_Rings_for_CPSW_Tx_channel_count          = 8;
+MAIN_1_R5_2.Packet_DMA_Rings_for_CPSW_Rx_channel_count          = 1;
+MAIN_1_R5_2.Packet_DMA_Free_Tx_channels_count                   = 2;
+MAIN_1_R5_2.Packet_DMA_CPSW_Tx_channels_count                   = 1;
+MAIN_1_R5_2.Packet_DMA_Free_Rx_channels_count                   = 2;
+MAIN_1_R5_2.Packet_DMA_Rings_for_IPC_count                      = 2;
